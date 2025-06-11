@@ -1,0 +1,267 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "新闻",
+      "icon": "📰"
+    },
+    {
+      "id": 2,
+      "name": "教育",
+      "icon": "📚"
+    },
+    {
+      "id": 3,
+      "name": "电影",
+      "icon": "🎬"
+    },
+    {
+      "id": 4,
+      "name": "阅读",
+      "icon": "📖"
+    },
+    {
+      "id": 5,
+      "name": "演讲",
+      "icon": "🎤"
+    },
+    {
+      "id": 6,
+      "name": "搞笑",
+      "icon": "😄"
+    },
+    {
+      "id": 7,
+      "name": "购物",
+      "icon": "🛒"
+    },
+    {
+      "id": 8,
+      "name": "音乐",
+      "icon": "🎵"
+    },
+    {
+      "id": 9,
+      "name": "医疗",
+      "icon": "🏥"
+    }
+  ],
+  "sites": [
+    {
+      "id": 1,
+      "name": "新浪新闻",
+      "url": "https://news.sina.com.cn",
+      "description": "及时准确的新闻资讯平台",
+      "categoryId": 1,
+      "icon": "/icons/sina.svg"
+    },
+    {
+      "id": 2,
+      "name": "腾讯新闻",
+      "url": "https://news.qq.com",
+      "description": "腾讯官方新闻客户端",
+      "categoryId": 1,
+      "icon": "/icons/qq.svg"
+    },
+    {
+      "id": 3,
+      "name": "网易新闻",
+      "url": "https://news.163.com",
+      "description": "有态度的门户网站",
+      "categoryId": 1,
+      "icon": "/icons/netease.svg"
+    },
+    {
+      "id": 4,
+      "name": "中国大学MOOC",
+      "url": "https://www.icourse163.org",
+      "description": "优质的中文在线课程平台",
+      "categoryId": 2,
+      "icon": "/icons/mooc.svg"
+    },
+    {
+      "id": 5,
+      "name": "学堂在线",
+      "url": "https://www.xuetangx.com",
+      "description": "清华大学发起的在线学习平台",
+      "categoryId": 2,
+      "icon": "/icons/xuetang.svg"
+    },
+    {
+      "id": 6,
+      "name": "Coursera",
+      "url": "https://www.coursera.org",
+      "description": "全球顶尖大学的在线课程",
+      "categoryId": 2,
+      "icon": "/icons/coursera.svg"
+    },
+    {
+      "id": 7,
+      "name": "豆瓣电影",
+      "url": "https://movie.douban.com",
+      "description": "发现好电影，分享观影心得",
+      "categoryId": 3,
+      "icon": "/icons/douban.svg"
+    },
+    {
+      "id": 8,
+      "name": "时光网",
+      "url": "https://www.mtime.com",
+      "description": "专业的电影资讯网站",
+      "categoryId": 3,
+      "icon": "/icons/mtime.svg"
+    },
+    {
+      "id": 9,
+      "name": "爱奇艺",
+      "url": "https://www.iqiyi.com",
+      "description": "悦享品质视频生活",
+      "categoryId": 3,
+      "icon": "/icons/iqiyi.svg"
+    },
+    {
+      "id": 10,
+      "name": "豆瓣读书",
+      "url": "https://book.douban.com",
+      "description": "记录你读过的、想读的书",
+      "categoryId": 4,
+      "icon": "/icons/douban.svg"
+    },
+    {
+      "id": 11,
+      "name": "微信读书",
+      "url": "https://weread.qq.com",
+      "description": "让阅读不再孤单",
+      "categoryId": 4,
+      "icon": "/icons/reading.svg"
+    },
+    {
+      "id": 12,
+      "name": "起点中文网",
+      "url": "https://www.qidian.com",
+      "description": "网络小说阅读平台",
+      "categoryId": 4,
+      "icon": "/icons/reading.svg"
+    },
+    {
+      "id": 13,
+      "name": "TED",
+      "url": "https://www.ted.com",
+      "description": "Ideas worth spreading",
+      "categoryId": 5,
+      "icon": "/icons/ted.svg"
+    },
+    {
+      "id": 14,
+      "name": "一席",
+      "url": "https://yixi.tv",
+      "description": "人文·科技·白日梦",
+      "categoryId": 5,
+      "icon": "/icons/yixi.svg"
+    },
+    {
+      "id": 15,
+      "name": "罗辑思维",
+      "url": "https://www.luojilab.com",
+      "description": "知识就是力量",
+      "categoryId": 5,
+      "icon": "/icons/luoji.svg"
+    },
+    {
+      "id": 16,
+      "name": "B站",
+      "url": "https://www.bilibili.com",
+      "description": "国内知名的视频弹幕网站",
+      "categoryId": 6,
+      "icon": "/icons/bilibili.svg"
+    },
+    {
+      "id": 17,
+      "name": "知乎",
+      "url": "https://www.zhihu.com",
+      "description": "有问题，就会有答案",
+      "categoryId": 6,
+      "icon": "/icons/zhihu.svg"
+    },
+    {
+      "id": 18,
+      "name": "微博",
+      "url": "https://weibo.com",
+      "description": "随时随地发现新鲜事",
+      "categoryId": 6,
+      "icon": "/icons/sina.svg"
+    },
+    {
+      "id": 19,
+      "name": "淘宝",
+      "url": "https://www.taobao.com",
+      "description": "万能的淘宝",
+      "categoryId": 7,
+      "icon": "/icons/taobao.svg"
+    },
+    {
+      "id": 20,
+      "name": "京东",
+      "url": "https://www.jd.com",
+      "description": "正品低价，品质保障",
+      "categoryId": 7,
+      "icon": "/icons/jd.svg"
+    },
+    {
+      "id": 21,
+      "name": "天猫",
+      "url": "https://www.tmall.com",
+      "description": "品牌好货，正品保证",
+      "categoryId": 7,
+      "icon": "/icons/tmall.svg"
+    },
+    {
+      "id": 22,
+      "name": "网易云音乐",
+      "url": "https://music.163.com",
+      "description": "音乐的力量",
+      "categoryId": 8,
+      "icon": "/icons/netease.svg"
+    },
+    {
+      "id": 23,
+      "name": "QQ音乐",
+      "url": "https://y.qq.com",
+      "description": "听我想听的歌",
+      "categoryId": 8,
+      "icon": "/icons/qq.svg"
+    },
+    {
+      "id": 24,
+      "name": "酷狗音乐",
+      "url": "https://www.kugou.com",
+      "description": "就是歌多",
+      "categoryId": 8,
+      "icon": "/icons/music.svg"
+    },
+    {
+      "id": 25,
+      "name": "丁香园",
+      "url": "https://www.dxy.cn",
+      "description": "专业的医疗健康平台",
+      "categoryId": 9,
+      "icon": "/icons/medical.svg"
+    },
+    {
+      "id": 26,
+      "name": "春雨医生",
+      "url": "https://www.chunyuyisheng.com",
+      "description": "在线问诊，健康咨询",
+      "categoryId": 9,
+      "icon": "/icons/medical.svg"
+    },
+    {
+      "id": 27,
+      "name": "好大夫在线",
+      "url": "https://www.haodf.com",
+      "description": "专业的医疗信息服务平台",
+      "categoryId": 9,
+      "icon": "/icons/medical.svg"
+    }
+  ]
+}
