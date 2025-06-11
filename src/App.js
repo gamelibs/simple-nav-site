@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import data from './data.json';
-import { useLazyLoad, useLocalStorage, useDebounce } from './hooks';
+import { useLocalStorage, useDebounce } from './hooks';
 import { SiteCard, CategoryButton, EmptyState, SearchBox } from './components';
 
 // 主应用组件
@@ -12,11 +12,6 @@ const App = () => {
   const [showBackToTop, setShowBackToTop] = useState(false);
   
   const debouncedSearchTerm = useDebounce(searchTerm, 300);
-  
-  const { visibleItems, observe } = useLazyLoad({
-    threshold: 0.1,
-    rootMargin: '50px'
-  });
 
   // 监听滚动事件，控制回到顶部按钮显示
   useEffect(() => {

@@ -1,15 +1,15 @@
 // 懒加载Hook
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 
 export const useLazyLoad = (options = {}) => {
   const [visibleItems, setVisibleItems] = useState(new Set());
   const observerRef = useRef();
 
-  const defaultOptions = {
+  const defaultOptions = useMemo(() => ({
     threshold: 0.1,
     rootMargin: '50px',
     ...options
-  };
+  }), [options]);
 
   useEffect(() => {
     observerRef.current = new IntersectionObserver((entries) => {
@@ -28,7 +28,7 @@ export const useLazyLoad = (options = {}) => {
         observerRef.current.disconnect();
       }
     };
-  }, []);
+  }, [defaultOptions]);
 
   const observe = (element, itemId) => {
     if (element && observerRef.current && itemId) {

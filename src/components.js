@@ -28,7 +28,7 @@ const SiteIcon = memo(({ site }) => {
         <div className="absolute inset-0 bg-gray-200 rounded-lg skeleton"></div>
       )}
       <img
-        src={site.icon}
+        src={process.env.PUBLIC_URL + site.icon}
         alt={`${site.name} 图标`}
         className={`w-12 h-12 rounded-lg object-cover shadow-sm transition-opacity duration-300 ${
           isLoading ? 'opacity-0' : 'opacity-100'
