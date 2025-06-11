@@ -1,0 +1,14 @@
+# 部署命令（请将 YOUR_GITHUB_USERNAME 替换为你的GitHub用户名）
+
+# 1. 添加远程仓库
+git remote add origin https://github.com/YOUR_GITHUB_USERNAME/simple-nav-site.git
+
+# 2. 推送代码到GitHub
+git branch -M main
+git push -u origin main
+
+# 3. 部署到GitHub Pages
+npm run deploy
+
+# 部署完成后，你的网站将在以下地址可访问：
+# https://YOUR_GITHUB_USERNAME.github.io/simple-nav-site
