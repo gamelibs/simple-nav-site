@@ -262,6 +262,14 @@
       "description": "专业的医疗信息服务平台",
       "categoryId": 9,
       "icon": "/icons/medical.svg"
+    },
+    {
+      "name": "ai教育",
+      "url": "https://aijiaoyu.com",
+      "description": "这是一个测试网站",
+      "categoryId": 2,
+      "icon": "/icons/default.svg",
+      "id": 1749653313295
     }
   ]
 }
