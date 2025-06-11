@@ -1,7 +1,7 @@
 {
   "name": "simple-nav-site",
   "version": "0.1.0",
-  "homepage": "https://YOUR_GITHUB_USERNAME.github.io/simple-nav-site",
+  "homepage": "https://gamelibs.github.io/simple-nav-site",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
