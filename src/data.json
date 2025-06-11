@@ -270,14 +270,6 @@
       "categoryId": 2,
       "icon": "/icons/default.svg",
       "id": 1749653313295
-    },
-    {
-      "name": "新境",
-      "url": "http://test.com",
-      "description": "这是个什么网站",
-      "categoryId": 3,
-      "icon": "/icons/default.svg",
-      "id": 1749654085561
     }
   ]
 }
