@@ -16,21 +16,21 @@ const SiteIcon = memo(({ site }) => {
 
   if (imageError) {
     return (
-      <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg flex items-center justify-center text-white font-bold text-lg shadow-md">
+      <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-sm">
         {site.name.charAt(0)}
       </div>
     );
   }
 
   return (
-    <div className="relative w-12 h-12">
+    <div className="relative w-10 h-10">
       {isLoading && (
         <div className="absolute inset-0 bg-gray-200 rounded-lg skeleton"></div>
       )}
       <img
         src={process.env.PUBLIC_URL + site.icon}
         alt={`${site.name} 图标`}
-        className={`w-12 h-12 rounded-lg object-cover shadow-sm transition-opacity duration-300 ${
+        className={`w-10 h-10 rounded-lg object-cover shadow-sm transition-opacity duration-300 ${
           isLoading ? 'opacity-0' : 'opacity-100'
         }`}
         onLoad={handleImageLoad}
@@ -45,7 +45,7 @@ const SiteIcon = memo(({ site }) => {
 const SiteCard = memo(({ site, isVisible, delay = 0, isEditMode = false, onEdit, onDelete }) => {
   return (
     <div 
-      className={`card-hover bg-white rounded-xl shadow-card p-6 border border-gray-100 transition-all duration-700 ease-out ${
+      className={`card-hover bg-white rounded-lg shadow-card p-4 border border-gray-100 transition-all duration-700 ease-out ${
         isVisible 
           ? 'opacity-100 translate-y-0 scale-100' 
           : 'opacity-0 translate-y-8 scale-95'
@@ -56,37 +56,37 @@ const SiteCard = memo(({ site, isVisible, delay = 0, isEditMode = false, onEdit,
     >
       {/* 编辑模式按钮 */}
       {isEditMode && (
-        <div className="absolute top-3 right-3 flex space-x-2">
+        <div className="absolute top-2 right-2 flex space-x-1">
           <button
             onClick={() => onEdit(site)}
-            className="p-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors duration-200"
+            className="p-1.5 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-200"
             title="编辑"
           >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
             </svg>
           </button>
           <button
             onClick={() => onDelete(site.id)}
-            className="p-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors duration-200"
+            className="p-1.5 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors duration-200"
             title="删除"
           >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
             </svg>
           </button>
         </div>
       )}
 
-      <div className="flex items-start space-x-4">
+      <div className="flex items-start space-x-3">
         <div className="flex-shrink-0">
           <SiteIcon site={site} />
         </div>
         <div className="flex-1 min-w-0">
-          <h3 className="text-lg font-semibold text-gray-900 mb-2 truncate hover:text-primary-blue transition-colors duration-200">
+          <h3 className="text-sm font-semibold text-gray-900 mb-1 truncate hover:text-primary-blue transition-colors duration-200">
             {site.name}
           </h3>
-          <p className="text-sm text-gray-600 mb-4 line-clamp-2 leading-relaxed">
+          <p className="text-xs text-gray-600 mb-3 line-clamp-2 leading-relaxed">
             {site.description}
           </p>
           {!isEditMode && (
@@ -94,10 +94,10 @@ const SiteCard = memo(({ site, isVisible, delay = 0, isEditMode = false, onEdit,
               href={site.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-4 py-2 bg-primary-blue text-white text-sm font-medium rounded-lg hover:bg-blue-600 hover:shadow-lg transition-all duration-200 transform hover:scale-105 active:scale-95"
+              className="inline-flex items-center px-3 py-1.5 bg-primary-blue text-white text-xs font-medium rounded-md hover:bg-blue-600 hover:shadow-md transition-all duration-200 transform hover:scale-105 active:scale-95"
             >
-              访问网站
-              <svg className="ml-2 w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              访问
+              <svg className="ml-1 w-3 h-3 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
             </a>
@@ -113,13 +113,13 @@ const CategoryButton = memo(({ category, isActive, onClick }) => {
   return (
     <button
       onClick={() => onClick(category.id)}
-      className={`category-button px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center space-x-2 ${
+      className={`category-button px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center space-x-1 ${
         isActive
-          ? 'bg-primary-blue text-white shadow-lg shadow-blue-200 ring-2 ring-blue-300 ring-opacity-50'
-          : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:shadow-md'
+          ? 'bg-primary-blue text-white shadow-md'
+          : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
       }`}
     >
-      <span className="text-base">{category.icon}</span>
+      <span className="text-sm">{category.icon}</span>
       <span>{category.name}</span>
     </button>
   );
@@ -128,14 +128,14 @@ const CategoryButton = memo(({ category, isActive, onClick }) => {
 // 加载骨架屏组件
 const SkeletonCard = () => {
   return (
-    <div className="bg-white rounded-xl shadow-card p-6 border border-gray-100">
-      <div className="flex items-start space-x-4">
-        <div className="w-12 h-12 bg-gray-200 rounded-lg skeleton"></div>
+    <div className="bg-white rounded-lg shadow-card p-4 border border-gray-100">
+      <div className="flex items-start space-x-3">
+        <div className="w-10 h-10 bg-gray-200 rounded-lg skeleton"></div>
         <div className="flex-1">
-          <div className="h-5 bg-gray-200 rounded skeleton mb-2"></div>
-          <div className="h-4 bg-gray-200 rounded skeleton mb-1 w-3/4"></div>
-          <div className="h-4 bg-gray-200 rounded skeleton mb-4 w-1/2"></div>
-          <div className="h-8 bg-gray-200 rounded skeleton w-24"></div>
+          <div className="h-4 bg-gray-200 rounded skeleton mb-2"></div>
+          <div className="h-3 bg-gray-200 rounded skeleton mb-1 w-3/4"></div>
+          <div className="h-3 bg-gray-200 rounded skeleton mb-3 w-1/2"></div>
+          <div className="h-7 bg-gray-200 rounded skeleton w-20"></div>
         </div>
       </div>
     </div>
