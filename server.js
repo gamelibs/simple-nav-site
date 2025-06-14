@@ -8,10 +8,18 @@ const PORT = 15001;
 
 // 数据文件路径
 const DATA_FILE_PATH = path.join(__dirname, 'src', 'data.json');
+// 构建文件路径
+const BUILD_PATH = path.join(__dirname, 'build');
 
 // 中间件
 app.use(cors());
 app.use(express.json());
+
+// 托管静态文件 - 优先提供 build 目录的静态文件
+app.use(express.static(BUILD_PATH));
+
+// 为 icons 提供特殊路由，确保图标可以正确访问
+app.use('/icons', express.static(path.join(BUILD_PATH, 'icons')));
 
 // 读取数据文件
 const readDataFile = async () => {
@@ -240,6 +248,20 @@ app.get('/api/health', (req, res) => {
   });
 });
 
+// 所有非 API 路由都返回 React 应用的 index.html
+app.get('*', (req, res) => {
+  // 如果请求的是 API 路由，继续处理错误
+  if (req.path.startsWith('/api/')) {
+    return res.status(404).json({
+      success: false,
+      error: 'API 路由不存在'
+    });
+  }
+  
+  // 否则返回 React 应用
+  res.sendFile(path.join(BUILD_PATH, 'index.html'));
+});
+
 // 错误处理中间件
 app.use((error, req, res, next) => {
   console.error('服务器错误:', error);
@@ -251,10 +273,12 @@ app.use((error, req, res, next) => {
 
 // 启动服务器
 app.listen(PORT, () => {
-  console.log(`🚀 编辑服务器已启动在端口 ${PORT}`);
+  console.log(`🚀 服务器已启动在端口 ${PORT}`);
+  console.log(`🌐 网站访问: http://localhost:${PORT}`);
   console.log(`📍 API 地址: http://localhost:${PORT}/api`);
   console.log(`🔍 健康检查: http://localhost:${PORT}/api/health`);
   console.log(`📊 数据文件: ${DATA_FILE_PATH}`);
+  console.log(`📁 静态文件: ${BUILD_PATH}`);
 });
 
 module.exports = app;
