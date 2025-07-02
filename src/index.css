@@ -115,6 +115,16 @@ p.text-gray-600 {
   background: #a1a1a1;
 }
 
+/* 隐藏滚动条 */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
+
 /* 卡片悬停动画 */
 .card-hover {
   transition: all 0.3s ease;

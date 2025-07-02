@@ -270,14 +270,6 @@
       "categoryId": 2,
       "icon": "/icons/default.svg",
       "id": 1749653313295
-    },
-    {
-      "name": "test",
-      "url": "https://test.top",
-      "description": "test",
-      "categoryId": 1,
-      "icon": "/icons/default.svg",
-      "id": 1749656442604
     }
   ]
 }

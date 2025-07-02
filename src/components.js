@@ -14,12 +14,130 @@ const SiteIcon = memo(({ site }) => {
     setIsLoading(false);
   };
 
-  if (imageError) {
+  // 生成多样化的默认图标
+  const generateDefaultIcon = (siteName) => {
+    const name = siteName || 'N';
+    const firstChar = name.charAt(0).toUpperCase();
+    
+    // 基于网站名称生成一致的随机数
+    const hash = name.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+    
+    // 根据网站名称关键词匹配emoji图标
+    const keywordEmojis = {
+      '新闻|news|资讯': '📰',
+      '视频|电影|movie|video': '🎬',
+      '音乐|music|歌曲': '🎵',
+      '购物|商城|shop|mall': '🛒',
+      '教育|学习|education|course': '📚',
+      '游戏|game|娱乐': '🎮',
+      '工具|tool|效率': '🔧',
+      '社交|social|聊天': '💬',
+      '搜索|search|引擎': '🔍',
+      '设计|design|创意': '🎨',
+      '开发|dev|code|编程': '💻',
+      '云|cloud|存储': '☁️',
+      '邮箱|email|mail': '📧',
+      '地图|map|导航': '🗺️',
+      '天气|weather': '🌤️',
+      '财经|金融|finance': '💰',
+      '医疗|健康|health': '🏥',
+      '旅游|travel|出行': '✈️',
+      '美食|food|餐饮': '🍕',
+      '体育|sport|运动': '⚽',
+      '阅读|read|书籍': '📖',
+    };
+
+    // 检查是否匹配关键词
+    const lowerName = name.toLowerCase();
+    let matchedEmoji = null;
+    
+    for (const [keywords, emoji] of Object.entries(keywordEmojis)) {
+      const keywordList = keywords.split('|');
+      if (keywordList.some(keyword => lowerName.includes(keyword))) {
+        matchedEmoji = emoji;
+        break;
+      }
+    }
+
+    // 如果匹配到emoji，显示emoji图标
+    if (matchedEmoji) {
+      const shapes = ['rounded-lg', 'rounded-full', 'rounded-xl'];
+      const shapeIndex = hash % shapes.length;
+      
+      return (
+        <div className={`
+          w-10 h-10 bg-gradient-to-br from-gray-50 to-gray-100 
+          ${shapes[shapeIndex]} border border-gray-200
+          flex items-center justify-center text-lg 
+          shadow-sm transform transition-all duration-200 hover:scale-105
+        `}>
+          {matchedEmoji}
+        </div>
+      );
+    }
+
+    // 多种渐变背景色
+    const gradients = [
+      'from-blue-400 to-purple-500',
+      'from-green-400 to-blue-500',
+      'from-purple-400 to-pink-500',
+      'from-red-400 to-orange-500',
+      'from-teal-400 to-cyan-500',
+      'from-indigo-400 to-purple-500',
+      'from-pink-400 to-rose-500',
+      'from-orange-400 to-red-500',
+      'from-emerald-400 to-teal-500',
+      'from-violet-400 to-purple-500',
+      'from-cyan-400 to-blue-500',
+      'from-amber-400 to-orange-500',
+      'from-lime-400 to-green-500',
+      'from-fuchsia-400 to-pink-500',
+      'from-sky-400 to-blue-500',
+    ];
+
+    // 多种图标形状
+    const shapes = [
+      'rounded-lg',
+      'rounded-full',
+      'rounded-xl',
+      'rounded-2xl',
+    ];
+
+    // 多种装饰元素
+    const decorations = [
+      '', // 无装饰
+      'ring-2 ring-white ring-opacity-50',
+      'shadow-lg',
+      'border-2 border-white border-opacity-30',
+      'shadow-md shadow-black/20',
+    ];
+
+    // 多种文字效果
+    const textEffects = [
+      'font-bold',
+      'font-extrabold',
+      'font-black',
+    ];
+
+    const gradientIndex = hash % gradients.length;
+    const shapeIndex = (hash * 2) % shapes.length;
+    const decorationIndex = (hash * 3) % decorations.length;
+    const textEffectIndex = (hash * 5) % textEffects.length;
+
     return (
-      <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-sm">
-        {site.name.charAt(0)}
+      <div className={`
+        w-10 h-10 bg-gradient-to-br ${gradients[gradientIndex]} 
+        ${shapes[shapeIndex]} ${decorations[decorationIndex]}
+        flex items-center justify-center text-white ${textEffects[textEffectIndex]} 
+        text-sm shadow-sm transform transition-all duration-200 hover:scale-105
+      `}>
+        {firstChar}
       </div>
     );
+  };
+
+  if (imageError) {
+    return generateDefaultIcon(site.name);
   }
 
   return (
@@ -45,7 +163,7 @@ const SiteIcon = memo(({ site }) => {
 const SiteCard = memo(({ site, isVisible, delay = 0, isEditMode = false, onEdit, onDelete }) => {
   return (
     <div 
-      className={`card-hover bg-white rounded-lg shadow-card p-4 border border-gray-100 transition-all duration-700 ease-out ${
+      className={`card-hover bg-white rounded-lg shadow-card p-3 border border-gray-100 transition-all duration-700 ease-out ${
         isVisible 
           ? 'opacity-100 translate-y-0 scale-100' 
           : 'opacity-0 translate-y-8 scale-95'
@@ -56,37 +174,37 @@ const SiteCard = memo(({ site, isVisible, delay = 0, isEditMode = false, onEdit,
     >
       {/* 编辑模式按钮 */}
       {isEditMode && (
-        <div className="absolute top-2 right-2 flex space-x-1">
+        <div className="absolute top-1 right-1 flex space-x-1">
           <button
             onClick={() => onEdit(site)}
-            className="p-1.5 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-200"
+            className="p-1 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-200"
             title="编辑"
           >
-            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
             </svg>
           </button>
           <button
             onClick={() => onDelete(site.id)}
-            className="p-1.5 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors duration-200"
+            className="p-1 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors duration-200"
             title="删除"
           >
-            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
             </svg>
           </button>
         </div>
       )}
 
-      <div className="flex items-start space-x-3">
+      <div className="flex flex-col items-center space-y-2">
         <div className="flex-shrink-0">
           <SiteIcon site={site} />
         </div>
-        <div className="flex-1 min-w-0">
+        <div className="w-full text-center">
           <h3 className="text-sm font-semibold text-gray-900 mb-1 truncate hover:text-primary-blue transition-colors duration-200">
             {site.name}
           </h3>
-          <p className="text-xs text-gray-600 mb-3 line-clamp-2 leading-relaxed">
+          <p className="text-xs text-gray-600 mb-2 line-clamp-2 leading-relaxed">
             {site.description}
           </p>
           {!isEditMode && (
@@ -94,7 +212,7 @@ const SiteCard = memo(({ site, isVisible, delay = 0, isEditMode = false, onEdit,
               href={site.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-3 py-1.5 bg-primary-blue text-white text-xs font-medium rounded-md hover:bg-blue-600 hover:shadow-md transition-all duration-200 transform hover:scale-105 active:scale-95"
+              className="inline-flex items-center justify-center w-full px-3 py-1.5 bg-primary-blue text-white text-xs font-medium rounded-md hover:bg-blue-600 hover:shadow-md transition-all duration-200 transform hover:scale-105 active:scale-95"
             >
               访问
               <svg className="ml-1 w-3 h-3 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
