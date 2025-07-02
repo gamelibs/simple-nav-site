@@ -1,15 +1,16 @@
-# 简约导航站 - 项目完成总结
+# 简约导航站 - 本地API版本
 
 ## 🎉 项目概览
-一个使用 React + Tailwind CSS 构建的简约风格网站导航平台，具有现代化的用户界面和丰富的交互功能。
+一个使用 React + Express.js + Tailwind CSS 构建的简约风格网站导航平台，具有现代化的用户界面和完整的编辑功能。支持本地API服务器管理数据，可以添加、编辑、删除网站。
 
 ## ✅ 完成功能
 
 ### 1. 核心功能
 - ✅ **分类导航**: 9个主要分类（新闻、教育、电影、阅读、演讲、搞笑、购物、音乐、医疗）
-- ✅ **网站卡片**: 27个精选网站，每个都有图标、描述和访问链接
+- ✅ **网站卡片**: 精选网站展示，每个都有图标、描述和访问链接
 - ✅ **搜索功能**: 实时搜索网站名称和描述
-- ✅ **懒加载**: 滚动懒加载优化性能
+- ✅ **编辑功能**: 支持添加、编辑、删除网站（本地API版本）
+- ✅ **数据持久化**: 数据保存到本地JSON文件
 - ✅ **本地存储**: 记住用户选择的分类
 
 ### 2. 用户界面
@@ -21,6 +22,7 @@
 
 ### 3. 技术特性
 - ✅ **React Hooks**: 使用现代 React 开发模式
+- ✅ **Express.js API**: 本地服务器提供REST API接口
 - ✅ **Tailwind CSS**: 原子化CSS框架
 - ✅ **本地SVG图标**: 所有图标都是本地生成的SVG
 - ✅ **防抖搜索**: 优化搜索性能
@@ -39,66 +41,158 @@
 ```
 simple-nav-site/
 ├── package.json              # 项目配置和依赖
+├── server.js                 # Express.js 服务器
+├── deploy.sh                 # 部署脚本
+├── DEPLOYMENT.md             # 部署说明文档
+├── .env.production           # 生产环境配置
 ├── tailwind.config.js        # Tailwind CSS 配置
 ├── postcss.config.js         # PostCSS 配置
+├── build/                    # 生产构建文件
 ├── public/
 │   ├── index.html            # HTML 模板
 │   └── icons/               # 本地 SVG 图标
-│       ├── news.svg         # 新闻图标
-│       ├── education.svg    # 教育图标
-│       ├── movie.svg        # 电影图标
-│       ├── reading.svg      # 阅读图标
-│       ├── speech.svg       # 演讲图标
-│       ├── comedy.svg       # 搞笑图标
-│       ├── shopping.svg     # 购物图标
-│       ├── music.svg        # 音乐图标
-│       ├── medical.svg      # 医疗图标
-│       ├── sina.svg         # 新浪图标
-│       ├── qq.svg           # QQ图标
-│       ├── netease.svg      # 网易图标
-│       ├── douban.svg       # 豆瓣图标
-│       ├── bilibili.svg     # B站图标
-│       ├── zhihu.svg        # 知乎图标
-│       ├── taobao.svg       # 淘宝图标
-│       ├── jd.svg           # 京东图标
-│       ├── tmall.svg        # 天猫图标
-│       ├── ted.svg          # TED图标
-│       ├── yixi.svg         # 一席图标
-│       ├── luoji.svg        # 罗辑思维图标
-│       ├── mooc.svg         # MOOC图标
-│       ├── xuetang.svg      # 学堂在线图标
-│       ├── coursera.svg     # Coursera图标
-│       ├── mtime.svg        # 时光网图标
-│       └── iqiyi.svg        # 爱奇艺图标
 └── src/
     ├── index.js             # React 入口文件
     ├── index.css            # 全局样式和动画
     ├── App.js               # 主应用组件
     ├── components.js        # 可复用组件
+    ├── EditComponents.js    # 编辑功能组件
     ├── hooks.js             # 自定义 React Hooks
-    └── data.json            # 网站数据
+    ├── data.json            # 网站数据（API服务器修改此文件）
+    └── hooks/
+        └── useLocalAPI.js   # 本地API管理Hook
 ```
 
-## 🚀 如何使用
+## 🚀 如何启动项目
 
-### 开发环境
+### 环境要求
+- Node.js 14.0 或更高版本
+- npm 6.0 或更高版本
+
+### 快速开始
+
+#### 1. 安装依赖
 ```bash
-# 安装依赖
 npm install
-
-# 启动开发服务器
-npm start
-
-# 访问 http://localhost:3000
 ```
 
-### 生产构建
+#### 2. 启动后端服务器（必须先启动）
 ```bash
-# 创建生产版本
-npm run build
+# 启动Express API服务器
+node server.js
+```
+服务器将启动在 http://localhost:15001
 
-# 使用静态服务器运行
-npx serve -s build
+#### 3. 启动前端开发服务器（新终端窗口）
+```bash
+# 启动React开发服务器
+npm start
+```
+前端将启动在 http://localhost:3000
+
+#### 4. 访问应用
+打开浏览器访问 http://localhost:3000
+
+### 一键启动（推荐）
+如果安装了 concurrently，可以同时启动前后端：
+```bash
+# 安装 concurrently（首次运行）
+npm install -g concurrently
+
+# 同时启动前后端
+npm run dev
+```
+
+### 生产环境部署
+
+#### 1. 构建前端
+```bash
+npm run build
+```
+
+#### 2. 使用部署脚本
+```bash
+# 使脚本可执行
+chmod +x deploy.sh
+
+# 运行部署脚本
+./deploy.sh
+```
+
+#### 3. 生产环境启动
+```bash
+# 直接启动
+node server.js
+
+# 或使用 PM2（推荐）
+npm install -g pm2
+pm2 start server.js --name simple-nav-site
+```
+
+### 编辑功能使用
+
+#### 激活编辑模式
+有多种方式可以激活编辑模式：
+
+1. **URL参数**：在地址栏添加 `?edit=1`
+   - 例如：`http://localhost:3000?edit=1`
+
+2. **快捷键**：
+   - 按 `Ctrl+E`（Windows/Linux）或 `Cmd+E`（Mac）
+
+3. **连续按键**：
+   - 连续快速按3次字母 `E`
+
+4. **长按标题**：
+   - 长按页面标题"简约导航站"3秒
+
+#### 编辑操作
+- **添加网站**：编辑模式下点击右下角绿色"+"按钮
+- **编辑网站**：编辑模式下点击网站卡片上的编辑按钮
+- **删除网站**：编辑模式下点击网站卡片上的删除按钮
+
+### API接口文档
+
+#### 获取所有数据
+```
+GET /api/data
+```
+
+#### 添加网站
+```
+POST /api/sites
+Content-Type: application/json
+
+{
+  "name": "网站名称",
+  "url": "https://example.com",
+  "description": "网站描述",
+  "categoryId": 1,
+  "icon": "/icons/default.svg"
+}
+```
+
+#### 更新网站
+```
+PUT /api/sites/:id
+Content-Type: application/json
+
+{
+  "name": "新网站名称",
+  "url": "https://newexample.com",
+  "description": "新描述",
+  "categoryId": 2
+}
+```
+
+#### 删除网站
+```
+DELETE /api/sites/:id
+```
+
+#### 健康检查
+```
+GET /api/health
 ```
 
 ## 🎨 设计特色
@@ -132,56 +226,92 @@ npx serve -s build
 - 🎵 **音乐** (3个网站): 网易云音乐、QQ音乐、酷狗音乐
 - 🏥 **医疗** (3个网站): 丁香园、春雨医生、好大夫在线
 
-**总计**: 9个分类，27个精选网站
+**总计**: 9个分类，29个精选网站（包含新增的测试网站）
+
+## 🔧 技术架构
+
+### 前端技术栈
+- **React 18**: 现代化前端框架
+- **Tailwind CSS**: 原子化CSS框架
+- **自定义Hooks**: 数据管理和状态逻辑
+
+### 后端技术栈  
+- **Express.js**: 轻量级Node.js服务器
+- **fs-extra**: 文件系统操作
+- **CORS**: 跨域资源共享支持
+
+### 数据存储
+- **JSON文件**: 简单的文件数据库
+- **实时同步**: API操作直接修改JSON文件
+- **数据持久化**: 所有编辑操作永久保存
 
 ## 🔧 技术亮点
 
 ### 1. 性能优化
-- **懒加载**: 使用 Intersection Observer API 实现滚动懒加载
+- **API缓存**: useLocalAPI Hook缓存数据减少请求
 - **防抖搜索**: 300ms 防抖避免频繁搜索
 - **本地存储**: 记住用户偏好设置
-- **代码分割**: 组件模块化设计
+- **组件懒加载**: 编辑组件按需加载
 
 ### 2. 用户体验
 - **加载状态**: 骨架屏提供视觉反馈
-- **错误处理**: 图标加载失败时显示备用图标
-- **无障碍**: 语义化HTML和ARIA标签
-- **SEO友好**: 合理的HTML结构
+- **错误处理**: 完善的错误边界和提示
+- **编辑模式**: 多种激活方式，操作简便
+- **实时反馈**: 编辑操作立即生效
 
 ### 3. 开发体验
-- **模块化**: 组件、Hook、样式分离
-- **类型安全**: PropTypes 类型检查
-- **代码规范**: ESLint 代码检查
-- **构建优化**: 生产版本优化
+- **模块化**: 组件、Hook、API分离
+- **类型安全**: 完善的数据验证
+- **热重载**: 开发环境自动刷新
+- **部署脚本**: 一键部署支持
 
 ## 🌟 项目特色
 
-1. **完全本地化图标**: 所有图标都是自制的SVG，保证加载速度和一致性
-2. **渐进式加载**: 实现了真正的懒加载，提升页面性能
-3. **丰富的动画**: 60fps流畅动画，提升用户体验
-4. **数据驱动**: JSON配置驱动，易于维护和扩展
-5. **响应式设计**: 适配各种设备尺寸
+1. **完整的编辑功能**: 支持添加、编辑、删除网站，数据实时保存
+2. **本地API架构**: Express.js提供RESTful API，无需外部数据库
+3. **多种编辑激活方式**: URL参数、快捷键、连续按键、长按标题
+4. **紧凑的UI设计**: 优化的导航栏和4列网格布局
+5. **生产就绪**: 包含完整的构建和部署脚本
 
-## 📱 在线访问
+## 📱 访问地址
 
-- **开发服务器**: http://localhost:3001
+- **前端开发服务器**: http://localhost:3000
+- **后端API服务器**: http://localhost:15001
+- **API文档**: http://localhost:15001/api/health
 - **生产构建**: 使用 `npm run build` 后部署
 
-## 🎯 未来扩展
+## 🚨 注意事项
 
-### 可能的功能扩展
-- [ ] 用户收藏功能
-- [ ] 网站评分系统
-- [ ] 更多分类和网站
+1. **启动顺序**: 必须先启动后端服务器，再启动前端
+2. **端口占用**: 确保15001（后端）和3000（前端）端口未被占用
+3. **数据备份**: 编辑功能会直接修改 `src/data.json` 文件，建议定期备份
+4. **生产部署**: 生产环境需要修改 `useLocalAPI.js` 中的API地址
+
+## 🎯 功能特性
+
+### 已完成功能
+- ✅ **网站管理**: 完整的增删改查功能
+- ✅ **分类管理**: 9个主要分类导航
+- ✅ **搜索功能**: 实时搜索网站名称和描述
+- ✅ **数据持久化**: 本地JSON文件存储
+- ✅ **响应式设计**: 适配各种设备尺寸
+- ✅ **编辑模式**: 多种激活方式
+- ✅ **API接口**: RESTful API设计
+
+### 可扩展功能
+- [ ] 用户认证系统
+- [ ] 网站分组功能
+- [ ] 批量导入导出
+- [ ] 网站图标自动获取
+- [ ] 访问统计功能
 - [ ] 深色主题模式
 - [ ] 多语言支持
-- [ ] 后台管理系统
-- [ ] 用户投稿功能
-- [ ] API接口开发
+- [ ] 云端数据同步
 
 ---
 
-**项目状态**: ✅ 完成
-**最后更新**: 2024年
-**技术栈**: React + Tailwind CSS + 原生JavaScript
+**项目状态**: ✅ 生产就绪
+**最后更新**: 2025年7月2日  
+**技术栈**: React + Express.js + Tailwind CSS
+**架构**: 前后端分离 + 本地API + JSON数据库
 **设计风格**: 简约、现代、响应式
