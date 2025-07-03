@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import data from './data.json';
 import { useLocalStorage, useDebounce } from './hooks';
 import { SiteCard, EmptyState } from './components';
-import { EditModeToolbar, EditSiteModal, Notification, ConfirmDialog } from './EditComponents';
+import { EditModeToolbar, EditSiteModal, Notification, ConfirmDialog, CategoryManagement } from './EditComponents';
 import { useLocalAPI } from './hooks/useLocalAPI';
 
 // 主应用组件
@@ -19,6 +19,7 @@ const App = () => {
   const [showEditModal, setShowEditModal] = useState(false);
   const [editingSite, setEditingSite] = useState(null);
   const [notification, setNotification] = useState(null);
+  const [showCategoryManagement, setShowCategoryManagement] = useState(false);
   
   // 确认弹窗相关状态
   const [showConfirmDialog, setShowConfirmDialog] = useState(false);
@@ -32,6 +33,7 @@ const App = () => {
     addSite, 
     editSite, 
     deleteSite,
+    addCategory,
     deleteCategory
   } = useLocalAPI();
   
@@ -122,46 +124,64 @@ const App = () => {
     }
   };
 
-  const handleDeleteCategory = async (categoryId, categoryName) => {
+  // 处理添加分类
+  const handleAddCategory = async (categoryData) => {
+    const result = await addCategory(categoryData);
+    if (result.success) {
+      setNotification({ 
+        message: `分类"${categoryData.name}"添加成功！`, 
+        type: 'success' 
+      });
+      return result;
+    } else {
+      setNotification({ 
+        message: `添加分类失败: ${result.error}`, 
+        type: 'error' 
+      });
+      return result;
+    }
+  };
+
+  // 处理删除分类（用于分类管理组件）
+  const handleManageDeleteCategory = async (categoryId) => {
+    const category = currentData.categories.find(cat => cat.id === categoryId);
+    if (!category) return { success: false, error: '分类不存在' };
+
     // 检查该分类下是否有网站
     const sitesInCategory = currentData.sites.filter(site => site.categoryId === categoryId);
     
     if (sitesInCategory.length > 0) {
       setNotification({ 
-        message: `无法删除分类"${categoryName}"，该分类下还有 ${sitesInCategory.length} 个网站。请先删除或移动这些网站。`, 
+        message: `无法删除分类"${category.name}"，该分类下还有 ${sitesInCategory.length} 个网站。请先删除或移动这些网站。`, 
         type: 'error' 
       });
-      return;
+      return { success: false, error: '分类下有网站' };
     }
 
-    // 显示确认弹窗
-    setConfirmDialogData({
-      title: '删除分类',
-      message: `确定要删除分类"${categoryName}"吗？此操作无法撤销。`,
-      confirmText: '删除',
-      cancelText: '取消',
-      type: 'danger',
-      onConfirm: async () => {
-        const result = await deleteCategory(categoryId);
-        if (result.success) {
-          setNotification({ 
-            message: result.isLocal 
-              ? `分类"${categoryName}"删除成功！（演示模式）`
-              : `分类"${categoryName}"删除成功！`, 
-            type: 'success' 
-          });
-          // 如果当前选中的分类被删除，切换到"全部网站"
-          if (activeCategory === categoryId) {
-            setActiveCategory(0);
-          }
-        } else {
-          setNotification({ message: `删除失败: ${result.error}`, type: 'error' });
-        }
-        setShowConfirmDialog(false);
-        setConfirmDialogData(null);
+    const result = await deleteCategory(categoryId);
+    if (result.success) {
+      setNotification({ 
+        message: result.isLocal 
+          ? `分类"${category.name}"删除成功！（演示模式）`
+          : `分类"${category.name}"删除成功！`, 
+        type: 'success' 
+      });
+      // 如果当前选中的分类被删除，切换到"全部网站"
+      if (activeCategory === categoryId) {
+        setActiveCategory(0);
       }
-    });
-    setShowConfirmDialog(true);
+    } else {
+      setNotification({ 
+        message: `删除失败: ${result.error}`, 
+        type: 'error' 
+      });
+    }
+    return result;
+  };
+
+  // 打开分类管理
+  const handleManageCategories = () => {
+    setShowCategoryManagement(true);
   };
 
   const handleCategoryChange = (categoryId) => {
@@ -228,10 +248,10 @@ const App = () => {
 
       {/* 左侧可折叠导航栏 */}
       <div className={`bg-white shadow-lg border-r border-gray-200 transition-all duration-300 ease-in-out z-50 flex flex-col ${
-        // 桌面端：可折叠侧边栏  
-        'lg:relative ' + (sidebarExpanded ? 'lg:w-64' : 'lg:w-16') +
+        // 桌面端和移动端都使用固定定位，不随页面滚动
+        'fixed inset-y-0 left-0 ' + (sidebarExpanded ? 'lg:w-64' : 'lg:w-16') +
         // 移动端：中等宽度侧边栏（比之前更窄但能显示完整内容）
-        ' fixed inset-y-0 left-0 w-48 transform ' + 
+        ' w-48 transform ' + 
         (mobileMenuOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0')
       } flex-shrink-0`}>
         {/* 侧边栏头部 */}
@@ -318,26 +338,6 @@ const App = () => {
                     </>
                   )}
                 </button>
-                
-                {/* 编辑模式下的删除按钮 */}
-                {isEditMode && (sidebarExpanded || mobileMenuOpen) && (
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleDeleteCategory(category.id, category.name);
-                    }}
-                    className={`absolute right-2 top-1/2 transform -translate-y-1/2 w-6 h-6 rounded-full flex items-center justify-center transition-all duration-200 ${
-                      activeCategory === category.id
-                        ? 'bg-red-500 hover:bg-red-600 text-white opacity-80 hover:opacity-100'
-                        : 'bg-red-500 hover:bg-red-600 text-white opacity-70 hover:opacity-100'
-                    }`}
-                    title={`删除分类 ${category.name}`}
-                  >
-                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                    </svg>
-                  </button>
-                )}
               </div>
             );
           })}
@@ -362,7 +362,10 @@ const App = () => {
       </div>
 
       {/* 右侧主内容区域 */}
-      <div className="flex-1 flex flex-col min-w-0">
+      <div className={`flex-1 flex flex-col min-w-0 transition-all duration-300 ease-in-out ${
+        // 为固定侧边栏留出空间
+        sidebarExpanded ? 'lg:ml-64' : 'lg:ml-16'
+      }`}>
         {/* 顶部搜索栏 */}
         <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-30">
           <div className="px-6 py-4">
@@ -533,6 +536,7 @@ const App = () => {
           isEditMode={isEditMode}
           onToggleEditMode={() => setIsEditMode(!isEditMode)}
           onAddSite={handleAddSite}
+          onManageCategories={handleManageCategories}
         />
       )}
 
@@ -548,6 +552,32 @@ const App = () => {
           site={editingSite}
           categories={currentData.categories}
         />
+      )}
+
+      {/* 分类管理模态框 */}
+      {showCategoryManagement && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-hidden">
+            <div className="flex items-center justify-between p-6 border-b border-gray-200">
+              <h2 className="text-xl font-semibold text-gray-800">分类管理</h2>
+              <button
+                onClick={() => setShowCategoryManagement(false)}
+                className="text-gray-400 hover:text-gray-600 transition-colors duration-200"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div className="p-6">
+              <CategoryManagement
+                categories={currentData.categories}
+                onAddCategory={handleAddCategory}
+                onDeleteCategory={handleManageDeleteCategory}
+              />
+            </div>
+          </div>
+        </div>
       )}
 
       {/* 通知组件 */}

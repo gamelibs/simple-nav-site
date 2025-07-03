@@ -239,6 +239,63 @@ app.post('/api/categories', async (req, res) => {
   }
 });
 
+// 删除分类
+app.delete('/api/categories/:id', async (req, res) => {
+  try {
+    const categoryId = parseInt(req.params.id);
+    
+    if (!categoryId) {
+      return res.status(400).json({
+        success: false,
+        error: '无效的分类ID'
+      });
+    }
+
+    const data = await readDataFile();
+    
+    // 找到要删除的分类
+    const categoryIndex = data.categories.findIndex(cat => cat.id === categoryId);
+    
+    if (categoryIndex === -1) {
+      return res.status(404).json({
+        success: false,
+        error: '分类不存在'
+      });
+    }
+    
+    // 检查该分类下是否有网站
+    const sitesInCategory = data.sites.filter(site => site.categoryId === categoryId);
+    
+    if (sitesInCategory.length > 0) {
+      return res.status(400).json({
+        success: false,
+        error: `无法删除分类，该分类下还有 ${sitesInCategory.length} 个网站。请先删除或移动这些网站。`
+      });
+    }
+    
+    // 获取要删除的分类信息
+    const deletedCategory = data.categories[categoryIndex];
+    
+    // 从数组中移除
+    data.categories.splice(categoryIndex, 1);
+    
+    // 保存数据
+    await writeDataFile(data);
+    
+    res.json({
+      success: true,
+      data: deletedCategory,
+      message: `分类 "${deletedCategory.name}" 删除成功`
+    });
+    
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message
+    });
+  }
+});
+
 // 健康检查
 app.get('/api/health', (req, res) => {
   res.json({

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 // 编辑模式工具栏组件
-export const EditModeToolbar = ({ isEditMode, onToggleEditMode, onAddSite }) => {
+export const EditModeToolbar = ({ isEditMode, onToggleEditMode, onAddSite, onManageCategories }) => {
   if (!isEditMode) return null;
 
   return (
@@ -13,6 +13,16 @@ export const EditModeToolbar = ({ isEditMode, onToggleEditMode, onAddSite }) => 
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+        </svg>
+      </button>
+      
+      <button
+        onClick={onManageCategories}
+        className="flex items-center justify-center w-14 h-14 bg-purple-500 text-white rounded-full shadow-lg hover:bg-purple-600 hover:shadow-xl transition-all duration-300 transform hover:scale-110 active:scale-95"
+        title="管理分类"
+      >
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14-7l-7 12L5 4l7 12m2-7h6" />
         </svg>
       </button>
       
@@ -371,6 +381,297 @@ export const ConfirmDialog = ({ isOpen, onClose, onConfirm, title, message, conf
           </div>
         </div>
       </div>
+    </div>
+  );
+};
+
+// 添加分类模态框组件
+export const AddCategoryModal = ({ isOpen, onClose, onSave }) => {
+  const [formData, setFormData] = useState({
+    name: '',
+    icon: '📁'
+  });
+
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // 常用图标选项
+  const iconOptions = [
+    '📁', '📰', '📚', '🎬', '📖', '🎤', '😄', '🛒', '🎵', '🏥',
+    '💻', '🎮', '🎨', '🔧', '🌐', '📱', '🏠', '🍔', '✈️', '🚗',
+    '📊', '💡', '🔬', '📷', '🎯', '💰', '🎪', '🌟', '🔒', '📝'
+  ];
+
+  // 处理表单输入变化
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+    
+    // 清除对应字段的错误
+    if (errors[name]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }));
+    }
+  };
+
+  // 处理图标选择
+  const handleIconSelect = (icon) => {
+    setFormData(prev => ({
+      ...prev,
+      icon
+    }));
+  };
+
+  // 验证表单
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!formData.name.trim()) {
+      newErrors.name = '分类名称不能为空';
+    } else if (formData.name.trim().length > 20) {
+      newErrors.name = '分类名称不能超过20个字符';
+    }
+
+    if (!formData.icon.trim()) {
+      newErrors.icon = '请选择一个图标';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  // 处理表单提交
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+
+    setIsSubmitting(true);
+    
+    try {
+      const categoryData = {
+        name: formData.name.trim(),
+        icon: formData.icon
+      };
+
+      await onSave(categoryData);
+      
+      // 重置表单
+      setFormData({
+        name: '',
+        icon: '📁'
+      });
+      setErrors({});
+      onClose();
+    } catch (error) {
+      console.error('添加分类失败:', error);
+      setErrors({ general: '添加分类失败，请重试' });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  // 重置表单并关闭模态框
+  const handleClose = () => {
+    if (!isSubmitting) {
+      setFormData({
+        name: '',
+        icon: '📁'
+      });
+      setErrors({});
+      onClose();
+    }
+  };
+
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+      <div className="bg-white rounded-xl shadow-2xl w-full max-w-md max-h-[90vh] overflow-y-auto">
+        <div className="p-6">
+          {/* 标题 */}
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-xl font-semibold text-gray-800">添加新分类</h2>
+            <button
+              onClick={handleClose}
+              disabled={isSubmitting}
+              className="text-gray-400 hover:text-gray-600 transition-colors duration-200 disabled:opacity-50"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          <form onSubmit={handleSubmit} className="space-y-6">
+            {/* 全局错误信息 */}
+            {errors.general && (
+              <div className="p-3 bg-red-50 border border-red-200 rounded-lg">
+                <p className="text-sm text-red-600">{errors.general}</p>
+              </div>
+            )}
+
+            {/* 分类名称 */}
+            <div>
+              <label htmlFor="categoryName" className="block text-sm font-medium text-gray-700 mb-2">
+                分类名称 *
+              </label>
+              <input
+                type="text"
+                id="categoryName"
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
+                placeholder="请输入分类名称"
+                disabled={isSubmitting}
+                className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 transition-colors duration-200 disabled:bg-gray-50 disabled:text-gray-500 ${
+                  errors.name 
+                    ? 'border-red-300 focus:ring-red-500 focus:border-red-500' 
+                    : 'border-gray-300 focus:ring-blue-500 focus:border-blue-500'
+                }`}
+              />
+              {errors.name && (
+                <p className="mt-1 text-sm text-red-600">{errors.name}</p>
+              )}
+            </div>
+
+            {/* 图标选择 */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                选择图标 *
+              </label>
+              <div className="grid grid-cols-6 gap-2 max-h-32 overflow-y-auto border border-gray-300 rounded-lg p-2">
+                {iconOptions.map((icon) => (
+                  <button
+                    key={icon}
+                    type="button"
+                    onClick={() => handleIconSelect(icon)}
+                    disabled={isSubmitting}
+                    className={`w-10 h-10 text-xl rounded-lg transition-colors duration-200 disabled:opacity-50 ${
+                      formData.icon === icon
+                        ? 'bg-blue-500 text-white'
+                        : 'bg-gray-100 hover:bg-gray-200 text-gray-700'
+                    }`}
+                  >
+                    {icon}
+                  </button>
+                ))}
+              </div>
+              {errors.icon && (
+                <p className="mt-1 text-sm text-red-600">{errors.icon}</p>
+              )}
+            </div>
+
+            {/* 预览 */}
+            <div className="bg-gray-50 rounded-lg p-3">
+              <p className="text-sm text-gray-600 mb-2">预览：</p>
+              <div className="flex items-center space-x-2">
+                <span className="text-xl">{formData.icon}</span>
+                <span className="text-sm font-medium text-gray-800">
+                  {formData.name || '分类名称'}
+                </span>
+              </div>
+            </div>
+
+            {/* 操作按钮 */}
+            <div className="flex space-x-3 pt-4">
+              <button
+                type="button"
+                onClick={handleClose}
+                disabled={isSubmitting}
+                className="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-200 disabled:opacity-50"
+              >
+                取消
+              </button>
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="flex-1 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? '添加中...' : '添加分类'}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// 分类管理组件
+export const CategoryManagement = ({ categories, onAddCategory, onDeleteCategory }) => {
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+  const [deleteConfirm, setDeleteConfirm] = useState(null);
+
+  const handleDeleteCategory = async (categoryId) => {
+    const result = await onDeleteCategory(categoryId);
+    if (result.success) {
+      setDeleteConfirm(null);
+    }
+  };
+
+  return (
+    <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
+      <div className="flex items-center justify-between mb-4">
+        <h3 className="text-lg font-medium text-gray-800">分类管理</h3>
+        <button
+          onClick={() => setIsAddModalOpen(true)}
+          className="px-3 py-1 bg-blue-500 text-white text-sm rounded-lg hover:bg-blue-600 transition-colors duration-200"
+        >
+          添加分类
+        </button>
+      </div>
+
+      <div className="space-y-2 max-h-64 overflow-y-auto">
+        {categories.map((category) => (
+          <div
+            key={category.id}
+            className="flex items-center justify-between p-2 bg-gray-50 rounded-lg"
+          >
+            <div className="flex items-center space-x-3">
+              <span className="text-lg">{category.icon}</span>
+              <span className="text-sm font-medium text-gray-800">{category.name}</span>
+            </div>
+            <button
+              onClick={() => setDeleteConfirm(category)}
+              className="text-red-500 hover:text-red-700 transition-colors duration-200"
+              title="删除分类"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+              </svg>
+            </button>
+          </div>
+        ))}
+      </div>
+
+      {/* 添加分类模态框 */}
+      <AddCategoryModal
+        isOpen={isAddModalOpen}
+        onClose={() => setIsAddModalOpen(false)}
+        onSave={onAddCategory}
+      />
+
+      {/* 删除确认对话框 */}
+      {deleteConfirm && (
+        <ConfirmDialog
+          isOpen={true}
+          title="删除分类"
+          message={`确定要删除分类"${deleteConfirm.name}"吗？该分类下的所有网站也将被删除。`}
+          confirmText="删除"
+          cancelText="取消"
+          onConfirm={() => handleDeleteCategory(deleteConfirm.id)}
+          onClose={() => setDeleteConfirm(null)}
+          type="danger"
+        />
+      )}
     </div>
   );
 };
