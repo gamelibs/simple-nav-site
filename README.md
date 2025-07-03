@@ -15,13 +15,13 @@ npm install --only=production
 # 使用 PM2 启动
 pm2 start server.js --name nav-site
 ```
+
 ## 文件结构
 
 - `build/` - 前端静态文件
 - `server.js` - Node.js 服务器
 - `package.json` - 依赖配置
 - `src/data.json` - 数据文件
->>>>>>> ab90223364c237c2a02b505928e813d489906e5c
 
 ## 端口
 
