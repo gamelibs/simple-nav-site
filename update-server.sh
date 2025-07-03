@@ -129,12 +129,34 @@ git commit -m "服务器部署版本更新 $(date '+%Y-%m-%d')
 echo ""
 echo "✅ 服务器版本更新完成! 版本: $NEW_VERSION"
 echo ""
-echo "📤 推送到远程仓库命令:"
-echo "git push origin $TARGET_BRANCH --force"
-echo ""
-echo "🚀 服务器部署命令:"
-echo "1. 在服务器上: git pull"
-echo "2. 重启服务: pm2 restart nav-site"
+
+# 询问是否推送到远程
+read -p "🔄 是否立即推送到远程仓库? (y/n): " PUSH_CONFIRM
+
+if [[ $PUSH_CONFIRM =~ ^[Yy]$ ]]; then
+    echo "📤 正在推送到远程仓库..."
+    git push origin $TARGET_BRANCH --force
+    
+    if [ $? -eq 0 ]; then
+        echo "✅ 远程推送成功！"
+        echo ""
+        echo "🚀 服务器部署命令:"
+        echo "1. 在服务器上: git pull"
+        echo "2. 重启服务: pm2 restart nav-site"
+    else
+        echo "❌ 远程推送失败，请手动执行:"
+        echo "git push origin $TARGET_BRANCH --force"
+    fi
+else
+    echo ""
+    echo "📝 跳过远程推送，您可以稍后手动执行:"
+    echo "git push origin $TARGET_BRANCH --force"
+    echo ""
+    echo "🚀 服务器部署命令:"
+    echo "1. 在服务器上: git pull"
+    echo "2. 重启服务: pm2 restart nav-site"
+fi
+
 echo ""
 echo "🔙 返回开发分支:"
 echo "git checkout $SOURCE_BRANCH"

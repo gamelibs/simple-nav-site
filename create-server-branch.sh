@@ -76,43 +76,6 @@ if [ -f "package.json" ]; then
     # 这里可以用 jq 工具进一步优化，移除开发依赖
 fi
 
-# 创建简化版的 README
-cat > README.md << 'EOF'
-# 简约导航站 - 服务器部署版本
-
-这是服务器部署分支，只包含运行必需的文件。
-
-## 快速部署
-
-```bash
-# 克隆服务器分支
-git clone -b server-deploy https://github.com/gamelibs/simple-nav-site.git nav-site
-
-# 安装依赖
-cd nav-site
-npm install --production
-
-# 使用 PM2 启动
-pm2 start server.js --name nav-site
-```
-
-## 文件结构
-
-- `build/` - 前端静态文件
-- `server.js` - Node.js 服务器
-- `package.json` - 依赖配置
-- `src/data.json` - 数据文件
-
-## 端口
-
-默认端口：15001
-
-## 版本信息
-
-- 服务器版本: $NEW_VERSION
-- 最后更新: $TODAY
-EOF
-
 # 更新服务器版本信息
 echo "📝 更新服务器版本信息..."
 TODAY=$(date "+%Y年%m月%d日")
@@ -123,6 +86,43 @@ VERSION_PARTS=(${VERSION//./ })
 NEW_VERSION="${VERSION_PARTS[0]}.${VERSION_PARTS[1]}.${VERSION_PARTS[2]}"
 sed -i '' "s/\/\/ 服务器版本:.*$/\/\/ 服务器版本: $NEW_VERSION/" server.js
 echo "✅ 服务器版本已更新至 $NEW_VERSION"
+
+# 创建简化版的 README
+cat > README.md << EOF
+# 简约导航站 - 服务器部署版本
+
+这是服务器部署分支，只包含运行必需的文件。
+
+## 快速部署
+
+\`\`\`bash
+# 克隆服务器分支
+git clone -b server-deploy https://github.com/gamelibs/simple-nav-site.git nav-site
+
+# 安装依赖
+cd nav-site
+npm install --production
+
+# 使用 PM2 启动
+pm2 start server.js --name nav-site
+\`\`\`
+
+## 文件结构
+
+- \`build/\` - 前端静态文件
+- \`server.js\` - Node.js 服务器
+- \`package.json\` - 依赖配置
+- \`src/data.json\` - 数据文件
+
+## 端口
+
+默认端口：15001
+
+## 版本信息
+
+- 服务器版本: $NEW_VERSION
+- 最后更新: $TODAY
+EOF
 
 # 提交更改
 git add .
@@ -135,13 +135,36 @@ git commit -m "服务器部署版本更新 $(date '+%Y-%m-%d')
 echo ""
 echo "✅ 服务器分支创建完成! 版本: $NEW_VERSION"
 echo ""
-echo "📤 推送到远程仓库命令:"
-echo "git push origin $TARGET_BRANCH --force"
-echo ""
-echo "🚀 服务器部署命令:"
-echo "1. 在服务器上: git clone -b $TARGET_BRANCH https://github.com/gamelibs/simple-nav-site.git"
-echo "2. 安装依赖: npm install --production"
-echo "3. 启动服务: pm2 start server.js --name nav-site"
+
+# 询问是否推送到远程
+read -p "🔄 是否立即推送到远程仓库? (y/n): " PUSH_CONFIRM
+
+if [[ $PUSH_CONFIRM =~ ^[Yy]$ ]]; then
+    echo "📤 正在推送到远程仓库..."
+    git push origin $TARGET_BRANCH --force
+    
+    if [ $? -eq 0 ]; then
+        echo "✅ 远程推送成功！"
+        echo ""
+        echo "🚀 服务器部署命令:"
+        echo "1. 在服务器上: git clone -b $TARGET_BRANCH https://github.com/gamelibs/simple-nav-site.git"
+        echo "2. 安装依赖: npm install --production"
+        echo "3. 启动服务: pm2 start server.js --name nav-site"
+    else
+        echo "❌ 远程推送失败，请手动执行:"
+        echo "git push origin $TARGET_BRANCH --force"
+    fi
+else
+    echo ""
+    echo "📝 跳过远程推送，您可以稍后手动执行:"
+    echo "git push origin $TARGET_BRANCH --force"
+    echo ""
+    echo "🚀 服务器部署命令:"
+    echo "1. 在服务器上: git clone -b $TARGET_BRANCH https://github.com/gamelibs/simple-nav-site.git"
+    echo "2. 安装依赖: npm install --production" 
+    echo "3. 启动服务: pm2 start server.js --name nav-site"
+fi
+
 echo ""
 echo "🔙 返回开发分支:"
 echo "git checkout $SOURCE_BRANCH"
