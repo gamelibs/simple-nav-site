@@ -42,15 +42,15 @@
 simple-nav-site/
 ├── package.json              # 项目配置和依赖
 ├── server.js                 # Express.js 服务器
-├── deploy.sh                 # 部署脚本
-├── DEPLOYMENT.md             # 部署说明文档
-├── .env.production           # 生产环境配置
+├── update-server.sh          # 更新服务器版本脚本
+├── create-server-branch.sh   # 创建服务器分支脚本
+├── CHANGELOG.md              # 版本变更日志
 ├── tailwind.config.js        # Tailwind CSS 配置
 ├── postcss.config.js         # PostCSS 配置
 ├── build/                    # 生产构建文件
 ├── public/
 │   ├── index.html            # HTML 模板
-│   └── icons/               # 本地 SVG 图标
+│   └── icons/                # 本地 SVG 图标
 └── src/
     ├── index.js             # React 入口文件
     ├── index.css            # 全局样式和动画
@@ -103,20 +103,88 @@ npm install -g concurrently
 npm run dev
 ```
 
-### 生产环境部署
+## 📊 分支管理
 
-#### 1. 构建前端
+本项目使用两个分支进行管理：
+
+1. **`local-api-version`** - 开发分支
+   - 包含完整的源代码、构建工具和开发依赖
+   - 用于开发和测试
+
+2. **`server-deploy`** - 服务器部署分支
+   - 仅包含运行所需的最小文件集
+   - 优化的服务器部署版本
+
+### 部署脚本说明
+
+项目提供了两个部署脚本：
+
+1. **`update-server.sh`** - 更新服务器版本
+   - 构建最新前端代码
+   - 自动增加版本号
+   - 将必要文件同步到服务器分支
+   - 生成更新日志和部署说明
+
+2. **`create-server-branch.sh`** - 创建新的服务器分支
+   - 用于首次创建服务器部署分支
+   - 或需要重置服务器分支时使用
+
+## 🚀 生产环境部署
+
+### 方法一：使用更新脚本（日常更新推荐）
+
+这个脚本会自动构建项目并将需要的文件同步到服务器分支。
+
+```bash
+# 使脚本可执行
+chmod +x update-server.sh
+
+# 运行更新脚本
+./update-server.sh
+```
+
+推送到远程仓库:
+```bash
+git push origin server-deploy --force
+```
+
+### 方法二：创建新的服务器分支（首次部署推荐）
+
+适用于首次部署或需要重置服务器分支的情况。
+
+```bash
+# 使脚本可执行
+chmod +x create-server-branch.sh
+
+# 运行创建脚本
+./create-server-branch.sh
+```
+
+推送到远程仓库:
+```bash
+git push origin server-deploy --force
+```
+
+### 方法三：手动部署
+
+1. 构建前端
 ```bash
 npm run build
 ```
 
-#### 2. 使用部署脚本
+2. 将构建文件复制到服务器
+3. 安装生产依赖
 ```bash
-# 使脚本可执行
-chmod +x deploy.sh
+npm install --production
+```
 
-# 运行部署脚本
-./deploy.sh
+4. 启动服务器
+```bash
+# 直接启动
+node server.js
+
+# 或使用 PM2 管理
+pm2 start server.js --name nav-site
 ```
 
 #### 3. 生产环境启动
@@ -338,10 +406,31 @@ GET /api/health
    - 更新快速启动说明 (QUICKSTART.md)
    - 添加构建验证工具 (verify-build.sh)
 
-### 安装与部署
+## 🛠 服务器配置
 
-请参考以下文档进行部署：
+### 端口配置
+服务器默认使用 **15001** 端口。如需修改，请在 `server.js` 文件中更改 `PORT` 常量值。
 
-1. [快速启动指南](./QUICKSTART.md) - 开发环境设置
-2. [部署文档](./DEPLOYMENT.md) - 生产环境部署
-3. 使用验证脚本检查构建：`./verify-build.sh`
+### 版本管理
+项目在 `server.js` 文件顶部包含版本和更新日期信息：
+```javascript
+// 最后更新日期: 2025年7月3日
+// 服务器版本: 1.0.1
+```
+
+每次使用 `update-server.sh` 脚本部署时，会自动:
+1. 更新日期为当前日期
+2. 将版本号的第三位（补丁版本）加1
+
+## 📝 维护说明
+
+### 添加新网站
+1. 修改 `src/data.json` 文件，按照现有格式添加新网站
+2. 将网站图标保存到 `public/icons/` 目录（SVG格式）
+3. 重新构建并部署
+
+### 修改分类
+当前支持9个分类，如需修改分类名称或添加新分类：
+1. 编辑 `src/data.json` 中的分类配置
+2. 将分类图标添加到 `public/icons/` 目录
+3. 重新构建并部署

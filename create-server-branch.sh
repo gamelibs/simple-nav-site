@@ -74,9 +74,9 @@ if [ -f "package.json" ]; then
     # 这里可以用 jq 工具进一步优化，移除开发依赖
 fi
 
-# 创建简单的 README
+# 创建简化版的 README
 cat > README.md << 'EOF'
-# Simple Nav Site - Server Deploy
+# 简约导航站 - 服务器部署版本
 
 这是服务器部署分支，只包含运行必需的文件。
 
@@ -88,7 +88,7 @@ git clone -b server-deploy https://github.com/gamelibs/simple-nav-site.git nav-s
 
 # 安装依赖
 cd nav-site
-npm install --only=production
+npm install --production
 
 # 使用 PM2 启动
 pm2 start server.js --name nav-site
@@ -104,19 +104,30 @@ pm2 start server.js --name nav-site
 ## 端口
 
 默认端口：15001
+
+## 更新日期
+
+最后更新: $(date "+%Y年%m月%d日")
 EOF
 
 # 提交更改
 git add .
-git commit -m "服务器部署版本 - 只包含运行必需文件
+git commit -m "服务器部署版本更新 $(date '+%Y-%m-%d')
 
-- build/ 静态文件
-- server.js 服务器
-- package.json 依赖配置
-- src/data.json 数据文件"
+- 更新前端构建文件
+- 更新服务器脚本
+- 优化部署结构"
 
 echo ""
 echo "✅ 服务器分支创建完成!"
+echo ""
+echo "📤 推送到远程仓库:"
+echo "git push origin $TARGET_BRANCH --force"
+echo ""
+echo "🚀 部署命令:"
+echo "1. 在服务器上: git pull"
+echo "2. 重启服务: pm2 restart nav-site"
+echo ""
 echo ""
 echo "📤 推送到远程仓库:"
 echo "git push origin $TARGET_BRANCH"
