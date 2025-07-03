@@ -1,3 +1,5 @@
+// 最后更新日期: 2025年7月3日
+// 服务器版本: 1.0.1
 const express = require('express');
 const cors = require('cors');
 const fs = require('fs-extra');
