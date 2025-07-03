@@ -2,6 +2,8 @@
 
 # 创建服务器部署分支脚本
 # 从 local-api-version 分支提取必要文件到 server-deploy 分支
+# 创建日期: 2025年7月3日
+# 最后修改日期: $(date "+%Y年%m月%d日")
 
 SOURCE_BRANCH="local-api-version"
 TARGET_BRANCH="server-deploy"
@@ -105,33 +107,42 @@ pm2 start server.js --name nav-site
 
 默认端口：15001
 
-## 更新日期
+## 版本信息
 
-最后更新: $(date "+%Y年%m月%d日")
+- 服务器版本: $NEW_VERSION
+- 最后更新: $TODAY
 EOF
+
+# 更新服务器版本信息
+echo "📝 更新服务器版本信息..."
+TODAY=$(date "+%Y年%m月%d日")
+sed -i '' "s/\/\/ 最后更新日期:.*$/\/\/ 最后更新日期: $TODAY/" server.js
+VERSION=$(grep "服务器版本:" server.js | sed -E 's/\/\/ 服务器版本: ([0-9]+\.[0-9]+\.[0-9]+)/\1/')
+VERSION_PARTS=(${VERSION//./ })
+((VERSION_PARTS[2]++))
+NEW_VERSION="${VERSION_PARTS[0]}.${VERSION_PARTS[1]}.${VERSION_PARTS[2]}"
+sed -i '' "s/\/\/ 服务器版本:.*$/\/\/ 服务器版本: $NEW_VERSION/" server.js
+echo "✅ 服务器版本已更新至 $NEW_VERSION"
 
 # 提交更改
 git add .
 git commit -m "服务器部署版本更新 $(date '+%Y-%m-%d')
 
-- 更新前端构建文件
-- 更新服务器脚本
-- 优化部署结构"
+- 更新前端构建文件至最新版本
+- 更新服务器脚本至 $NEW_VERSION
+- 更新部署日期: $TODAY"
 
 echo ""
-echo "✅ 服务器分支创建完成!"
+echo "✅ 服务器分支创建完成! 版本: $NEW_VERSION"
 echo ""
-echo "📤 推送到远程仓库:"
+echo "📤 推送到远程仓库命令:"
 echo "git push origin $TARGET_BRANCH --force"
 echo ""
-echo "🚀 部署命令:"
-echo "1. 在服务器上: git pull"
-echo "2. 重启服务: pm2 restart nav-site"
-echo ""
-echo ""
-echo "📤 推送到远程仓库:"
-echo "git push origin $TARGET_BRANCH"
-echo ""
 echo "🚀 服务器部署命令:"
-echo "git clone -b $TARGET_BRANCH https://github.com/gamelibs/simple-nav-site.git"
+echo "1. 在服务器上: git clone -b $TARGET_BRANCH https://github.com/gamelibs/simple-nav-site.git"
+echo "2. 安装依赖: npm install --production"
+echo "3. 启动服务: pm2 start server.js --name nav-site"
+echo ""
+echo "🔙 返回开发分支:"
+echo "git checkout $SOURCE_BRANCH"
 echo ""
