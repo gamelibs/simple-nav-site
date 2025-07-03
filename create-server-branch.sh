@@ -47,6 +47,12 @@ git rm -rf . 2>/dev/null || true
 # 从源分支恢复需要的文件
 echo "📋 恢复必要文件..."
 for file in "${KEEP_FILES[@]}"; do
+    # 跳过 node_modules 目录，如果它已经存在
+    if [[ "$file" == "node_modules/" && -d "node_modules" ]]; then
+        echo "⏩ 跳过已存在的 node_modules 目录"
+        continue
+    fi
+
     if git show "$SOURCE_BRANCH:$file" > /dev/null 2>&1; then
         if [[ "$file" == */ ]]; then
             # 目录
