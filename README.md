@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Simple Nav Site - Server Deploy
+=======
+# 简约导航站 - 服务器部署版本
+>>>>>>> 22a32e9bd8ff288efcc56ec3f00414ff28163a07
 
 这是服务器部署分支，只包含运行必需的文件。
 
@@ -10,7 +14,11 @@ git clone -b server-deploy https://github.com/gamelibs/simple-nav-site.git nav-s
 
 # 安装依赖
 cd nav-site
+<<<<<<< HEAD
 npm install --only=production
+=======
+npm install --production
+>>>>>>> 22a32e9bd8ff288efcc56ec3f00414ff28163a07
 
 # 使用 PM2 启动
 pm2 start server.js --name nav-site
@@ -26,3 +34,11 @@ pm2 start server.js --name nav-site
 ## 端口
 
 默认端口：15001
+<<<<<<< HEAD
+=======
+
+## 版本信息
+
+- 服务器版本: 1.0.2
+- 最后更新: 2025年07月03日
+>>>>>>> 22a32e9bd8ff288efcc56ec3f00414ff28163a07
