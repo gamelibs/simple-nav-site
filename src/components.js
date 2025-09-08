@@ -1,6 +1,7 @@
-import React, { useState, memo } from 'react';
+import React, { useState, memo, useRef, useEffect } from 'react';
+import ReactDOM from 'react-dom';
 
-// 网站图标组件
+// Site icon component
 const SiteIcon = memo(({ site }) => {
   const [imageError, setImageError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -16,21 +17,21 @@ const SiteIcon = memo(({ site }) => {
 
   if (imageError) {
     return (
-      <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-sm">
+      <div className="w-[6.5rem] h-[6.5rem] bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg flex items-center justify-center text-white font-bold text-2xl shadow-sm">
         {site.name.charAt(0)}
       </div>
     );
   }
 
   return (
-    <div className="relative w-10 h-10">
+    <div className="relative w-[6.5rem] h-[6.5rem]">
       {isLoading && (
         <div className="absolute inset-0 bg-gray-200 rounded-lg skeleton"></div>
       )}
       <img
         src={process.env.PUBLIC_URL + site.icon}
         alt={`${site.name} 图标`}
-        className={`w-10 h-10 rounded-lg object-cover shadow-sm transition-opacity duration-300 ${
+        className={`w-[6.5rem] h-[6.5rem] rounded-lg object-cover shadow-sm transition-opacity duration-300 ${
           isLoading ? 'opacity-0' : 'opacity-100'
         }`}
         onLoad={handleImageLoad}
@@ -41,11 +42,112 @@ const SiteIcon = memo(({ site }) => {
   );
 });
 
-// 网站卡片组件
+// Site card component
+// iframe preview modal component
+const IframePreviewModal = ({ open, onClose, src, title = 'Game Preview' }) => {
+  const iframeRef = useRef(null);
+
+  useEffect(() => {
+    if (!open) return;
+
+    // Handler to receive status updates from the iframe
+    const onMessage = (ev) => {
+      try {
+        // Only accept messages coming from the iframe we opened (best-effort)
+        if (!iframeRef.current || ev.source !== iframeRef.current.contentWindow) return;
+        const d = ev.data || {};
+        // Accept either a specific type or loose payloads that include time/score/level
+        if (d.type === 'game-status' || d.type === 'status-update' || d.time !== undefined || d.score !== undefined || d.level !== undefined) {
+          const setIf = (key, value) => {
+            const el = document.getElementById(key);
+            if (el && value !== undefined && value !== null) {
+              el.textContent = String(value);
+              // flash updated style
+              el.classList.add('updated');
+              setTimeout(() => el.classList.remove('updated'), 300);
+            }
+          };
+
+          if (d.time !== undefined) setIf('game-time-display', d.time);
+          if (d.score !== undefined) setIf('game-score-display', d.score);
+          if (d.level !== undefined) setIf('game-level-display', d.level);
+        }
+      } catch (e) {
+        // ignore malformed messages
+      }
+    };
+
+    window.addEventListener('message', onMessage);
+    return () => window.removeEventListener('message', onMessage);
+  }, [open]);
+
+  const handleLoad = () => {
+    try {
+      const frame = iframeRef.current;
+      if (frame && frame.contentWindow) {
+        frame.contentWindow.postMessage({ type: 'init-load', url: src }, '*');
+      }
+    } catch (e) {
+      // ignore
+    }
+  };
+
+  if (!open) return null;
+
+  const modal = (
+    <div className="fixed inset-0 z-50 flex items-start justify-center p-4 pt-12">
+      <div className="absolute inset-0 bg-black/60"></div>
+      <div className="relative w-full max-w-6xl h-[92vh] bg-white rounded-lg overflow-hidden shadow-2xl">
+        <div className="flex items-center justify-between p-4 border-b" style={{ backgroundColor: '#2b2a00' }}>
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded flex items-center justify-center" style={{ backgroundColor: '#f5d000', color: '#2b2a00', fontWeight: 700 }}>🎮</div>
+            <div className="font-semibold" style={{ color: '#f5d000' }}>{title}</div>
+          </div>
+          <div>
+            <button onClick={onClose} className="px-3 py-1 rounded font-bold" style={{ backgroundColor: '#118335', color: '#f5d000' }}>X</button>
+          </div>
+        </div>
+
+        {/* English status bar used by the iframe to post updates (bright green strip) */}
+        <div className="flex items-center gap-6 px-4 py-2" style={{ backgroundColor: '#000000ff', color: '#ffffff' }}>
+          <div className="flex flex-col items-center min-w-[90px]">
+            <span className="text-xs font-medium" style={{ color: 'rgba(255,255,255,0.9)' }}>Game Time</span>
+            <span id="game-time-display" className="text-sm font-semibold" style={{ color: '#ffffff' }}>00:00</span>
+          </div>
+          <div className="flex flex-col items-center min-w-[90px]">
+            <span className="text-xs font-medium" style={{ color: 'rgba(255,255,255,0.9)' }}>Game Score</span>
+            <span id="game-score-display" className="text-sm font-semibold" style={{ color: '#ffffff' }}>0</span>
+          </div>
+          <div className="flex flex-col items-center min-w-[90px]">
+            <span className="text-xs font-medium" style={{ color: 'rgba(255,255,255,0.9)' }}>Game Level</span>
+            <span id="game-level-display" className="text-sm font-semibold" style={{ color: '#ffffff' }}>1</span>
+          </div>
+        </div>
+
+  <div className="game-frame-container h-[calc(100%-132px)]">
+          <iframe
+            ref={iframeRef}
+            src={src}
+            className="game-preview w-full h-full bg-white"
+            onLoad={handleLoad}
+            title={title}
+          />
+        </div>
+      </div>
+    </div>
+  );
+
+  return ReactDOM.createPortal(modal, document.body);
+};
+
 const SiteCard = memo(({ site, isVisible, delay = 0, isEditMode = false, onEdit, onDelete }) => {
+  const [previewOpen, setPreviewOpen] = useState(false);
+  const openPreview = () => setPreviewOpen(true);
+  const closePreview = () => setPreviewOpen(false);
   return (
+    <>
     <div 
-      className={`card-hover bg-white rounded-lg shadow-card p-4 border border-gray-100 transition-all duration-700 ease-out ${
+      className={`card-hover bg-white rounded-lg shadow-card p-4 border border-transparent transition-all duration-700 ease-out ${
         isVisible 
           ? 'opacity-100 translate-y-0 scale-100' 
           : 'opacity-0 translate-y-8 scale-95'
@@ -54,13 +156,13 @@ const SiteCard = memo(({ site, isVisible, delay = 0, isEditMode = false, onEdit,
         transitionDelay: `${delay}ms`
       }}
     >
-      {/* 编辑模式按钮 */}
+  {/* Edit mode buttons */}
       {isEditMode && (
         <div className="absolute top-2 right-2 flex space-x-1">
           <button
             onClick={() => onEdit(site)}
             className="p-1.5 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-200"
-            title="编辑"
+            title="Edit"
           >
             <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
@@ -69,7 +171,7 @@ const SiteCard = memo(({ site, isVisible, delay = 0, isEditMode = false, onEdit,
           <button
             onClick={() => onDelete(site.id)}
             className="p-1.5 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors duration-200"
-            title="删除"
+            title="Delete"
           >
             <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
@@ -78,7 +180,7 @@ const SiteCard = memo(({ site, isVisible, delay = 0, isEditMode = false, onEdit,
         </div>
       )}
 
-      <div className="flex items-start space-x-3">
+        <div className="flex items-center space-x-3">
         <div className="flex-shrink-0">
           <SiteIcon site={site} />
         </div>
@@ -86,25 +188,47 @@ const SiteCard = memo(({ site, isVisible, delay = 0, isEditMode = false, onEdit,
           <h3 className="text-sm font-semibold text-gray-900 mb-1 truncate hover:text-primary-blue transition-colors duration-200">
             {site.name}
           </h3>
+          <div className="text-xs text-gray-500 mb-2 flex items-center gap-3">
+            <span className="text-green-500 px-2 py-0.5 rounded">gid: {site.gid}</span>
+            {site.pubid && site.pubid.length > 0 && (
+              <span className="px-2 py-0.5 rounded" style={{ color: '#f5d000', backgroundColor: 'transparent' }}>pubid: {site.pubid}</span>
+            )}
+          </div>
           <p className="text-xs text-gray-600 mb-3 line-clamp-2 leading-relaxed">
             {site.description}
           </p>
-          {!isEditMode && (
+        </div>
+        {!isEditMode && (
+          <div className="flex flex-col items-center justify-center space-y-2">
             <a
-              href={site.url}
+              href={site.path || site.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-3 py-1.5 bg-primary-blue text-white text-xs font-medium rounded-md hover:bg-blue-600 hover:shadow-md transition-all duration-200 transform hover:scale-105 active:scale-95"
+              className="inline-flex items-center w-10 h-8 justify-center bg-primary-blue text-white text-xs font-medium rounded-md hover:bg-blue-600 hover:shadow-md transition-all duration-200 transform hover:scale-105 active:scale-95"
+              aria-label="Open in new tab"
             >
-              访问
-              <svg className="ml-1 w-3 h-3 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
             </a>
-          )}
-        </div>
+            <button
+              onClick={openPreview}
+              className="inline-flex items-center w-10 h-8 justify-center bg-green-500 text-white text-xs font-medium rounded-md hover:bg-green-600 hover:shadow-md transition-all duration-200"
+              title="Preview on this page"
+              aria-label="Preview"
+            >
+              {/* Arrow up into a U-shaped half-box */}
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v8m0-8l-4 4m4-4 4 4" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 18h16M6 18v-4M18 18v-4" />
+              </svg>
+            </button>
+          </div>
+        )}
       </div>
     </div>
+    <IframePreviewModal open={previewOpen} onClose={closePreview} src={site.path || site.url} title={site.name} />
+    </>
   );
 });
 
@@ -116,7 +240,7 @@ const CategoryButton = memo(({ category, isActive, onClick }) => {
       className={`category-button px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center space-x-1 ${
         isActive
           ? 'bg-primary-blue text-white shadow-md'
-          : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+          : 'bg-transparent text-white hover:bg-[#222222]'
       }`}
     >
       <span className="text-sm">{category.icon}</span>
@@ -128,7 +252,7 @@ const CategoryButton = memo(({ category, isActive, onClick }) => {
 // 加载骨架屏组件
 const SkeletonCard = () => {
   return (
-    <div className="bg-white rounded-lg shadow-card p-4 border border-gray-100">
+  <div className="bg-white rounded-lg shadow-card p-4 border border-transparent">
       <div className="flex items-start space-x-3">
         <div className="w-10 h-10 bg-gray-200 rounded-lg skeleton"></div>
         <div className="flex-1">
@@ -147,16 +271,16 @@ const EmptyState = ({ category }) => {
   return (
     <div className="text-center py-16 animate-fadeInUp">
       <div className="text-6xl mb-4 animate-bounce">🔍</div>
-      <h3 className="text-lg font-medium text-gray-900 mb-2">暂无网站</h3>
+      <h3 className="text-lg font-medium text-gray-900 mb-2">No games</h3>
       <p className="text-gray-500">
-        {category ? `${category.name}分类下暂时没有收录网站` : '暂时没有收录网站'}
+        {category ? `${category.name} has no games yet` : 'No games have been added yet'}
       </p>
     </div>
   );
 };
 
 // 搜索框组件
-const SearchBox = ({ onSearch, placeholder = "搜索网站..." }) => {
+const SearchBox = ({ onSearch, placeholder = "搜索game..." }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [isFocused, setIsFocused] = useState(false);
 

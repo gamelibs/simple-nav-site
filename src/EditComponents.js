@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-// 编辑模式工具栏组件
+// Edit mode toolbar component
 export const EditModeToolbar = ({ isEditMode, onToggleEditMode, onAddSite }) => {
   if (!isEditMode) return null;
 
@@ -9,7 +9,7 @@ export const EditModeToolbar = ({ isEditMode, onToggleEditMode, onAddSite }) => 
       <button
         onClick={onAddSite}
         className="flex items-center justify-center w-14 h-14 bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 hover:shadow-xl transition-all duration-300 transform hover:scale-110 active:scale-95"
-        title="添加新网站"
+  title="Add new game"
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
@@ -19,7 +19,7 @@ export const EditModeToolbar = ({ isEditMode, onToggleEditMode, onAddSite }) => 
       <button
         onClick={onToggleEditMode}
         className="flex items-center justify-center w-14 h-14 bg-red-500 text-white rounded-full shadow-lg hover:bg-red-600 hover:shadow-xl transition-all duration-300 transform hover:scale-110 active:scale-95"
-        title="退出编辑模式"
+  title="Exit edit mode"
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -29,11 +29,12 @@ export const EditModeToolbar = ({ isEditMode, onToggleEditMode, onAddSite }) => 
   );
 };
 
-// 编辑网站模态框组件
+// Edit game modal component
 export const EditSiteModal = ({ isOpen, onClose, onSave, site, categories }) => {
   const [formData, setFormData] = useState({
     name: '',
     url: '',
+    path: '',
     description: '',
     categoryId: 1,
     icon: '/icons/default.svg'
@@ -42,21 +43,23 @@ export const EditSiteModal = ({ isOpen, onClose, onSave, site, categories }) => 
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // 当编辑现有网站时，填充表单数据
+  // When editing an existing game, populate the form
   useEffect(() => {
     if (site) {
       setFormData({
         name: site.name || '',
         url: site.url || '',
+        path: site.path || site.url || '',
         description: site.description || '',
         categoryId: site.categoryId || 1,
         icon: site.icon || '/icons/default.svg'
       });
     } else {
-      // 重置表单为默认值
+  // reset form to defaults
       setFormData({
         name: '',
         url: '',
+        path: '',
         description: '',
         categoryId: 1,
         icon: '/icons/default.svg'
@@ -65,29 +68,34 @@ export const EditSiteModal = ({ isOpen, onClose, onSave, site, categories }) => 
     setErrors({});
   }, [site, isOpen]);
 
-  // 验证表单数据
+  // Validate form data
   const validateForm = () => {
     const newErrors = {};
     
     if (!formData.name.trim()) {
-      newErrors.name = '网站名称不能为空';
+      newErrors.name = 'Game name is required';
     }
     
     if (!formData.url.trim()) {
-      newErrors.url = '网站URL不能为空';
+      newErrors.url = 'Game URL is required';
     } else if (!/^https?:\/\/.+/.test(formData.url)) {
-      newErrors.url = '请输入有效的URL (http://或https://)';
+      newErrors.url = 'Please enter a valid URL (http:// or https://)';
+    }
+
+    if (!formData.path.trim()) {
+      // path is required because visit buttons use it
+      newErrors.path = 'Path is required';
     }
     
     if (!formData.categoryId) {
-      newErrors.categoryId = '请选择分类';
+      newErrors.categoryId = 'Please select a category';
     }
     
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
-  // 处理表单提交
+  // Handle form submit
   const handleSubmit = async (e) => {
     e.preventDefault();
     
@@ -101,7 +109,7 @@ export const EditSiteModal = ({ isOpen, onClose, onSave, site, categories }) => 
       await onSave(formData);
       // onSave 成功后会关闭模态框
     } catch (error) {
-      console.error('保存失败:', error);
+  console.error('Save failed:', error);
     } finally {
       setIsSubmitting(false);
     }
@@ -131,7 +139,7 @@ export const EditSiteModal = ({ isOpen, onClose, onSave, site, categories }) => 
         <div className="p-6">
           <div className="flex items-center justify-between mb-6">
             <h3 className="text-xl font-semibold text-gray-900">
-              {site ? '编辑网站' : '添加新网站'}
+              {site ? 'Edit Game' : 'Add New Game'}
             </h3>
             <button
               onClick={onClose}
@@ -145,10 +153,10 @@ export const EditSiteModal = ({ isOpen, onClose, onSave, site, categories }) => 
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-5">
-            {/* 网站名称 */}
+            {/* Game name */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                网站名称 *
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                Game name *
               </label>
               <input
                 type="text"
@@ -157,7 +165,7 @@ export const EditSiteModal = ({ isOpen, onClose, onSave, site, categories }) => 
                 className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200 ${
                   errors.name ? 'border-red-500' : 'border-gray-300'
                 }`}
-                placeholder="请输入网站名称"
+                placeholder="Enter game name"
                 disabled={isSubmitting}
               />
               {errors.name && (
@@ -165,10 +173,10 @@ export const EditSiteModal = ({ isOpen, onClose, onSave, site, categories }) => 
               )}
             </div>
 
-            {/* 网站URL */}
+            {/* Game URL */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                网站URL *
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                Game URL *
               </label>
               <input
                 type="url"
@@ -185,25 +193,45 @@ export const EditSiteModal = ({ isOpen, onClose, onSave, site, categories }) => 
               )}
             </div>
 
-            {/* 网站描述 */}
+              {/* game PATH (用于访问按钮) */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Game PATH *
+                  </label>
+                <input
+                  type="text"
+                  value={formData.path}
+                  onChange={(e) => handleInputChange('path', e.target.value)}
+                  className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200 ${
+                    errors.path ? 'border-red-500' : 'border-gray-300'
+                  }`}
+                  placeholder="https://example.com/mygame"
+                  disabled={isSubmitting}
+                />
+                {errors.path && (
+                  <p className="text-red-500 text-xs mt-1">{errors.path}</p>
+                )}
+              </div>
+
+            {/* Game description */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                网站描述
+                game描述
               </label>
               <textarea
                 value={formData.description}
                 onChange={(e) => handleInputChange('description', e.target.value)}
                 rows={3}
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200 resize-none"
-                placeholder="请输入网站描述"
+                placeholder="Enter game description"
                 disabled={isSubmitting}
               />
             </div>
 
-            {/* 分类选择 */}
+            {/* Category selection */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                分类 *
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                Category *
               </label>
               <select
                 value={formData.categoryId}
@@ -213,7 +241,7 @@ export const EditSiteModal = ({ isOpen, onClose, onSave, site, categories }) => 
                 }`}
                 disabled={isSubmitting}
               >
-                <option value="">请选择分类</option>
+                <option value="">Please select a category</option>
                 {categories?.map((category) => (
                   <option key={category.id} value={category.id}>
                     {category.icon} {category.name}
@@ -225,10 +253,10 @@ export const EditSiteModal = ({ isOpen, onClose, onSave, site, categories }) => 
               )}
             </div>
 
-            {/* 图标URL */}
+            {/* Icon URL */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                图标路径
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                Icon path
               </label>
               <input
                 type="text"
@@ -239,7 +267,7 @@ export const EditSiteModal = ({ isOpen, onClose, onSave, site, categories }) => 
                 disabled={isSubmitting}
               />
               <p className="text-xs text-gray-500 mt-1">
-                图标文件路径，相对于public目录
+                Icon file path, relative to the public directory
               </p>
             </div>
 
@@ -251,7 +279,7 @@ export const EditSiteModal = ({ isOpen, onClose, onSave, site, categories }) => 
                 className="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-200"
                 disabled={isSubmitting}
               >
-                取消
+                Cancel
               </button>
               <button
                 type="submit"
@@ -264,10 +292,10 @@ export const EditSiteModal = ({ isOpen, onClose, onSave, site, categories }) => 
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
-                    保存中...
+                    Saving...
                   </>
                 ) : (
-                  site ? '更新' : '添加'
+                  site ? 'Update' : 'Add'
                 )}
               </button>
             </div>

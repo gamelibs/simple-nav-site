@@ -5,21 +5,22 @@ import { SiteCard, CategoryButton, EmptyState } from './components';
 import { EditModeToolbar, EditSiteModal, Notification } from './EditComponents';
 import { useLocalAPI } from './hooks/useLocalAPI';
 
-// 主应用组件
+// Main application component
 const App = () => {
   const [activeCategory, setActiveCategory] = useLocalStorage('activeCategory', 0);
   const [filteredSites, setFilteredSites] = useState(data.sites);
   const [searchTerm, setSearchTerm] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const [sortOrder, setSortOrder] = useState('asc'); // 'asc' or 'desc'
   
-  // 编辑模式相关状态
+  // Edit mode related state
   const [isEditMode, setIsEditMode] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
   const [editingSite, setEditingSite] = useState(null);
   const [notification, setNotification] = useState(null);
   
-  // 本地API数据管理
+  // Local API data management
   const { 
     data: apiData, 
     loading: apiLoading, 
@@ -31,23 +32,23 @@ const App = () => {
   
   const debouncedSearchTerm = useDebounce(searchTerm, 300);
   
-  // 使用API数据或本地数据
+  // Use API data or local data
   const currentData = apiData || data;
 
-  // 检查URL参数来决定是否启用编辑模式
+  // Check URL params to decide whether to enable edit mode
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const editParam = urlParams.get('edit');
     if (editParam === '1' || editParam === 'true') {
       setIsEditMode(true);
       setNotification({ 
-        message: '编辑模式已通过URL参数启用', 
+        message: 'Edit mode enabled via URL parameter', 
         type: 'success' 
       });
     }
   }, []);
 
-  // 监听滚动事件，控制回到顶部按钮显示
+  // Listen for scroll events to control back-to-top button visibility
   useEffect(() => {
     const handleScroll = () => {
       setShowBackToTop(window.pageYOffset > 300);
@@ -57,18 +58,18 @@ const App = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // 过滤网站数据
+  // Filter games data
   useEffect(() => {
     setIsLoading(true);
     
     let sites = currentData.sites;
     
-    // 按分类过滤
+  // Filter by category
     if (activeCategory !== 0) {
       sites = sites.filter(site => site.categoryId === activeCategory);
     }
     
-    // 按搜索词过滤
+  // Filter by search term
     if (debouncedSearchTerm) {
       sites = sites.filter(site => 
         site.name.toLowerCase().includes(debouncedSearchTerm.toLowerCase()) ||
@@ -76,10 +77,18 @@ const App = () => {
       );
     }
     
-    // 立即更新状态，移除加载延迟
-    setFilteredSites(sites);
+  // Update state immediately, remove loading delay
+      // sort by id according to sortOrder
+      const sorted = [...sites].sort((a, b) => {
+        const ai = Number(a.id);
+        const bi = Number(b.id);
+        if (isNaN(ai) || isNaN(bi)) return 0;
+        return sortOrder === 'asc' ? ai - bi : bi - ai;
+      });
+
+      setFilteredSites(sorted);
     setIsLoading(false);
-  }, [activeCategory, debouncedSearchTerm, currentData]);
+  }, [activeCategory, debouncedSearchTerm, currentData, sortOrder]);
 
   // 编辑功能处理函数
   const handleAddSite = () => {
@@ -95,20 +104,20 @@ const App = () => {
   const handleSaveSite = async (formData) => {
     let result;
     if (editingSite) {
-      // 编辑现有网站
+      // Edit existing game
       result = await editSite(editingSite.id, formData);
       if (result.success) {
-        setNotification({ message: '网站更新成功！', type: 'success' });
+        setNotification({ message: 'Game updated successfully!', type: 'success' });
       } else {
-        setNotification({ message: `更新失败: ${result.error}`, type: 'error' });
+        setNotification({ message: `Update failed: ${result.error}`, type: 'error' });
       }
     } else {
-      // 添加新网站
+      // Add new game
       result = await addSite(formData);
       if (result.success) {
-        setNotification({ message: '网站添加成功！', type: 'success' });
+        setNotification({ message: 'Game added successfully!', type: 'success' });
       } else {
-        setNotification({ message: `添加失败: ${result.error}`, type: 'error' });
+        setNotification({ message: `Add failed: ${result.error}`, type: 'error' });
       }
     }
     setShowEditModal(false);
@@ -116,19 +125,19 @@ const App = () => {
   };
 
   const handleDeleteSite = async (siteId) => {
-    if (window.confirm('确定要删除这个网站吗？')) {
+    if (window.confirm('Are you sure you want to delete this game?')) {
       const result = await deleteSite(siteId);
       if (result.success) {
-        setNotification({ message: '网站删除成功！', type: 'success' });
+        setNotification({ message: 'Game deleted successfully!', type: 'success' });
       } else {
-        setNotification({ message: `删除失败: ${result.error}`, type: 'error' });
+        setNotification({ message: `Delete failed: ${result.error}`, type: 'error' });
       }
     }
   };
 
   const handleCategoryChange = (categoryId) => {
     setActiveCategory(categoryId);
-    setSearchTerm(''); // 切换分类时清空搜索
+    setSearchTerm(''); // Clear search on category change
   };
 
   const handleSearch = (term) => {
@@ -142,12 +151,12 @@ const App = () => {
   // 添加快捷键监听
   useEffect(() => {
     const handleKeyPress = (event) => {
-      // Ctrl+E (Windows/Linux) 或 Cmd+E (Mac) 切换编辑模式
+      // Ctrl+E (Windows/Linux) or Cmd+E (Mac) toggles edit mode
       if ((event.ctrlKey || event.metaKey) && event.key === 'e') {
         event.preventDefault();
         setIsEditMode(!isEditMode);
         setNotification({ 
-          message: `编辑模式${!isEditMode ? '已开启' : '已关闭'}`, 
+          message: `Edit mode ${!isEditMode ? 'enabled' : 'disabled'}`, 
           type: 'success' 
         });
       }
@@ -162,12 +171,12 @@ const App = () => {
         const recentPresses = keyPresses.filter(time => now - time < 3000);
         localStorage.setItem('keyPresses', JSON.stringify(recentPresses));
         
-        // 如果 3 秒内按了 3 次 E
+        // If E was pressed 3 times within 3 seconds
         if (recentPresses.length >= 3) {
           localStorage.removeItem('keyPresses');
           setIsEditMode(!isEditMode);
           setNotification({ 
-            message: `🎉 编辑模式${!isEditMode ? '已开启' : '已关闭'}！`, 
+            message: `🎉 Edit mode ${!isEditMode ? 'enabled' : 'disabled'}!`, 
             type: 'success' 
           });
         }
@@ -179,72 +188,84 @@ const App = () => {
   }, [isEditMode]);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+  <div className="min-h-screen bg-[#0b0b0c] text-gray-200">
       {/* 顶部导航 */}
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
+  <header className="sticky top-0 z-50 bg-[#111111] text-white border-b border-gray-800 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="py-4">
-            {/* 标题和搜索框行 */}
-            <div className="flex items-center justify-between mb-4">
+            {/* 标题行 */}
+            <div className="flex items-center justify-center mb-2">
               <div className="flex items-center">
-                <h1 
-                  className="text-2xl font-bold gradient-text cursor-pointer select-none"
-                  onMouseDown={(e) => {
-                    // 长按标题3秒激活编辑模式
-                    const timer = setTimeout(() => {
-                      if (!isEditMode) {
-                        setIsEditMode(true);
-                        setNotification({ 
-                          message: '🎉 隐藏的编辑模式已激活！', 
-                          type: 'success' 
-                        });
-                      }
-                    }, 3000);
-                    
-                    const cleanup = () => {
-                      clearTimeout(timer);
-                      document.removeEventListener('mouseup', cleanup);
-                    };
-                    
-                    document.addEventListener('mouseup', cleanup);
-                  }}
-                  title="长按3秒激活编辑模式"
-                >
-                  简约导航站
-                </h1>
+                <div data-v-cffdc6d6="" className="header-content flex items-center">
+                  <img
+                    data-v-cffdc6d6=""
+                    className="logo mr-3 rounded-md object-contain max-h-12"
+                    src="/icons/logo.png"
+                    onError={(e) => { e.target.onerror = null; e.target.src = '/logo192.png'; }}
+                    alt="Online Games Library"
+                    style={{ width: 'auto', height: '48px' }}
+                  />
+                  <h1 data-v-cffdc6d6="" className="title text-lg font-semibold text-gray-200">Online Games Library</h1>
+                </div>
                 {isEditMode && (
                   <span className="ml-3 text-xs text-blue-500 bg-blue-50 px-2 py-1 rounded-full">
-                    💡 编辑模式
+                    💡 Edit mode
                   </span>
                 )}
               </div>
-              
-              {/* 搜索框 - 右侧紧凑版 */}
-              <div className="flex-shrink-0">
-                <div className="relative w-64">
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <svg className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                  </div>
-                  <input
-                    type="text"
-                    value={searchTerm}
-                    onChange={(e) => handleSearch(e.target.value)}
-                    className="block w-full pl-9 pr-8 py-2 border border-gray-300 rounded-lg text-sm leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-primary-blue focus:border-primary-blue transition-all duration-200"
-                    placeholder="搜索网站..."
-                  />
-                  {searchTerm && (
-                    <button
-                      onClick={() => handleSearch('')}
-                      className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600 transition-colors duration-200"
-                    >
-                      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                      </svg>
-                    </button>
-                  )}
+            </div>
+
+            {/* Search row: search input and sort controls */}
+            <div className="flex items-end justify-center mb-4 gap-3">
+              <div className="relative w-full sm:w-64">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <svg className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
                 </div>
+                <input
+                  type="text"
+                  value={searchTerm}
+                  onChange={(e) => handleSearch(e.target.value)}
+                  className="block w-full pl-9 pr-8 py-2 border border-gray-700 rounded-lg text-sm leading-5 bg-transparent placeholder-gray-400 focus:outline-none focus:placeholder-gray-300 focus:ring-1 focus:ring-primary-blue focus:border-primary-blue transition-all duration-200 text-white"
+                  placeholder="Search..."
+                />
+                {searchTerm && (
+                  <button
+                    onClick={() => handleSearch('')}
+                    className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-200 transition-colors duration-200"
+                  >
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                )}
+              </div>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => setSortOrder('asc')}
+                  className={`sort-button w-10 h-9 flex items-center justify-center rounded-md bg-transparent transition-colors ${sortOrder === 'asc' ? 'active' : ''}`}
+                  title="Sort by id ascending"
+                  aria-label="Sort ascending"
+                >
+                  {/* Enlarged up arrow to indicate ascending order (uses currentColor) */}
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v13" />
+                  </svg>
+                </button>
+                <button
+                  onClick={() => setSortOrder('desc')}
+                  className={`sort-button w-10 h-9 flex items-center justify-center rounded-md bg-transparent transition-colors ${sortOrder === 'desc' ? 'active' : ''}`}
+                  title="Sort by id descending"
+                  aria-label="Sort descending"
+                >
+                  {/* Enlarged down arrow to indicate descending order (uses currentColor) */}
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 21V8" />
+                  </svg>
+                </button>
               </div>
             </div>
             
@@ -254,12 +275,12 @@ const App = () => {
                 onClick={() => handleCategoryChange(0)}
                 className={`category-button px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 active:scale-95 ${
                   activeCategory === 0
-                    ? 'bg-primary-blue text-white shadow-md'
+                    ? 'bg-[#1a1a1a] text-white shadow-md'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
               >
                 <span className="mr-1">🌟</span>
-                全部
+                All
               </button>
               {data.categories.map((category) => (
                 <CategoryButton
@@ -284,7 +305,7 @@ const App = () => {
                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
               </svg>
-              正在从服务器加载数据...
+              Loading data from server...
             </div>
           </div>
         )}
@@ -296,7 +317,7 @@ const App = () => {
               <svg className="mr-2 h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
               </svg>
-              服务器数据加载失败，使用本地数据: {apiError}
+              Failed to load server data, using local data: {apiError}
             </div>
           </div>
         )}
@@ -305,12 +326,12 @@ const App = () => {
         {searchTerm && (
           <div className="mb-6 text-center">
             <p className="text-gray-600 text-sm">
-              搜索 "{searchTerm}" 找到 {filteredSites.length} 个网站
+              Search "{searchTerm}" found {filteredSites.length} games
             </p>
           </div>
         )}
 
-        {/* 网站卡片网格 */}
+        {/* game卡片网格 */}
         {isLoading ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {[...Array(8)].map((_, index) => (
@@ -357,7 +378,7 @@ const App = () => {
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="fixed bottom-8 right-8 p-3 bg-primary-blue text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 active:scale-95 animate-heartbeat z-40"
-            title="回到顶部"
+            title="Back to top"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
@@ -374,7 +395,7 @@ const App = () => {
           />
         )}
 
-        {/* 编辑网站模态框 */}
+        {/* 编辑game模态框 */}
         {showEditModal && (
           <EditSiteModal 
             isOpen={showEditModal}
@@ -394,12 +415,12 @@ const App = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row md:justify-between md:items-center space-y-2 md:space-y-0">
             <p className="text-sm text-gray-500 text-center md:text-left">
-              © 2024 简约导航站. Made with ❤️
+                © 2023 - 2025 Online Games Library ·  Made by Vidar 
             </p>
             <div className="flex justify-center md:justify-end space-x-4 text-sm text-gray-500">
-              <span>共收录 {currentData.sites.length} 个网站</span>
-              <span>•</span>
-              <span>{currentData.categories.length} 个分类</span>
+              <span>Collection of {currentData.sites.length} 个games</span>
+              <span>❤️</span>
+              <span>{currentData.categories.length} categories</span>
             </div>
           </div>
         </div>
@@ -414,7 +435,7 @@ const App = () => {
         />
       )}
 
-      {/* 编辑网站模态框 */}
+      {/* 编辑game模态框 */}
       {showEditModal && (
         <EditSiteModal 
           isOpen={showEditModal}

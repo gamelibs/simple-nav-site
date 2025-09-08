@@ -52,7 +52,7 @@ app.get('/api/data', async (req, res) => {
   }
 });
 
-// 添加新网站
+// 添加新game
 app.post('/api/sites', async (req, res) => {
   try {
     const { name, url, description, categoryId, icon } = req.body;
@@ -70,7 +70,7 @@ app.post('/api/sites', async (req, res) => {
     // 生成新ID
     const newId = Math.max(...data.sites.map(site => site.id), 0) + 1;
     
-    // 创建新网站对象
+    // 创建新game对象
     const newSite = {
       id: newId,
       name,
@@ -89,7 +89,7 @@ app.post('/api/sites', async (req, res) => {
     res.json({
       success: true,
       data: newSite,
-      message: `网站 "${name}" 添加成功`
+      message: `game "${name}" 添加成功`
     });
     
   } catch (error) {
@@ -100,7 +100,7 @@ app.post('/api/sites', async (req, res) => {
   }
 });
 
-// 更新网站
+// 更新game
 app.put('/api/sites/:id', async (req, res) => {
   try {
     const siteId = parseInt(req.params.id);
@@ -108,17 +108,17 @@ app.put('/api/sites/:id', async (req, res) => {
     
     const data = await readDataFile();
     
-    // 找到要更新的网站
+    // 找到要更新的game
     const siteIndex = data.sites.findIndex(site => site.id === siteId);
     
     if (siteIndex === -1) {
       return res.status(404).json({
         success: false,
-        error: '网站不存在'
+        error: 'game不存在'
       });
     }
     
-    // 更新网站信息
+    // 更新game信息
     const updatedSite = {
       ...data.sites[siteIndex],
       ...(name && { name }),
@@ -136,7 +136,7 @@ app.put('/api/sites/:id', async (req, res) => {
     res.json({
       success: true,
       data: updatedSite,
-      message: `网站 "${updatedSite.name}" 更新成功`
+      message: `game "${updatedSite.name}" 更新成功`
     });
     
   } catch (error) {
@@ -147,24 +147,24 @@ app.put('/api/sites/:id', async (req, res) => {
   }
 });
 
-// 删除网站
+// 删除game
 app.delete('/api/sites/:id', async (req, res) => {
   try {
     const siteId = parseInt(req.params.id);
     
     const data = await readDataFile();
     
-    // 找到要删除的网站
+    // 找到要删除的game
     const siteIndex = data.sites.findIndex(site => site.id === siteId);
     
     if (siteIndex === -1) {
       return res.status(404).json({
         success: false,
-        error: '网站不存在'
+        error: 'game不存在'
       });
     }
     
-    // 获取要删除的网站信息
+    // 获取要删除的game信息
     const deletedSite = data.sites[siteIndex];
     
     // 从数组中移除
@@ -176,7 +176,7 @@ app.delete('/api/sites/:id', async (req, res) => {
     res.json({
       success: true,
       data: deletedSite,
-      message: `网站 "${deletedSite.name}" 删除成功`
+      message: `game "${deletedSite.name}" 删除成功`
     });
     
   } catch (error) {

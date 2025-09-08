@@ -8,25 +8,27 @@ body {
     'Ubuntu', 'Cantarell', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f8fafc;
-  color: #1f2937;
+  /* 墨色背景 */
+  background-color: #0b0b0c;
+  /* 浅色文字以便在深色背景上可读 */
+  color: #ffffff;
 }
 
 /* 颜色修复 - 确保所有元素颜色正确显示 */
 .text-gray-900 {
-  color: #111827 !important;
+  color: #f9fafb !important;
 }
 
 .text-gray-600 {
-  color: #4b5563 !important;
+  color: #9ca3af !important;
 }
 
 .text-gray-700 {
-  color: #374151 !important;
+  color: #d1d5db !important;
 }
 
 .text-gray-500 {
-  color: #6b7280 !important;
+  color: #94a3b8 !important;
 }
 
 .text-white {
@@ -34,7 +36,7 @@ body {
 }
 
 .bg-primary-blue {
-  background-color: #3b82f6 !important;
+  background-color: #ffff00 !important;
 }
 
 .hover\:bg-blue-600:hover {
@@ -66,7 +68,7 @@ a.bg-primary-blue:hover {
 
 /* 卡片标题颜色 */
 h3.text-gray-900 {
-  color: #111827 !important;
+  color: #ffffff !important;
 }
 
 h3.hover\:text-primary-blue:hover {
@@ -85,7 +87,7 @@ p.text-gray-600 {
   visibility: visible !important;
 }
 
-/* 网站卡片容器 */
+/* game卡片容器 */
 [data-item-id], 
 .grid > div {
   opacity: 1 !important;
@@ -103,16 +105,16 @@ p.text-gray-600 {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #0b0b0c;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
+  background: #374151;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #a1a1a1;
+  background: #4b5563;
 }
 
 /* 卡片悬停动画 */
@@ -197,6 +199,123 @@ p.text-gray-600 {
   background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
   background-size: 400% 100%;
   animation: shimmer 1.2s ease-in-out infinite;
+}
+
+/* Buttons and controls: ensure their foreground (text/icons) is white on dark backgrounds */
+.category-button,
+.tabs li,
+button,
+.btn,
+.button,
+a[role="button"] {
+  color: #ffffff !important;
+}
+.category-button *,
+.tabs li *,
+button *,
+.btn *,
+.button *,
+a[role="button"] * {
+  color: #ffffff !important;
+}
+
+/* SVG icons inside button-like elements */
+button svg,
+.category-button svg,
+.tabs li svg,
+a[role="button"] svg,
+.btn svg,
+.button svg {
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+/* User-provided header styles */
+.logo[data-v-cffdc6d6] {
+  width: auto;
+  max-height: 4.25rem; /* 控制高度，避免溢出 */
+  object-fit: contain;
+  /* 默认小尺寸，适应移动端 */
+}
+.title[data-v-cffdc6d6] {
+  margin: 0;
+  color: greenyellow;
+  /* 响应式字号：clamp(min, preferred, max) */
+  font-size: clamp(1.5rem, 6vw, 3.5rem);
+  line-height: 1;
+}
+
+/* 确保 header 内文字为白色优先 */
+.header-content, header {
+  color: #ffffff;
+}
+
+/* Buttons: change white foreground on buttons to dark #333333 */
+button,
+input[type="button"],
+input[type="submit"],
+a[role="button"],
+button *,
+[role="button"],
+[role="button"] *,
+.btn,
+.btn *,
+.button,
+.button *,
+.category-button,
+.category-button *,
+.tabs li,
+.tabs li * {
+  color: #ffff00 !important;
+}
+
+/* Change light button backgrounds to #1a1a1a and ensure text/icons are white for contrast */
+.bg-white,
+.bg-gray-100,
+.category-button,
+.btn,
+.button,
+.tabs li,
+a.bg-white,
+a.bg-gray-100 {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+}
+
+.category-button svg,
+.tabs li svg,
+button svg,
+.btn svg,
+.button svg,
+a.bg-white svg,
+a.bg-gray-100 svg {
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+/* Anchors that look like buttons */
+a.bg-primary-blue,
+a.bg-white,
+a.bg-gray-100 {
+  color: #333333 !important;
+}
+
+/* Ensure SVG icons inside buttons also become dark */
+button svg,
+.category-button svg,
+.tabs li svg,
+a[role="button"] svg,
+button svg *,
+.category-button svg *,
+.tabs li svg *,
+a[role="button"] svg * {
+  fill: #333333 !important;
+  stroke: #333333 !important;
+}
+
+/* Also ensure button-like elements inherit the text color */
+button, .category-button, .tabs li, a[role="button"], .btn, .button {
+  color: #00ff00 !important;
 }
 
 /* 平滑滚动 */
@@ -332,4 +451,28 @@ html {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Override Tailwind's border-gray-800 to greenyellow */
+.border-gray-800 {
+  --tw-border-opacity: 1;
+  border-color: #388e3c !important
+}
+
+/* Navigation pill (category-button) color fix: subtle dark hover suitable for the ink background */
+.category-button {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  border: 1px solid transparent !important;
+}
+.category-button:hover {
+  /* very subtle lightening on hover so pills remain visible but not bright */
+  background-color: rgba(255,255,255,0.03) !important;
+  color: #ffffff !important;
+}
+.category-button:active,
+.category-button.active,
+.category-button[aria-pressed="true"] {
+  background-color: rgba(255,255,255,0.06) !important;
+  color: #ffffff !important;
 }

@@ -29,7 +29,7 @@ export const useLocalAPI = () => {
     }
   };
 
-  // 添加网站
+  // 添加game
   const addSite = async (siteData) => {
     try {
       setLoading(true);
@@ -50,7 +50,7 @@ export const useLocalAPI = () => {
         await fetchData();
         return { success: true, data: result.data, message: result.message };
       } else {
-        throw new Error(result.error || '添加网站失败');
+        throw new Error(result.error || '添加game失败');
       }
     } catch (err) {
       setError(err.message);
@@ -60,7 +60,7 @@ export const useLocalAPI = () => {
     }
   };
 
-  // 编辑网站
+  // 编辑game
   const editSite = async (siteId, siteData) => {
     try {
       setLoading(true);
@@ -81,7 +81,7 @@ export const useLocalAPI = () => {
         await fetchData();
         return { success: true, data: result.data, message: result.message };
       } else {
-        throw new Error(result.error || '更新网站失败');
+        throw new Error(result.error || '更新game失败');
       }
     } catch (err) {
       setError(err.message);
@@ -91,7 +91,7 @@ export const useLocalAPI = () => {
     }
   };
 
-  // 删除网站
+  // 删除game
   const deleteSite = async (siteId) => {
     try {
       setLoading(true);
@@ -108,7 +108,7 @@ export const useLocalAPI = () => {
         await fetchData();
         return { success: true, data: result.data, message: result.message };
       } else {
-        throw new Error(result.error || '删除网站失败');
+        throw new Error(result.error || '删除game失败');
       }
     } catch (err) {
       setError(err.message);
