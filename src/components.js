@@ -49,47 +49,129 @@ const IframePreviewModal = ({ open, onClose, src, title = 'Game Preview' }) => {
 
   useEffect(() => {
     if (!open) return;
+    // We only subscribe to the iframe's internal IframeSdk event bus on iframe load.
+    // postMessage handling removed per request - no message listener is installed.
 
-    // Handler to receive status updates from the iframe
-    const onMessage = (ev) => {
+    // We'll attach directly to the iframe's IframeSdk.events_iframe on iframe load.
+    // Keep a small local holder for the bus and handlers so we can clean up on unmount/close.
+    let bus = null;
+    const handlers = {};
+
+    const cleanupBus = () => {
       try {
-        // Only accept messages coming from the iframe we opened (best-effort)
-        if (!iframeRef.current || ev.source !== iframeRef.current.contentWindow) return;
-        const d = ev.data || {};
-        // Accept either a specific type or loose payloads that include time/score/level
-        if (d.type === 'game-status' || d.type === 'status-update' || d.time !== undefined || d.score !== undefined || d.level !== undefined) {
-          const setIf = (key, value) => {
-            const el = document.getElementById(key);
-            if (el && value !== undefined && value !== null) {
-              el.textContent = String(value);
-              // flash updated style
-              el.classList.add('updated');
-              setTimeout(() => el.classList.remove('updated'), 300);
-            }
-          };
-
-          if (d.time !== undefined) setIf('game-time-display', d.time);
-          if (d.score !== undefined) setIf('game-score-display', d.score);
-          if (d.level !== undefined) setIf('game-level-display', d.level);
+        if (bus && typeof bus.off === 'function') {
+          if (handlers.time) bus.off('game_time', handlers.time);
+          if (handlers.score) bus.off('game_score', handlers.score);
+          if (handlers.level) bus.off('game_level', handlers.level);
         }
       } catch (e) {
-        // ignore malformed messages
+        // ignore
       }
+      bus = null;
     };
 
-    window.addEventListener('message', onMessage);
-    return () => window.removeEventListener('message', onMessage);
+    // expose cleanup alongside the effect's cleanup
+    const effectCleanup = () => {
+      try {
+        const bus = busRef.current;
+        const handlers = handlersRef.current || {};
+        if (bus && typeof bus.off === 'function') {
+          if (handlers.time) bus.off('game_time', handlers.time);
+          if (handlers.score) bus.off('game_score', handlers.score);
+          if (handlers.level) bus.off('game_level', handlers.level);
+        }
+      } catch (e) {
+        // ignore
+      }
+      busRef.current = null;
+      handlersRef.current = {};
+    };
+
+    // Replace effect cleanup return value
+    return effectCleanup;
   }, [open]);
+
+  // We'll keep bus and handlers in refs so both handleLoad and effect cleanup can access them.
+  const busRef = useRef(null);
+  const handlersRef = useRef({});
 
   const handleLoad = () => {
     try {
       const frame = iframeRef.current;
       if (frame && frame.contentWindow) {
-        frame.contentWindow.postMessage({ type: 'init-load', url: src }, '*');
+        // Subscribe directly to the global `window.IframeSdk.events_iframe` as requested
+        try {
+          const candidate = window && window.IframeSdk && window.IframeSdk.events_iframe;
+          if (candidate && typeof candidate.on === 'function') {
+            const formatSeconds = (sec) => {
+              const total = Number(sec) || 0;
+              const abs = Math.max(0, Math.floor(total));
+              const h = Math.floor(abs / 3600);
+              const m = Math.floor((abs % 3600) / 60);
+              const s = abs % 60;
+              const pad = (n) => String(n).padStart(2, '0');
+              if (h > 0) return `${pad(h)}:${pad(m)}:${pad(s)}`;
+              return `${pad(m)}:${pad(s)}`;
+            };
+
+            const handlers = {};
+            handlers.time = (val) => {
+              const el = document.getElementById('game-time-display');
+              if (el) {
+                el.textContent = formatSeconds(val);
+                el.classList.add('updated');
+                setTimeout(() => el.classList.remove('updated'), 300);
+              }
+            };
+            handlers.score = (val) => {
+              const el = document.getElementById('game-score-display');
+              if (el) {
+                el.textContent = String(val);
+                el.classList.add('updated');
+                setTimeout(() => el.classList.remove('updated'), 300);
+              }
+            };
+            handlers.level = (val) => {
+              const el = document.getElementById('game-level-display');
+              if (el) {
+                el.textContent = String(val);
+                el.classList.add('updated');
+                setTimeout(() => el.classList.remove('updated'), 300);
+              }
+            };
+
+            try {
+              candidate.on('game_time', handlers.time);
+              candidate.on('game_score', handlers.score);
+              candidate.on('game_level', handlers.level);
+              busRef.current = candidate;
+              handlersRef.current = handlers;
+            } catch (e) {
+              // ignore registration errors
+            }
+          }
+        } catch (e) {
+          // ignore
+        }
       }
     } catch (e) {
       // ignore
     }
+  };
+
+  // helper to format seconds into MM:SS or HH:MM:SS
+  const formatSeconds = (secs) => {
+    const n = Number(secs) || 0;
+    const pad = (s) => String(s).padStart(2, '0');
+    if (n >= 3600) {
+      const h = Math.floor(n / 3600);
+      const m = Math.floor((n % 3600) / 60);
+      const s = Math.floor(n % 60);
+      return `${pad(h)}:${pad(m)}:${pad(s)}`;
+    }
+    const m = Math.floor(n / 60);
+    const s = Math.floor(n % 60);
+    return `${pad(m)}:${pad(s)}`;
   };
 
   if (!open) return null;
@@ -227,7 +309,7 @@ const SiteCard = memo(({ site, isVisible, delay = 0, isEditMode = false, onEdit,
         )}
       </div>
     </div>
-    <IframePreviewModal open={previewOpen} onClose={closePreview} src={site.path || site.url} title={site.name} />
+  <IframePreviewModal open={previewOpen} onClose={closePreview} src={site.pathBeta || site.path || site.url} title={site.name} />
     </>
   );
 });
