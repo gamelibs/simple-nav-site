@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import data from './data.json';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useLocalStorage, useDebounce } from './hooks';
 import { SiteCard, CategoryButton, EmptyState } from './components';
 import { EditModeToolbar, EditSiteModal, Notification } from './EditComponents';
@@ -8,8 +7,9 @@ import { useLocalAPI } from './hooks/useLocalAPI';
 // Main application component
 const App = () => {
   const [activeCategory, setActiveCategory] = useLocalStorage('activeCategory', 0);
-  const [filteredSites, setFilteredSites] = useState(data.sites);
+  const [filteredSites, setFilteredSites] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  // localData removed: use API-driven data via useLocalAPI
   const [isLoading, setIsLoading] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [sortOrder, setSortOrder] = useState('asc'); // 'asc' or 'desc'
@@ -32,8 +32,9 @@ const App = () => {
   
   const debouncedSearchTerm = useDebounce(searchTerm, 300);
   
-  // Use API data or local data
-  const currentData = apiData || data;
+  // Use API data as primary source; fall back to an empty structure
+  // memoize to keep stable identity and avoid triggering effects every render
+  const currentData = useMemo(() => (apiData || { sites: [], categories: [] }), [apiData]);
 
   // Check URL params to decide whether to enable edit mode
   useEffect(() => {
@@ -61,8 +62,8 @@ const App = () => {
   // Filter games data
   useEffect(() => {
     setIsLoading(true);
-    
-    let sites = currentData.sites;
+
+    let sites = currentData.sites || [];
     
   // Filter by category
     if (activeCategory !== 0) {
@@ -88,7 +89,9 @@ const App = () => {
 
       setFilteredSites(sorted);
     setIsLoading(false);
-  }, [activeCategory, debouncedSearchTerm, currentData, sortOrder]);
+  }, [activeCategory, debouncedSearchTerm, apiData, sortOrder]);
+
+  // data is provided by useLocalAPI (apiData). No local /data.json fetch here.
 
   // 编辑功能处理函数
   const handleAddSite = () => {
@@ -145,7 +148,7 @@ const App = () => {
   };
 
   const getCurrentCategory = () => {
-    return data.categories.find(cat => cat.id === activeCategory);
+    return currentData.categories.find(cat => cat.id === activeCategory);
   };
 
   // 添加快捷键监听
@@ -282,7 +285,7 @@ const App = () => {
                 <span className="mr-1">🌟</span>
                 All
               </button>
-              {data.categories.map((category) => (
+              {currentData.categories.map((category) => (
                 <CategoryButton
                   key={category.id}
                   category={category}

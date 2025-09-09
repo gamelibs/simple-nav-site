@@ -2853,6 +2853,14 @@
       "path": "https://cpsense.heiheigame.com/douyou_release/BlockCrasher",
       "categoryId": 1,
       "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BlockCrasher"
+    },
+    {
+      "id": 287,
+      "name": "TEST_GAME",
+      "url": "https://example.com/test",
+      "description": "",
+      "categoryId": 1,
+      "icon": "https://example.com/icon.png"
     }
   ]
 }

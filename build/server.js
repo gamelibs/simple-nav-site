@@ -4,10 +4,22 @@ const fs = require('fs-extra');
 const path = require('path');
 
 const app = express();
-const PORT = 15001;
+const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 15001;
 
-// 数据文件路径
-const DATA_FILE_PATH = path.join(__dirname, 'data', 'data.json');
+// 数据文件路径 (可通过环境变量覆盖)
+const DATA_FILE_PATH = process.env.DATA_FILE_PATH || path.join(__dirname, 'data', 'data.json');
+
+// 如果存在 build 目录（生产构建），提供静态文件支持，允许在 build/ 中直接运行 server.js
+const buildPath = path.join(__dirname, 'build');
+if (fs.existsSync(buildPath)) {
+  console.log('检测到 build 目录，启用静态文件服务 ->', buildPath);
+  app.use(express.static(buildPath));
+
+  // 所有非 /api 请求都返回 index.html（支持 SPA 路由）
+  app.get(/^\/(?!api).*/, (req, res) => {
+    res.sendFile(path.join(buildPath, 'index.html'));
+  });
+}
 
 // 中间件
 app.use(cors());

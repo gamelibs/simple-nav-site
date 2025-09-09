@@ -53,3 +53,5 @@ echo "💡 使用 PM2 启动 (推荐生产环境):"
 echo "pm2 start $SERVER_FILE --name simple-nav-site"
 echo ""
 echo "🎉 部署准备完成！"
+
+# cp server.js build/server.js && cp package.json build/package.json && mkdir -p build/data && cp -R data/data.json build/data/data.json

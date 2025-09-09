@@ -1,6 +1,25 @@
 import { useState, useEffect } from 'react';
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:15001/api';
+// Determine API base URL with a safe development fallback.
+// - If REACT_APP_API_BASE_URL is provided, use it.
+// - If running in the browser on localhost (CRA dev server), default to the backend port used by server.js.
+// - Otherwise use relative '/api' for same-origin production builds.
+const getDefaultApiBase = () => {
+  if (process.env.REACT_APP_API_BASE_URL) return process.env.REACT_APP_API_BASE_URL;
+  try {
+    if (typeof window !== 'undefined') {
+      const host = window.location.hostname;
+      if (host === 'localhost' || host === '127.0.0.1') {
+        return 'http://localhost:15001/api';
+      }
+    }
+  } catch (e) {
+    // ignore
+  }
+  return '/api';
+};
+
+const API_BASE_URL = getDefaultApiBase();
 
 export const useLocalAPI = () => {
   const [data, setData] = useState(null);
