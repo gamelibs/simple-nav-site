@@ -20,7 +20,7 @@
       "name": "Bubble_Shooter_Arcade",
       "path": "https://cpsense.heiheigame.com/douyou_release/Bubble_Shooter_Arcade",
       "categoryId": 1,
-      "pathBeta": "http://localhost:13200/static/1012/beta/002/beta.html?vb=beta&dev=4094-cpsense&timestamp-1757320019256&cb=1757320019256"
+      "pathBeta": "http://localhost:13200/static/1012/beta/001/beta.html?vb=beta&dev=4094-cpsense&timestamp-1757392316836&cb=1757392316836"
     },
     {
       "id": 2,
@@ -40,7 +40,7 @@
       "name": "tower-match",
       "path": "https://cpsense.heiheigame.com/douyou_release/tower-match",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/tower-match"
+      "pathBeta": "http://localhost:13200/static/1012/beta/003/beta.html?vb=beta&dev=4094-cpsense&timestamp-1757389887333&cb=1757389887333"
     },
     {
       "id": 4,
@@ -50,7 +50,9 @@
       "name": "2020-plus",
       "path": "https://cpsense.heiheigame.com/douyou_release/2020-plus",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/2020-plus"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/2020-plus",
+      "url": "https://cpsense.heiheigame.com/douyou_release/2020-plus",
+      "description": ""
     },
     {
       "id": 5,

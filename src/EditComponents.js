@@ -35,6 +35,7 @@ export const EditSiteModal = ({ isOpen, onClose, onSave, site, categories }) => 
     name: '',
     url: '',
     path: '',
+    pathBeta: '',
     description: '',
     categoryId: 1,
     icon: '/icons/default.svg'
@@ -48,8 +49,10 @@ export const EditSiteModal = ({ isOpen, onClose, onSave, site, categories }) => 
     if (site) {
       setFormData({
         name: site.name || '',
-        url: site.url || '',
-        path: site.path || site.url || '',
+        // Use site.url if present; otherwise default URL input from site.path
+        url: site.url ?? site.path ?? '',
+        path: site.path ?? site.url ?? '',
+        pathBeta: site.pathBeta ?? site.path ?? site.url ?? '',
         description: site.description || '',
         categoryId: site.categoryId || 1,
         icon: site.icon || '/icons/default.svg'
@@ -60,6 +63,7 @@ export const EditSiteModal = ({ isOpen, onClose, onSave, site, categories }) => 
         name: '',
         url: '',
         path: '',
+        pathBeta: '',
         description: '',
         categoryId: 1,
         icon: '/icons/default.svg'
@@ -82,10 +86,7 @@ export const EditSiteModal = ({ isOpen, onClose, onSave, site, categories }) => 
       newErrors.url = 'Please enter a valid URL (http:// or https://)';
     }
 
-    if (!formData.path.trim()) {
-      // path is required because visit buttons use it
-      newErrors.path = 'Path is required';
-    }
+    // path is derived from URL now; no manual PATH required
     
     if (!formData.categoryId) {
       newErrors.categoryId = 'Please select a category';
@@ -119,7 +120,9 @@ export const EditSiteModal = ({ isOpen, onClose, onSave, site, categories }) => 
   const handleInputChange = (field, value) => {
     setFormData(prev => ({
       ...prev,
-      [field]: value
+      [field]: value,
+      // if url changes, keep path in sync to url by default
+      ...(field === 'url' ? { path: value } : {})
     }));
     
     // 清除对应字段的错误
@@ -162,7 +165,7 @@ export const EditSiteModal = ({ isOpen, onClose, onSave, site, categories }) => 
                 type="text"
                 value={formData.name}
                 onChange={(e) => handleInputChange('name', e.target.value)}
-                className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200 ${
+                className={`w-full px-3 py-2 border rounded-lg bg-white text-black focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200 ${
                   errors.name ? 'border-red-500' : 'border-gray-300'
                 }`}
                 placeholder="Enter game name"
@@ -182,7 +185,7 @@ export const EditSiteModal = ({ isOpen, onClose, onSave, site, categories }) => 
                 type="url"
                 value={formData.url}
                 onChange={(e) => handleInputChange('url', e.target.value)}
-                className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200 ${
+                className={`w-full px-3 py-2 border rounded-lg bg-white text-black focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200 ${
                   errors.url ? 'border-red-500' : 'border-gray-300'
                 }`}
                 placeholder="https://example.com"
@@ -193,25 +196,21 @@ export const EditSiteModal = ({ isOpen, onClose, onSave, site, categories }) => 
               )}
             </div>
 
-              {/* game PATH (用于访问按钮) */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Game PATH *
+
+                {/* Beta path (green button) */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Game PATH Beta
                   </label>
-                <input
-                  type="text"
-                  value={formData.path}
-                  onChange={(e) => handleInputChange('path', e.target.value)}
-                  className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200 ${
-                    errors.path ? 'border-red-500' : 'border-gray-300'
-                  }`}
-                  placeholder="https://example.com/mygame"
-                  disabled={isSubmitting}
-                />
-                {errors.path && (
-                  <p className="text-red-500 text-xs mt-1">{errors.path}</p>
-                )}
-              </div>
+                  <input
+                    type="text"
+                    value={formData.pathBeta}
+                    onChange={(e) => handleInputChange('pathBeta', e.target.value)}
+                    className="w-full px-3 py-2 border rounded-lg bg-white text-black focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors duration-200 border-gray-300"
+                    placeholder="https://example.com/mygame-beta"
+                    disabled={isSubmitting}
+                  />
+                </div>
 
             {/* Game description */}
             <div>
@@ -222,7 +221,7 @@ export const EditSiteModal = ({ isOpen, onClose, onSave, site, categories }) => 
                 value={formData.description}
                 onChange={(e) => handleInputChange('description', e.target.value)}
                 rows={3}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200 resize-none"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white text-black focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200 resize-none"
                 placeholder="Enter game description"
                 disabled={isSubmitting}
               />
@@ -236,7 +235,7 @@ export const EditSiteModal = ({ isOpen, onClose, onSave, site, categories }) => 
               <select
                 value={formData.categoryId}
                 onChange={(e) => handleInputChange('categoryId', parseInt(e.target.value))}
-                className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200 ${
+                className={`w-full px-3 py-2 border rounded-lg bg-white text-black focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200 ${
                   errors.categoryId ? 'border-red-500' : 'border-gray-300'
                 }`}
                 disabled={isSubmitting}
@@ -262,7 +261,7 @@ export const EditSiteModal = ({ isOpen, onClose, onSave, site, categories }) => 
                 type="text"
                 value={formData.icon}
                 onChange={(e) => handleInputChange('icon', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white text-black focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200"
                 placeholder="/icons/default.svg"
                 disabled={isSubmitting}
               />
