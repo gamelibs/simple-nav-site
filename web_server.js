@@ -4,7 +4,7 @@ const fs = require('fs-extra');
 const path = require('path');
 
 const app = express();
-const PORT = 15001;
+const PORT = 15002;
 
 // 数据文件路径
 const DATA_FILE_PATH = path.join(__dirname, 'data', 'data.json');
@@ -55,7 +55,7 @@ app.get('/api/data', async (req, res) => {
 // 添加新game
 app.post('/api/sites', async (req, res) => {
   try {
-    const { name, url, description, categoryId, icon } = req.body;
+    const { name, url, description, categoryId, icon, pubid } = req.body;
     
     // 验证必需字段
     if (!name || !url || !categoryId) {
@@ -76,8 +76,13 @@ app.post('/api/sites', async (req, res) => {
       name,
       url,
       description: description || '',
+      pubid: pubid || '',
       categoryId: parseInt(categoryId),
-      icon: icon || '/icons/default.svg'
+      icon: icon || '/icons/default.svg',
+      // also store path/pathBeta if provided (form may provide them)
+      ...(req.body.path ? { path: req.body.path } : {}),
+      ...(req.body.pathBeta ? { pathBeta: req.body.pathBeta } : {})
+      
     };
     
     // 添加到数据中
@@ -104,7 +109,7 @@ app.post('/api/sites', async (req, res) => {
 app.put('/api/sites/:id', async (req, res) => {
   try {
     const siteId = parseInt(req.params.id);
-    const { name, url, description, categoryId, icon } = req.body;
+    const { name, url, description, categoryId, icon, pubid } = req.body;
     
     const data = await readDataFile();
     
@@ -124,8 +129,12 @@ app.put('/api/sites/:id', async (req, res) => {
       ...(name && { name }),
       ...(url && { url }),
       ...(description !== undefined && { description }),
+      ...(pubid !== undefined && { pubid }),
       ...(categoryId && { categoryId: parseInt(categoryId) }),
-      ...(icon && { icon })
+      ...(icon && { icon }),
+      // accept edits to path and pathBeta as well
+      ...(req.body.path !== undefined && { path: req.body.path }),
+      ...(req.body.pathBeta !== undefined && { pathBeta: req.body.pathBeta })
     };
     
     data.sites[siteIndex] = updatedSite;

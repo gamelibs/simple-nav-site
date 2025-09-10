@@ -4,8 +4,21 @@ import { SiteCard, CategoryButton, EmptyState } from './components';
 import { EditModeToolbar, EditSiteModal, Notification } from './EditComponents';
 import { useLocalAPI } from './hooks/useLocalAPI';
 
+// Global logo status across mounts: 'pending' | 'success' | 'failed'
+let logoStatus = 'pending';
+let logoInFlight = false;
+
 // Main application component
 const App = () => {
+  // 监听 logo-failed 事件，强制刷新组件（全局只请求一次）
+  const [logoFailedRefresh, setLogoFailedRefresh] = useState(0);
+  useEffect(() => {
+    function handler() {
+      setLogoFailedRefresh(x => x + 1);
+    }
+    window.addEventListener('logo-failed', handler);
+    return () => window.removeEventListener('logo-failed', handler);
+  }, []);
   const [activeCategory, setActiveCategory] = useLocalStorage('activeCategory', 0);
   const [filteredSites, setFilteredSites] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
@@ -36,7 +49,10 @@ const App = () => {
   // memoize to keep stable identity and avoid triggering effects every render
   const currentData = useMemo(() => (apiData || { sites: [], categories: [] }), [apiData]);
 
-  // Check URL params to decide whether to enable edit mode
+
+// Module-level logo status is declared above.
+
+// Check URL params to decide whether to enable edit mode
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const editParam = urlParams.get('edit');
@@ -73,8 +89,10 @@ const App = () => {
   // Filter by search term
     if (debouncedSearchTerm) {
       sites = sites.filter(site => 
-        site.name.toLowerCase().includes(debouncedSearchTerm.toLowerCase()) ||
-        site.description.toLowerCase().includes(debouncedSearchTerm.toLowerCase())
+        (site.name || '').toLowerCase().includes(debouncedSearchTerm.toLowerCase()) ||
+        (site.description || '').toLowerCase().includes(debouncedSearchTerm.toLowerCase()) ||
+        (site.gid || '').toString().toLowerCase().includes(debouncedSearchTerm.toLowerCase()) ||
+        (site.pubid || '').toString().toLowerCase().includes(debouncedSearchTerm.toLowerCase())
       );
     }
     
@@ -200,14 +218,31 @@ const App = () => {
             <div className="flex items-center justify-center mb-2">
               <div className="flex items-center">
                 <div data-v-cffdc6d6="" className="header-content flex items-center">
-                  <img
-                    data-v-cffdc6d6=""
-                    className="logo mr-3 rounded-md object-contain max-h-12"
-                    src="/icons/logo.png"
-                    onError={(e) => { e.target.onerror = null; e.target.src = '/logo192.png'; }}
-                    alt="Online Games Library"
-                    style={{ width: 'auto', height: '48px' }}
-                  />
+                  {logoStatus === 'failed' ? (
+                    <svg width="48" height="48" viewBox="0 0 24 24" style={{ display: 'inline-block', verticalAlign: 'middle' }}>
+                      <rect x="3" y="3" width="18" height="18" rx="2" fill="#111827"/>
+                      <path d="M7 12h10M7 16h10M7 8h10" stroke="#9CA3AF"/>
+                    </svg>
+                  ) : (
+                    <img
+                      data-v-cffdc6d6=""
+                      className="logo mr-3 rounded-md object-contain max-h-12"
+                      src="icons/logo.png"
+                      alt="Online Games Library"
+                      style={{ width: 'auto', height: '48px' }}
+                      onError={e => {
+                        logoStatus = 'failed';
+                        e.target.onerror = null;
+                        // 强制触发重新渲染（用 state）
+                        if (typeof window !== 'undefined') {
+                          window.dispatchEvent(new Event('logo-failed'));
+                        }
+                      }}
+                      onLoad={() => {
+                        logoStatus = 'success';
+                      }}
+                    />
+                  )}
                   <h1 data-v-cffdc6d6="" className="title text-lg font-semibold text-gray-200">Online Games Library</h1>
                 </div>
                 {isEditMode && (

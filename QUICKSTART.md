@@ -32,8 +32,8 @@ npm run dev
 
 ## 访问地址
 - 🌐 前端应用: http://localhost:3000
-- 🔌 后端API: http://localhost:15001
-- 📊 健康检查: http://localhost:15001/api/health
+- 🔌 后端API: http://localhost:15002
+- 📊 健康检查: http://localhost:15002/api/health
 
 ## 编辑功能
 激活编辑模式的方法：

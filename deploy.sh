@@ -5,7 +5,7 @@
 echo "🚀 开始部署简约导航站..."
 
 # 设置变量
-SERVER_PORT=15001
+SERVER_PORT=15002
 BUILD_DIR="build"
 SERVER_FILE="server.js"
 DATA_DIR="src"

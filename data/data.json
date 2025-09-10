@@ -2,13 +2,18 @@
   "categories": [
     {
       "id": 1,
-      "name": "New games",
+      "name": "Cpsense",
       "icon": "📚"
     },
     {
       "id": 2,
       "name": "Cd-cpsense",
       "icon": "📰"
+    },
+    {
+      "id": 3,
+      "name": "New games",
+      "icon": "🌹"
     }
   ],
   "sites": [
@@ -18,8 +23,8 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/001-icon-128.jpg",
       "name": "Bubble_Shooter_Arcade",
-      "path": "https://cpsense.heiheigame.com/douyou_release/Bubble_Shooter_Arcade",
-      "categoryId": 1,
+      "path": "https://cpsense.heiheigame.com/douyou_release/Bubble_Shooter_Arcade/",
+      "categoryId": 3,
       "pathBeta": "http://localhost:13200/static/1012/beta/001/beta.html?vb=beta&dev=4094-cpsense&timestamp-1757392316836&cb=1757392316836"
     },
     {
@@ -28,9 +33,11 @@
       "pubid": "2141",
       "icon": "https://cpsense.heiheigame.com/gameicon/002-icon-128.jpg",
       "name": "Lines_2048",
-      "path": "https://cpsense.heiheigame.com/douyou_release/Lines_2048",
+      "path": "https://cpsense.heiheigame.com/douyou_release/Lines_2048/",
       "categoryId": 1,
-      "pathBeta": "http://localhost:13200/static/1012/beta/002/beta.html?vb=beta&dev=4094-cpsense&timestamp-1757320019256&cb=1757320019256"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Lines_2048/",
+      "url": "https://cpsense.heiheigame.com/douyou_release/Lines_2048/",
+      "description": ""
     },
     {
       "id": 3,
@@ -38,7 +45,7 @@
       "pubid": "2143",
       "icon": "https://cpsense.heiheigame.com/gameicon/003-icon-128.jpg",
       "name": "tower-match",
-      "path": "https://cpsense.heiheigame.com/douyou_release/tower-match",
+      "path": "https://cpsense.heiheigame.com/douyou_release/tower-match/",
       "categoryId": 1,
       "pathBeta": "http://localhost:13200/static/1012/beta/003/beta.html?vb=beta&dev=4094-cpsense&timestamp-1757389887333&cb=1757389887333"
     },
@@ -48,10 +55,9 @@
       "pubid": "2142",
       "icon": "https://cpsense.heiheigame.com/gameicon/004-icon-128.jpg",
       "name": "2020-plus",
-      "path": "https://cpsense.heiheigame.com/douyou_release/2020-plus",
+      "path": "https://cpsense.heiheigame.com/douyou_release/2020-plus/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/2020-plus",
-      "url": "https://cpsense.heiheigame.com/douyou_release/2020-plus",
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/2020-plus/",
       "description": ""
     },
     {
@@ -60,9 +66,9 @@
       "pubid": "2144",
       "icon": "https://cpsense.heiheigame.com/gameicon/005-icon-128.jpg",
       "name": "Mahjong-match",
-      "path": "https://cpsense.heiheigame.com/douyou_release/Mahjong-match",
+      "path": "https://cpsense.heiheigame.com/douyou_release/Mahjong-match/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Mahjong-match"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Mahjong-match/"
     },
     {
       "id": 6,
@@ -70,9 +76,9 @@
       "pubid": "2145",
       "icon": "https://cpsense.heiheigame.com/gameicon/006-icon-128.jpg",
       "name": "doughnut",
-      "path": "https://cpsense.heiheigame.com/douyou_release/doughnut",
+      "path": "https://cpsense.heiheigame.com/douyou_release/doughnut/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/doughnut"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/doughnut/"
     },
     {
       "id": 7,
@@ -80,9 +86,9 @@
       "pubid": "2146",
       "icon": "https://cpsense.heiheigame.com/gameicon/007-icon-128.jpg",
       "name": "2Kbubbles",
-      "path": "https://cpsense.heiheigame.com/douyou_release/2Kbubbles",
+      "path": "https://cpsense.heiheigame.com/douyou_release/2Kbubbles/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/2Kbubbles"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/2Kbubbles/"
     },
     {
       "id": 8,
@@ -90,9 +96,9 @@
       "pubid": "2147",
       "icon": "https://cpsense.heiheigame.com/gameicon/008-icon-128.jpg",
       "name": "candy-match",
-      "path": "https://cpsense.heiheigame.com/douyou_release/candy-match",
+      "path": "https://cpsense.heiheigame.com/douyou_release/candy-match/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/candy-match"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/candy-match/"
     },
     {
       "id": 9,
@@ -100,9 +106,9 @@
       "pubid": "2148",
       "icon": "https://cpsense.heiheigame.com/gameicon/009-icon-128.jpg",
       "name": "Operational-cars",
-      "path": "https://cpsense.heiheigame.com/douyou_release/Operational-cars",
+      "path": "https://cpsense.heiheigame.com/douyou_release/Operational-cars/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Operational-cars"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Operational-cars/"
     },
     {
       "id": 10,
@@ -110,9 +116,9 @@
       "pubid": "1723",
       "icon": "https://cpsense.heiheigame.com/gameicon/010-icon-128.jpg",
       "name": "3D_FlowerSphere",
-      "path": "https://cpsense.heiheigame.com/douyou_release/3D_FlowerSphere",
+      "path": "https://cpsense.heiheigame.com/douyou_release/3D_FlowerSphere/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/3D_FlowerSphere"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/3D_FlowerSphere/"
     },
     {
       "id": 11,
@@ -120,9 +126,9 @@
       "pubid": "2149",
       "icon": "https://cpsense.heiheigame.com/gameicon/011-icon-128.jpg",
       "name": "Draw_with_me",
-      "path": "https://cpsense.heiheigame.com/douyou_release/Draw_with_me",
+      "path": "https://cpsense.heiheigame.com/douyou_release/Draw_with_me/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Draw_with_me"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Draw_with_me/"
     },
     {
       "id": 12,
@@ -130,9 +136,9 @@
       "pubid": "2150",
       "icon": "https://cpsense.heiheigame.com/gameicon/012-icon-128.jpg",
       "name": "Desert-Duel",
-      "path": "https://cpsense.heiheigame.com/douyou_release/Desert-Duel",
+      "path": "https://cpsense.heiheigame.com/douyou_release/Desert-Duel/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Desert-Duel"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Desert-Duel/"
     },
     {
       "id": 13,
@@ -140,9 +146,9 @@
       "pubid": "2151",
       "icon": "https://cpsense.heiheigame.com/gameicon/013-icon-128.jpg",
       "name": "Bowling-Battle",
-      "path": "https://cpsense.heiheigame.com/douyou_release/Bowling-Battle",
+      "path": "https://cpsense.heiheigame.com/douyou_release/Bowling-Battle/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Bowling-Battle"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Bowling-Battle/"
     },
     {
       "id": 14,
@@ -150,9 +156,9 @@
       "pubid": "2152",
       "icon": "https://cpsense.heiheigame.com/gameicon/014-icon-128.jpg",
       "name": "TriplePlayFootball",
-      "path": "https://cpsense.heiheigame.com/douyou_release/TriplePlayFootball",
+      "path": "https://cpsense.heiheigame.com/douyou_release/TriplePlayFootball/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/TriplePlayFootball"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/TriplePlayFootball/"
     },
     {
       "id": 15,
@@ -160,9 +166,9 @@
       "pubid": "2160",
       "icon": "https://cpsense.heiheigame.com/gameicon/015-icon-128.jpg",
       "name": "TempleJewels",
-      "path": "https://cpsense.heiheigame.com/douyou_release/TempleJewels",
+      "path": "https://cpsense.heiheigame.com/douyou_release/TempleJewels/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/TempleJewels"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/TempleJewels/"
     },
     {
       "id": 16,
@@ -170,9 +176,9 @@
       "pubid": "2161",
       "icon": "https://cpsense.heiheigame.com/gameicon/016-icon-128.jpg",
       "name": "Queen",
-      "path": "https://cpsense.heiheigame.com/douyou_release/Queen",
+      "path": "https://cpsense.heiheigame.com/douyou_release/Queen/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Queen"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Queen/"
     },
     {
       "id": 17,
@@ -180,9 +186,9 @@
       "pubid": "2162",
       "icon": "https://cpsense.heiheigame.com/gameicon/017-icon-128.jpg",
       "name": "Car Out",
-      "path": "https://cpsense.heiheigame.com/douyou_release/CarOut",
+      "path": "https://cpsense.heiheigame.com/douyou_release/CarOut/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CarOut"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CarOut/"
     },
     {
       "id": 20,
@@ -190,9 +196,9 @@
       "pubid": "2165",
       "icon": "https://cpsense.heiheigame.com/gameicon/020-icon-128.jpg",
       "name": "x_Impostor",
-      "path": "https://cpsense.heiheigame.com/douyou_release/x_Impostor",
+      "path": "https://cpsense.heiheigame.com/douyou_release/x_Impostor/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/x_Impostor"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/x_Impostor/"
     },
     {
       "id": 21,
@@ -200,9 +206,9 @@
       "pubid": "2163",
       "icon": "https://cpsense.heiheigame.com/gameicon/021-icon-128.jpg",
       "name": "x_Protect",
-      "path": "https://cpsense.heiheigame.com/douyou_release/x_Protect",
+      "path": "https://cpsense.heiheigame.com/douyou_release/x_Protect/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/x_Protect"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/x_Protect/"
     },
     {
       "id": 22,
@@ -210,9 +216,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/022-icon-128.jpg",
       "name": "x_Brawl",
-      "path": "https://cpsense.heiheigame.com/douyou_release/x_Brawl",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/x_Brawl"
+      "path": "https://cpsense.heiheigame.com/douyou_release/x_Brawl/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/x_Brawl/"
     },
     {
       "id": 23,
@@ -220,9 +226,9 @@
       "pubid": "2164",
       "icon": "https://cpsense.heiheigame.com/gameicon/023-icon-128.jpg",
       "name": "Ludo",
-      "path": "https://cpsense.heiheigame.com/douyou_release/Ludo",
+      "path": "https://cpsense.heiheigame.com/douyou_release/Ludo/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Ludo"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Ludo/"
     },
     {
       "id": 24,
@@ -230,9 +236,9 @@
       "pubid": "2166",
       "icon": "https://cpsense.heiheigame.com/gameicon/024-icon-128.jpg",
       "name": "Kitty Jewel Quest",
-      "path": "https://cpsense.heiheigame.com/douyou_release/KittyJewelQuest",
+      "path": "https://cpsense.heiheigame.com/douyou_release/KittyJewelQuest/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/KittyJewelQuest"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/KittyJewelQuest/"
     },
     {
       "id": 25,
@@ -240,9 +246,9 @@
       "pubid": "2169",
       "icon": "https://cpsense.heiheigame.com/gameicon/025-icon-128.jpg",
       "name": "Lazy Jumper",
-      "path": "https://cpsense.heiheigame.com/douyou_release/LazyJumper",
+      "path": "https://cpsense.heiheigame.com/douyou_release/LazyJumper/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/LazyJumper"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/LazyJumper/"
     },
     {
       "id": 26,
@@ -250,9 +256,9 @@
       "pubid": "2170",
       "icon": "https://cpsense.heiheigame.com/gameicon/026-icon-128.jpg",
       "name": "2020JellyTime",
-      "path": "https://cpsense.heiheigame.com/douyou_release/2020JellyTime",
+      "path": "https://cpsense.heiheigame.com/douyou_release/2020JellyTime/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/2020JellyTime"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/2020JellyTime/"
     },
     {
       "id": 27,
@@ -260,9 +266,9 @@
       "pubid": "2183",
       "icon": "https://cpsense.heiheigame.com/gameicon/027-icon-128.jpg",
       "name": "ChromaChallenge",
-      "path": "https://cpsense.heiheigame.com/douyou_release/ChromaChallenge",
+      "path": "https://cpsense.heiheigame.com/douyou_release/ChromaChallenge/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ChromaChallenge"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ChromaChallenge/"
     },
     {
       "id": 28,
@@ -270,9 +276,9 @@
       "pubid": "2167",
       "icon": "https://cpsense.heiheigame.com/gameicon/028-icon-128.jpg",
       "name": "PetLink",
-      "path": "https://cpsense.heiheigame.com/douyou_release/PetLink",
+      "path": "https://cpsense.heiheigame.com/douyou_release/PetLink/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/PetLink"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/PetLink/"
     },
     {
       "id": 29,
@@ -280,9 +286,9 @@
       "pubid": "2168",
       "icon": "https://cpsense.heiheigame.com/gameicon/029-icon-128.jpg",
       "name": "SummerParty",
-      "path": "https://cpsense.heiheigame.com/douyou_release/SummerParty",
+      "path": "https://cpsense.heiheigame.com/douyou_release/SummerParty/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SummerParty"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SummerParty/"
     },
     {
       "id": 30,
@@ -290,9 +296,9 @@
       "pubid": "2171",
       "icon": "https://cpsense.heiheigame.com/gameicon/030-icon-128.jpg",
       "name": "Archery Master",
-      "path": "https://cpsense.heiheigame.com/douyou_release/ArcheryMaster",
+      "path": "https://cpsense.heiheigame.com/douyou_release/ArcheryMaster/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ArcheryMaster"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ArcheryMaster/"
     },
     {
       "id": 31,
@@ -300,9 +306,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/031-icon-128.jpg",
       "name": "WomPenaltyKick",
-      "path": "https://cpsense.heiheigame.com/douyou_release/WomPenaltyKick",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/WomPenaltyKick"
+      "path": "https://cpsense.heiheigame.com/douyou_release/WomPenaltyKick/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/WomPenaltyKick/"
     },
     {
       "id": 32,
@@ -310,9 +316,9 @@
       "pubid": "2172",
       "icon": "https://cpsense.heiheigame.com/gameicon/032-icon-128.jpg",
       "name": "Dog Story",
-      "path": "https://cpsense.heiheigame.com/douyou_release/DogStory",
+      "path": "https://cpsense.heiheigame.com/douyou_release/DogStory/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/DogStory"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/DogStory/"
     },
     {
       "id": 33,
@@ -320,9 +326,9 @@
       "pubid": "2173",
       "icon": "https://cpsense.heiheigame.com/gameicon/033-icon-128.jpg",
       "name": "EatingApple",
-      "path": "https://cpsense.heiheigame.com/douyou_release/EatingApple",
+      "path": "https://cpsense.heiheigame.com/douyou_release/EatingApple/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/EatingApple"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/EatingApple/"
     },
     {
       "id": 34,
@@ -330,9 +336,9 @@
       "pubid": "2182",
       "icon": "https://cpsense.heiheigame.com/gameicon/034-icon-128.jpg",
       "name": "JewelBurst",
-      "path": "https://cpsense.heiheigame.com/douyou_release/JewelBurst",
+      "path": "https://cpsense.heiheigame.com/douyou_release/JewelBurst/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/JewelBurst"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/JewelBurst/"
     },
     {
       "id": 35,
@@ -340,9 +346,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/035-icon-128.jpg",
       "name": "OlliBall",
-      "path": "https://cpsense.heiheigame.com/douyou_release/OlliBall",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/OlliBall"
+      "path": "https://cpsense.heiheigame.com/douyou_release/OlliBall/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/OlliBall/"
     },
     {
       "id": 36,
@@ -350,9 +356,9 @@
       "pubid": "2174",
       "icon": "https://cpsense.heiheigame.com/gameicon/036-icon-128.jpg",
       "name": "TwistedCity",
-      "path": "https://cpsense.heiheigame.com/douyou_release/TwistedCity",
+      "path": "https://cpsense.heiheigame.com/douyou_release/TwistedCity/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/TwistedCity"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/TwistedCity/"
     },
     {
       "id": 37,
@@ -360,9 +366,9 @@
       "pubid": "2175",
       "icon": "https://cpsense.heiheigame.com/gameicon/037-icon-128.jpg",
       "name": "SuperStack",
-      "path": "https://cpsense.heiheigame.com/douyou_release/SuperStack",
+      "path": "https://cpsense.heiheigame.com/douyou_release/SuperStack/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SuperStack"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SuperStack/"
     },
     {
       "id": 38,
@@ -370,9 +376,9 @@
       "pubid": "2176",
       "icon": "https://cpsense.heiheigame.com/gameicon/038-icon-128.jpg",
       "name": "JellyMadness",
-      "path": "https://cpsense.heiheigame.com/douyou_release/JellyMadness",
+      "path": "https://cpsense.heiheigame.com/douyou_release/JellyMadness/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/JellyMadness"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/JellyMadness/"
     },
     {
       "id": 39,
@@ -380,9 +386,9 @@
       "pubid": "2181",
       "icon": "https://cpsense.heiheigame.com/gameicon/039-icon-128.jpg",
       "name": "Gold Mine Strike",
-      "path": "https://cpsense.heiheigame.com/douyou_release/GoldMineStrike",
+      "path": "https://cpsense.heiheigame.com/douyou_release/GoldMineStrike/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/GoldMineStrike"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/GoldMineStrike/"
     },
     {
       "id": 40,
@@ -390,9 +396,9 @@
       "pubid": "2177",
       "icon": "https://cpsense.heiheigame.com/gameicon/040-icon-128.jpg",
       "name": "Brick Duel",
-      "path": "https://cpsense.heiheigame.com/douyou_release/BrickDuel",
+      "path": "https://cpsense.heiheigame.com/douyou_release/BrickDuel/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BrickDuel"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BrickDuel/"
     },
     {
       "id": 41,
@@ -400,9 +406,9 @@
       "pubid": "2178",
       "icon": "https://cpsense.heiheigame.com/gameicon/041-icon-128.jpg",
       "name": "DrawJoust",
-      "path": "https://cpsense.heiheigame.com/douyou_release/DrawJoust",
+      "path": "https://cpsense.heiheigame.com/douyou_release/DrawJoust/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/DrawJoust"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/DrawJoust/"
     },
     {
       "id": 42,
@@ -410,9 +416,9 @@
       "pubid": "2312",
       "icon": "https://cpsense.heiheigame.com/gameicon/042-icon-128.jpg",
       "name": "Zombeta",
-      "path": "https://cpsense.heiheigame.com/douyou_release/Zombeta",
+      "path": "https://cpsense.heiheigame.com/douyou_release/Zombeta/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Zombeta"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Zombeta/"
     },
     {
       "id": 43,
@@ -420,9 +426,9 @@
       "pubid": "2140",
       "icon": "https://cpsense.heiheigame.com/gameicon/044-icon-128.jpg",
       "name": "BubbleShooterPro",
-      "path": "https://cpsense.heiheigame.com/douyou_release/BubbleShooterPro",
+      "path": "https://cpsense.heiheigame.com/douyou_release/BubbleShooterPro/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BubbleShooterPro"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BubbleShooterPro/"
     },
     {
       "id": 44,
@@ -430,9 +436,9 @@
       "pubid": "2180",
       "icon": "https://cpsense.heiheigame.com/gameicon/045-icon-128.jpg",
       "name": "Stick Defenders",
-      "path": "https://cpsense.heiheigame.com/douyou_release/StickDefenders",
+      "path": "https://cpsense.heiheigame.com/douyou_release/StickDefenders/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/StickDefenders"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/StickDefenders/"
     },
     {
       "id": 45,
@@ -440,9 +446,9 @@
       "pubid": "2184",
       "icon": "https://cpsense.heiheigame.com/gameicon/046-icon-128.jpg",
       "name": "Mahjong2",
-      "path": "https://cpsense.heiheigame.com/douyou_release/Mahjong2",
+      "path": "https://cpsense.heiheigame.com/douyou_release/Mahjong2/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Mahjong2"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Mahjong2/"
     },
     {
       "id": 46,
@@ -450,9 +456,9 @@
       "pubid": "2185",
       "icon": "https://cpsense.heiheigame.com/gameicon/047-icon-128.jpg",
       "name": "Up Hill Racing",
-      "path": "https://cpsense.heiheigame.com/douyou_release/UpHillRacing",
+      "path": "https://cpsense.heiheigame.com/douyou_release/UpHillRacing/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/UpHillRacing"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/UpHillRacing/"
     },
     {
       "id": 47,
@@ -460,9 +466,9 @@
       "pubid": "2186",
       "icon": "https://cpsense.heiheigame.com/gameicon/048-icon-128.jpg",
       "name": "Ninja Ranmaru",
-      "path": "https://cpsense.heiheigame.com/douyou_release/NinjaRanmaru",
+      "path": "https://cpsense.heiheigame.com/douyou_release/NinjaRanmaru/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/NinjaRanmaru"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/NinjaRanmaru/"
     },
     {
       "id": 48,
@@ -470,9 +476,9 @@
       "pubid": "2187",
       "icon": "https://cpsense.heiheigame.com/gameicon/049-icon-128.jpg",
       "name": "Light UP",
-      "path": "https://cpsense.heiheigame.com/douyou_release/LightUP",
+      "path": "https://cpsense.heiheigame.com/douyou_release/LightUP/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/LightUP"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/LightUP/"
     },
     {
       "id": 49,
@@ -480,9 +486,9 @@
       "pubid": "2188",
       "icon": "https://cpsense.heiheigame.com/gameicon/050-icon-128.jpg",
       "name": "Basketball Kings",
-      "path": "https://cpsense.heiheigame.com/douyou_release/BasketballKings",
+      "path": "https://cpsense.heiheigame.com/douyou_release/BasketballKings/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BasketballKings"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BasketballKings/"
     },
     {
       "id": 50,
@@ -490,9 +496,9 @@
       "pubid": "2189",
       "icon": "https://cpsense.heiheigame.com/gameicon/051-icon-128.jpg",
       "name": "Basketball Crazy",
-      "path": "https://cpsense.heiheigame.com/douyou_release/BasketballCrazy",
+      "path": "https://cpsense.heiheigame.com/douyou_release/BasketballCrazy/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BasketballCrazy"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BasketballCrazy/"
     },
     {
       "id": 51,
@@ -500,9 +506,9 @@
       "pubid": "2190",
       "icon": "https://cpsense.heiheigame.com/gameicon/052-icon-128.jpg",
       "name": "Cut Dunk",
-      "path": "https://cpsense.heiheigame.com/douyou_release/CutDunk",
+      "path": "https://cpsense.heiheigame.com/douyou_release/CutDunk/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CutDunk"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CutDunk/"
     },
     {
       "id": 52,
@@ -510,9 +516,9 @@
       "pubid": "2191",
       "icon": "https://cpsense.heiheigame.com/gameicon/053-icon-128.jpg",
       "name": "Mini Golf Clash",
-      "path": "https://cpsense.heiheigame.com/douyou_release/MiniGolfClash",
+      "path": "https://cpsense.heiheigame.com/douyou_release/MiniGolfClash/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/MiniGolfClash"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/MiniGolfClash/"
     },
     {
       "id": 53,
@@ -520,9 +526,9 @@
       "pubid": "2192",
       "icon": "https://cpsense.heiheigame.com/gameicon/054-icon-128.jpg",
       "name": "Dunk Shot",
-      "path": "https://cpsense.heiheigame.com/douyou_release/DunkShot",
+      "path": "https://cpsense.heiheigame.com/douyou_release/DunkShot/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/DunkShot"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/DunkShot/"
     },
     {
       "id": 54,
@@ -530,9 +536,9 @@
       "pubid": "2193",
       "icon": "https://cpsense.heiheigame.com/gameicon/055-icon-128.jpg",
       "name": "Stick Fight Combbo",
-      "path": "https://cpsense.heiheigame.com/douyou_release/StickFightCombbo",
+      "path": "https://cpsense.heiheigame.com/douyou_release/StickFightCombbo/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/StickFightCombbo"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/StickFightCombbo/"
     },
     {
       "id": 55,
@@ -540,9 +546,9 @@
       "pubid": "2194",
       "icon": "https://cpsense.heiheigame.com/gameicon/056-icon-128.jpg",
       "name": "SkibidiHeroIO",
-      "path": "https://cpsense.heiheigame.com/douyou_release/SkibidiHeroIO",
+      "path": "https://cpsense.heiheigame.com/douyou_release/SkibidiHeroIO/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SkibidiHeroIO"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SkibidiHeroIO/"
     },
     {
       "id": 56,
@@ -550,9 +556,9 @@
       "pubid": "2195",
       "icon": "https://cpsense.heiheigame.com/gameicon/057-icon-128.jpg",
       "name": "SuperAdventure",
-      "path": "https://cpsense.heiheigame.com/douyou_release/SuperAdventure",
+      "path": "https://cpsense.heiheigame.com/douyou_release/SuperAdventure/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SuperAdventure"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SuperAdventure/"
     },
     {
       "id": 57,
@@ -560,9 +566,9 @@
       "pubid": "2196",
       "icon": "https://cpsense.heiheigame.com/gameicon/058-icon-128.jpg",
       "name": "Battling Zombies",
-      "path": "https://cpsense.heiheigame.com/douyou_release/BattlingZombies",
+      "path": "https://cpsense.heiheigame.com/douyou_release/BattlingZombies/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BattlingZombies"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BattlingZombies/"
     },
     {
       "id": 58,
@@ -570,9 +576,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/059-icon-128.jpg",
       "name": "EI Clasico",
-      "path": "https://cpsense.heiheigame.com/douyou_release/EIClasico",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/EIClasico"
+      "path": "https://cpsense.heiheigame.com/douyou_release/EIClasico/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/EIClasico/"
     },
     {
       "id": 59,
@@ -580,9 +586,9 @@
       "pubid": "2197",
       "icon": "https://cpsense.heiheigame.com/gameicon/060-icon-128.jpg",
       "name": "Parkour Race",
-      "path": "https://cpsense.heiheigame.com/douyou_release/ParkourRace",
+      "path": "https://cpsense.heiheigame.com/douyou_release/ParkourRace/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ParkourRace"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ParkourRace/"
     },
     {
       "id": 60,
@@ -590,9 +596,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/061-icon-128.jpg",
       "name": "Rival Basketball",
-      "path": "https://cpsense.heiheigame.com/douyou_release/RivalBasketball",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/RivalBasketball"
+      "path": "https://cpsense.heiheigame.com/douyou_release/RivalBasketball/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/RivalBasketball/"
     },
     {
       "id": 61,
@@ -600,9 +606,9 @@
       "pubid": "2198",
       "icon": "https://cpsense.heiheigame.com/gameicon/062-icon-128.jpg",
       "name": "Wobbly Boxing",
-      "path": "https://cpsense.heiheigame.com/douyou_release/WobblyBoxing",
+      "path": "https://cpsense.heiheigame.com/douyou_release/WobblyBoxing/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/WobblyBoxing"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/WobblyBoxing/"
     },
     {
       "id": 62,
@@ -610,9 +616,9 @@
       "pubid": "2199",
       "icon": "https://cpsense.heiheigame.com/gameicon/063-icon-128.jpg",
       "name": "Global Hoops",
-      "path": "https://cpsense.heiheigame.com/douyou_release/GlobalHoops",
+      "path": "https://cpsense.heiheigame.com/douyou_release/GlobalHoops/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/GlobalHoops"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/GlobalHoops/"
     },
     {
       "id": 63,
@@ -620,9 +626,9 @@
       "pubid": "2200",
       "icon": "https://cpsense.heiheigame.com/gameicon/064-icon-128.jpg",
       "name": "Bowling3D",
-      "path": "https://cpsense.heiheigame.com/douyou_release/Bowling3D",
+      "path": "https://cpsense.heiheigame.com/douyou_release/Bowling3D/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Bowling3D"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Bowling3D/"
     },
     {
       "id": 64,
@@ -630,9 +636,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/065-icon-128.jpg",
       "name": "Kick Off",
-      "path": "https://cpsense.heiheigame.com/douyou_release/KickOff",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/KickOff"
+      "path": "https://cpsense.heiheigame.com/douyou_release/KickOff/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/KickOff/"
     },
     {
       "id": 65,
@@ -640,9 +646,9 @@
       "pubid": "2233",
       "icon": "https://cpsense.heiheigame.com/gameicon/066-icon-128.jpg",
       "name": "Naruto2",
-      "path": "https://cpsense.heiheigame.com/douyou_release/Naruto2",
+      "path": "https://cpsense.heiheigame.com/douyou_release/Naruto2/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Naruto2"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Naruto2/"
     },
     {
       "id": 66,
@@ -650,9 +656,9 @@
       "pubid": "2201",
       "icon": "https://cpsense.heiheigame.com/gameicon/067-icon-128.jpg",
       "name": "Golf Field",
-      "path": "https://cpsense.heiheigame.com/douyou_release/GolfField",
+      "path": "https://cpsense.heiheigame.com/douyou_release/GolfField/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/GolfField"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/GolfField/"
     },
     {
       "id": 67,
@@ -660,9 +666,9 @@
       "pubid": "2234",
       "icon": "https://cpsense.heiheigame.com/gameicon/068-icon-128.jpg",
       "name": "8 Ball Mania",
-      "path": "https://cpsense.heiheigame.com/douyou_release/8BallMania",
+      "path": "https://cpsense.heiheigame.com/douyou_release/8BallMania/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/8BallMania"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/8BallMania/"
     },
     {
       "id": 68,
@@ -670,9 +676,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/069-icon-128.jpg",
       "name": "Archery3D",
-      "path": "https://cpsense.heiheigame.com/douyou_release/Archery3D",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Archery3D"
+      "path": "https://cpsense.heiheigame.com/douyou_release/Archery3D/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Archery3D/"
     },
     {
       "id": 69,
@@ -680,9 +686,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/070-icon-128.jpg",
       "name": "Rolling Ball",
-      "path": "https://cpsense.heiheigame.com/douyou_release/RollingBall",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/RollingBall"
+      "path": "https://cpsense.heiheigame.com/douyou_release/RollingBall/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/RollingBall/"
     },
     {
       "id": 70,
@@ -690,9 +696,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/071-icon-128.jpg",
       "name": "Solitaire",
-      "path": "https://cpsense.heiheigame.com/douyou_release/Solitaire",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Solitaire"
+      "path": "https://cpsense.heiheigame.com/douyou_release/Solitaire/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Solitaire/"
     },
     {
       "id": 71,
@@ -700,9 +706,9 @@
       "pubid": "2235",
       "icon": "https://cpsense.heiheigame.com/gameicon/072-icon-128.jpg",
       "name": "AlienMerge",
-      "path": "https://cpsense.heiheigame.com/douyou_release/AlienMerge",
+      "path": "https://cpsense.heiheigame.com/douyou_release/AlienMerge/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/AlienMerge"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/AlienMerge/"
     },
     {
       "id": 72,
@@ -710,9 +716,9 @@
       "pubid": "2236",
       "icon": "https://cpsense.heiheigame.com/gameicon/073-icon-128.jpg",
       "name": "Brick Breaker",
-      "path": "https://cpsense.heiheigame.com/douyou_release/BrickBreaker",
+      "path": "https://cpsense.heiheigame.com/douyou_release/BrickBreaker/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BrickBreaker"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BrickBreaker/"
     },
     {
       "id": 73,
@@ -720,9 +726,9 @@
       "pubid": "2237",
       "icon": "https://cpsense.heiheigame.com/gameicon/074-icon-128.jpg",
       "name": "Santa Soosiz",
-      "path": "https://cpsense.heiheigame.com/douyou_release/SantaSoosiz",
+      "path": "https://cpsense.heiheigame.com/douyou_release/SantaSoosiz/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SantaSoosiz"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SantaSoosiz/"
     },
     {
       "id": 74,
@@ -730,9 +736,9 @@
       "pubid": "2238",
       "icon": "https://cpsense.heiheigame.com/gameicon/075-icon-128.jpg",
       "name": "Christmas Sweeper",
-      "path": "https://cpsense.heiheigame.com/douyou_release/ChristmasSweeper",
+      "path": "https://cpsense.heiheigame.com/douyou_release/ChristmasSweeper/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ChristmasSweeper"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ChristmasSweeper/"
     },
     {
       "id": 75,
@@ -740,9 +746,9 @@
       "pubid": "2239",
       "icon": "https://cpsense.heiheigame.com/gameicon/076-icon-128.jpg",
       "name": "JewelChristmasStory",
-      "path": "https://cpsense.heiheigame.com/douyou_release/JewelChristmasStory",
+      "path": "https://cpsense.heiheigame.com/douyou_release/JewelChristmasStory/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/JewelChristmasStory"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/JewelChristmasStory/"
     },
     {
       "id": 76,
@@ -750,9 +756,9 @@
       "pubid": "2240",
       "icon": "https://cpsense.heiheigame.com/gameicon/077-icon-128.jpg",
       "name": "Football KickOff",
-      "path": "https://cpsense.heiheigame.com/douyou_release/FootballKickOff",
+      "path": "https://cpsense.heiheigame.com/douyou_release/FootballKickOff/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/FootballKickOff"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/FootballKickOff/"
     },
     {
       "id": 77,
@@ -760,9 +766,9 @@
       "pubid": "2241",
       "icon": "https://cpsense.heiheigame.com/gameicon/078-icon-128.jpg",
       "name": "RoadFixer",
-      "path": "https://cpsense.heiheigame.com/douyou_release/RoadFixer",
+      "path": "https://cpsense.heiheigame.com/douyou_release/RoadFixer/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/RoadFixer"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/RoadFixer/"
     },
     {
       "id": 78,
@@ -770,9 +776,9 @@
       "pubid": "2243",
       "icon": "https://cpsense.heiheigame.com/gameicon/079-icon-128.jpg",
       "name": "Impulse Ball",
-      "path": "https://cpsense.heiheigame.com/douyou_release/ImpulseBall",
+      "path": "https://cpsense.heiheigame.com/douyou_release/ImpulseBall/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ImpulseBall"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ImpulseBall/"
     },
     {
       "id": 79,
@@ -780,9 +786,9 @@
       "pubid": "2242",
       "icon": "https://cpsense.heiheigame.com/gameicon/080-icon-128.jpg",
       "name": "Fit Cats",
-      "path": "https://cpsense.heiheigame.com/douyou_release/FitCats",
+      "path": "https://cpsense.heiheigame.com/douyou_release/FitCats/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/FitCats"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/FitCats/"
     },
     {
       "id": 80,
@@ -790,9 +796,9 @@
       "pubid": "2244",
       "icon": "https://cpsense.heiheigame.com/gameicon/081-icon-128.jpg",
       "name": "Construction Ramp Jumping",
-      "path": "https://cpsense.heiheigame.com/douyou_release/ConstructionRampJumping",
+      "path": "https://cpsense.heiheigame.com/douyou_release/ConstructionRampJumping/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ConstructionRampJumping"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ConstructionRampJumping/"
     },
     {
       "id": 81,
@@ -800,9 +806,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/082-icon-128.jpg",
       "name": "Miner DungeonDoom",
-      "path": "https://cpsense.heiheigame.com/douyou_release/MinerDungeonDoom",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/MinerDungeonDoom"
+      "path": "https://cpsense.heiheigame.com/douyou_release/MinerDungeonDoom/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/MinerDungeonDoom/"
     },
     {
       "id": 82,
@@ -810,9 +816,9 @@
       "pubid": "2254",
       "icon": "https://cpsense.heiheigame.com/gameicon/083-icon-128.jpg",
       "name": "Boat Rush",
-      "path": "https://cpsense.heiheigame.com/douyou_release/BoatRush",
+      "path": "https://cpsense.heiheigame.com/douyou_release/BoatRush/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BoatRush"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BoatRush/"
     },
     {
       "id": 83,
@@ -820,9 +826,9 @@
       "pubid": "2245",
       "icon": "https://cpsense.heiheigame.com/gameicon/084-icon-128.jpg",
       "name": "The Watermelon",
-      "path": "https://cpsense.heiheigame.com/douyou_release/TheWatermelon",
+      "path": "https://cpsense.heiheigame.com/douyou_release/TheWatermelon/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/TheWatermelon"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/TheWatermelon/"
     },
     {
       "id": 84,
@@ -830,9 +836,9 @@
       "pubid": "2247",
       "icon": "https://cpsense.heiheigame.com/gameicon/085-icon-128.jpg",
       "name": "Zombies Cookies Apocalypse",
-      "path": "https://cpsense.heiheigame.com/douyou_release/ZombiesCookiesApocalypse",
+      "path": "https://cpsense.heiheigame.com/douyou_release/ZombiesCookiesApocalypse/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ZombiesCookiesApocalypse"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ZombiesCookiesApocalypse/"
     },
     {
       "id": 85,
@@ -840,9 +846,9 @@
       "pubid": "2248",
       "icon": "https://cpsense.heiheigame.com/gameicon/086-icon-128.jpg",
       "name": "Save The Monkey",
-      "path": "https://cpsense.heiheigame.com/douyou_release/SaveTheMonkey",
+      "path": "https://cpsense.heiheigame.com/douyou_release/SaveTheMonkey/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SaveTheMonkey"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SaveTheMonkey/"
     },
     {
       "id": 86,
@@ -850,9 +856,9 @@
       "pubid": "2246",
       "icon": "https://cpsense.heiheigame.com/gameicon/087-icon-128.jpg",
       "name": "Clash Of Warriors",
-      "path": "https://cpsense.heiheigame.com/douyou_release/ClashOfWarriors",
+      "path": "https://cpsense.heiheigame.com/douyou_release/ClashOfWarriors/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ClashOfWarriors"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ClashOfWarriors/"
     },
     {
       "id": 87,
@@ -860,9 +866,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/088-icon-128.jpg",
       "name": "Paper Golf",
-      "path": "https://cpsense.heiheigame.com/douyou_release/PaperGolf",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/PaperGolf"
+      "path": "https://cpsense.heiheigame.com/douyou_release/PaperGolf/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/PaperGolf/"
     },
     {
       "id": 88,
@@ -870,9 +876,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/089-icon-128.jpg",
       "name": "Legend  GoblinKing",
-      "path": "https://cpsense.heiheigame.com/douyou_release/LegendGoblinKing",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/LegendGoblinKing"
+      "path": "https://cpsense.heiheigame.com/douyou_release/LegendGoblinKing/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/LegendGoblinKing/"
     },
     {
       "id": 89,
@@ -880,9 +886,9 @@
       "pubid": "2251",
       "icon": "https://cpsense.heiheigame.com/gameicon/090-icon-128.jpg",
       "name": "phonecasediy",
-      "path": "https://cpsense.heiheigame.com/douyou_release/phonecasediy",
+      "path": "https://cpsense.heiheigame.com/douyou_release/phonecasediy/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/phonecasediy"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/phonecasediy/"
     },
     {
       "id": 90,
@@ -890,9 +896,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/091-icon-128.jpg",
       "name": "Romantic Bridal Salon",
-      "path": "https://cpsense.heiheigame.com/douyou_release/RomanticBridalSalon",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/RomanticBridalSalon"
+      "path": "https://cpsense.heiheigame.com/douyou_release/RomanticBridalSalon/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/RomanticBridalSalon/"
     },
     {
       "id": 91,
@@ -900,9 +906,9 @@
       "pubid": "2250",
       "icon": "https://cpsense.heiheigame.com/gameicon/092-icon-128.jpg",
       "name": "Fall Fashion",
-      "path": "https://cpsense.heiheigame.com/douyou_release/FallFashion",
+      "path": "https://cpsense.heiheigame.com/douyou_release/FallFashion/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/FallFashion"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/FallFashion/"
     },
     {
       "id": 92,
@@ -910,9 +916,9 @@
       "pubid": "2252",
       "icon": "https://cpsense.heiheigame.com/gameicon/093-icon-128.jpg",
       "name": "Nail Art",
-      "path": "https://cpsense.heiheigame.com/douyou_release/NailArt",
+      "path": "https://cpsense.heiheigame.com/douyou_release/NailArt/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/NailArt"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/NailArt/"
     },
     {
       "id": 93,
@@ -920,9 +926,9 @@
       "pubid": "2249",
       "icon": "https://cpsense.heiheigame.com/gameicon/094-icon-128.jpg",
       "name": "Cute Doll Dress Up",
-      "path": "https://cpsense.heiheigame.com/douyou_release/CuteDollDressUp",
+      "path": "https://cpsense.heiheigame.com/douyou_release/CuteDollDressUp/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CuteDollDressUp"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CuteDollDressUp/"
     },
     {
       "id": 94,
@@ -930,9 +936,9 @@
       "pubid": "2255",
       "icon": "https://cpsense.heiheigame.com/gameicon/095-icon-128.jpg",
       "name": "Mahjong Jong",
-      "path": "https://cpsense.heiheigame.com/douyou_release/MahjongJong",
+      "path": "https://cpsense.heiheigame.com/douyou_release/MahjongJong/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/MahjongJong"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/MahjongJong/"
     },
     {
       "id": 95,
@@ -940,9 +946,9 @@
       "pubid": "2257",
       "icon": "https://cpsense.heiheigame.com/gameicon/096-icon-128.jpg",
       "name": "Block Movers",
-      "path": "https://cpsense.heiheigame.com/douyou_release/BlockMovers",
+      "path": "https://cpsense.heiheigame.com/douyou_release/BlockMovers/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BlockMovers"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BlockMovers/"
     },
     {
       "id": 96,
@@ -950,9 +956,9 @@
       "pubid": "2256",
       "icon": "https://cpsense.heiheigame.com/gameicon/097-icon-128.jpg",
       "name": "Jewel Curse",
-      "path": "https://cpsense.heiheigame.com/douyou_release/JewelCurse",
+      "path": "https://cpsense.heiheigame.com/douyou_release/JewelCurse/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/JewelCurse"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/JewelCurse/"
     },
     {
       "id": 97,
@@ -960,9 +966,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/098-icon-128.jpg",
       "name": "Fun BubbleShooter",
-      "path": "https://cpsense.heiheigame.com/douyou_release/FunBubbleShooter",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/FunBubbleShooter"
+      "path": "https://cpsense.heiheigame.com/douyou_release/FunBubbleShooter/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/FunBubbleShooter/"
     },
     {
       "id": 98,
@@ -970,9 +976,9 @@
       "pubid": "2253",
       "icon": "https://cpsense.heiheigame.com/gameicon/099-icon-128.jpg",
       "name": "Fun Sudoku",
-      "path": "https://cpsense.heiheigame.com/douyou_release/FunSudoku",
+      "path": "https://cpsense.heiheigame.com/douyou_release/FunSudoku/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/FunSudoku"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/FunSudoku/"
     },
     {
       "id": 99,
@@ -980,9 +986,9 @@
       "pubid": "2258",
       "icon": "https://cpsense.heiheigame.com/gameicon/100-icon-128.jpg",
       "name": "Super Sticky Stacker",
-      "path": "https://cpsense.heiheigame.com/douyou_release/SuperStickyStacker",
+      "path": "https://cpsense.heiheigame.com/douyou_release/SuperStickyStacker/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SuperStickyStacker"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SuperStickyStacker/"
     },
     {
       "id": 100,
@@ -990,9 +996,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/101-icon-128.jpg",
       "name": "Sudoku Deluxe",
-      "path": "https://cpsense.heiheigame.com/douyou_release/SudokuDeluxe",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SudokuDeluxe"
+      "path": "https://cpsense.heiheigame.com/douyou_release/SudokuDeluxe/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SudokuDeluxe/"
     },
     {
       "id": 101,
@@ -1000,9 +1006,9 @@
       "pubid": "2272",
       "icon": "https://cpsense.heiheigame.com/gameicon/102-icon-128.jpg",
       "name": "Brain IQ Challenge",
-      "path": "https://cpsense.heiheigame.com/douyou_release/BrainIQChallenge",
+      "path": "https://cpsense.heiheigame.com/douyou_release/BrainIQChallenge/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BrainIQChallenge"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BrainIQChallenge/"
     },
     {
       "id": 102,
@@ -1010,9 +1016,9 @@
       "pubid": "2261",
       "icon": "https://cpsense.heiheigame.com/gameicon/103-icon-128.jpg",
       "name": "Solitaire2",
-      "path": "https://cpsense.heiheigame.com/douyou_release/Solitaire2",
+      "path": "https://cpsense.heiheigame.com/douyou_release/Solitaire2/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Solitaire2"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Solitaire2/"
     },
     {
       "id": 103,
@@ -1020,9 +1026,9 @@
       "pubid": "2259",
       "icon": "https://cpsense.heiheigame.com/gameicon/104-icon-128.jpg",
       "name": "Digging Miners",
-      "path": "https://cpsense.heiheigame.com/douyou_release/DiggingMiners",
+      "path": "https://cpsense.heiheigame.com/douyou_release/DiggingMiners/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/DiggingMiners"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/DiggingMiners/"
     },
     {
       "id": 104,
@@ -1030,9 +1036,9 @@
       "pubid": "2260",
       "icon": "https://cpsense.heiheigame.com/gameicon/105-icon-128.jpg",
       "name": "Candy Land",
-      "path": "https://cpsense.heiheigame.com/douyou_release/CandyLand",
+      "path": "https://cpsense.heiheigame.com/douyou_release/CandyLand/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CandyLand"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CandyLand/"
     },
     {
       "id": 105,
@@ -1040,9 +1046,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/106-icon-128.jpg",
       "name": "BubbleShooterCandy",
-      "path": "https://cpsense.heiheigame.com/douyou_release/BubbleShooterCandy",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BubbleShooterCandy"
+      "path": "https://cpsense.heiheigame.com/douyou_release/BubbleShooterCandy/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BubbleShooterCandy/"
     },
     {
       "id": 106,
@@ -1050,9 +1056,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/107-icon-128.jpg",
       "name": "ParkingTraining",
-      "path": "https://cpsense.heiheigame.com/douyou_release/ParkingTraining",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ParkingTraining"
+      "path": "https://cpsense.heiheigame.com/douyou_release/ParkingTraining/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ParkingTraining/"
     },
     {
       "id": 107,
@@ -1060,9 +1066,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/108-icon-128.jpg",
       "name": "Shuigo",
-      "path": "https://cpsense.heiheigame.com/douyou_release/Shuigo",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Shuigo"
+      "path": "https://cpsense.heiheigame.com/douyou_release/Shuigo/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Shuigo/"
     },
     {
       "id": 108,
@@ -1070,9 +1076,9 @@
       "pubid": "2266",
       "icon": "https://cpsense.heiheigame.com/gameicon/109-icon-128.jpg",
       "name": "ParkALot",
-      "path": "https://cpsense.heiheigame.com/douyou_release/ParkALot",
+      "path": "https://cpsense.heiheigame.com/douyou_release/ParkALot/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ParkALot"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ParkALot/"
     },
     {
       "id": 109,
@@ -1080,9 +1086,9 @@
       "pubid": "2267",
       "icon": "https://cpsense.heiheigame.com/gameicon/110-icon-128.jpg",
       "name": "JellyMadness2",
-      "path": "https://cpsense.heiheigame.com/douyou_release/JellyMadness2",
+      "path": "https://cpsense.heiheigame.com/douyou_release/JellyMadness2/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/JellyMadness2"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/JellyMadness2/"
     },
     {
       "id": 110,
@@ -1090,9 +1096,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/111-icon-128.jpg",
       "name": "LittleFarm",
-      "path": "https://cpsense.heiheigame.com/douyou_release/LittleFarm",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/LittleFarm"
+      "path": "https://cpsense.heiheigame.com/douyou_release/LittleFarm/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/LittleFarm/"
     },
     {
       "id": 111,
@@ -1100,9 +1106,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/112-icon-128.jpg",
       "name": "StreetCricket",
-      "path": "https://cpsense.heiheigame.com/douyou_release/StreetCricket",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/StreetCricket"
+      "path": "https://cpsense.heiheigame.com/douyou_release/StreetCricket/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/StreetCricket/"
     },
     {
       "id": 112,
@@ -1110,9 +1116,9 @@
       "pubid": "2262",
       "icon": "https://cpsense.heiheigame.com/gameicon/113-icon-128.jpg",
       "name": "cricketcup",
-      "path": "https://cpsense.heiheigame.com/douyou_release/cricketcup",
+      "path": "https://cpsense.heiheigame.com/douyou_release/cricketcup/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/cricketcup"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/cricketcup/"
     },
     {
       "id": 113,
@@ -1120,9 +1126,9 @@
       "pubid": "2263",
       "icon": "https://cpsense.heiheigame.com/gameicon/114-icon-128.jpg",
       "name": "CPLTournament",
-      "path": "https://cpsense.heiheigame.com/douyou_release/CPLTournament",
+      "path": "https://cpsense.heiheigame.com/douyou_release/CPLTournament/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CPLTournament"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CPLTournament/"
     },
     {
       "id": 114,
@@ -1130,9 +1136,9 @@
       "pubid": "2264",
       "icon": "https://cpsense.heiheigame.com/gameicon/115-icon-128.jpg",
       "name": "CricketLegends",
-      "path": "https://cpsense.heiheigame.com/douyou_release/CricketLegends",
+      "path": "https://cpsense.heiheigame.com/douyou_release/CricketLegends/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CricketLegends"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CricketLegends/"
     },
     {
       "id": 115,
@@ -1140,9 +1146,9 @@
       "pubid": "2265",
       "icon": "https://cpsense.heiheigame.com/gameicon/116-icon-128.jpg",
       "name": "CricketWorldCup",
-      "path": "https://cpsense.heiheigame.com/douyou_release/CricketWorldCup",
+      "path": "https://cpsense.heiheigame.com/douyou_release/CricketWorldCup/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CricketWorldCup"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CricketWorldCup/"
     },
     {
       "id": 116,
@@ -1150,9 +1156,9 @@
       "pubid": "2268",
       "icon": "https://cpsense.heiheigame.com/gameicon/117-icon-128.jpg",
       "name": "Maya",
-      "path": "https://cpsense.heiheigame.com/douyou_release/Maya",
+      "path": "https://cpsense.heiheigame.com/douyou_release/Maya/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Maya"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Maya/"
     },
     {
       "id": 117,
@@ -1160,9 +1166,9 @@
       "pubid": "2269",
       "icon": "https://cpsense.heiheigame.com/gameicon/118-icon-128.jpg",
       "name": "MusicRoad",
-      "path": "https://cpsense.heiheigame.com/douyou_release/MusicRoad",
+      "path": "https://cpsense.heiheigame.com/douyou_release/MusicRoad/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/MusicRoad"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/MusicRoad/"
     },
     {
       "id": 118,
@@ -1170,9 +1176,9 @@
       "pubid": "2270",
       "icon": "https://cpsense.heiheigame.com/gameicon/119-icon-128.jpg",
       "name": "AdamandEve1",
-      "path": "https://cpsense.heiheigame.com/douyou_release/AdamandEve1",
+      "path": "https://cpsense.heiheigame.com/douyou_release/AdamandEve1/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/AdamandEve1"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/AdamandEve1/"
     },
     {
       "id": 119,
@@ -1180,9 +1186,9 @@
       "pubid": "2271",
       "icon": "https://cpsense.heiheigame.com/gameicon/120-icon-128.jpg",
       "name": "BeatLine",
-      "path": "https://cpsense.heiheigame.com/douyou_release/BeatLine",
+      "path": "https://cpsense.heiheigame.com/douyou_release/BeatLine/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BeatLine"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BeatLine/"
     },
     {
       "id": 120,
@@ -1190,9 +1196,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/121-icon-128.jpg",
       "name": "PatternLink",
-      "path": "https://cpsense.heiheigame.com/douyou_release/PatternLink",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/PatternLink"
+      "path": "https://cpsense.heiheigame.com/douyou_release/PatternLink/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/PatternLink/"
     },
     {
       "id": 121,
@@ -1200,9 +1206,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/122-icon-128.jpg",
       "name": "BacktoCandyland",
-      "path": "https://cpsense.heiheigame.com/douyou_release/BacktoCandyland",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BacktoCandyland"
+      "path": "https://cpsense.heiheigame.com/douyou_release/BacktoCandyland/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BacktoCandyland/"
     },
     {
       "id": 122,
@@ -1210,9 +1216,9 @@
       "pubid": "2273",
       "icon": "https://cpsense.heiheigame.com/gameicon/123-icon-128.jpg",
       "name": "HappySnakes",
-      "path": "https://cpsense.heiheigame.com/douyou_release/HappySnakes",
+      "path": "https://cpsense.heiheigame.com/douyou_release/HappySnakes/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/HappySnakes"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/HappySnakes/"
     },
     {
       "id": 123,
@@ -1220,9 +1226,9 @@
       "pubid": "2274",
       "icon": "https://cpsense.heiheigame.com/gameicon/124-icon-128.jpg",
       "name": "SolitaireGold",
-      "path": "https://cpsense.heiheigame.com/douyou_release/SolitaireGold",
+      "path": "https://cpsense.heiheigame.com/douyou_release/SolitaireGold/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SolitaireGold"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SolitaireGold/"
     },
     {
       "id": 124,
@@ -1230,9 +1236,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/125-icon-128.jpg",
       "name": "ValentinesDay",
-      "path": "https://cpsense.heiheigame.com/douyou_release/ValentinesDay",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ValentinesDay"
+      "path": "https://cpsense.heiheigame.com/douyou_release/ValentinesDay/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ValentinesDay/"
     },
     {
       "id": 125,
@@ -1240,9 +1246,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/126-icon-128.jpg",
       "name": "AdamandEve5",
-      "path": "https://cpsense.heiheigame.com/douyou_release/AdamandEve5",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/AdamandEve5"
+      "path": "https://cpsense.heiheigame.com/douyou_release/AdamandEve5/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/AdamandEve5/"
     },
     {
       "id": 126,
@@ -1250,9 +1256,9 @@
       "pubid": "2275",
       "icon": "https://cpsense.heiheigame.com/gameicon/127-icon-128.jpg",
       "name": "SpaceBlazeDX",
-      "path": "https://cpsense.heiheigame.com/douyou_release/SpaceBlazeDX",
+      "path": "https://cpsense.heiheigame.com/douyou_release/SpaceBlazeDX/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SpaceBlazeDX"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SpaceBlazeDX/"
     },
     {
       "id": 127,
@@ -1260,9 +1266,9 @@
       "pubid": "2276",
       "icon": "https://cpsense.heiheigame.com/gameicon/128-icon-128.jpg",
       "name": "CarEatsCar2",
-      "path": "https://cpsense.heiheigame.com/douyou_release/CarEatsCar2",
+      "path": "https://cpsense.heiheigame.com/douyou_release/CarEatsCar2/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CarEatsCar2"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CarEatsCar2/"
     },
     {
       "id": 128,
@@ -1270,9 +1276,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/129-icon-128.jpg",
       "name": "ExtremeBikers",
-      "path": "https://cpsense.heiheigame.com/douyou_release/ExtremeBikers",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ExtremeBikers"
+      "path": "https://cpsense.heiheigame.com/douyou_release/ExtremeBikers/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ExtremeBikers/"
     },
     {
       "id": 129,
@@ -1280,9 +1286,9 @@
       "pubid": "2277",
       "icon": "https://cpsense.heiheigame.com/gameicon/130-icon-128.jpg",
       "name": "AmigoPancho2",
-      "path": "https://cpsense.heiheigame.com/douyou_release/AmigoPancho2",
+      "path": "https://cpsense.heiheigame.com/douyou_release/AmigoPancho2/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/AmigoPancho2"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/AmigoPancho2/"
     },
     {
       "id": 130,
@@ -1290,9 +1296,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/131-icon-128.jpg",
       "name": "SpyCar",
-      "path": "https://cpsense.heiheigame.com/douyou_release/SpyCar",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SpyCar"
+      "path": "https://cpsense.heiheigame.com/douyou_release/SpyCar/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SpyCar/"
     },
     {
       "id": 131,
@@ -1300,9 +1306,9 @@
       "pubid": "2278",
       "icon": "https://cpsense.heiheigame.com/gameicon/132-icon-128.jpg",
       "name": "HeroTowerWar",
-      "path": "https://cpsense.heiheigame.com/douyou_release/HeroTowerWar",
+      "path": "https://cpsense.heiheigame.com/douyou_release/HeroTowerWar/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/HeroTowerWar"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/HeroTowerWar/"
     },
     {
       "id": 132,
@@ -1310,9 +1316,9 @@
       "pubid": "2279",
       "icon": "https://cpsense.heiheigame.com/gameicon/133-icon-128.jpg",
       "name": "Shape-shifting",
-      "path": "https://cpsense.heiheigame.com/douyou_release/Shape-shifting",
+      "path": "https://cpsense.heiheigame.com/douyou_release/Shape-shifting/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Shape-shifting"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Shape-shifting/"
     },
     {
       "id": 133,
@@ -1320,9 +1326,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/134-icon-128.jpg",
       "name": "RoboRacing",
-      "path": "https://cpsense.heiheigame.com/douyou_release/RoboRacing",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/RoboRacing"
+      "path": "https://cpsense.heiheigame.com/douyou_release/RoboRacing/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/RoboRacing/"
     },
     {
       "id": 134,
@@ -1330,9 +1336,9 @@
       "pubid": "2282",
       "icon": "https://cpsense.heiheigame.com/gameicon/135-icon-128.jpg",
       "name": "AnimalDayCare",
-      "path": "https://cpsense.heiheigame.com/douyou_release/AnimalDayCare",
+      "path": "https://cpsense.heiheigame.com/douyou_release/AnimalDayCare/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/AnimalDayCare"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/AnimalDayCare/"
     },
     {
       "id": 135,
@@ -1340,9 +1346,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/136-icon-128.jpg",
       "name": "Flying Another World",
-      "path": "https://cpsense.heiheigame.com/douyou_release/FlyingAnotherWorld",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/FlyingAnotherWorld"
+      "path": "https://cpsense.heiheigame.com/douyou_release/FlyingAnotherWorld/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/FlyingAnotherWorld/"
     },
     {
       "id": 136,
@@ -1350,9 +1356,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/137-icon-128.jpg",
       "name": "KrisMasTiles",
-      "path": "https://cpsense.heiheigame.com/douyou_release/KrisMasTiles",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/KrisMasTiles"
+      "path": "https://cpsense.heiheigame.com/douyou_release/KrisMasTiles/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/KrisMasTiles/"
     },
     {
       "id": 137,
@@ -1360,9 +1366,9 @@
       "pubid": "2280",
       "icon": "https://cpsense.heiheigame.com/gameicon/138-icon-128.jpg",
       "name": "Transmorpher",
-      "path": "https://cpsense.heiheigame.com/douyou_release/Transmorpher",
+      "path": "https://cpsense.heiheigame.com/douyou_release/Transmorpher/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Transmorpher"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Transmorpher/"
     },
     {
       "id": 138,
@@ -1370,9 +1376,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/139-icon-128.jpg",
       "name": "Grindcraft Remastered",
-      "path": "https://cpsense.heiheigame.com/douyou_release/GrindcraftRemastered",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/GrindcraftRemastered"
+      "path": "https://cpsense.heiheigame.com/douyou_release/GrindcraftRemastered/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/GrindcraftRemastered/"
     },
     {
       "id": 139,
@@ -1380,9 +1386,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/140-icon-128.jpg",
       "name": "Fantasy Story",
-      "path": "https://cpsense.heiheigame.com/douyou_release/FantasyStory",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/FantasyStory"
+      "path": "https://cpsense.heiheigame.com/douyou_release/FantasyStory/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/FantasyStory/"
     },
     {
       "id": 140,
@@ -1390,9 +1396,9 @@
       "pubid": "2284",
       "icon": "https://cpsense.heiheigame.com/gameicon/141-icon-128.jpg",
       "name": "CrystalConnect",
-      "path": "https://cpsense.heiheigame.com/douyou_release/CrystalConnect",
+      "path": "https://cpsense.heiheigame.com/douyou_release/CrystalConnect/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CrystalConnect"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CrystalConnect/"
     },
     {
       "id": 141,
@@ -1400,9 +1406,9 @@
       "pubid": "2281",
       "icon": "https://cpsense.heiheigame.com/gameicon/142-icon-128.jpg",
       "name": "Transmorpher3",
-      "path": "https://cpsense.heiheigame.com/douyou_release/Transmorpher3",
+      "path": "https://cpsense.heiheigame.com/douyou_release/Transmorpher3/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Transmorpher3"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Transmorpher3/"
     },
     {
       "id": 142,
@@ -1410,9 +1416,9 @@
       "pubid": "2283",
       "icon": "https://cpsense.heiheigame.com/gameicon/143-icon-128.jpg",
       "name": "ShoppingMallTycoon",
-      "path": "https://cpsense.heiheigame.com/douyou_release/ShoppingMallTycoon",
+      "path": "https://cpsense.heiheigame.com/douyou_release/ShoppingMallTycoon/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ShoppingMallTycoon"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ShoppingMallTycoon/"
     },
     {
       "id": 143,
@@ -1420,9 +1426,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/144-icon-128.jpg",
       "name": "GoRobots2",
-      "path": "https://cpsense.heiheigame.com/douyou_release/GoRobots2",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/GoRobots2"
+      "path": "https://cpsense.heiheigame.com/douyou_release/GoRobots2/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/GoRobots2/"
     },
     {
       "id": 144,
@@ -1430,9 +1436,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/145-icon-128.jpg",
       "name": "wheely8",
-      "path": "https://cpsense.heiheigame.com/douyou_release/wheely8",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/wheely8"
+      "path": "https://cpsense.heiheigame.com/douyou_release/wheely8/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/wheely8/"
     },
     {
       "id": 145,
@@ -1440,9 +1446,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/146-icon-128.jpg",
       "name": "space blaze",
-      "path": "https://cpsense.heiheigame.com/douyou_release/spaceblaze",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/spaceblaze"
+      "path": "https://cpsense.heiheigame.com/douyou_release/spaceblaze/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/spaceblaze/"
     },
     {
       "id": 146,
@@ -1450,9 +1456,9 @@
       "pubid": "2285",
       "icon": "https://cpsense.heiheigame.com/gameicon/147-icon-128.jpg",
       "name": "WorldFootall",
-      "path": "https://cpsense.heiheigame.com/douyou_release/WorldFootall",
+      "path": "https://cpsense.heiheigame.com/douyou_release/WorldFootall/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/WorldFootall"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/WorldFootall/"
     },
     {
       "id": 147,
@@ -1460,9 +1466,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/148-icon-128.jpg",
       "name": "PlumberGame",
-      "path": "https://cpsense.heiheigame.com/douyou_release/PlumberGame",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/PlumberGame"
+      "path": "https://cpsense.heiheigame.com/douyou_release/PlumberGame/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/PlumberGame/"
     },
     {
       "id": 148,
@@ -1470,9 +1476,9 @@
       "pubid": "2286",
       "icon": "https://cpsense.heiheigame.com/gameicon/149-icon-128.jpg",
       "name": "FlyOrDie",
-      "path": "https://cpsense.heiheigame.com/douyou_release/FlyOrDie",
+      "path": "https://cpsense.heiheigame.com/douyou_release/FlyOrDie/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/FlyOrDie"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/FlyOrDie/"
     },
     {
       "id": 149,
@@ -1480,9 +1486,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/150-icon-128.jpg",
       "name": "Road Of Fury",
-      "path": "https://cpsense.heiheigame.com/douyou_release/RoadOfFury",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/RoadOfFury"
+      "path": "https://cpsense.heiheigame.com/douyou_release/RoadOfFury/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/RoadOfFury/"
     },
     {
       "id": 150,
@@ -1490,9 +1496,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/151-icon-128.jpg",
       "name": "Kitty Quiz",
-      "path": "https://cpsense.heiheigame.com/douyou_release/KittyQuiz",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/KittyQuiz"
+      "path": "https://cpsense.heiheigame.com/douyou_release/KittyQuiz/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/KittyQuiz/"
     },
     {
       "id": 151,
@@ -1500,9 +1506,9 @@
       "pubid": "2287",
       "icon": "https://cpsense.heiheigame.com/gameicon/152-icon-128.jpg",
       "name": "SLIDE STONE",
-      "path": "https://cpsense.heiheigame.com/douyou_release/SLIDESTONE",
+      "path": "https://cpsense.heiheigame.com/douyou_release/SLIDESTONE/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SLIDESTONE"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SLIDESTONE/"
     },
     {
       "id": 152,
@@ -1510,9 +1516,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/153-icon-128.jpg",
       "name": "Moving Up",
-      "path": "https://cpsense.heiheigame.com/douyou_release/MovingUp",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/MovingUp"
+      "path": "https://cpsense.heiheigame.com/douyou_release/MovingUp/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/MovingUp/"
     },
     {
       "id": 153,
@@ -1520,9 +1526,9 @@
       "pubid": "2289",
       "icon": "https://cpsense.heiheigame.com/gameicon/154-icon-128.jpg",
       "name": "Garage Master",
-      "path": "https://cpsense.heiheigame.com/douyou_release/GarageMaster",
+      "path": "https://cpsense.heiheigame.com/douyou_release/GarageMaster/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/GarageMaster"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/GarageMaster/"
     },
     {
       "id": 154,
@@ -1530,9 +1536,9 @@
       "pubid": "2288",
       "icon": "https://cpsense.heiheigame.com/gameicon/155-icon-128.jpg",
       "name": "RoyalRush",
-      "path": "https://cpsense.heiheigame.com/douyou_release/RoyalRush",
+      "path": "https://cpsense.heiheigame.com/douyou_release/RoyalRush/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/RoyalRush"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/RoyalRush/"
     },
     {
       "id": 155,
@@ -1540,9 +1546,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/156-icon-128.jpg",
       "name": "ShapeShiftRun",
-      "path": "https://cpsense.heiheigame.com/douyou_release/ShapeShiftRun",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ShapeShiftRun"
+      "path": "https://cpsense.heiheigame.com/douyou_release/ShapeShiftRun/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ShapeShiftRun/"
     },
     {
       "id": 156,
@@ -1550,9 +1556,9 @@
       "pubid": "2290",
       "icon": "https://cpsense.heiheigame.com/gameicon/157-icon-128.jpg",
       "name": "Sea Match",
-      "path": "https://cpsense.heiheigame.com/douyou_release/SeaMatch",
+      "path": "https://cpsense.heiheigame.com/douyou_release/SeaMatch/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SeaMatch"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SeaMatch/"
     },
     {
       "id": 157,
@@ -1560,9 +1566,9 @@
       "pubid": "2291",
       "icon": "https://cpsense.heiheigame.com/gameicon/158-icon-128.jpg",
       "name": "Fun Puzzle",
-      "path": "https://cpsense.heiheigame.com/douyou_release/FunPuzzle",
+      "path": "https://cpsense.heiheigame.com/douyou_release/FunPuzzle/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/FunPuzzle"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/FunPuzzle/"
     },
     {
       "id": 158,
@@ -1570,9 +1576,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/159-icon-128.jpg",
       "name": "Shape Matcher",
-      "path": "https://cpsense.heiheigame.com/douyou_release/ShapeMatcher",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ShapeMatcher"
+      "path": "https://cpsense.heiheigame.com/douyou_release/ShapeMatcher/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ShapeMatcher/"
     },
     {
       "id": 159,
@@ -1580,9 +1586,9 @@
       "pubid": "2292",
       "icon": "https://cpsense.heiheigame.com/gameicon/160-icon-128.jpg",
       "name": "BrickZ",
-      "path": "https://cpsense.heiheigame.com/douyou_release/BrickZ",
+      "path": "https://cpsense.heiheigame.com/douyou_release/BrickZ/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BrickZ"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BrickZ/"
     },
     {
       "id": 160,
@@ -1590,9 +1596,9 @@
       "pubid": "2293",
       "icon": "https://cpsense.heiheigame.com/gameicon/161-icon-128.jpg",
       "name": "Merge Shooter",
-      "path": "https://cpsense.heiheigame.com/douyou_release/MergeShooter",
+      "path": "https://cpsense.heiheigame.com/douyou_release/MergeShooter/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/MergeShooter"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/MergeShooter/"
     },
     {
       "id": 161,
@@ -1600,9 +1606,9 @@
       "pubid": "2294",
       "icon": "https://cpsense.heiheigame.com/gameicon/162-icon-128.jpg",
       "name": "Candy Shop Merge",
-      "path": "https://cpsense.heiheigame.com/douyou_release/CandyShopMerge",
+      "path": "https://cpsense.heiheigame.com/douyou_release/CandyShopMerge/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CandyShopMerge"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CandyShopMerge/"
     },
     {
       "id": 162,
@@ -1610,9 +1616,9 @@
       "pubid": "2298",
       "icon": "https://cpsense.heiheigame.com/gameicon/163-icon-128.jpg",
       "name": "99Balls",
-      "path": "https://cpsense.heiheigame.com/douyou_release/99Balls",
+      "path": "https://cpsense.heiheigame.com/douyou_release/99Balls/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/99Balls"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/99Balls/"
     },
     {
       "id": 163,
@@ -1620,9 +1626,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/164-icon-128.jpg",
       "name": "Moorhunh PowerGoal",
-      "path": "https://cpsense.heiheigame.com/douyou_release/MoorhunhPowerGoal",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/MoorhunhPowerGoal"
+      "path": "https://cpsense.heiheigame.com/douyou_release/MoorhunhPowerGoal/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/MoorhunhPowerGoal/"
     },
     {
       "id": 164,
@@ -1630,9 +1636,9 @@
       "pubid": "2295",
       "icon": "https://cpsense.heiheigame.com/gameicon/165-icon-128.jpg",
       "name": "NeonRider",
-      "path": "https://cpsense.heiheigame.com/douyou_release/NeonRider",
+      "path": "https://cpsense.heiheigame.com/douyou_release/NeonRider/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/NeonRider"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/NeonRider/"
     },
     {
       "id": 165,
@@ -1640,9 +1646,9 @@
       "pubid": "2296",
       "icon": "https://cpsense.heiheigame.com/gameicon/166-icon-128.jpg",
       "name": "Mystic Sea Treasures",
-      "path": "https://cpsense.heiheigame.com/douyou_release/MysticSeaTreasures",
+      "path": "https://cpsense.heiheigame.com/douyou_release/MysticSeaTreasures/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/MysticSeaTreasures"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/MysticSeaTreasures/"
     },
     {
       "id": 166,
@@ -1650,9 +1656,9 @@
       "pubid": "2297",
       "icon": "https://cpsense.heiheigame.com/gameicon/167-icon-128.jpg",
       "name": "Duo",
-      "path": "https://cpsense.heiheigame.com/douyou_release/Duo",
+      "path": "https://cpsense.heiheigame.com/douyou_release/Duo/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Duo"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Duo/"
     },
     {
       "id": 167,
@@ -1660,9 +1666,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/168-icon-128.jpg",
       "name": "Turk Cell",
-      "path": "https://cpsense.heiheigame.com/douyou_release/TurkCell",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/TurkCell"
+      "path": "https://cpsense.heiheigame.com/douyou_release/TurkCell/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/TurkCell/"
     },
     {
       "id": 168,
@@ -1670,9 +1676,9 @@
       "pubid": "2301",
       "icon": "https://cpsense.heiheigame.com/gameicon/169-icon-128.jpg",
       "name": "Flames Fortune",
-      "path": "https://cpsense.heiheigame.com/douyou_release/FlamesFortune",
+      "path": "https://cpsense.heiheigame.com/douyou_release/FlamesFortune/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/FlamesFortune"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/FlamesFortune/"
     },
     {
       "id": 169,
@@ -1680,9 +1686,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/170-icon-128.jpg",
       "name": "Memory Match",
-      "path": "https://cpsense.heiheigame.com/douyou_release/MemoryMatch",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/MemoryMatch"
+      "path": "https://cpsense.heiheigame.com/douyou_release/MemoryMatch/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/MemoryMatch/"
     },
     {
       "id": 170,
@@ -1690,9 +1696,9 @@
       "pubid": "2299",
       "icon": "https://cpsense.heiheigame.com/gameicon/171-icon-128.jpg",
       "name": "Viking Pub",
-      "path": "https://cpsense.heiheigame.com/douyou_release/VikingPub",
+      "path": "https://cpsense.heiheigame.com/douyou_release/VikingPub/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/VikingPub"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/VikingPub/"
     },
     {
       "id": 171,
@@ -1700,9 +1706,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/172-icon-128.jpg",
       "name": "Whack Them All",
-      "path": "https://cpsense.heiheigame.com/douyou_release/WhackThemAll",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/WhackThemAll"
+      "path": "https://cpsense.heiheigame.com/douyou_release/WhackThemAll/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/WhackThemAll/"
     },
     {
       "id": 172,
@@ -1710,9 +1716,9 @@
       "pubid": "2300",
       "icon": "https://cpsense.heiheigame.com/gameicon/173-icon-128.jpg",
       "name": "Dice Merge",
-      "path": "https://cpsense.heiheigame.com/douyou_release/DiceMerge",
+      "path": "https://cpsense.heiheigame.com/douyou_release/DiceMerge/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/DiceMerge"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/DiceMerge/"
     },
     {
       "id": 173,
@@ -1720,9 +1726,9 @@
       "pubid": "2304",
       "icon": "https://cpsense.heiheigame.com/gameicon/174-icon-128.jpg",
       "name": "Pet Olympics",
-      "path": "https://cpsense.heiheigame.com/douyou_release/PetOlympics",
+      "path": "https://cpsense.heiheigame.com/douyou_release/PetOlympics/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/PetOlympics"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/PetOlympics/"
     },
     {
       "id": 174,
@@ -1730,9 +1736,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/175-icon-128.jpg",
       "name": "Princess Pet Studio",
-      "path": "https://cpsense.heiheigame.com/douyou_release/PrincessPetStudio",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/PrincessPetStudio"
+      "path": "https://cpsense.heiheigame.com/douyou_release/PrincessPetStudio/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/PrincessPetStudio/"
     },
     {
       "id": 175,
@@ -1740,9 +1746,9 @@
       "pubid": "2306",
       "icon": "https://cpsense.heiheigame.com/gameicon/176-icon-128.jpg",
       "name": "Medieval Defense Z",
-      "path": "https://cpsense.heiheigame.com/douyou_release/MedievalDefenseZ",
+      "path": "https://cpsense.heiheigame.com/douyou_release/MedievalDefenseZ/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/MedievalDefenseZ"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/MedievalDefenseZ/"
     },
     {
       "id": 176,
@@ -1750,9 +1756,9 @@
       "pubid": "2305",
       "icon": "https://cpsense.heiheigame.com/gameicon/177-icon-128.jpg",
       "name": "SURROUND THE LEPRECHAUN",
-      "path": "https://cpsense.heiheigame.com/douyou_release/SURROUNDTHELEPRECHAUN",
+      "path": "https://cpsense.heiheigame.com/douyou_release/SURROUNDTHELEPRECHAUN/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SURROUNDTHELEPRECHAUN"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SURROUNDTHELEPRECHAUN/"
     },
     {
       "id": 177,
@@ -1760,9 +1766,9 @@
       "pubid": "2303",
       "icon": "https://cpsense.heiheigame.com/gameicon/178-icon-128.jpg",
       "name": "Gem Stacker",
-      "path": "https://cpsense.heiheigame.com/douyou_release/GemStacker",
+      "path": "https://cpsense.heiheigame.com/douyou_release/GemStacker/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/GemStacker"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/GemStacker/"
     },
     {
       "id": 178,
@@ -1770,9 +1776,9 @@
       "pubid": "2307",
       "icon": "https://cpsense.heiheigame.com/gameicon/179-icon-128.jpg",
       "name": "Screw Puzzle",
-      "path": "https://cpsense.heiheigame.com/douyou_release/ScrewPuzzle",
+      "path": "https://cpsense.heiheigame.com/douyou_release/ScrewPuzzle/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ScrewPuzzle"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ScrewPuzzle/"
     },
     {
       "id": 179,
@@ -1780,9 +1786,9 @@
       "pubid": "2302",
       "icon": "https://cpsense.heiheigame.com/gameicon/180-icon-128.jpg",
       "name": "Frozen Honey Asmr",
-      "path": "https://cpsense.heiheigame.com/douyou_release/FrozenHoneyAsmr",
+      "path": "https://cpsense.heiheigame.com/douyou_release/FrozenHoneyAsmr/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/FrozenHoneyAsmr"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/FrozenHoneyAsmr/"
     },
     {
       "id": 180,
@@ -1790,9 +1796,9 @@
       "pubid": "2308",
       "icon": "https://cpsense.heiheigame.com/gameicon/181-icon-128.jpg",
       "name": "Jeli2D",
-      "path": "https://cpsense.heiheigame.com/douyou_release/Jeli2D",
+      "path": "https://cpsense.heiheigame.com/douyou_release/Jeli2D/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Jeli2D"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Jeli2D/"
     },
     {
       "id": 181,
@@ -1800,9 +1806,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/182-icon-128.jpg",
       "name": "Super Mahjong 3D",
-      "path": "https://cpsense.heiheigame.com/douyou_release/SuperMahjong3D",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SuperMahjong3D"
+      "path": "https://cpsense.heiheigame.com/douyou_release/SuperMahjong3D/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SuperMahjong3D/"
     },
     {
       "id": 182,
@@ -1810,9 +1816,9 @@
       "pubid": "2309",
       "icon": "https://cpsense.heiheigame.com/gameicon/183-icon-128.jpg",
       "name": "Thrill Rush 3",
-      "path": "https://cpsense.heiheigame.com/douyou_release/ThrillRush3",
+      "path": "https://cpsense.heiheigame.com/douyou_release/ThrillRush3/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ThrillRush3"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ThrillRush3/"
     },
     {
       "id": 183,
@@ -1820,9 +1826,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/184-icon-128.jpg",
       "name": "Swing Chopper",
-      "path": "https://cpsense.heiheigame.com/douyou_release/SwingChopper",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SwingChopper"
+      "path": "https://cpsense.heiheigame.com/douyou_release/SwingChopper/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SwingChopper/"
     },
     {
       "id": 184,
@@ -1830,9 +1836,9 @@
       "pubid": "2310",
       "icon": "https://cpsense.heiheigame.com/gameicon/185-icon-128.jpg",
       "name": "Tank Stars",
-      "path": "https://cpsense.heiheigame.com/douyou_release/TankStars",
+      "path": "https://cpsense.heiheigame.com/douyou_release/TankStars/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/TankStars"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/TankStars/"
     },
     {
       "id": 185,
@@ -1840,9 +1846,9 @@
       "pubid": "2311",
       "icon": "https://cpsense.heiheigame.com/gameicon/186-icon-128.jpg",
       "name": "Sheep N Sheep",
-      "path": "https://cpsense.heiheigame.com/douyou_release/SheepNSheep",
+      "path": "https://cpsense.heiheigame.com/douyou_release/SheepNSheep/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SheepNSheep"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SheepNSheep/"
     },
     {
       "id": 186,
@@ -1850,9 +1856,9 @@
       "pubid": "2320",
       "icon": "https://cpsense.heiheigame.com/gameicon/187-icon-128.jpg",
       "name": "Washing Fixing",
-      "path": "https://cpsense.heiheigame.com/douyou_release/WashingFixing",
+      "path": "https://cpsense.heiheigame.com/douyou_release/WashingFixing/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/WashingFixing"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/WashingFixing/"
     },
     {
       "id": 187,
@@ -1860,9 +1866,9 @@
       "pubid": "2321",
       "icon": "https://cpsense.heiheigame.com/gameicon/188-icon-128.jpg",
       "name": "Cat Pet Doctor",
-      "path": "https://cpsense.heiheigame.com/douyou_release/CatPetDoctor",
+      "path": "https://cpsense.heiheigame.com/douyou_release/CatPetDoctor/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CatPetDoctor"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CatPetDoctor/"
     },
     {
       "id": 188,
@@ -1870,9 +1876,9 @@
       "pubid": "2312",
       "icon": "https://cpsense.heiheigame.com/gameicon/189-icon-128.jpg",
       "name": "Z Hunter Survival",
-      "path": "https://cpsense.heiheigame.com/douyou_release/ZHunterSurvival",
+      "path": "https://cpsense.heiheigame.com/douyou_release/ZHunterSurvival/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ZHunterSurvival"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ZHunterSurvival/"
     },
     {
       "id": 189,
@@ -1880,9 +1886,9 @@
       "pubid": "2313",
       "icon": "https://cpsense.heiheigame.com/gameicon/190-icon-128.jpg",
       "name": "Alien Hunters",
-      "path": "https://cpsense.heiheigame.com/douyou_release/AlienHunters",
+      "path": "https://cpsense.heiheigame.com/douyou_release/AlienHunters/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/AlienHunters"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/AlienHunters/"
     },
     {
       "id": 190,
@@ -1890,9 +1896,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/191-icon-128.jpg",
       "name": "Baby Capybaras",
-      "path": "https://cpsense.heiheigame.com/douyou_release/BabyCapybaras",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BabyCapybaras"
+      "path": "https://cpsense.heiheigame.com/douyou_release/BabyCapybaras/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BabyCapybaras/"
     },
     {
       "id": 191,
@@ -1900,9 +1906,9 @@
       "pubid": "2315",
       "icon": "https://cpsense.heiheigame.com/gameicon/192-icon-128.jpg",
       "name": "Vex X3M",
-      "path": "https://cpsense.heiheigame.com/douyou_release/VexX3M",
+      "path": "https://cpsense.heiheigame.com/douyou_release/VexX3M/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/VexX3M"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/VexX3M/"
     },
     {
       "id": 192,
@@ -1910,9 +1916,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/193-icon-128.jpg",
       "name": "Over the Rainbow",
-      "path": "https://cpsense.heiheigame.com/douyou_release/OvertheRainbow",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/OvertheRainbow"
+      "path": "https://cpsense.heiheigame.com/douyou_release/OvertheRainbow/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/OvertheRainbow/"
     },
     {
       "id": 193,
@@ -1920,9 +1926,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/194-icon-128.jpg",
       "name": "Volley Beans",
-      "path": "https://cpsense.heiheigame.com/douyou_release/VolleyBeans",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/VolleyBeans"
+      "path": "https://cpsense.heiheigame.com/douyou_release/VolleyBeans/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/VolleyBeans/"
     },
     {
       "id": 194,
@@ -1930,9 +1936,9 @@
       "pubid": "2314",
       "icon": "https://cpsense.heiheigame.com/gameicon/195-icon-128.jpg",
       "name": "Color Cocktail",
-      "path": "https://cpsense.heiheigame.com/douyou_release/ColorCocktail",
+      "path": "https://cpsense.heiheigame.com/douyou_release/ColorCocktail/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ColorCocktail"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ColorCocktail/"
     },
     {
       "id": 195,
@@ -1940,9 +1946,9 @@
       "pubid": "2316",
       "icon": "https://cpsense.heiheigame.com/gameicon/196-icon-128.jpg",
       "name": "Farming Life",
-      "path": "https://cpsense.heiheigame.com/douyou_release/FarmingLife",
+      "path": "https://cpsense.heiheigame.com/douyou_release/FarmingLife/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/FarmingLife"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/FarmingLife/"
     },
     {
       "id": 196,
@@ -1950,9 +1956,9 @@
       "pubid": "2317",
       "icon": "https://cpsense.heiheigame.com/gameicon/197-icon-128.jpg",
       "name": "Idel Inventor",
-      "path": "https://cpsense.heiheigame.com/douyou_release/IdelInventor",
+      "path": "https://cpsense.heiheigame.com/douyou_release/IdelInventor/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/IdelInventor"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/IdelInventor/"
     },
     {
       "id": 197,
@@ -1960,9 +1966,9 @@
       "pubid": "2323",
       "icon": "https://cpsense.heiheigame.com/gameicon/198-icon-128.jpg",
       "name": "BossMarket3D",
-      "path": "https://cpsense.heiheigame.com/douyou_release/BossMarket3D",
+      "path": "https://cpsense.heiheigame.com/douyou_release/BossMarket3D/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BossMarket3D"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BossMarket3D/"
     },
     {
       "id": 198,
@@ -1970,9 +1976,9 @@
       "pubid": "2322",
       "icon": "https://cpsense.heiheigame.com/gameicon/199-icon-128.jpg",
       "name": "Banana Farm",
-      "path": "https://cpsense.heiheigame.com/douyou_release/BananaFarm",
+      "path": "https://cpsense.heiheigame.com/douyou_release/BananaFarm/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BananaFarm"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BananaFarm/"
     },
     {
       "id": 199,
@@ -1980,9 +1986,9 @@
       "pubid": "2318",
       "icon": "https://cpsense.heiheigame.com/gameicon/201-icon-128.jpg",
       "name": "Bubble Shooter Witch",
-      "path": "https://cpsense.heiheigame.com/douyou_release/BubbleShooterWitch",
+      "path": "https://cpsense.heiheigame.com/douyou_release/BubbleShooterWitch/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BubbleShooterWitch"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BubbleShooterWitch/"
     },
     {
       "id": 200,
@@ -1990,9 +1996,9 @@
       "pubid": "2319",
       "icon": "https://cpsense.heiheigame.com/gameicon/202-icon-128.jpg",
       "name": "Dynamons",
-      "path": "https://cpsense.heiheigame.com/douyou_release/Dynamons",
+      "path": "https://cpsense.heiheigame.com/douyou_release/Dynamons/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Dynamons"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Dynamons/"
     },
     {
       "id": 201,
@@ -2000,9 +2006,9 @@
       "pubid": "2325",
       "icon": "https://cpsense.heiheigame.com/gameicon/203-icon-128.jpg",
       "name": "Cards2048",
-      "path": "https://cpsense.heiheigame.com/douyou_release/Cards2048",
+      "path": "https://cpsense.heiheigame.com/douyou_release/Cards2048/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Cards2048"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Cards2048/"
     },
     {
       "id": 202,
@@ -2010,9 +2016,9 @@
       "pubid": "2324",
       "icon": "https://cpsense.heiheigame.com/gameicon/204-icon-128.jpg",
       "name": "Happy Glass",
-      "path": "https://cpsense.heiheigame.com/douyou_release/HappyGlass",
+      "path": "https://cpsense.heiheigame.com/douyou_release/HappyGlass/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/HappyGlass"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/HappyGlass/"
     },
     {
       "id": 203,
@@ -2020,9 +2026,9 @@
       "pubid": "2326",
       "icon": "https://cpsense.heiheigame.com/gameicon/205-icon-128.jpg",
       "name": "Woodland Slide",
-      "path": "https://cpsense.heiheigame.com/douyou_release/WoodlandSlide",
+      "path": "https://cpsense.heiheigame.com/douyou_release/WoodlandSlide/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/WoodlandSlide"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/WoodlandSlide/"
     },
     {
       "id": 204,
@@ -2030,9 +2036,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/206-icon-128.jpg",
       "name": "Ninja Dash",
-      "path": "https://cpsense.heiheigame.com/douyou_release/NinjaDash",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/NinjaDash"
+      "path": "https://cpsense.heiheigame.com/douyou_release/NinjaDash/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/NinjaDash/"
     },
     {
       "id": 205,
@@ -2040,9 +2046,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/207-icon-128.jpg",
       "name": "Space Shift",
-      "path": "https://cpsense.heiheigame.com/douyou_release/SpaceShift",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SpaceShift"
+      "path": "https://cpsense.heiheigame.com/douyou_release/SpaceShift/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SpaceShift/"
     },
     {
       "id": 206,
@@ -2050,9 +2056,9 @@
       "pubid": "2328",
       "icon": "https://cpsense.heiheigame.com/gameicon/208-icon-128.jpg",
       "name": "Beat Blader 3D",
-      "path": "https://cpsense.heiheigame.com/douyou_release/BeatBlader3D",
+      "path": "https://cpsense.heiheigame.com/douyou_release/BeatBlader3D/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BeatBlader3D"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BeatBlader3D/"
     },
     {
       "id": 207,
@@ -2060,9 +2066,9 @@
       "pubid": "2327",
       "icon": "https://cpsense.heiheigame.com/gameicon/209-icon-128.jpg",
       "name": "Dino Survival",
-      "path": "https://cpsense.heiheigame.com/douyou_release/DinoSurvival",
+      "path": "https://cpsense.heiheigame.com/douyou_release/DinoSurvival/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/DinoSurvival"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/DinoSurvival/"
     },
     {
       "id": 208,
@@ -2070,9 +2076,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/210-icon-128.jpg",
       "name": "Gladiators Fight",
-      "path": "https://cpsense.heiheigame.com/douyou_release/GladiatorsFight",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/GladiatorsFight"
+      "path": "https://cpsense.heiheigame.com/douyou_release/GladiatorsFight/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/GladiatorsFight/"
     },
     {
       "id": 209,
@@ -2080,9 +2086,9 @@
       "pubid": "2329",
       "icon": "https://cpsense.heiheigame.com/gameicon/211-icon-128.jpg",
       "name": "Star Defense",
-      "path": "https://cpsense.heiheigame.com/douyou_release/StarDefense",
+      "path": "https://cpsense.heiheigame.com/douyou_release/StarDefense/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/StarDefense"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/StarDefense/"
     },
     {
       "id": 210,
@@ -2090,9 +2096,9 @@
       "pubid": "2330",
       "icon": "https://cpsense.heiheigame.com/gameicon/212-icon-128.jpg",
       "name": "Slice Master",
-      "path": "https://cpsense.heiheigame.com/douyou_release/SliceMaster",
+      "path": "https://cpsense.heiheigame.com/douyou_release/SliceMaster/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SliceMaster"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SliceMaster/"
     },
     {
       "id": 211,
@@ -2100,9 +2106,9 @@
       "pubid": "2332",
       "icon": "https://cpsense.heiheigame.com/gameicon/213-icon-128.jpg",
       "name": "Spin Master",
-      "path": "https://cpsense.heiheigame.com/douyou_release/SpinMaster",
+      "path": "https://cpsense.heiheigame.com/douyou_release/SpinMaster/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SpinMaster"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SpinMaster/"
     },
     {
       "id": 212,
@@ -2110,9 +2116,9 @@
       "pubid": "2331",
       "icon": "https://cpsense.heiheigame.com/gameicon/214-icon-128.jpg",
       "name": "Farm Triple Match",
-      "path": "https://cpsense.heiheigame.com/douyou_release/FarmTripleMatch",
+      "path": "https://cpsense.heiheigame.com/douyou_release/FarmTripleMatch/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/FarmTripleMatch"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/FarmTripleMatch/"
     },
     {
       "id": 213,
@@ -2120,9 +2126,9 @@
       "pubid": "2342",
       "icon": "https://cpsense.heiheigame.com/gameicon/215-icon-128.jpg",
       "name": "Hyper Knight",
-      "path": "https://cpsense.heiheigame.com/douyou_release/HyperKnight",
+      "path": "https://cpsense.heiheigame.com/douyou_release/HyperKnight/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/HyperKnight"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/HyperKnight/"
     },
     {
       "id": 214,
@@ -2130,9 +2136,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/216-icon-128.jpg",
       "name": "Car Park",
-      "path": "https://cpsense.heiheigame.com/douyou_release/CarPark",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CarPark"
+      "path": "https://cpsense.heiheigame.com/douyou_release/CarPark/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CarPark/"
     },
     {
       "id": 215,
@@ -2140,9 +2146,9 @@
       "pubid": "2340",
       "icon": "https://cpsense.heiheigame.com/gameicon/217-icon-128.jpg",
       "name": "Hexagon",
-      "path": "https://cpsense.heiheigame.com/douyou_release/Hexagon",
+      "path": "https://cpsense.heiheigame.com/douyou_release/Hexagon/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Hexagon"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Hexagon/"
     },
     {
       "id": 216,
@@ -2150,9 +2156,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/218-icon-128.jpg",
       "name": "ZUMBA Quest",
-      "path": "https://cpsense.heiheigame.com/douyou_release/ZUMBAQuest",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ZUMBAQuest"
+      "path": "https://cpsense.heiheigame.com/douyou_release/ZUMBAQuest/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ZUMBAQuest/"
     },
     {
       "id": 217,
@@ -2160,9 +2166,9 @@
       "pubid": "2339",
       "icon": "https://cpsense.heiheigame.com/gameicon/219-icon-128.jpg",
       "name": "House Robber",
-      "path": "https://cpsense.heiheigame.com/douyou_release/HouseRobber",
+      "path": "https://cpsense.heiheigame.com/douyou_release/HouseRobber/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/HouseRobber"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/HouseRobber/"
     },
     {
       "id": 218,
@@ -2170,9 +2176,9 @@
       "pubid": "2338",
       "icon": "https://cpsense.heiheigame.com/gameicon/220-icon-128.jpg",
       "name": "Black Breaker",
-      "path": "https://cpsense.heiheigame.com/douyou_release/BlackBreaker",
+      "path": "https://cpsense.heiheigame.com/douyou_release/BlackBreaker/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BlackBreaker"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BlackBreaker/"
     },
     {
       "id": 219,
@@ -2180,9 +2186,9 @@
       "pubid": "2337",
       "icon": "https://cpsense.heiheigame.com/gameicon/221-icon-128.jpg",
       "name": "Tanks3",
-      "path": "https://cpsense.heiheigame.com/douyou_release/Tanks3",
+      "path": "https://cpsense.heiheigame.com/douyou_release/Tanks3/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Tanks3"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Tanks3/"
     },
     {
       "id": 220,
@@ -2190,9 +2196,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/222-icon-128.jpg",
       "name": "Puzzle",
-      "path": "https://cpsense.heiheigame.com/douyou_release/Puzzle",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Puzzle"
+      "path": "https://cpsense.heiheigame.com/douyou_release/Puzzle/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Puzzle/"
     },
     {
       "id": 221,
@@ -2200,9 +2206,9 @@
       "pubid": "2341",
       "icon": "https://cpsense.heiheigame.com/gameicon/223-icon-128.jpg",
       "name": "Save Your Base",
-      "path": "https://cpsense.heiheigame.com/douyou_release/SaveYourBase",
+      "path": "https://cpsense.heiheigame.com/douyou_release/SaveYourBase/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SaveYourBase"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SaveYourBase/"
     },
     {
       "id": 222,
@@ -2210,9 +2216,9 @@
       "pubid": "2343",
       "icon": "https://cpsense.heiheigame.com/gameicon/224-icon-128.jpg",
       "name": "Egypt Mahjong",
-      "path": "https://cpsense.heiheigame.com/douyou_release/EgyptMahjong",
+      "path": "https://cpsense.heiheigame.com/douyou_release/EgyptMahjong/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/EgyptMahjong"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/EgyptMahjong/"
     },
     {
       "id": 223,
@@ -2220,9 +2226,9 @@
       "pubid": "2347",
       "icon": "https://cpsense.heiheigame.com/gameicon/225-icon-128.jpg",
       "name": "Queen Mahjong",
-      "path": "https://cpsense.heiheigame.com/douyou_release/QueenMahjong",
+      "path": "https://cpsense.heiheigame.com/douyou_release/QueenMahjong/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/QueenMahjong"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/QueenMahjong/"
     },
     {
       "id": 224,
@@ -2230,9 +2236,9 @@
       "pubid": "2345",
       "icon": "https://cpsense.heiheigame.com/gameicon/226-icon-128.jpg",
       "name": "Bullet Heroes",
-      "path": "https://cpsense.heiheigame.com/douyou_release/BulletHeroes",
+      "path": "https://cpsense.heiheigame.com/douyou_release/BulletHeroes/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BulletHeroes"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BulletHeroes/"
     },
     {
       "id": 225,
@@ -2240,9 +2246,9 @@
       "pubid": "2344",
       "icon": "https://cpsense.heiheigame.com/gameicon/227-icon-128.jpg",
       "name": "Elite Chess",
-      "path": "https://cpsense.heiheigame.com/douyou_release/EliteChess",
+      "path": "https://cpsense.heiheigame.com/douyou_release/EliteChess/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/EliteChess"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/EliteChess/"
     },
     {
       "id": 226,
@@ -2250,9 +2256,9 @@
       "pubid": "2346",
       "icon": "https://cpsense.heiheigame.com/gameicon/228-icon-128.jpg",
       "name": "9blocks",
-      "path": "https://cpsense.heiheigame.com/douyou_release/9blocks",
+      "path": "https://cpsense.heiheigame.com/douyou_release/9blocks/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/9blocks"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/9blocks/"
     },
     {
       "id": 227,
@@ -2260,9 +2266,9 @@
       "pubid": "2349",
       "icon": "https://cpsense.heiheigame.com/gameicon/229-icon-128.jpg",
       "name": "Rescue Mission",
-      "path": "https://cpsense.heiheigame.com/douyou_release/RescueMission",
+      "path": "https://cpsense.heiheigame.com/douyou_release/RescueMission/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/RescueMission"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/RescueMission/"
     },
     {
       "id": 228,
@@ -2270,9 +2276,9 @@
       "pubid": "2348",
       "icon": "https://cpsense.heiheigame.com/gameicon/230-icon-128.jpg",
       "name": "mazecube2048",
-      "path": "https://cpsense.heiheigame.com/douyou_release/mazecube2048",
+      "path": "https://cpsense.heiheigame.com/douyou_release/mazecube2048/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/mazecube2048"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/mazecube2048/"
     },
     {
       "id": 229,
@@ -2280,9 +2286,9 @@
       "pubid": "2351",
       "icon": "https://cpsense.heiheigame.com/gameicon/232-icon-128.jpg",
       "name": "FrogIO",
-      "path": "https://cpsense.heiheigame.com/douyou_release/FrogIO",
+      "path": "https://cpsense.heiheigame.com/douyou_release/FrogIO/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/FrogIO"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/FrogIO/"
     },
     {
       "id": 230,
@@ -2290,9 +2296,9 @@
       "pubid": "2350",
       "icon": "https://cpsense.heiheigame.com/gameicon/233-icon-128.jpg",
       "name": "Solitaire Story",
-      "path": "https://cpsense.heiheigame.com/douyou_release/SolitaireStory",
+      "path": "https://cpsense.heiheigame.com/douyou_release/SolitaireStory/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SolitaireStory"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SolitaireStory/"
     },
     {
       "id": 231,
@@ -2300,9 +2306,9 @@
       "pubid": "2336",
       "icon": "https://cpsense.heiheigame.com/gameicon/234-icon-128.jpg",
       "name": "TheNutBr",
-      "path": "https://cpsense.heiheigame.com/douyou_other/TheNutBr",
+      "path": "https://cpsense.heiheigame.com/douyou_other/TheNutBr/",
       "categoryId": 2,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/TheNutBr"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/TheNutBr/"
     },
     {
       "id": 232,
@@ -2310,9 +2316,9 @@
       "pubid": "2352",
       "icon": "https://cpsense.heiheigame.com/gameicon/235-icon-128.jpg",
       "name": "Spider obstacle",
-      "path": "https://cpsense.heiheigame.com/douyou_release/Spiderobstacle",
+      "path": "https://cpsense.heiheigame.com/douyou_release/Spiderobstacle/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Spiderobstacle"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Spiderobstacle/"
     },
     {
       "id": 233,
@@ -2320,9 +2326,9 @@
       "pubid": "2354",
       "icon": "https://cpsense.heiheigame.com/gameicon/236-icon-128.jpg",
       "name": "Eco Block Puzzle",
-      "path": "https://cpsense.heiheigame.com/douyou_release/EcoBlockPuzzle",
+      "path": "https://cpsense.heiheigame.com/douyou_release/EcoBlockPuzzle/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/EcoBlockPuzzle"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/EcoBlockPuzzle/"
     },
     {
       "id": 234,
@@ -2330,9 +2336,9 @@
       "pubid": "2353",
       "icon": "https://cpsense.heiheigame.com/gameicon/237-icon-128.jpg",
       "name": "Archer Ragdoll",
-      "path": "https://cpsense.heiheigame.com/douyou_release/ArcherRagdoll",
+      "path": "https://cpsense.heiheigame.com/douyou_release/ArcherRagdoll/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ArcherRagdoll"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ArcherRagdoll/"
     },
     {
       "id": 235,
@@ -2340,9 +2346,9 @@
       "pubid": "2356",
       "icon": "https://cpsense.heiheigame.com/gameicon/238-icon-128.jpg",
       "name": "Match Puzzle Mania",
-      "path": "https://cpsense.heiheigame.com/douyou_release/MatchPuzzleMania",
+      "path": "https://cpsense.heiheigame.com/douyou_release/MatchPuzzleMania/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/MatchPuzzleMania"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/MatchPuzzleMania/"
     },
     {
       "id": 236,
@@ -2350,9 +2356,9 @@
       "pubid": "2355",
       "icon": "https://cpsense.heiheigame.com/gameicon/239-icon-128.jpg",
       "name": "Snake Maxx",
-      "path": "https://cpsense.heiheigame.com/douyou_release/SnakeMaxx",
+      "path": "https://cpsense.heiheigame.com/douyou_release/SnakeMaxx/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SnakeMaxx"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SnakeMaxx/"
     },
     {
       "id": 237,
@@ -2360,9 +2366,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/240-icon-128.jpg",
       "name": "SquidRun",
-      "path": "https://cpsense.heiheigame.com/douyou_release/SquidRun",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SquidRun"
+      "path": "https://cpsense.heiheigame.com/douyou_release/SquidRun/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SquidRun/"
     },
     {
       "id": 238,
@@ -2370,9 +2376,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/241-icon-128.jpg",
       "name": "Airways Maze",
-      "path": "https://cpsense.heiheigame.com/douyou_release/AirwaysMaze",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/AirwaysMaze"
+      "path": "https://cpsense.heiheigame.com/douyou_release/AirwaysMaze/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/AirwaysMaze/"
     },
     {
       "id": 239,
@@ -2380,9 +2386,9 @@
       "pubid": "2358",
       "icon": "https://cpsense.heiheigame.com/gameicon/242-icon-128.jpg",
       "name": "Demolition Derby",
-      "path": "https://cpsense.heiheigame.com/douyou_release/DemolitionDerby",
+      "path": "https://cpsense.heiheigame.com/douyou_release/DemolitionDerby/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/DemolitionDerby"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/DemolitionDerby/"
     },
     {
       "id": 240,
@@ -2390,9 +2396,9 @@
       "pubid": "2359",
       "icon": "https://cpsense.heiheigame.com/gameicon/243-icon-128.jpg",
       "name": "Gun Build",
-      "path": "https://cpsense.heiheigame.com/douyou_release/GunBuild",
+      "path": "https://cpsense.heiheigame.com/douyou_release/GunBuild/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/GunBuild"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/GunBuild/"
     },
     {
       "id": 241,
@@ -2400,9 +2406,9 @@
       "pubid": "2360",
       "icon": "https://cpsense.heiheigame.com/gameicon/244-icon-128.jpg",
       "name": "Sword Ninja",
-      "path": "https://cpsense.heiheigame.com/douyou_release/SwordNinja",
+      "path": "https://cpsense.heiheigame.com/douyou_release/SwordNinja/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SwordNinja"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SwordNinja/"
     },
     {
       "id": 242,
@@ -2410,9 +2416,9 @@
       "pubid": "2361",
       "icon": "https://cpsense.heiheigame.com/gameicon/245-icon-128.jpg",
       "name": "Hoop Stack",
-      "path": "https://cpsense.heiheigame.com/douyou_release/HoopStack",
+      "path": "https://cpsense.heiheigame.com/douyou_release/HoopStack/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/HoopStack"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/HoopStack/"
     },
     {
       "id": 243,
@@ -2420,9 +2426,9 @@
       "pubid": "2362",
       "icon": "https://cpsense.heiheigame.com/gameicon/246-icon-128.jpg",
       "name": "Tower Crash",
-      "path": "https://cpsense.heiheigame.com/douyou_release/TowerCrash",
+      "path": "https://cpsense.heiheigame.com/douyou_release/TowerCrash/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/TowerCrash"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/TowerCrash/"
     },
     {
       "id": 244,
@@ -2430,9 +2436,9 @@
       "pubid": "2357",
       "icon": "https://cpsense.heiheigame.com/gameicon/247-icon-128.jpg",
       "name": "Rescue The Car",
-      "path": "https://cpsense.heiheigame.com/douyou_other/RescueTheCar",
+      "path": "https://cpsense.heiheigame.com/douyou_other/RescueTheCar/",
       "categoryId": 2,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/RescueTheCar"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/RescueTheCar/"
     },
     {
       "id": 245,
@@ -2440,9 +2446,9 @@
       "pubid": "2363",
       "icon": "https://cpsense.heiheigame.com/gameicon/248-icon-128.jpg",
       "name": "Master Blender",
-      "path": "https://cpsense.heiheigame.com/douyou_other/MasterBlender",
+      "path": "https://cpsense.heiheigame.com/douyou_other/MasterBlender/",
       "categoryId": 2,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/MasterBlender"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/MasterBlender/"
     },
     {
       "id": 246,
@@ -2450,9 +2456,9 @@
       "pubid": "2364",
       "icon": "https://cpsense.heiheigame.com/gameicon/249-icon-128.jpg",
       "name": "Idle Dairy Farm Tycoon",
-      "path": "https://cpsense.heiheigame.com/douyou_release/IdleDairyFarmTycoon",
+      "path": "https://cpsense.heiheigame.com/douyou_release/IdleDairyFarmTycoon/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/IdleDairyFarmTycoon"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/IdleDairyFarmTycoon/"
     },
     {
       "id": 247,
@@ -2460,9 +2466,9 @@
       "pubid": "2365",
       "icon": "https://cpsense.heiheigame.com/gameicon/250-icon-128.jpg",
       "name": "Train 2028",
-      "path": "https://cpsense.heiheigame.com/douyou_release/Train2028",
+      "path": "https://cpsense.heiheigame.com/douyou_release/Train2028/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Train2028"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Train2028/"
     },
     {
       "id": 248,
@@ -2470,9 +2476,9 @@
       "pubid": "2370",
       "icon": "https://cpsense.heiheigame.com/gameicon/251-icon-128.jpg",
       "name": "Royal Jewels Match",
-      "path": "https://cpsense.heiheigame.com/douyou_release/RoyalJewelsMatch",
+      "path": "https://cpsense.heiheigame.com/douyou_release/RoyalJewelsMatch/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/RoyalJewelsMatch"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/RoyalJewelsMatch/"
     },
     {
       "id": 249,
@@ -2480,9 +2486,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/252-icon-128.jpg",
       "name": "Cow Boys",
-      "path": "https://cpsense.heiheigame.com/douyou_release/CowBoys",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CowBoys"
+      "path": "https://cpsense.heiheigame.com/douyou_release/CowBoys/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CowBoys/"
     },
     {
       "id": 250,
@@ -2490,9 +2496,9 @@
       "pubid": "2371",
       "icon": "https://cpsense.heiheigame.com/gameicon/253-icon-128.jpg",
       "name": "Horde Hunters",
-      "path": "https://cpsense.heiheigame.com/douyou_release/HordeHunters",
+      "path": "https://cpsense.heiheigame.com/douyou_release/HordeHunters/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/HordeHunters"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/HordeHunters/"
     },
     {
       "id": 251,
@@ -2500,9 +2506,9 @@
       "pubid": "2366",
       "icon": "https://cpsense.heiheigame.com/gameicon/254-icon-128.jpg",
       "name": "Mojo Match 3D",
-      "path": "https://cpsense.heiheigame.com/douyou_release/MojoMatch3D",
+      "path": "https://cpsense.heiheigame.com/douyou_release/MojoMatch3D/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/MojoMatch3D"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/MojoMatch3D/"
     },
     {
       "id": 252,
@@ -2510,9 +2516,9 @@
       "pubid": "2372",
       "icon": "https://cpsense.heiheigame.com/gameicon/256-icon-128.jpg",
       "name": "Merge Run Battle",
-      "path": "https://cpsense.heiheigame.com/douyou_release/MergeRunBattle",
+      "path": "https://cpsense.heiheigame.com/douyou_release/MergeRunBattle/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/MergeRunBattle"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/MergeRunBattle/"
     },
     {
       "id": 253,
@@ -2520,9 +2526,9 @@
       "pubid": "2367",
       "icon": "https://cpsense.heiheigame.com/gameicon/257-icon-128.jpg",
       "name": "Coin Merge",
-      "path": "https://cpsense.heiheigame.com/douyou_release/CoinMerge",
+      "path": "https://cpsense.heiheigame.com/douyou_release/CoinMerge/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CoinMerge"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CoinMerge/"
     },
     {
       "id": 254,
@@ -2530,9 +2536,9 @@
       "pubid": "2368",
       "icon": "https://cpsense.heiheigame.com/gameicon/258-icon-128.jpg",
       "name": "save seafood",
-      "path": "https://cpsense.heiheigame.com/douyou_release/saveseafood",
+      "path": "https://cpsense.heiheigame.com/douyou_release/saveseafood/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/saveseafood"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/saveseafood/"
     },
     {
       "id": 255,
@@ -2540,9 +2546,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/259-icon-128.jpg",
       "name": "Bull Runner",
-      "path": "https://cpsense.heiheigame.com/douyou_release/BullRunner",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BullRunner"
+      "path": "https://cpsense.heiheigame.com/douyou_release/BullRunner/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BullRunner/"
     },
     {
       "id": 256,
@@ -2550,9 +2556,9 @@
       "pubid": "2369",
       "icon": "https://cpsense.heiheigame.com/gameicon/260-icon-128.jpg",
       "name": "Color Block Jam",
-      "path": "https://cpsense.heiheigame.com/douyou_release/ColorBlockJam",
+      "path": "https://cpsense.heiheigame.com/douyou_release/ColorBlockJam/",
       "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ColorBlockJam"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ColorBlockJam/"
     },
     {
       "id": 257,
@@ -2560,9 +2566,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/261-icon-128.jpg",
       "name": "Park Them All",
-      "path": "https://cpsense.heiheigame.com/douyou_release/ParkThemAll",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ParkThemAll"
+      "path": "https://cpsense.heiheigame.com/douyou_release/ParkThemAll/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ParkThemAll/"
     },
     {
       "id": 258,
@@ -2570,9 +2576,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/262-icon-128.jpg",
       "name": "SnipingAliens",
-      "path": "https://cpsense.heiheigame.com/douyou_other/SnipingAliens",
-      "categoryId": 2,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SnipingAliens"
+      "path": "https://cpsense.heiheigame.com/douyou_other/SnipingAliens/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SnipingAliens/"
     },
     {
       "id": 259,
@@ -2580,9 +2586,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/264-icon-128.jpg",
       "name": "Color Bump 3D",
-      "path": "https://cpsense.heiheigame.com/douyou_release/ColorBump3D",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ColorBump3D"
+      "path": "https://cpsense.heiheigame.com/douyou_release/ColorBump3D/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ColorBump3D/"
     },
     {
       "id": 260,
@@ -2590,9 +2596,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/266-icon-128.jpg",
       "name": "GunfightShoot",
-      "path": "https://cpsense.heiheigame.com/douyou_other/GunfightShoot",
-      "categoryId": 2,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/GunfightShoot"
+      "path": "https://cpsense.heiheigame.com/douyou_other/GunfightShoot/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/GunfightShoot/"
     },
     {
       "id": 261,
@@ -2600,9 +2606,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/267-icon-128.jpg",
       "name": "Catch Doll",
-      "path": "https://cpsense.heiheigame.com/douyou_other/CatchDoll",
-      "categoryId": 2,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CatchDoll"
+      "path": "https://cpsense.heiheigame.com/douyou_other/CatchDoll/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CatchDoll/"
     },
     {
       "id": 262,
@@ -2610,9 +2616,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/268-icon-128.jpg",
       "name": "Storm Sunder",
-      "path": "https://cpsense.heiheigame.com/douyou_other/StormSunder",
-      "categoryId": 2,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/StormSunder"
+      "path": "https://cpsense.heiheigame.com/douyou_other/StormSunder/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/StormSunder/"
     },
     {
       "id": 263,
@@ -2620,9 +2626,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/269-icon-128.jpg",
       "name": "FarmPuzzle",
-      "path": "https://cpsense.heiheigame.com/douyou_other/FarmPuzzle",
-      "categoryId": 2,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/FarmPuzzle"
+      "path": "https://cpsense.heiheigame.com/douyou_other/FarmPuzzle/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/FarmPuzzle/"
     },
     {
       "id": 264,
@@ -2630,9 +2636,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/270-icon-128.jpg",
       "name": "Popsicle Stack",
-      "path": "https://cpsense.heiheigame.com/douyou_release/PopsicleStack",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/PopsicleStack"
+      "path": "https://cpsense.heiheigame.com/douyou_release/PopsicleStack/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/PopsicleStack/"
     },
     {
       "id": 265,
@@ -2640,9 +2646,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/271-icon-128.jpg",
       "name": "Cray_Foot",
-      "path": "https://cpsense.heiheigame.com/douyou_release/Cray_Foot",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Cray_Foot"
+      "path": "https://cpsense.heiheigame.com/douyou_release/Cray_Foot/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Cray_Foot/"
     },
     {
       "id": 266,
@@ -2650,9 +2656,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/272-icon-128.jpg",
       "name": "CatchPig",
-      "path": "https://cpsense.heiheigame.com/douyou_release/CatchPig",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CatchPig"
+      "path": "https://cpsense.heiheigame.com/douyou_release/CatchPig/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CatchPig/"
     },
     {
       "id": 267,
@@ -2660,9 +2666,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/273-icon-128.jpg",
       "name": " Color Cargo Puzzle Rush",
-      "path": "https://cpsense.heiheigame.com/douyou_release/ColorCargoPuzzleRush",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ColorCargoPuzzleRush"
+      "path": "https://cpsense.heiheigame.com/douyou_release/ColorCargoPuzzleRush/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ColorCargoPuzzleRush/"
     },
     {
       "id": 268,
@@ -2670,9 +2676,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/274-icon-128.jpg",
       "name": " Hide and Luig",
-      "path": "https://cpsense.heiheigame.com/douyou_release/HideandLuig",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/HideandLuig"
+      "path": "https://cpsense.heiheigame.com/douyou_release/HideandLuig/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/HideandLuig/"
     },
     {
       "id": 269,
@@ -2680,9 +2686,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/275-icon-128.jpg",
       "name": "Weightlifting_beauty",
-      "path": "https://cpsense.heiheigame.com/douyou_release/Weightlifting_beauty",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Weightlifting_beauty"
+      "path": "https://cpsense.heiheigame.com/douyou_release/Weightlifting_beauty/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Weightlifting_beauty/"
     },
     {
       "id": 270,
@@ -2690,9 +2696,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/276-icon-128.jpg",
       "name": " Isometric Escape",
-      "path": "https://cpsense.heiheigame.com/douyou_release/IsometricEscape",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/IsometricEscape"
+      "path": "https://cpsense.heiheigame.com/douyou_release/IsometricEscape/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/IsometricEscape/"
     },
     {
       "id": 271,
@@ -2700,9 +2706,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/277-icon-128.jpg",
       "name": "Sorting Puzzle",
-      "path": "https://cpsense.heiheigame.com/douyou_release/SortingPuzzle",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SortingPuzzle"
+      "path": "https://cpsense.heiheigame.com/douyou_release/SortingPuzzle/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SortingPuzzle/"
     },
     {
       "id": 272,
@@ -2710,9 +2716,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/278-icon-128.jpg",
       "name": "Dress Up Run",
-      "path": "https://cpsense.heiheigame.com/douyou_release/DressUpRun",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/DressUpRun"
+      "path": "https://cpsense.heiheigame.com/douyou_release/DressUpRun/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/DressUpRun/"
     },
     {
       "id": 273,
@@ -2720,9 +2726,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/279-icon-128.jpg",
       "name": "Insect Exploration",
-      "path": "https://cpsense.heiheigame.com/douyou_release/InsectExploration",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/InsectExploration"
+      "path": "https://cpsense.heiheigame.com/douyou_release/InsectExploration/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/InsectExploration/"
     },
     {
       "id": 274,
@@ -2730,9 +2736,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/280-icon-128.jpg",
       "name": "Beat Swiper",
-      "path": "https://cpsense.heiheigame.com/douyou_release/BeatSwiper",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BeatSwiper"
+      "path": "https://cpsense.heiheigame.com/douyou_release/BeatSwiper/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BeatSwiper/"
     },
     {
       "id": 275,
@@ -2740,9 +2746,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/cd-281-icon-128.jpg",
       "name": "JewelryTycoon",
-      "path": "https://cpsense.heiheigame.com/JewelryTycoon",
-      "categoryId": 2,
-      "pathBeta": "https://cpsense.heiheigame.com/JewelryTycoon"
+      "path": "https://cpsense.heiheigame.com/JewelryTycoon/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/JewelryTycoon/"
     },
     {
       "id": 276,
@@ -2750,9 +2756,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/cd-282-icon-128.jpg",
       "name": "ShootBlock",
-      "path": "https://cpsense.heiheigame.com/ShootBlock",
-      "categoryId": 2,
-      "pathBeta": "https://cpsense.heiheigame.com/ShootBlock"
+      "path": "https://cpsense.heiheigame.com/ShootBlock/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/ShootBlock/"
     },
     {
       "id": 277,
@@ -2760,9 +2766,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/281-icon-128.jpg",
       "name": "Screamals",
-      "path": "https://cpsense.heiheigame.com/douyou_release/Screamals",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Screamals"
+      "path": "https://cpsense.heiheigame.com/douyou_release/Screamals/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Screamals/"
     },
     {
       "id": 278,
@@ -2770,9 +2776,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/282-icon-128.jpg",
       "name": "Bubble It Jam",
-      "path": "https://cpsense.heiheigame.com/douyou_release/BubbleItJam",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BubbleItJam"
+      "path": "https://cpsense.heiheigame.com/douyou_release/BubbleItJam/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BubbleItJam/"
     },
     {
       "id": 279,
@@ -2780,9 +2786,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/283-icon-128.jpg",
       "name": "Perfect Shot",
-      "path": "https://cpsense.heiheigame.com/douyou_release/PerfectShot",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/PerfectShot"
+      "path": "https://cpsense.heiheigame.com/douyou_release/PerfectShot/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/PerfectShot/"
     },
     {
       "id": 280,
@@ -2790,9 +2796,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/284-icon-128.jpg",
       "name": "Love Totems",
-      "path": "https://cpsense.heiheigame.com/douyou_release/LoveTotems",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/LoveTotems"
+      "path": "https://cpsense.heiheigame.com/douyou_release/LoveTotems/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/LoveTotems/"
     },
     {
       "id": 281,
@@ -2800,9 +2806,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/285-icon-128.jpg",
       "name": "Idle Baseball Tycoon",
-      "path": "https://cpsense.heiheigame.com/douyou_release/IdleBaseballTycoon",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/IdleBaseballTycoon"
+      "path": "https://cpsense.heiheigame.com/douyou_release/IdleBaseballTycoon/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/IdleBaseballTycoon/"
     },
     {
       "id": 282,
@@ -2810,9 +2816,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/286-icon-128.jpg",
       "name": "Cat Rescue",
-      "path": "https://cpsense.heiheigame.com/douyou_release/CatRescue",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CatRescue"
+      "path": "https://cpsense.heiheigame.com/douyou_release/CatRescue/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CatRescue/"
     },
     {
       "id": 283,
@@ -2820,9 +2826,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/287-icon-128.jpg",
       "name": "Obby On Bike",
-      "path": "https://cpsense.heiheigame.com/douyou_release/ObbyOnBike",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ObbyOnBike"
+      "path": "https://cpsense.heiheigame.com/douyou_release/ObbyOnBike/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ObbyOnBike/"
     },
     {
       "id": 284,
@@ -2830,9 +2836,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/288-icon-128.jpg",
       "name": "Match Fighter",
-      "path": "https://cpsense.heiheigame.com/douyou_release/MatchFighter",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/MatchFighter"
+      "path": "https://cpsense.heiheigame.com/douyou_release/MatchFighter/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/MatchFighter/"
     },
     {
       "id": 285,
@@ -2840,9 +2846,9 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/289-icon-128.jpg",
       "name": "Color Dodge",
-      "path": "https://cpsense.heiheigame.com/douyou_release/ColorDodge",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ColorDodge"
+      "path": "https://cpsense.heiheigame.com/douyou_release/ColorDodge/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ColorDodge/"
     },
     {
       "id": 286,
@@ -2850,14 +2856,14 @@
       "pubid": "",
       "icon": "https://cpsense.heiheigame.com/gameicon/290-icon-128.jpg",
       "name": "Block Crasher",
-      "path": "https://cpsense.heiheigame.com/douyou_release/BlockCrasher",
-      "categoryId": 1,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BlockCrasher"
+      "path": "https://cpsense.heiheigame.com/douyou_release/BlockCrasher/",
+      "categoryId": 3,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BlockCrasher/"
     },
     {
       "id": 287,
       "name": "TEST_GAME",
-      "url": "https://example.com/test",
+      "url": "https://example.com/test/",
       "description": "",
       "categoryId": 1,
       "icon": "https://example.com/icon.png"

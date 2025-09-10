@@ -1,7 +1,7 @@
 {
-  "short_name": "简约导航",
-  "name": "简约导航站",
-  "description": "精选优质game，简约高效导航",
+  "short_name": "nav website",
+  "name": "nav website",
+  "description": "small game",
   "icons": [
     {
       "src": "favicon.ico",

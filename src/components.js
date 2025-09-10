@@ -22,7 +22,7 @@ const SiteIcon = memo(({ site, onClick }) => {
         role={onClick ? 'button' : undefined}
         className="w-[6.5rem] h-[6.5rem] bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg flex items-center justify-center text-white font-bold text-2xl shadow-sm cursor-pointer"
       >
-        {site.name.charAt(0)}
+        {(site.name || '?').charAt(0)}
       </div>
     );
   }
@@ -33,7 +33,16 @@ const SiteIcon = memo(({ site, onClick }) => {
         <div className="absolute inset-0 bg-gray-200 rounded-lg skeleton"></div>
       )}
       <img
-        src={process.env.PUBLIC_URL + site.icon}
+        src={(() => {
+          // If site.icon looks like an absolute URL (http://, https://) or protocol-relative (//),
+          // use it as-is. Otherwise prefix with PUBLIC_URL so relative paths resolve correctly.
+          const icon = site.icon || '/icons/default.svg';
+          if (/^https?:\/\//i.test(icon) || /^\/\//.test(icon)) return icon;
+          // Ensure PUBLIC_URL ends without a trailing slash
+          const base = (process.env.PUBLIC_URL || '').replace(/\/$/, '');
+          // If icon already starts with '/', don't add extra slash
+          return base ? base + (icon.startsWith('/') ? icon : '/' + icon) : icon;
+        })()}
         alt={`${site.name} 图标`}
         className={`w-[6.5rem] h-[6.5rem] rounded-lg object-cover shadow-sm transition-opacity duration-300 ${
           isLoading ? 'opacity-0' : 'opacity-100'
@@ -267,6 +276,24 @@ const IframePreviewModal = ({ open, onClose, src, title = 'Game Preview' }) => {
     }
   };
 
+  // Normalize iframe src for protocol issues: when the host page is served over https
+  // but the site data contains an http:// URL, browsers will block the iframe as mixed
+  // content. Do a safe runtime replacement here so we don't have to edit source data
+  // files immediately.
+  const normalizeSrcForProtocol = (url) => {
+    if (!url) return url;
+    try {
+      if (typeof window !== 'undefined' && window.location && window.location.protocol === 'https:') {
+        if (/^http:\/\//i.test(url)) {
+          return url.replace(/^http:\/\//i, 'https://');
+        }
+      }
+    } catch (e) {
+      // ignore and return original
+    }
+    return url;
+  };
+
 
   if (!open) return null;
 
@@ -331,7 +358,7 @@ const IframePreviewModal = ({ open, onClose, src, title = 'Game Preview' }) => {
   <div className="game-frame-container h-[calc(100%-132px)]">
           <iframe
             ref={iframeRef}
-            src={src}
+            src={normalizeSrcForProtocol(src)}
             className="game-preview w-full h-full bg-white"
             onLoad={handleLoad}
             title={title}
@@ -568,13 +595,13 @@ class ErrorBoundary extends React.Component {
         <div className="min-h-screen bg-gradient-to-br from-white to-gray-50 flex items-center justify-center">
           <div className="text-center p-8">
             <div className="text-6xl mb-4">😵‍💫</div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">出了点小问题</h2>
-            <p className="text-gray-600 mb-6">页面遇到了一些技术问题，请刷新页面重试</p>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Something went wrong</h2>
+            <p className="text-gray-600 mb-6">The page encountered some technical issues, please refresh and try again</p>
             <button
               onClick={() => window.location.reload()}
               className="px-6 py-3 bg-primary-blue text-white rounded-lg hover:bg-blue-600 transition-colors duration-200"
             >
-              刷新页面
+              Refresh Page
             </button>
           </div>
         </div>

@@ -10,7 +10,8 @@ const getDefaultApiBase = () => {
     if (typeof window !== 'undefined') {
       const host = window.location.hostname;
       if (host === 'localhost' || host === '127.0.0.1') {
-        return 'http://localhost:15001/api';
+        return 'http://localhost:15002/api'//'https://online.gameslog.top/api'
+        //'http://localhost:15002/api';
       }
     }
   } catch (e) {
@@ -31,8 +32,9 @@ export const useLocalAPI = () => {
     try {
       setLoading(true);
       setError(null);
-      
-      const response = await fetch(`${API_BASE_URL}/data`);
+      // Add a timestamp query param to avoid cached responses on the client or intermediary caches.
+      const url = `${API_BASE_URL}/data${API_BASE_URL.includes('?') ? '&' : '?'}_ts=${Date.now()}`;
+      const response = await fetch(url, { cache: 'no-store', credentials: 'same-origin' });
       const result = await response.json();
       
       if (result.success) {

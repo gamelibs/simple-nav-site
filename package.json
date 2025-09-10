@@ -2,6 +2,7 @@
   "name": "simple-nav-site",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
@@ -18,7 +19,7 @@
     "start": "react-scripts start",
     "server": "node server.js",
     "dev": "concurrently \"npm run server\" \"npm start\"",
-    "build": "react-scripts build",
+  "build": "PUBLIC_URL=. react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
