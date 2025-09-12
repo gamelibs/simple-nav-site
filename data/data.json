@@ -869,8 +869,10 @@
       "icon": "https://cpsense.heiheigame.com/gameicon/088-icon-128.jpg",
       "name": "Paper Golf",
       "path": "https://cpsense.heiheigame.com/douyou_release/PaperGolf/",
-      "categoryId": 3,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/PaperGolf/"
+      "categoryId": 1,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/PaperGolf/",
+      "url": "https://cpsense.heiheigame.com/douyou_release/PaperGolf/",
+      "description": ""
     },
     {
       "id": 88,
@@ -1359,8 +1361,10 @@
       "icon": "https://cpsense.heiheigame.com/gameicon/137-icon-128.jpg",
       "name": "KrisMasTiles",
       "path": "https://cpsense.heiheigame.com/douyou_release/KrisMasTiles/",
-      "categoryId": 3,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/KrisMasTiles/"
+      "categoryId": 1,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/KrisMasTiles/",
+      "url": "https://cpsense.heiheigame.com/douyou_release/KrisMasTiles/",
+      "description": ""
     },
     {
       "id": 137,
@@ -1519,8 +1523,10 @@
       "icon": "https://cpsense.heiheigame.com/gameicon/153-icon-128.jpg",
       "name": "Moving Up",
       "path": "https://cpsense.heiheigame.com/douyou_release/MovingUp/",
-      "categoryId": 3,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/MovingUp/"
+      "categoryId": 1,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/MovingUp/",
+      "url": "https://cpsense.heiheigame.com/douyou_release/MovingUp/",
+      "description": ""
     },
     {
       "id": 153,
@@ -1899,8 +1905,10 @@
       "icon": "https://cpsense.heiheigame.com/gameicon/191-icon-128.jpg",
       "name": "Baby Capybaras",
       "path": "https://cpsense.heiheigame.com/douyou_release/BabyCapybaras/",
-      "categoryId": 3,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BabyCapybaras/"
+      "categoryId": 1,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BabyCapybaras/",
+      "url": "https://cpsense.heiheigame.com/douyou_release/BabyCapybaras/",
+      "description": ""
     },
     {
       "id": 191,
@@ -2371,8 +2379,10 @@
       "icon": "https://cpsense.heiheigame.com/gameicon/240-icon-128.jpg",
       "name": "SquidRun",
       "path": "https://cpsense.heiheigame.com/douyou_release/SquidRun/",
-      "categoryId": 3,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SquidRun/"
+      "categoryId": 2,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SquidRun/",
+      "url": "https://cpsense.heiheigame.com/douyou_release/SquidRun/",
+      "description": ""
     },
     {
       "id": 238,
@@ -2788,7 +2798,7 @@
       "id": 277,
       "gid": "281",
       "pubid": "",
-      "icon": "https://cpsense.heiheigame.com/gameicon/281-icon-128.jpg",
+      "icon": "https://cpsense.heiheigame.com/gameicon/281-icon-128.jpg?1",
       "name": "Screamals",
       "path": "https://cpsense.heiheigame.com/douyou_release/Screamals/",
       "categoryId": 3,
@@ -2800,11 +2810,13 @@
       "id": 278,
       "gid": "282",
       "pubid": "2393",
-      "icon": "https://cpsense.heiheigame.com/gameicon/282-icon-128.jpg",
+      "icon": "https://cpsense.heiheigame.com/gameicon/282-icon-128.jpg?1",
       "name": "Bubble It Jam",
       "path": "https://cpsense.heiheigame.com/douyou_release/BubbleItJam/",
-      "categoryId": 3,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BubbleItJam/"
+      "categoryId": 1,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BubbleItJam/",
+      "url": "https://cpsense.heiheigame.com/douyou_release/BubbleItJam/",
+      "description": ""
     },
     {
       "id": 279,
@@ -2843,7 +2855,7 @@
       "icon": "https://cpsense.heiheigame.com/gameicon/286-icon-128.jpg",
       "name": "Cat Rescue",
       "path": "https://cpsense.heiheigame.com/douyou_release/CatRescue/",
-      "categoryId": 3,
+      "categoryId": 2,
       "pathBeta": "http://localhost:13200/static/1012/release/286/index.html?vb=beta&dev=4094-cpsense&cb=1757583822950&w-v=4.4",
       "url": "https://cpsense.heiheigame.com/douyou_release/CatRescue/",
       "description": ""
@@ -2888,7 +2900,9 @@
       "name": "Block Crasher",
       "path": "https://cpsense.heiheigame.com/douyou_release/BlockCrasher/",
       "categoryId": 3,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BlockCrasher/"
+      "pathBeta": "http://localhost:13200/static/1012/release/290/index.html?vb=beta&dev=4094-cpsense&cb=1757671164075",
+      "url": "https://cpsense.heiheigame.com/douyou_release/BlockCrasher/",
+      "description": ""
     },
     {
       "id": 288,
