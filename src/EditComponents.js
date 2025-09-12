@@ -38,6 +38,7 @@ export const EditSiteModal = ({ isOpen, onClose, onSave, site, categories }) => 
     pathBeta: '',
     description: '',
     pubid: '',
+    gid: '',
     categoryId: 1,
     icon: '/icons/default.svg'
   });
@@ -56,6 +57,7 @@ export const EditSiteModal = ({ isOpen, onClose, onSave, site, categories }) => 
         pathBeta: site.pathBeta ?? site.path ?? site.url ?? '',
         description: site.description || '',
         pubid: site.pubid || '',
+        gid: site.gid || '',
         categoryId: site.categoryId || 1,
         icon: site.icon || '/icons/default.svg'
       });
@@ -68,6 +70,7 @@ export const EditSiteModal = ({ isOpen, onClose, onSave, site, categories }) => 
         pathBeta: '',
         description: '',
         pubid: '',
+        gid: '',
         categoryId: 1,
         icon: '/icons/default.svg'
       });
@@ -243,6 +246,22 @@ export const EditSiteModal = ({ isOpen, onClose, onSave, site, categories }) => 
                 placeholder="Enter pubid"
                 disabled={isSubmitting}
               />
+            </div>
+
+            {/* GID field */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                GID
+              </label>
+              <input
+                type="text"
+                value={formData.gid}
+                onChange={(e) => handleInputChange('gid', e.target.value)}
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white text-black focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200"
+                placeholder="Enter gid"
+                disabled={isSubmitting}
+              />
+              <p className="text-xs text-gray-500 mt-1">Optional: internal game id</p>
             </div>
 
             {/* Category selection */}

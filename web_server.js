@@ -55,7 +55,7 @@ app.get('/api/data', async (req, res) => {
 // 添加新game
 app.post('/api/sites', async (req, res) => {
   try {
-    const { name, url, description, categoryId, icon, pubid } = req.body;
+    const { name, url, description, categoryId, icon, pubid, gid } = req.body;
     
     // 验证必需字段
     if (!name || !url || !categoryId) {
@@ -77,6 +77,7 @@ app.post('/api/sites', async (req, res) => {
       url,
       description: description || '',
       pubid: pubid || '',
+      gid: gid || '',
       categoryId: parseInt(categoryId),
       icon: icon || '/icons/default.svg',
       // also store path/pathBeta if provided (form may provide them)
@@ -109,7 +110,7 @@ app.post('/api/sites', async (req, res) => {
 app.put('/api/sites/:id', async (req, res) => {
   try {
     const siteId = parseInt(req.params.id);
-    const { name, url, description, categoryId, icon, pubid } = req.body;
+    const { name, url, description, categoryId, icon, pubid, gid } = req.body;
     
     const data = await readDataFile();
     
@@ -130,6 +131,7 @@ app.put('/api/sites/:id', async (req, res) => {
       ...(url && { url }),
       ...(description !== undefined && { description }),
       ...(pubid !== undefined && { pubid }),
+      ...(gid !== undefined && { gid }),
       ...(categoryId && { categoryId: parseInt(categoryId) }),
       ...(icon && { icon }),
       // accept edits to path and pathBeta as well

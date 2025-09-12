@@ -25,7 +25,9 @@
       "name": "Bubble_Shooter_Arcade",
       "path": "https://cpsense.heiheigame.com/douyou_release/Bubble_Shooter_Arcade/",
       "categoryId": 3,
-      "pathBeta": "http://localhost:13200/static/1012/beta/001/beta.html?vb=beta&dev=4094-cpsense&timestamp-1757392316836&cb=1757392316836"
+      "pathBeta": "http://localhost:13200/static/1012/release/001/index.html?vb=beta&dev=4094-cpsense&cb=1757582048836&w-v=4.4",
+      "url": "https://cpsense.heiheigame.com/douyou_release/Bubble_Shooter_Arcade/",
+      "description": ""
     },
     {
       "id": 2,
@@ -863,7 +865,7 @@
     {
       "id": 87,
       "gid": "088",
-      "pubid": "",
+      "pubid": "2391",
       "icon": "https://cpsense.heiheigame.com/gameicon/088-icon-128.jpg",
       "name": "Paper Golf",
       "path": "https://cpsense.heiheigame.com/douyou_release/PaperGolf/",
@@ -1353,7 +1355,7 @@
     {
       "id": 136,
       "gid": "137",
-      "pubid": "",
+      "pubid": "2392",
       "icon": "https://cpsense.heiheigame.com/gameicon/137-icon-128.jpg",
       "name": "KrisMasTiles",
       "path": "https://cpsense.heiheigame.com/douyou_release/KrisMasTiles/",
@@ -1513,7 +1515,7 @@
     {
       "id": 152,
       "gid": "153",
-      "pubid": "",
+      "pubid": "\t2388",
       "icon": "https://cpsense.heiheigame.com/gameicon/153-icon-128.jpg",
       "name": "Moving Up",
       "path": "https://cpsense.heiheigame.com/douyou_release/MovingUp/",
@@ -1893,7 +1895,7 @@
     {
       "id": 190,
       "gid": "191",
-      "pubid": "",
+      "pubid": "2387",
       "icon": "https://cpsense.heiheigame.com/gameicon/191-icon-128.jpg",
       "name": "Baby Capybaras",
       "path": "https://cpsense.heiheigame.com/douyou_release/BabyCapybaras/",
@@ -2302,13 +2304,15 @@
     },
     {
       "id": 231,
-      "gid": "234",
+      "gid": "10000",
       "pubid": "2336",
-      "icon": "https://cpsense.heiheigame.com/gameicon/234-icon-128.jpg",
+      "icon": "https://cpsense.heiheigame.com/cd_gameicon/10000-icon-128.jpg",
       "name": "TheNutBr",
       "path": "https://cpsense.heiheigame.com/douyou_other/TheNutBr/",
       "categoryId": 2,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/TheNutBr/"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/TheNutBr/",
+      "url": "https://cpsense.heiheigame.com/douyou_other/TheNutBr/",
+      "description": ""
     },
     {
       "id": 232,
@@ -2363,7 +2367,7 @@
     {
       "id": 237,
       "gid": "240",
-      "pubid": "",
+      "pubid": "2386",
       "icon": "https://cpsense.heiheigame.com/gameicon/240-icon-128.jpg",
       "name": "SquidRun",
       "path": "https://cpsense.heiheigame.com/douyou_release/SquidRun/",
@@ -2432,23 +2436,27 @@
     },
     {
       "id": 244,
-      "gid": "247",
+      "gid": "10002",
       "pubid": "2357",
-      "icon": "https://cpsense.heiheigame.com/gameicon/247-icon-128.jpg",
+      "icon": "https://cpsense.heiheigame.com/cd_gameicon/10002-icon-128.jpg",
       "name": "Rescue The Car",
       "path": "https://cpsense.heiheigame.com/douyou_other/RescueTheCar/",
       "categoryId": 2,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/RescueTheCar/"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/RescueTheCar/",
+      "url": "https://cpsense.heiheigame.com/douyou_other/RescueTheCar/",
+      "description": ""
     },
     {
       "id": 245,
-      "gid": "248",
+      "gid": "10001",
       "pubid": "2363",
-      "icon": "https://cpsense.heiheigame.com/gameicon/248-icon-128.jpg",
+      "icon": "https://cpsense.heiheigame.com/cd_gameicon/10001-icon-128.jpg",
       "name": "Master Blender",
       "path": "https://cpsense.heiheigame.com/douyou_other/MasterBlender/",
       "categoryId": 2,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/MasterBlender/"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/MasterBlender/",
+      "url": "https://cpsense.heiheigame.com/douyou_other/MasterBlender/",
+      "description": ""
     },
     {
       "id": 246,
@@ -2564,21 +2572,25 @@
       "id": 257,
       "gid": "261",
       "pubid": "",
-      "icon": "https://cpsense.heiheigame.com/gameicon/261-icon-128.jpg",
+      "icon": "https://cpsense.heiheigame.com/cd_gameicon/10004-icon-128.jpg",
       "name": "Park Them All",
       "path": "https://cpsense.heiheigame.com/douyou_release/ParkThemAll/",
       "categoryId": 3,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ParkThemAll/"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ParkThemAll/",
+      "url": "https://cpsense.heiheigame.com/douyou_release/ParkThemAll/",
+      "description": ""
     },
     {
       "id": 258,
-      "gid": "262",
-      "pubid": "",
-      "icon": "https://cpsense.heiheigame.com/gameicon/262-icon-128.jpg",
+      "gid": "10004",
+      "pubid": "2374",
+      "icon": "https://cpsense.heiheigame.com/cd_gameicon/10004-icon-128.jpg",
       "name": "SnipingAliens",
       "path": "https://cpsense.heiheigame.com/douyou_other/SnipingAliens/",
-      "categoryId": 3,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SnipingAliens/"
+      "categoryId": 2,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SnipingAliens/",
+      "url": "https://cpsense.heiheigame.com/douyou_other/SnipingAliens/",
+      "description": ""
     },
     {
       "id": 259,
@@ -2592,43 +2604,51 @@
     },
     {
       "id": 260,
-      "gid": "266",
+      "gid": "10008",
       "pubid": "",
-      "icon": "https://cpsense.heiheigame.com/gameicon/266-icon-128.jpg",
+      "icon": "https://cpsense.heiheigame.com/cd_gameicon/10008-icon-128.jpg",
       "name": "GunfightShoot",
       "path": "https://cpsense.heiheigame.com/douyou_other/GunfightShoot/",
-      "categoryId": 3,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/GunfightShoot/"
+      "categoryId": 2,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/GunfightShoot/",
+      "url": "https://cpsense.heiheigame.com/douyou_other/GunfightShoot/",
+      "description": ""
     },
     {
       "id": 261,
-      "gid": "267",
-      "pubid": "",
-      "icon": "https://cpsense.heiheigame.com/gameicon/267-icon-128.jpg",
+      "gid": "10003",
+      "pubid": "2375",
+      "icon": "https://cpsense.heiheigame.com/cd_gameicon/10003-icon-128.jpg",
       "name": "Catch Doll",
       "path": "https://cpsense.heiheigame.com/douyou_other/CatchDoll/",
-      "categoryId": 3,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CatchDoll/"
+      "categoryId": 2,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CatchDoll/",
+      "url": "https://cpsense.heiheigame.com/douyou_other/CatchDoll/",
+      "description": ""
     },
     {
       "id": 262,
-      "gid": "268",
-      "pubid": "",
-      "icon": "https://cpsense.heiheigame.com/gameicon/268-icon-128.jpg",
+      "gid": "10006",
+      "pubid": "2394",
+      "icon": "https://cpsense.heiheigame.com/cd_gameicon/10006-icon-128.jpg",
       "name": "Storm Sunder",
       "path": "https://cpsense.heiheigame.com/douyou_other/StormSunder/",
-      "categoryId": 3,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/StormSunder/"
+      "categoryId": 2,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/StormSunder/",
+      "url": "https://cpsense.heiheigame.com/douyou_other/StormSunder/",
+      "description": ""
     },
     {
       "id": 263,
-      "gid": "269",
-      "pubid": "",
-      "icon": "https://cpsense.heiheigame.com/gameicon/269-icon-128.jpg",
+      "gid": "10005",
+      "pubid": "2376",
+      "icon": "https://cpsense.heiheigame.com/cd_gameicon/10005-icon-128.jpg",
       "name": "FarmPuzzle",
       "path": "https://cpsense.heiheigame.com/douyou_other/FarmPuzzle/",
-      "categoryId": 3,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/FarmPuzzle/"
+      "categoryId": 2,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/FarmPuzzle/",
+      "url": "https://cpsense.heiheigame.com/douyou_other/FarmPuzzle/",
+      "description": ""
     },
     {
       "id": 264,
@@ -2742,23 +2762,27 @@
     },
     {
       "id": 275,
-      "gid": "cd-281",
+      "gid": "10011",
       "pubid": "",
-      "icon": "https://cpsense.heiheigame.com/gameicon/cd-281-icon-128.jpg",
+      "icon": "https://cpsense.heiheigame.com/cd_gameicon/10011-icon-128.jpg",
       "name": "JewelryTycoon",
       "path": "https://cpsense.heiheigame.com/JewelryTycoon/",
-      "categoryId": 3,
-      "pathBeta": "https://cpsense.heiheigame.com/JewelryTycoon/"
+      "categoryId": 2,
+      "pathBeta": "https://cpsense.heiheigame.com/JewelryTycoon/",
+      "url": "https://cpsense.heiheigame.com/JewelryTycoon/",
+      "description": ""
     },
     {
       "id": 276,
-      "gid": "cd-282",
-      "pubid": "",
-      "icon": "https://cpsense.heiheigame.com/gameicon/cd-282-icon-128.jpg",
+      "gid": "10007",
+      "pubid": "2382",
+      "icon": "https://cpsense.heiheigame.com/cd_gameicon/10007-icon-128.jpg",
       "name": "ShootBlock",
       "path": "https://cpsense.heiheigame.com/ShootBlock/",
-      "categoryId": 3,
-      "pathBeta": "https://cpsense.heiheigame.com/ShootBlock/"
+      "categoryId": 2,
+      "pathBeta": "https://cpsense.heiheigame.com/ShootBlock/",
+      "url": "https://cpsense.heiheigame.com/ShootBlock/",
+      "description": ""
     },
     {
       "id": 277,
@@ -2768,12 +2792,14 @@
       "name": "Screamals",
       "path": "https://cpsense.heiheigame.com/douyou_release/Screamals/",
       "categoryId": 3,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Screamals/"
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Screamals/?vb=beta&w-v=4.4",
+      "url": "https://cpsense.heiheigame.com/douyou_release/Screamals/",
+      "description": ""
     },
     {
       "id": 278,
       "gid": "282",
-      "pubid": "",
+      "pubid": "2393",
       "icon": "https://cpsense.heiheigame.com/gameicon/282-icon-128.jpg",
       "name": "Bubble It Jam",
       "path": "https://cpsense.heiheigame.com/douyou_release/BubbleItJam/",
@@ -2813,12 +2839,14 @@
     {
       "id": 282,
       "gid": "286",
-      "pubid": "",
+      "pubid": "2389",
       "icon": "https://cpsense.heiheigame.com/gameicon/286-icon-128.jpg",
       "name": "Cat Rescue",
       "path": "https://cpsense.heiheigame.com/douyou_release/CatRescue/",
       "categoryId": 3,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CatRescue/"
+      "pathBeta": "http://localhost:13200/static/1012/release/286/index.html?vb=beta&dev=4094-cpsense&cb=1757583822950&w-v=4.4",
+      "url": "https://cpsense.heiheigame.com/douyou_release/CatRescue/",
+      "description": ""
     },
     {
       "id": 283,
@@ -2848,7 +2876,9 @@
       "name": "Color Dodge",
       "path": "https://cpsense.heiheigame.com/douyou_release/ColorDodge/",
       "categoryId": 3,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ColorDodge/"
+      "pathBeta": "http://localhost:13200/static/1012/beta/290/beta.html?vb=beta&dev=4094-cpsense&timestamp-1757660254480&cb=1757660254480",
+      "url": "https://cpsense.heiheigame.com/douyou_release/ColorDodge/",
+      "description": ""
     },
     {
       "id": 286,
@@ -2861,12 +2891,40 @@
       "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BlockCrasher/"
     },
     {
-      "id": 287,
-      "name": "TEST_GAME",
-      "url": "https://example.com/test/",
+      "id": 288,
+      "gid": "10012",
+      "name": "Bear Market",
+      "url": "https://cpsense.heiheigame.com/douyou_other/BearMarket",
       "description": "",
-      "categoryId": 1,
-      "icon": "https://example.com/icon.png"
+      "pubid": "2383",
+      "categoryId": 2,
+      "icon": "https://cpsense.heiheigame.com/cd_gameicon/10012-icon-128.jpg",
+      "path": "https://cpsense.heiheigame.com/douyou_other/BearMarket",
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_other/BearMarket"
+    },
+    {
+      "id": 289,
+      "gid": "10010",
+      "name": "Happy Pop",
+      "url": "https://cpsense.heiheigame.com/douyou_other/HappyPop",
+      "description": "",
+      "pubid": "2384",
+      "categoryId": 2,
+      "icon": "https://cpsense.heiheigame.com/cd_gameicon/10010-icon-128.jpg",
+      "path": "https://cpsense.heiheigame.com/douyou_other/HappyPop",
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_other/HappyPop"
+    },
+    {
+      "id": 290,
+      "gid": "10009",
+      "name": "WarGears",
+      "url": "https://cpsense.heiheigame.com/douyou_other/WarGears/",
+      "description": "",
+      "pubid": "",
+      "categoryId": 2,
+      "icon": "https://cpsense.heiheigame.com/cd_gameicon/10009-icon-128.jpg",
+      "path": "https://cpsense.heiheigame.com/douyou_other/WarGears/",
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_other/WarGears/"
     }
   ]
 }

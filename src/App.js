@@ -169,44 +169,26 @@ const App = () => {
     return currentData.categories.find(cat => cat.id === activeCategory);
   };
 
-  // 添加快捷键监听
+  // 添加快捷键监听：使用 Cmd+U 切换编辑模式（Meta+U）
   useEffect(() => {
-    const handleKeyPress = (event) => {
-      // Ctrl+E (Windows/Linux) or Cmd+E (Mac) toggles edit mode
-      if ((event.ctrlKey || event.metaKey) && event.key === 'e') {
+    const handleKeyDown = (event) => {
+      const key = (event.key || '').toLowerCase();
+      // Cmd (Meta) + U 触发
+      if (event.metaKey && key === 'u') {
         event.preventDefault();
-        setIsEditMode(!isEditMode);
-        setNotification({ 
-          message: `Edit mode ${!isEditMode ? 'enabled' : 'disabled'}`, 
-          type: 'success' 
+        setIsEditMode(prev => {
+          const next = !prev;
+          setNotification({ message: `Edit mode ${next ? 'enabled' : 'disabled'}`, type: 'success' });
+          return next;
         });
-      }
-      
-      // 连续按 3 次 E 键也可以切换编辑模式
-      if (event.key === 'e' || event.key === 'E') {
-        const now = Date.now();
-        const keyPresses = JSON.parse(localStorage.getItem('keyPresses') || '[]');
-        keyPresses.push(now);
-        
-        // 只保留最近 3 秒内的按键
-        const recentPresses = keyPresses.filter(time => now - time < 3000);
-        localStorage.setItem('keyPresses', JSON.stringify(recentPresses));
-        
-        // If E was pressed 3 times within 3 seconds
-        if (recentPresses.length >= 3) {
-          localStorage.removeItem('keyPresses');
-          setIsEditMode(!isEditMode);
-          setNotification({ 
-            message: `🎉 Edit mode ${!isEditMode ? 'enabled' : 'disabled'}!`, 
-            type: 'success' 
-          });
-        }
       }
     };
 
-    window.addEventListener('keydown', handleKeyPress);
-    return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [isEditMode]);
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
 
   return (
   <div className="min-h-screen bg-[#0b0b0c] text-gray-200">
