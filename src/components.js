@@ -88,8 +88,8 @@ const IframePreviewModal = ({ open, onClose, src, title = 'Game Preview' }) => {
                   bus.off('after_ad', handlers.afterAd);
                   bus.off('interstitial_viewed', handlers.afterAd);
                 }
-                if (handlers.dismissed) bus.off('ad_dismissed', handlers.dismissed);
-                if (handlers.viewed) bus.off('ad_viewed', handlers.viewed);
+                if (handlers.dismissed) bus.off('reward_dismissed', handlers.dismissed);
+                if (handlers.viewed) bus.off('reward_viewed', handlers.viewed);
           // if (handlers.adError) bus.off('ad_error', handlers.adError);
         }
       } catch (e) {
@@ -257,8 +257,8 @@ const IframePreviewModal = ({ open, onClose, src, title = 'Game Preview' }) => {
               candidate.on('before_ad', handlers.beforeAd);
               candidate.on('interstitial_viewed', handlers.afterAd);
               candidate.on('after_ad', handlers.afterAd);
-              candidate.on('ad_dismissed', handlers.dismissed);
-              candidate.on('ad_viewed', handlers.viewed);
+              candidate.on('reward_dismissed', handlers.dismissed);
+              candidate.on('reward_viewed', handlers.viewed);
               candidate.on('ad_error', handlers.adError);
 
               busRef.current = candidate;
