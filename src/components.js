@@ -70,8 +70,9 @@ const IframePreviewModal = ({ open, onClose, src, title = 'Game Preview' }) => {
       try {
         const bus = busRef.current;
         const handlers = handlersRef.current || {};
-        if (bus && typeof bus.off === 'function') {
+          if (bus && typeof bus.off === 'function') {
           if (handlers.time) bus.off('game_time', handlers.time);
+          if (handlers.start) bus.off('game_start', handlers.start);
           if (handlers.score) bus.off('game_score', handlers.score);
           if (handlers.level) bus.off('game_level', handlers.level);
           // ad handlers
@@ -147,6 +148,16 @@ const IframePreviewModal = ({ open, onClose, src, title = 'Game Preview' }) => {
               const el = document.getElementById('game-level-display');
               if (el) {
                 el.textContent = String(val);
+                el.classList.add('updated');
+                setTimeout(() => el.classList.remove('updated'), 300);
+              }
+            };
+            // game_start: set a boolean display (true/false). Default is false.
+            handlers.start = (val) => {
+              const el = document.getElementById('game-start-display');
+              if (el) {
+                const state = !!val;
+                el.textContent = state ? 'true' : 'false';
                 el.classList.add('updated');
                 setTimeout(() => el.classList.remove('updated'), 300);
               }
@@ -248,6 +259,7 @@ const IframePreviewModal = ({ open, onClose, src, title = 'Game Preview' }) => {
 
             try {
               candidate.on('game_time', handlers.time);
+              candidate.on('game_start', handlers.start);
               candidate.on('game_score', handlers.score);
               candidate.on('game_level', handlers.level);
               // ad events
@@ -316,6 +328,10 @@ const IframePreviewModal = ({ open, onClose, src, title = 'Game Preview' }) => {
           <div className="flex flex-col items-center min-w-[90px]">
             <span className="text-xs font-medium" style={{ color: 'rgba(255,255,255,0.9)' }}>Game Time</span>
             <span id="game-time-display" className="text-sm font-semibold" style={{ color: '#ffffff' }}>00:00</span>
+          </div>
+          <div className="flex flex-col items-center min-w-[90px]">
+            <span className="text-xs font-medium" style={{ color: 'rgba(255,255,255,0.9)' }}>Game Start</span>
+            <span id="game-start-display" className="text-sm font-semibold" style={{ color: '#ffffff' }}>false</span>
           </div>
           <div className="flex flex-col items-center min-w-[90px]">
             <span className="text-xs font-medium" style={{ color: 'rgba(255,255,255,0.9)' }}>Game Score</span>
