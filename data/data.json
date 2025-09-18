@@ -25,7 +25,7 @@
       "name": "Bubble_Shooter_Arcade",
       "path": "https://cpsense.heiheigame.com/douyou_release/Bubble_Shooter_Arcade/",
       "categoryId": 3,
-      "pathBeta": "http://localhost:13200/static/1012/release/001/index.html?vb=beta&dev=4094-cpsense&cb=1757582048836&w-v=4.4",
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Bubble_Shooter_Arcade/?vb=beta",
       "url": "https://cpsense.heiheigame.com/douyou_release/Bubble_Shooter_Arcade/",
       "description": ""
     },
@@ -2315,11 +2315,11 @@
       "gid": "10000",
       "pubid": "2336",
       "icon": "https://cpsense.heiheigame.com/cd_gameicon/10000-icon-128.jpg",
-      "name": "TheNutBr",
-      "path": "https://cpsense.heiheigame.com/douyou_other/TheNutBr/",
+      "name": "TheNutBreaker",
+      "path": "https://cpsense.heiheigame.com/douyou_other/TheNutBreaker",
       "categoryId": 2,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/TheNutBr/",
-      "url": "https://cpsense.heiheigame.com/douyou_other/TheNutBr/",
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/TheNutBreaker",
+      "url": "https://cpsense.heiheigame.com/douyou_other/TheNutBreaker",
       "description": ""
     },
     {
@@ -2501,12 +2501,14 @@
     {
       "id": 249,
       "gid": "252",
-      "pubid": "",
+      "pubid": "2377",
       "icon": "https://cpsense.heiheigame.com/gameicon/252-icon-128.jpg",
       "name": "Cow Boys",
       "path": "https://cpsense.heiheigame.com/douyou_release/CowBoys/",
-      "categoryId": 3,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CowBoys/"
+      "categoryId": 1,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CowBoys/",
+      "url": "https://cpsense.heiheigame.com/douyou_release/CowBoys/",
+      "description": ""
     },
     {
       "id": 250,
@@ -2577,18 +2579,6 @@
       "path": "https://cpsense.heiheigame.com/douyou_release/ColorBlockJam/",
       "categoryId": 1,
       "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ColorBlockJam/"
-    },
-    {
-      "id": 257,
-      "gid": "261",
-      "pubid": "",
-      "icon": "https://cpsense.heiheigame.com/cd_gameicon/10004-icon-128.jpg",
-      "name": "Park Them All",
-      "path": "https://cpsense.heiheigame.com/douyou_release/ParkThemAll/",
-      "categoryId": 3,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ParkThemAll/",
-      "url": "https://cpsense.heiheigame.com/douyou_release/ParkThemAll/",
-      "description": ""
     },
     {
       "id": 258,
@@ -2683,22 +2673,26 @@
     {
       "id": 266,
       "gid": "272",
-      "pubid": "",
+      "pubid": "2378",
       "icon": "https://cpsense.heiheigame.com/gameicon/272-icon-128.jpg",
       "name": "CatchPig",
       "path": "https://cpsense.heiheigame.com/douyou_release/CatchPig/",
-      "categoryId": 3,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CatchPig/"
+      "categoryId": 1,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/CatchPig/",
+      "url": "https://cpsense.heiheigame.com/douyou_release/CatchPig/",
+      "description": ""
     },
     {
       "id": 267,
       "gid": "273",
-      "pubid": "",
+      "pubid": "2379",
       "icon": "https://cpsense.heiheigame.com/gameicon/273-icon-128.jpg",
       "name": " Color Cargo Puzzle Rush",
       "path": "https://cpsense.heiheigame.com/douyou_release/ColorCargoPuzzleRush/",
-      "categoryId": 3,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ColorCargoPuzzleRush/"
+      "categoryId": 1,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/ColorCargoPuzzleRush/",
+      "url": "https://cpsense.heiheigame.com/douyou_release/ColorCargoPuzzleRush/",
+      "description": ""
     },
     {
       "id": 268,
@@ -2733,12 +2727,14 @@
     {
       "id": 271,
       "gid": "277",
-      "pubid": "",
+      "pubid": "2380",
       "icon": "https://cpsense.heiheigame.com/gameicon/277-icon-128.jpg",
       "name": "Sorting Puzzle",
       "path": "https://cpsense.heiheigame.com/douyou_release/SortingPuzzle/",
-      "categoryId": 3,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SortingPuzzle/"
+      "categoryId": 1,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/SortingPuzzle/",
+      "url": "https://cpsense.heiheigame.com/douyou_release/SortingPuzzle/",
+      "description": ""
     },
     {
       "id": 272,
@@ -2753,12 +2749,14 @@
     {
       "id": 273,
       "gid": "279",
-      "pubid": "",
+      "pubid": "2381",
       "icon": "https://cpsense.heiheigame.com/gameicon/279-icon-128.jpg",
       "name": "Insect Exploration",
       "path": "https://cpsense.heiheigame.com/douyou_release/InsectExploration/",
-      "categoryId": 3,
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/InsectExploration/"
+      "categoryId": 1,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/InsectExploration/",
+      "url": "https://cpsense.heiheigame.com/douyou_release/InsectExploration/",
+      "description": ""
     },
     {
       "id": 274,
@@ -2768,9 +2766,7 @@
       "name": "Beat Swiper",
       "path": "https://cpsense.heiheigame.com/douyou_release/BeatSwiper/",
       "categoryId": 3,
-      "pathBeta": "http://localhost:13200/static/1012/release/280/?vb=beta&w-v=4.4",
-      "url": "https://cpsense.heiheigame.com/douyou_release/BeatSwiper/",
-      "description": ""
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BeatSwiper/"
     },
     {
       "id": 275,
@@ -2799,11 +2795,11 @@
     {
       "id": 277,
       "gid": "281",
-      "pubid": "",
+      "pubid": "2390",
       "icon": "https://cpsense.heiheigame.com/gameicon/281-icon-128.jpg?1",
       "name": "Screamals",
       "path": "https://cpsense.heiheigame.com/douyou_release/Screamals/",
-      "categoryId": 3,
+      "categoryId": 1,
       "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/Screamals/?vb=beta&w-v=4.4",
       "url": "https://cpsense.heiheigame.com/douyou_release/Screamals/",
       "description": ""
@@ -2823,36 +2819,36 @@
     {
       "id": 279,
       "gid": "283",
-      "pubid": "",
+      "pubid": "2395",
       "icon": "https://cpsense.heiheigame.com/gameicon/283-icon-128.jpg",
       "name": "Perfect Shot",
       "path": "https://cpsense.heiheigame.com/douyou_release/PerfectShot/",
-      "categoryId": 3,
-      "pathBeta": "http://localhost:13200/static/1012/release/283/?vb=beta&w-v=4.4",
+      "categoryId": 1,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/PerfectShot/",
       "url": "https://cpsense.heiheigame.com/douyou_release/PerfectShot/",
       "description": ""
     },
     {
       "id": 280,
       "gid": "284",
-      "pubid": "",
+      "pubid": "2396",
       "icon": "https://cpsense.heiheigame.com/gameicon/284-icon-128.jpg",
       "name": "Love Totems",
       "path": "https://cpsense.heiheigame.com/douyou_release/LoveTotems/",
-      "categoryId": 3,
-      "pathBeta": "http://localhost:13200/static/1012/release/284/?vb=beta&w-v=4.4",
+      "categoryId": 1,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/LoveTotems/",
       "url": "https://cpsense.heiheigame.com/douyou_release/LoveTotems/",
       "description": ""
     },
     {
       "id": 281,
       "gid": "285",
-      "pubid": "",
+      "pubid": "2397",
       "icon": "https://cpsense.heiheigame.com/gameicon/285-icon-128.jpg",
       "name": "Idle Baseball Tycoon",
       "path": "https://cpsense.heiheigame.com/douyou_release/IdleBaseballTycoon/",
-      "categoryId": 3,
-      "pathBeta": "http://localhost:13200/static/1012/release/285/?vb=beta&w-v=4.4",
+      "categoryId": 1,
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/IdleBaseballTycoon/",
       "url": "https://cpsense.heiheigame.com/douyou_release/IdleBaseballTycoon/",
       "description": ""
     },
@@ -2864,7 +2860,7 @@
       "name": "Cat Rescue",
       "path": "https://cpsense.heiheigame.com/douyou_release/CatRescue/",
       "categoryId": 2,
-      "pathBeta": "http://localhost:13200/static/1012/release/286/?vb=beta&w-v=4.4",
+      "pathBeta": "http://localhost:13200/static/1012/release/286/index.html?vb=beta&dev=4094-cpsense&cb=1757583822950&w-v=4.4",
       "url": "https://cpsense.heiheigame.com/douyou_release/CatRescue/",
       "description": ""
     },
@@ -2886,7 +2882,7 @@
       "name": "Match Fighter",
       "path": "https://cpsense.heiheigame.com/douyou_release/MatchFighter/",
       "categoryId": 3,
-      "pathBeta": "http://localhost:13200/static/1012/release/288/?vb=beta&w-v=4.4",
+      "pathBeta": "http://localhost:13200/static/1012/release/287/?vb=beta&w-v4.4",
       "url": "https://cpsense.heiheigame.com/douyou_release/MatchFighter/",
       "description": ""
     },
@@ -2898,7 +2894,7 @@
       "name": "Color Dodge",
       "path": "https://cpsense.heiheigame.com/douyou_release/ColorDodge/",
       "categoryId": 3,
-      "pathBeta": "http://localhost:13200/static/1012/release/287/?vb=beta&w-v=4.4",
+      "pathBeta": "http://localhost:13200/static/1012/beta/290/beta.html?vb=beta&w-v=4.4",
       "url": "https://cpsense.heiheigame.com/douyou_release/ColorDodge/",
       "description": ""
     },
@@ -2910,7 +2906,7 @@
       "name": "Block Crasher",
       "path": "https://cpsense.heiheigame.com/douyou_release/BlockCrasher/",
       "categoryId": 3,
-      "pathBeta": "http://localhost:13200/static/1012/release/290/index.html?vb=beta",
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_beta/BlockCrasher/?vb=beta&w-v=4.4",
       "url": "https://cpsense.heiheigame.com/douyou_release/BlockCrasher/",
       "description": ""
     },
