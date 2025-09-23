@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#3b82f6" />
-    <meta
-      name="description"
-      content="Simple Navigation Station - Collecting and organizing all kinds of high-quality game resources, providing a simple and efficient website navigation"
-    />
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#3b82f6" />
+  <meta name="description"
+    content="Simple Navigation Station - Collecting and organizing all kinds of high-quality game resources, providing a simple and efficient website navigation" />
   <!-- apple-touch-icon removed to avoid unnecessary requests -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>online games Library</title>
-  <!-- <script src="https://cpsense.heiheigame.com/libs/iframesdk1.0.js"></script> -->
-  <script src="http://localhost:13600/src/iframesdk1.0.js"></script>
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <title>online games Library</title>
+  <!-- prefer using a copy inside public/libs so it's included in the build output -->
+  <script src="https://cpsense.heiheigame.com/libs/iframesdk1.0.js"></script>
+  <!-- <script src="http://localhost:13600/src/iframesdk1.0.js"></script> -->
+  <!-- <script src="%PUBLIC_URL%/libs/iframesdk1.0.js"></script> -->
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+
 </html>

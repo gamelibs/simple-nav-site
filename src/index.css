@@ -117,6 +117,19 @@ p.text-gray-600 {
   background: #4b5563;
 }
 
+/* helper to hide scrollbars for lightweight horizontal scroll areas */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+/* enable smooth touch scrolling on iOS */
+.scrollbar-hide {
+  -webkit-overflow-scrolling: touch;
+}
+
 /* 卡片悬停动画 */
 .card-hover {
   transition: all 0.3s ease;

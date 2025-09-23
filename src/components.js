@@ -20,7 +20,7 @@ const SiteIcon = memo(({ site, onClick }) => {
       <div
         onClick={onClick}
         role={onClick ? 'button' : undefined}
-        className="w-[6.5rem] h-[6.5rem] bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg flex items-center justify-center text-white font-bold text-2xl shadow-sm cursor-pointer"
+        className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-[6.5rem] lg:h-[6.5rem] bg-gradient-to-br from-blue-400 to-purple-500 rounded-md sm:rounded-lg flex items-center justify-center text-white font-bold text-2xl shadow-sm cursor-pointer"
       >
         {(site.name || '?').charAt(0)}
       </div>
@@ -28,7 +28,7 @@ const SiteIcon = memo(({ site, onClick }) => {
   }
 
   return (
-    <div className="relative w-[6.5rem] h-[6.5rem] cursor-pointer" onClick={onClick} role={onClick ? 'button' : undefined}>
+  <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-[6.5rem] lg:h-[6.5rem] cursor-pointer" onClick={onClick} role={onClick ? 'button' : undefined}>
       {isLoading && (
         <div className="absolute inset-0 bg-gray-200 rounded-lg skeleton"></div>
       )}
@@ -44,7 +44,7 @@ const SiteIcon = memo(({ site, onClick }) => {
           return base ? base + (icon.startsWith('/') ? icon : '/' + icon) : icon;
         })()}
         alt={`${site.name} 图标`}
-        className={`w-[6.5rem] h-[6.5rem] rounded-lg object-cover shadow-sm transition-opacity duration-300 ${
+        className={`w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-[6.5rem] lg:h-[6.5rem] rounded-md sm:rounded-lg object-cover shadow-sm transition-opacity duration-300 ${
           isLoading ? 'opacity-0' : 'opacity-100'
         }`}
         onLoad={handleImageLoad}
@@ -59,39 +59,39 @@ const SiteIcon = memo(({ site, onClick }) => {
 // iframe preview modal component
 const IframePreviewModal = ({ open, onClose, src, title = 'Game Preview' }) => {
   const iframeRef = useRef(null);
+  const busRef = useRef(null);
+  const handlersRef = useRef({});
 
+  // cleanup when modal closes
   useEffect(() => {
     if (!open) return;
-    // We only subscribe to the iframe's internal IframeSdk event bus on iframe load.
-    // postMessage handling removed per request - no message listener is installed.
-
-    // Use refs for the bus and handlers; effect cleanup will unregister them.
-    const effectCleanup = () => {
+    return () => {
       try {
         const bus = busRef.current;
         const handlers = handlersRef.current || {};
-          if (bus && typeof bus.off === 'function') {
+        if (bus && typeof bus.off === 'function') {
           if (handlers.time) bus.off('game_time', handlers.time);
           if (handlers.start) bus.off('game_start', handlers.start);
           if (handlers.score) bus.off('game_score', handlers.score);
           if (handlers.level) bus.off('game_level', handlers.level);
-          // ad handlers
-                if (handlers.interstitial) {
-                  bus.off('interstitial', handlers.interstitial);
-                  bus.off('interstitial_open', handlers.interstitial);
-                }
-                if (handlers.reward) bus.off('reward', handlers.reward);
-                if (handlers.beforeAd) {
-                  bus.off('before_ad', handlers.beforeAd);
-                  bus.off('interstitial_open', handlers.beforeAd);
-                }
-                if (handlers.afterAd) {
-                  bus.off('after_ad', handlers.afterAd);
-                  bus.off('interstitial_viewed', handlers.afterAd);
-                }
-                if (handlers.dismissed) bus.off('reward_dismissed', handlers.dismissed);
-                if (handlers.viewed) bus.off('reward_viewed', handlers.viewed);
-          // if (handlers.adError) bus.off('ad_error', handlers.adError);
+          if (handlers.interstitial) {
+            bus.off('interstitial', handlers.interstitial);
+            bus.off('interstitial_open', handlers.interstitial);
+          }
+          if (handlers.reward) bus.off('reward', handlers.reward);
+          if (handlers.beforeAd) {
+            bus.off('before_ad', handlers.beforeAd);
+            bus.off('interstitial_open', handlers.beforeAd);
+          }
+          if (handlers.afterAd) {
+            bus.off('after_ad', handlers.afterAd);
+            bus.off('interstitial_viewed', handlers.afterAd);
+          }
+          if (handlers.dismissed) bus.off('reward_dismissed', handlers.dismissed);
+          if (handlers.viewed) bus.off('reward_viewed', handlers.viewed);
+        }
+        if (bus && bus._isMessageListener && typeof bus._remove === 'function') {
+          try { bus._remove(); } catch (e) { /* ignore */ }
         }
       } catch (e) {
         // ignore
@@ -99,188 +99,174 @@ const IframePreviewModal = ({ open, onClose, src, title = 'Game Preview' }) => {
       busRef.current = null;
       handlersRef.current = {};
     };
-
-    return effectCleanup;
   }, [open]);
 
-  // We'll keep bus and handlers in refs so both handleLoad and effect cleanup can access them.
-  const busRef = useRef(null);
-  const handlersRef = useRef({});
+  const normalizeEvent = (type) => {
+    const raw = (type === undefined || type === null) ? '' : String(type);
+    return raw.replace(/[^a-z0-9_]/gi, '_').replace(/_+/g, '_').toLowerCase();
+  };
 
   const handleLoad = () => {
     try {
       const frame = iframeRef.current;
-      if (frame && frame.contentWindow) {
-        // Subscribe to the iframe's IframeSdk.events_iframe when possible;
-        // fall back to the parent window's global if the SDK is exposed there.
-        try {
-          const candidate = window && window.IframeSdk && window.IframeSdk.events_iframe;
-          if (candidate && typeof candidate.on === 'function') {
-            const formatSeconds = (sec) => {
-              const total = Number(sec) || 0;
-              const abs = Math.max(0, Math.floor(total));
-              const h = Math.floor(abs / 3600);
-              const m = Math.floor((abs % 3600) / 60);
-              const s = abs % 60;
-              const pad = (n) => String(n).padStart(2, '0');
-              if (h > 0) return `${pad(h)}:${pad(m)}:${pad(s)}`;
-              return `${pad(m)}:${pad(s)}`;
-            };
+      if (!frame || !frame.contentWindow) return;
 
-            const handlers = {};
-            handlers.time = (val) => {
-              const el = document.getElementById('game-time-display');
-              if (el) {
-                el.textContent = formatSeconds(val);
-                el.classList.add('updated');
-                setTimeout(() => el.classList.remove('updated'), 300);
-              }
-            };
-            handlers.score = (val) => {
-              const el = document.getElementById('game-score-display');
-              if (el) {
-                el.textContent = String(val);
-                el.classList.add('updated');
-                setTimeout(() => el.classList.remove('updated'), 300);
-              }
-            };
-            handlers.level = (val) => {
-              const el = document.getElementById('game-level-display');
-              if (el) {
-                el.textContent = String(val);
-                el.classList.add('updated');
-                setTimeout(() => el.classList.remove('updated'), 300);
-              }
-            };
-            // game_start: set a boolean display (true/false). Default is false.
-            handlers.start = (val) => {
-              const el = document.getElementById('game-start-display');
-              if (el) {
-                const state = !!val;
-                el.textContent = state ? 'true' : 'false';
-                el.classList.add('updated');
-                setTimeout(() => el.classList.remove('updated'), 300);
-              }
-            };
-           
-            // handlers.interstitial = (val) => {
-            //   const el = document.getElementById('interstitial-display');
-            //   if (el) {
-            //     el.textContent = String(val ?? 0);
-            //     el.classList.add('updated');
-            //     setTimeout(() => el.classList.remove('updated'), 300);
-            //   }
-            // };
-            // handlers.reward = (val) => {
-            //   const el = document.getElementById('reward-display');
-            //   if (el) {
-            //     el.textContent = String(val ?? 0);
-            //     el.classList.add('updated');
-            //     setTimeout(() => el.classList.remove('updated'), 300);
-            //   }
-            // };
-            // handlers.beforeAd = (val) => {
-            //   const el = document.getElementById('before-ad-display');
-            //   if (el) {
-            //     el.textContent = String(val ?? 0);
-            //     el.classList.add('updated');
-            //     setTimeout(() => el.classList.remove('updated'), 300);
-            //   }
-            // };
-            // handlers.afterAd = (val) => {
-            //   const el = document.getElementById('after-ad-display');
-            //   if (el) {
-            //     el.textContent = String(val ?? 0);
-            //     el.classList.add('updated');
-            //     setTimeout(() => el.classList.remove('updated'), 300);
-            //   }
-            // };
-            // handlers.dismissed = (val) => {
-            //   const el = document.getElementById('dismissed-display');
-            //   if (el) {
-            //     el.textContent = String(val ?? 0);
-            //     el.classList.add('updated');
-            //     setTimeout(() => el.classList.remove('updated'), 300);
-            //   }
-            // };
-            // handlers.viewed = (val) => {
-            //   const el = document.getElementById('viewed-display');
-            //   if (el) {
-            //     el.textContent = String(val ?? 0);
-            //     el.classList.add('updated');
-            //     setTimeout(() => el.classList.remove('updated'), 300);
-            //   }
-            // };
-            // handlers.adError = (val) => {
-            //   const el = document.getElementById('error-display');
-            //   if (el) {
-            //     el.textContent = String(val ?? 0);
-            //     el.classList.add('updated');
-            //     setTimeout(() => el.classList.remove('updated'), 300);
-            //   }
-            // };
+      // try iframe-scoped SDK first
+      let candidate = null;
+      try {
+        const cw = frame.contentWindow;
+        if (cw && cw.IframeSdk && cw.IframeSdk.events_iframe && typeof cw.IframeSdk.events_iframe.on === 'function') {
+          candidate = cw.IframeSdk.events_iframe;
+        }
+      } catch (e) {
+        candidate = null; // cross-origin or inaccessible
+      }
 
-            // helper to add value to a numeric display element (cumulative)
-            // - if delta is undefined/null -> +1
-            // - if delta is a number-like string -> add that number
-            // - if delta is an object and contains common numeric keys, extract them
-            // - otherwise treat non-numeric payload as +1
-            const addToDisplay = (id, delta) => {
-              const el = document.getElementById(id);
-              if (!el) return;
-              const cur = Number(el.textContent) || 0;
-              let inc = 1;
-              if (delta !== undefined && delta !== null) {
-                if (typeof delta === 'object') {
-                  // common shapes: {count: N}, {value: N}, {n: N}
-                  if (typeof delta.count === 'number') inc = delta.count;
-                  else if (typeof delta.value === 'number') inc = delta.value;
-                  else if (typeof delta.n === 'number') inc = delta.n;
-                  else if (delta.count !== undefined) inc = Number(delta.count) || 1;
-                  else if (delta.value !== undefined) inc = Number(delta.value) || 1;
-                  else inc = 1;
-                } else {
-                  const n = Number(delta);
-                  inc = isNaN(n) ? 1 : n;
-                }
-              }
-              const next = cur + inc;
-              el.textContent = String(next);
-              el.classList.add('updated');
-              setTimeout(() => el.classList.remove('updated'), 300);
-            };
-            handlers.interstitial = (val) => addToDisplay('interstitial-display', val);
-            handlers.reward = (val) => addToDisplay('reward-display', val);
-            handlers.beforeAd = (val) => addToDisplay('before-ad-display', val);
-            handlers.afterAd = (val) => addToDisplay('after-ad-display', val);
-            handlers.dismissed = (val) => addToDisplay('dismissed-display', val);
-            handlers.viewed = (val) => addToDisplay('viewed-display', val);
-            handlers.adError = (val) => addToDisplay('error-display', val);
+      // try parent window SDK
+      try {
+        if (!candidate) {
+          const parentCandidate = window && window.IframeSdk && window.IframeSdk.events_iframe;
+          if (parentCandidate && typeof parentCandidate.on === 'function') candidate = parentCandidate;
+        }
+      } catch (e) {
+        // ignore
+      }
 
-            try {
-              candidate.on('game_time', handlers.time);
-              candidate.on('game_start', handlers.start);
-              candidate.on('game_score', handlers.score);
-              candidate.on('game_level', handlers.level);
-              // ad events
-              candidate.on('interstitial', handlers.interstitial);
-              candidate.on('reward', handlers.reward);
-              candidate.on('interstitial_open', handlers.beforeAd);
-              candidate.on('before_ad', handlers.beforeAd);
-              candidate.on('interstitial_viewed', handlers.afterAd);
-              candidate.on('after_ad', handlers.afterAd);
-              candidate.on('reward_dismissed', handlers.dismissed);
-              candidate.on('reward_viewed', handlers.viewed);
-              candidate.on('ad_error', handlers.adError);
+      // fallback: postMessage-based bus that listens only to messages from this iframe
+      if (!candidate) {
+        const listeners = {};
+        const onMessage = (ev) => {
+          try {
+            if (ev.source !== frame.contentWindow) return;
+            const payload = typeof ev.data === 'string' ? JSON.parse(ev.data) : ev.data;
+            const items = Array.isArray(payload) ? payload : [payload];
+            items.forEach(item => {
+              if (!item || !item.type) return;
+              const key = normalizeEvent(item.type);
+              const cbs = listeners[key] || [];
+              cbs.forEach(cb => { try { cb(item.value); } catch (e) { /* ignore */ } });
+            });
+          } catch (e) {
+            // ignore malformed messages
+          }
+        };
+        window.addEventListener('message', onMessage);
 
-              busRef.current = candidate;
-              handlersRef.current = handlers;
-            } catch (e) {
-              // ignore registration errors
+        candidate = {
+          on: (evt, cb) => {
+            const k = normalizeEvent(evt);
+            if (!listeners[k]) listeners[k] = [];
+            listeners[k].push(cb);
+          },
+          off: (evt, cb) => {
+            const k = normalizeEvent(evt);
+            if (!listeners[k]) return;
+            if (!cb) { listeners[k] = []; return; }
+            listeners[k] = listeners[k].filter(x => x !== cb);
+          },
+          _isMessageListener: true,
+          _remove: () => window.removeEventListener('message', onMessage)
+        };
+      }
+
+      if (candidate && typeof candidate.on === 'function') {
+        const formatSeconds = (sec) => {
+          const total = Number(sec) || 0;
+          const abs = Math.max(0, Math.floor(total));
+          const h = Math.floor(abs / 3600);
+          const m = Math.floor((abs % 3600) / 60);
+          const s = abs % 60;
+          const pad = (n) => String(n).padStart(2, '0');
+          if (h > 0) return `${pad(h)}:${pad(m)}:${pad(s)}`;
+          return `${pad(m)}:${pad(s)}`;
+        };
+
+        const handlers = {};
+        handlers.time = (val) => {
+          const el = document.getElementById('game-time-display');
+          if (el) {
+            el.textContent = formatSeconds(val);
+            el.classList.add('updated');
+            setTimeout(() => el.classList.remove('updated'), 300);
+          }
+        };
+        handlers.score = (val) => {
+          const el = document.getElementById('game-score-display');
+          if (el) {
+            el.textContent = String(val);
+            el.classList.add('updated');
+            setTimeout(() => el.classList.remove('updated'), 300);
+          }
+        };
+        handlers.level = (val) => {
+          const el = document.getElementById('game-level-display');
+          if (el) {
+            el.textContent = String(val);
+            el.classList.add('updated');
+            setTimeout(() => el.classList.remove('updated'), 300);
+          }
+        };
+        handlers.start = (val) => {
+          const el = document.getElementById('game-start-display');
+          if (el) {
+            const state = !!val;
+            el.textContent = state ? 'true' : 'false';
+            el.classList.add('updated');
+            setTimeout(() => el.classList.remove('updated'), 300);
+          }
+        };
+
+        // numeric accumulators
+        const addToDisplay = (id, delta) => {
+          const el = document.getElementById(id);
+          if (!el) return;
+          const cur = Number(el.textContent) || 0;
+          let inc = 1;
+          if (delta !== undefined && delta !== null) {
+            if (typeof delta === 'object') {
+              if (typeof delta.count === 'number') inc = delta.count;
+              else if (typeof delta.value === 'number') inc = delta.value;
+              else if (typeof delta.n === 'number') inc = delta.n;
+              else if (delta.count !== undefined) inc = Number(delta.count) || 1;
+              else if (delta.value !== undefined) inc = Number(delta.value) || 1;
+              else inc = 1;
+            } else {
+              const n = Number(delta);
+              inc = isNaN(n) ? 1 : n;
             }
           }
+          const next = cur + inc;
+          el.textContent = String(next);
+          el.classList.add('updated');
+          setTimeout(() => el.classList.remove('updated'), 300);
+        };
+        handlers.interstitial = (val) => addToDisplay('interstitial-display', val);
+        handlers.reward = (val) => addToDisplay('reward-display', val);
+        handlers.beforeAd = (val) => addToDisplay('before-ad-display', val);
+        handlers.afterAd = (val) => addToDisplay('after-ad-display', val);
+        handlers.dismissed = (val) => addToDisplay('dismissed-display', val);
+        handlers.viewed = (val) => addToDisplay('viewed-display', val);
+        handlers.adError = (val) => addToDisplay('error-display', val);
+
+        try {
+          candidate.on('game_time', handlers.time);
+          candidate.on('game_start', handlers.start);
+          candidate.on('game_score', handlers.score);
+          candidate.on('game_level', handlers.level);
+          candidate.on('interstitial', handlers.interstitial);
+          candidate.on('reward', handlers.reward);
+          candidate.on('interstitial_open', handlers.beforeAd);
+          candidate.on('before_ad', handlers.beforeAd);
+          candidate.on('interstitial_viewed', handlers.afterAd);
+          candidate.on('after_ad', handlers.afterAd);
+          candidate.on('reward_dismissed', handlers.dismissed);
+          candidate.on('reward_viewed', handlers.viewed);
+          candidate.on('ad_error', handlers.adError);
+
+          busRef.current = candidate;
+          handlersRef.current = handlers;
         } catch (e) {
-          // ignore
+          // ignore registration errors
         }
       }
     } catch (e) {
@@ -288,10 +274,7 @@ const IframePreviewModal = ({ open, onClose, src, title = 'Game Preview' }) => {
     }
   };
 
-  // Normalize iframe src for protocol issues: when the host page is served over https
-  // but the site data contains an http:// URL, browsers will block the iframe as mixed
-  // content. Do a safe runtime replacement here so we don't have to edit source data
-  // files immediately.
+  // Normalize iframe src for protocol issues
   const normalizeSrcForProtocol = (url) => {
     if (!url) return url;
     try {
@@ -305,7 +288,6 @@ const IframePreviewModal = ({ open, onClose, src, title = 'Game Preview' }) => {
     }
     return url;
   };
-
 
   if (!open) return null;
 
@@ -325,19 +307,19 @@ const IframePreviewModal = ({ open, onClose, src, title = 'Game Preview' }) => {
 
         {/* English status bar used by the iframe to post updates (bright green strip) */}
         <div className="flex items-center gap-6 px-4 py-2" style={{ backgroundColor: '#000000ff', color: '#ffffff' }}>
-          <div className="flex flex-col items-center min-w-[90px]">
+          <div className="flex flex-col items-center min-w-[60px] sm:min-w-[90px]">
             <span className="text-xs font-medium" style={{ color: 'rgba(255,255,255,0.9)' }}>Game Time</span>
             <span id="game-time-display" className="text-sm font-semibold" style={{ color: '#ffffff' }}>00:00</span>
           </div>
-          <div className="flex flex-col items-center min-w-[90px]">
+          <div className="flex flex-col items-center min-w-[60px] sm:min-w-[90px]">
             <span className="text-xs font-medium" style={{ color: 'rgba(255,255,255,0.9)' }}>Game Start</span>
             <span id="game-start-display" className="text-sm font-semibold" style={{ color: '#ffffff' }}>false</span>
           </div>
-          <div className="flex flex-col items-center min-w-[90px]">
+          <div className="flex flex-col items-center min-w-[60px] sm:min-w-[90px]">
             <span className="text-xs font-medium" style={{ color: 'rgba(255,255,255,0.9)' }}>Game Score</span>
             <span id="game-score-display" className="text-sm font-semibold" style={{ color: '#ffffff' }}>0</span>
           </div>
-          <div className="flex flex-col items-center min-w-[90px]">
+          <div className="flex flex-col items-center min-w-[60px] sm:min-w-[90px]">
             <span className="text-xs font-medium" style={{ color: 'rgba(255,255,255,0.9)' }}>Game Level</span>
             <span id="game-level-display" className="text-sm font-semibold" style={{ color: '#ffffff' }}>0</span>
           </div>
@@ -371,7 +353,7 @@ const IframePreviewModal = ({ open, onClose, src, title = 'Game Preview' }) => {
           </div>
         </div>
 
-  <div className="game-frame-container h-[calc(100%-132px)]">
+        <div className="game-frame-container h-[calc(100%-132px)]">
           <iframe
             ref={iframeRef}
             src={normalizeSrcForProtocol(src)}
@@ -398,7 +380,7 @@ const SiteCard = memo(({ site, isVisible, delay = 0, isEditMode = false, onEdit,
   return (
     <>
     <div 
-      className={`card-hover bg-white rounded-lg shadow-card p-4 border border-transparent transition-all duration-700 ease-out ${
+      className={`card-hover bg-white rounded-lg shadow-card p-3 sm:p-4 border border-transparent transition-all duration-700 ease-out ${
         isVisible 
           ? 'opacity-100 translate-y-0 scale-100' 
           : 'opacity-0 translate-y-8 scale-95'
@@ -488,7 +470,7 @@ const CategoryButton = memo(({ category, isActive, onClick }) => {
   return (
     <button
       onClick={() => onClick(category.id)}
-      className={`category-button px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center space-x-1 ${
+      className={`category-button inline-flex px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 active:scale-95 items-center space-x-1 whitespace-nowrap ${
         isActive
           ? 'bg-primary-blue text-white shadow-md'
           : 'bg-transparent text-white hover:bg-[#222222]'

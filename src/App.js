@@ -194,10 +194,10 @@ const App = () => {
   <div className="min-h-screen bg-[#0b0b0c] text-gray-200">
       {/* 顶部导航 */}
   <header className="sticky top-0 z-50 bg-[#111111] text-white border-b border-gray-800 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="py-4">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
+          <div className="py-3 lg:py-4">
             {/* 标题行 */}
-            <div className="flex items-center justify-center mb-2">
+            <div className="flex items-center justify-start sm:justify-center mb-2">
               <div className="flex items-center">
                 <div data-v-cffdc6d6="" className="header-content flex items-center">
                   {logoStatus === 'failed' ? (
@@ -289,8 +289,8 @@ const App = () => {
               </div>
             </div>
             
-            {/* 分类导航 */}
-            <nav className="flex flex-wrap justify-center gap-2">
+            {/* 分类导航: single-line, horizontally scrollable on small screens */}
+            <nav className="w-full flex items-center space-x-3 overflow-x-auto whitespace-nowrap -mx-3 px-3 scrollbar-hide">
               <button
                 onClick={() => handleCategoryChange(0)}
                 className={`category-button px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 active:scale-95 ${
@@ -353,7 +353,7 @@ const App = () => {
 
         {/* game卡片网格 */}
         {isLoading ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-4">
             {[...Array(8)].map((_, index) => (
               <div key={index} className="animate-pulse">
                 <div className="bg-white rounded-lg shadow-card p-4 border border-gray-100">
