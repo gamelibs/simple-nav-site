@@ -3541,7 +3541,7 @@
       "pubid": "",
       "gid": "10000",
       "categoryId": 6,
-      "icon": "https://cpsense.heiheigame.com/gameicon_zhangyun/10000-icon-128.jpg",
+      "icon": "https://cpsense.heiheigame.com/gamecpicon/10000-icon-128.jpg",
       "path": "https://cpsense.heiheigame.com/douyou_cp/SmallHouse/",
       "pathBeta": "https://cpsense.heiheigame.com/douyou_cp/SmallHouse/?vb=beta"
     },
@@ -3553,7 +3553,7 @@
       "pubid": "",
       "gid": "10001",
       "categoryId": 6,
-      "icon": "https://cpsense.heiheigame.com/gameicon_zhangyun/10001-icon-128.jpg",
+      "icon": "https://cpsense.heiheigame.com/gamecpicon/10001-icon-128.jpg",
       "path": "https://cpsense.heiheigame.com/douyou_cp/ShapeTransforming/",
       "pathBeta": "https://cpsense.heiheigame.com/douyou_cp/ShapeTransforming/?vb=beta"
     },
@@ -3562,24 +3562,24 @@
       "name": "Tennis Fell",
       "url": "https://cpsense.heiheigame.com/douyou_cp/TennisFell/",
       "description": "",
-      "pubid": "",
+      "pubid": "2413",
       "gid": "10002",
       "categoryId": 6,
-      "icon": "https://cpsense.heiheigame.com/gameicon_zhangyun/10002-icon-128.jpg",
+      "icon": "https://cpsense.heiheigame.com/gamecpicon/10002-icon-128.jpg",
       "path": "https://cpsense.heiheigame.com/douyou_cp/TennisFell/",
       "pathBeta": "https://cpsense.heiheigame.com/douyou_cp/TennisFell/?vb=beta"
     },
     {
       "id": 331,
       "name": "Agent plan",
-      "url": "https://cpsense.heiheigame.com/douyou_cp/AgentPlan/",
+      "url": "https://cpsense.heiheigame.com/douyou_cp/Agentplan/",
       "description": "",
       "pubid": "",
       "gid": "10003",
       "categoryId": 6,
-      "icon": "https://cpsense.heiheigame.com/gameicon_zhangyun/10003-icon-128.jpg",
-      "path": "https://cpsense.heiheigame.com/douyou_cp/AgentPlan/",
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_cp/AgentPlan/?vb=beta"
+      "icon": "https://cpsense.heiheigame.com/gamecpicon/10003-icon-128.jpg",
+      "path": "https://cpsense.heiheigame.com/douyou_cp/Agentplan/",
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_cp/Agentplan/?vb=beta"
     },
     {
       "id": 332,
@@ -3589,7 +3589,7 @@
       "pubid": "",
       "gid": "10004",
       "categoryId": 6,
-      "icon": "https://cpsense.heiheigame.com/gameicon_zhangyun/10004-icon-128.jpg",
+      "icon": "https://cpsense.heiheigame.com/gamecpicon/10004-icon-128.jpg",
       "path": "https://cpsense.heiheigame.com/douyou_cp/BallDuet/",
       "pathBeta": "https://cpsense.heiheigame.com/douyou_cp/BallDuet/?vb=beta"
     },
@@ -3601,7 +3601,7 @@
       "pubid": "",
       "gid": "10005",
       "categoryId": 6,
-      "icon": "https://cpsense.heiheigame.com/gameicon_zhangyun/10005-icon-128.jpg",
+      "icon": "https://cpsense.heiheigame.com/gamecpicon/10005-icon-128.jpg",
       "path": "https://cpsense.heiheigame.com/douyou_cp/BlockStacking/",
       "pathBeta": "https://cpsense.heiheigame.com/douyou_cp/BlockStacking/?vb=beta"
     },
@@ -3613,7 +3613,7 @@
       "pubid": "",
       "gid": "10006",
       "categoryId": 6,
-      "icon": "https://cpsense.heiheigame.com/gameicon_zhangyun/10006-icon-128.jpg",
+      "icon": "https://cpsense.heiheigame.com/gamecpicon/10006-icon-128.jpg",
       "path": "https://cpsense.heiheigame.com/douyou_cp/BlowBaloons/",
       "pathBeta": "https://cpsense.heiheigame.com/douyou_cp/BlowBaloons/?vb=beta"
     },
@@ -3625,7 +3625,7 @@
       "pubid": "",
       "gid": "10007",
       "categoryId": 6,
-      "icon": "https://cpsense.heiheigame.com/gameicon_zhangyun/10007-icon-128.jpg",
+      "icon": "https://cpsense.heiheigame.com/gamecpicon/10007-icon-128.jpg",
       "path": "https://cpsense.heiheigame.com/douyou_cp/FindPair/",
       "pathBeta": "https://cpsense.heiheigame.com/douyou_cp/FindPair/?vb=beta"
     },
@@ -3634,24 +3634,24 @@
       "name": "Butterfly Kyodai",
       "url": "https://cpsense.heiheigame.com/douyou_cp/ButterflyKyodai/",
       "description": "",
-      "pubid": "",
+      "pubid": "2412",
       "gid": "10008",
       "categoryId": 6,
-      "icon": "https://cpsense.heiheigame.com/gameicon_zhangyun/10008-icon-128.jpg",
+      "icon": "https://cpsense.heiheigame.com/gamecpicon/10008-icon-128.jpg",
       "path": "https://cpsense.heiheigame.com/douyou_cp/ButterflyKyodai/",
       "pathBeta": "https://cpsense.heiheigame.com/douyou_cp/ButterflyKyodai/?vb=beta"
     },
     {
       "id": 337,
       "name": "Hit the Fan",
-      "url": "https://cpsense.heiheigame.com/douyou_cp/HitTheFan/",
+      "url": "https://cpsense.heiheigame.com/douyou_cp/HittheFan/",
       "description": "",
       "pubid": "",
       "gid": "10009",
       "categoryId": 6,
-      "icon": "https://cpsense.heiheigame.com/gameicon_zhangyun/10009-icon-128.jpg",
-      "path": "https://cpsense.heiheigame.com/douyou_cp/HitTheFan/",
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_cp/HitTheFan/?vb=beta"
+      "icon": "https://cpsense.heiheigame.com/gamecpicon/10009-icon-128.jpg",
+      "path": "https://cpsense.heiheigame.com/douyou_cp/HittheFan/",
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_cp/HittheFan/?vb=beta"
     },
     {
       "id": 338,
@@ -3661,7 +3661,7 @@
       "pubid": "",
       "gid": "10010",
       "categoryId": 6,
-      "icon": "https://cpsense.heiheigame.com/gameicon_zhangyun/10010-icon-128.jpg",
+      "icon": "https://cpsense.heiheigame.com/gamecpicon/10010-icon-128.jpg",
       "path": "https://cpsense.heiheigame.com/douyou_cp/Salon/",
       "pathBeta": "https://cpsense.heiheigame.com/douyou_cp/Salon/?vb=beta"
     },
@@ -3673,21 +3673,21 @@
       "pubid": "",
       "gid": "10013",
       "categoryId": 6,
-      "icon": "https://cpsense.heiheigame.com/gameicon_zhangyun/10013-icon-128.jpg",
+      "icon": "https://cpsense.heiheigame.com/gamecpicon/10013-icon-128.jpg",
       "path": "https://cpsense.heiheigame.com/douyou_cp/SushiRoll/",
       "pathBeta": "https://cpsense.heiheigame.com/douyou_cp/SushiRoll/?vb=beta"
     },
     {
       "id": 340,
       "name": "People tower",
-      "url": "https://cpsense.heiheigame.com/douyou_cp/PeopleTower/",
+      "url": "https://cpsense.heiheigame.com/douyou_cp/Peopletower/",
       "description": "",
       "pubid": "",
       "gid": "10014",
       "categoryId": 6,
-      "icon": "https://cpsense.heiheigame.com/gameicon_zhangyun/10014-icon-128.jpg",
-      "path": "https://cpsense.heiheigame.com/douyou_cp/PeopleTower/",
-      "pathBeta": "https://cpsense.heiheigame.com/douyou_cp/PeopleTower/?vb=beta"
+      "icon": "https://cpsense.heiheigame.com/gamecpicon/10014-icon-128.jpg",
+      "path": "https://cpsense.heiheigame.com/douyou_cp/Peopletower/",
+      "pathBeta": "https://cpsense.heiheigame.com/douyou_cp/Peopletower/?vb=beta"
     },
     {
       "id": 341,
@@ -3697,7 +3697,7 @@
       "pubid": "",
       "gid": "10015",
       "categoryId": 6,
-      "icon": "https://cpsense.heiheigame.com/gameicon_zhangyun/10015-icon-128.jpg",
+      "icon": "https://cpsense.heiheigame.com/gamecpicon/10015-icon-128.jpg",
       "path": "https://cpsense.heiheigame.com/douyou_cp/SoccerDash/",
       "pathBeta": "https://cpsense.heiheigame.com/douyou_cp/SoccerDash/?vb=beta"
     },
@@ -3706,10 +3706,10 @@
       "name": "Real Freekick",
       "url": "https://cpsense.heiheigame.com/douyou_cp/RealFreekick/",
       "description": "",
-      "pubid": "",
+      "pubid": "2411",
       "gid": "10016",
       "categoryId": 6,
-      "icon": "https://cpsense.heiheigame.com/gameicon_zhangyun/10016-icon-128.jpg",
+      "icon": "https://cpsense.heiheigame.com/gamecpicon/10016-icon-128.jpg",
       "path": "https://cpsense.heiheigame.com/douyou_cp/RealFreekick/",
       "pathBeta": "https://cpsense.heiheigame.com/douyou_cp/RealFreekick/?vb=beta"
     },
@@ -3718,10 +3718,10 @@
       "name": "My Hotel",
       "url": "https://cpsense.heiheigame.com/douyou_cp/MyHotel/",
       "description": "",
-      "pubid": "",
+      "pubid": "2410",
       "gid": "10017",
       "categoryId": 6,
-      "icon": "https://cpsense.heiheigame.com/gameicon_zhangyun/10017-icon-128.jpg",
+      "icon": "https://cpsense.heiheigame.com/gamecpicon/10017-icon-128.jpg",
       "path": "https://cpsense.heiheigame.com/douyou_cp/MyHotel/",
       "pathBeta": "https://cpsense.heiheigame.com/douyou_cp/MyHotel/?vb=beta"
     },
@@ -3733,7 +3733,7 @@
       "pubid": "",
       "gid": "10018",
       "categoryId": 6,
-      "icon": "https://cpsense.heiheigame.com/gameicon_zhangyun/10018-icon-128.jpg",
+      "icon": "https://cpsense.heiheigame.com/gamecpicon/10018-icon-128.jpg",
       "path": "https://cpsense.heiheigame.com/douyou_cp/MatchCollection/",
       "pathBeta": "https://cpsense.heiheigame.com/douyou_cp/MatchCollection/?vb=beta"
     },
@@ -3745,7 +3745,7 @@
       "pubid": "",
       "gid": "10019",
       "categoryId": 6,
-      "icon": "https://cpsense.heiheigame.com/gameicon_zhangyun/10019-icon-128.jpg",
+      "icon": "https://cpsense.heiheigame.com/gamecpicon/10019-icon-128.jpg",
       "path": "https://cpsense.heiheigame.com/douyou_cp/TheSortingMart/",
       "pathBeta": "https://cpsense.heiheigame.com/douyou_cp/TheSortingMart/?vb=beta"
     }
