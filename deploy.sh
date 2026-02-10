@@ -7,7 +7,7 @@ echo "🚀 开始部署简约导航站..."
 # 设置变量
 SERVER_PORT=15002
 BUILD_DIR="build"
-SERVER_FILE="server.js"
+SERVER_FILE="local_server.js"
 DATA_DIR="src"
 
 # 检查必需文件

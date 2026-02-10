@@ -260,12 +260,14 @@ app.use((error, req, res, next) => {
   });
 });
 
-// 启动服务器
-app.listen(PORT, () => {
-  console.log(`🚀 编辑服务器已启动在端口 ${PORT}`);
-  console.log(`📍 API 地址: http://localhost:${PORT}/api`);
-  console.log(`🔍 健康检查: http://localhost:${PORT}/api/health`);
-  console.log(`📊 数据文件: ${DATA_FILE_PATH}`);
-});
+// 如果直接运行此文件，则启动仅包含 API 的编辑服务器
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`🚀 编辑服务器已启动在端口 ${PORT}`);
+    console.log(`📍 API 地址: http://localhost:${PORT}/api`);
+    console.log(`🔍 健康检查: http://localhost:${PORT}/api/health`);
+    console.log(`📊 数据文件: ${DATA_FILE_PATH}`);
+  });
+}
 
 module.exports = app;

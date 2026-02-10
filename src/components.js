@@ -75,20 +75,39 @@ const IframePreviewModal = ({ open, onClose, src, title = 'Game Preview' }) => {
           if (handlers.score) bus.off('game_score', handlers.score);
           if (handlers.level) bus.off('game_level', handlers.level);
           if (handlers.interstitial) {
+            bus.off('game_interstitial', handlers.interstitial);
+            bus.off('game_interstitialad', handlers.interstitial);
             bus.off('interstitial', handlers.interstitial);
             bus.off('interstitial_open', handlers.interstitial);
           }
-          if (handlers.reward) bus.off('reward', handlers.reward);
+          if (handlers.reward) {
+            bus.off('game_reward', handlers.reward);
+            bus.off('reward', handlers.reward);
+          }
           if (handlers.beforeAd) {
             bus.off('before_ad', handlers.beforeAd);
             bus.off('interstitial_open', handlers.beforeAd);
+            bus.off('beforeAd', handlers.beforeAd);
+            bus.off('game_interstitialad_open', handlers.beforeAd);
+            bus.off('game_reward_open', handlers.beforeAd);
           }
           if (handlers.afterAd) {
             bus.off('after_ad', handlers.afterAd);
             bus.off('interstitial_viewed', handlers.afterAd);
+            bus.off('afterAd', handlers.afterAd);
+            bus.off('game_interstitialad_viewed', handlers.afterAd);
           }
-          if (handlers.dismissed) bus.off('reward_dismissed', handlers.dismissed);
-          if (handlers.viewed) bus.off('reward_viewed', handlers.viewed);
+          if (handlers.dismissed) {
+            bus.off('reward_dismissed', handlers.dismissed);
+            bus.off('adDismissed', handlers.dismissed);
+            bus.off('game_reward_dismissed', handlers.dismissed);
+          }
+          if (handlers.viewed) {
+            bus.off('reward_viewed', handlers.viewed);
+            bus.off('adViewed', handlers.viewed);
+            bus.off('game_reward_viewed', handlers.viewed);
+          }
+          if (handlers.adError) bus.off('ad_error', handlers.adError);
         }
         if (bus && bus._isMessageListener && typeof bus._remove === 'function') {
           try { bus._remove(); } catch (e) { /* ignore */ }
@@ -253,14 +272,35 @@ const IframePreviewModal = ({ open, onClose, src, title = 'Game Preview' }) => {
           candidate.on('game_start', handlers.start);
           candidate.on('game_score', handlers.score);
           candidate.on('game_level', handlers.level);
+
+          // 兼容：prsdk/iframesdk 常用事件命名（线上已使用，站点仅做映射）
+          // - interstitial/reward: 广告触发
+          // - beforeAd/afterAd: 广告前后（等价于 interstitial_open/interstitial_viewed 或 before_ad/after_ad）
+          // - adViewed/adDismissed: 广告结果（站点面板计数映射到 reward_viewed/reward_dismissed）
+          candidate.on('game_interstitial', handlers.interstitial);
+          // prsdk/GA 命名：interstitial
+          candidate.on('game_interstitialad', handlers.interstitial);
+          candidate.on('game_reward', handlers.reward);
           candidate.on('interstitial', handlers.interstitial);
           candidate.on('reward', handlers.reward);
           candidate.on('interstitial_open', handlers.beforeAd);
           candidate.on('before_ad', handlers.beforeAd);
+          candidate.on('beforeAd', handlers.beforeAd);
+          // prsdk/GA 命名：open
+          candidate.on('game_interstitialad_open', handlers.beforeAd);
+          candidate.on('game_reward_open', handlers.beforeAd);
           candidate.on('interstitial_viewed', handlers.afterAd);
           candidate.on('after_ad', handlers.afterAd);
+          candidate.on('afterAd', handlers.afterAd);
+          // prsdk/GA 命名：viewed
+          candidate.on('game_interstitialad_viewed', handlers.afterAd);
           candidate.on('reward_dismissed', handlers.dismissed);
           candidate.on('reward_viewed', handlers.viewed);
+          candidate.on('adDismissed', handlers.dismissed);
+          candidate.on('adViewed', handlers.viewed);
+          // prsdk/GA 命名：reward result
+          candidate.on('game_reward_dismissed', handlers.dismissed);
+          candidate.on('game_reward_viewed', handlers.viewed);
           candidate.on('ad_error', handlers.adError);
 
           busRef.current = candidate;
