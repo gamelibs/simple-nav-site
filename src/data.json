@@ -3,107 +3,128 @@
     {
       "id": 1,
       "name": "新闻",
-      "icon": "📰"
+      "icon": "📰",
+      "description": "聚合权威新闻媒体与资讯平台，快速了解时政、财经与全球动态"
     },
     {
       "id": 2,
       "name": "教育",
-      "icon": "📚"
+      "icon": "📚",
+      "description": "优质在线课程与学习平台合集，覆盖慕课、公开课与知识服务"
     },
     {
       "id": 3,
       "name": "电影",
-      "icon": "🎬"
+      "icon": "🎬",
+      "description": "电影资讯、影评榜单与在线观影平台导航"
     },
     {
       "id": 4,
       "name": "阅读",
-      "icon": "📖"
+      "icon": "📖",
+      "description": "电子书、网络文学与数字阅读平台精选"
     },
     {
       "id": 5,
       "name": "演讲",
-      "icon": "🎤"
+      "icon": "🎤",
+      "description": "精选演讲视频与表达学习平台，聆听思想的声音"
     },
     {
       "id": 6,
       "name": "搞笑",
-      "icon": "😄"
+      "icon": "😄",
+      "description": "段子、趣图与轻松内容合集，每天的快乐源泉"
     },
     {
       "id": 7,
       "name": "购物",
-      "icon": "🛒"
+      "icon": "🛒",
+      "description": "主流电商与优惠导购平台，放心买买买"
     },
     {
       "id": 8,
       "name": "音乐",
-      "icon": "🎵"
+      "icon": "🎵",
+      "description": "在线音乐、电台与音频娱乐平台导航"
     },
     {
       "id": 9,
       "name": "医疗",
-      "icon": "🏥"
+      "icon": "🏥",
+      "description": "权威医疗资讯、健康科普与就医服务平台"
     },
     {
       "id": 11,
       "name": "工作",
-      "icon": "🎯"
+      "icon": "🎯",
+      "description": "求职招聘与职场发展平台，助你找到好工作"
     },
     {
       "id": 12,
       "name": "纪录片",
-      "icon": "📝"
+      "icon": "📝",
+      "description": "国内外纪录片平台与优质纪实内容合集"
     },
     {
       "id": 13,
       "name": "科普",
-      "icon": "💡"
+      "icon": "💡",
+      "description": "科学科普与知识类内容平台，满足你的好奇心"
     },
     {
       "id": 14,
       "name": "咨询",
-      "icon": "💰"
+      "icon": "💰",
+      "description": "商业资讯与行业信息查询平台精选"
     },
     {
       "id": 15,
       "name": "玩乐",
-      "icon": "✈️"
+      "icon": "✈️",
+      "description": "旅游出行与本地玩乐服务平台导航"
     },
     {
       "id": 16,
       "name": "才艺",
-      "icon": "🌟"
+      "icon": "🌟",
+      "description": "兴趣才艺学习与技能提升平台精选"
     },
     {
       "id": 17,
       "name": "早听",
-      "icon": "💡"
+      "icon": "💡",
+      "description": "晨间资讯与有声收听平台，碎片时间涨知识"
     },
     {
       "id": 18,
       "name": "美食",
-      "icon": "🍔"
+      "icon": "🍔",
+      "description": "美食菜谱、探店指南与餐饮服务平台"
     },
     {
       "id": 19,
       "name": "图片",
-      "icon": "📷"
+      "icon": "📷",
+      "description": "图片素材、摄影社区与图库网站精选"
     },
     {
       "id": 20,
       "name": "PPT",
-      "icon": "🎪"
+      "icon": "🎪",
+      "description": "PPT 模板、素材与演示设计资源平台"
     },
     {
       "id": 21,
       "name": "网络热词",
-      "icon": "🌐"
+      "icon": "🌐",
+      "description": "网络流行语、热梗与流行文化速览"
     },
     {
       "id": 22,
       "name": "金融",
-      "icon": "💰"
+      "icon": "💰",
+      "description": "财经资讯、行情数据与金融服务平台导航"
     }
   ],
   "sites": [
@@ -111,7 +132,7 @@
       "id": 1,
       "name": "快懂百科",
       "url": "https://www.baike.com/",
-      "description": "",
+      "description": "快懂百科致力于打造可靠、全面、触手可及的互联网百科全书，让通识学习更简单",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -119,7 +140,7 @@
       "id": 2,
       "name": "医学百科",
       "url": "https://www.yxbaike.com/wiki/",
-      "description": "",
+      "description": "医学百科网是在线中文医学百科网站，内容涵盖了疾病、症状，检查等医学保健知识，其宗旨是帮助广大医学生…",
       "categoryId": 9,
       "icon": "/icons/default.svg"
     },
@@ -127,7 +148,7 @@
       "id": 3,
       "name": "医学百科",
       "url": "https://www.yixue.com/",
-      "description": "",
+      "description": "医学网是一家在国内非常专业的中文医学百科大全，由全国百科爱好者共同编辑，并由国内专业人士进行审核…",
       "categoryId": 9,
       "icon": "/icons/default.svg"
     },
@@ -135,7 +156,7 @@
       "id": 4,
       "name": "中医世家",
       "url": "https://www.zysj.com.cn/index.html",
-      "description": "",
+      "description": "中医知识、中药材与中医典籍查询平台",
       "categoryId": 9,
       "icon": "/icons/default.svg"
     },
@@ -143,7 +164,7 @@
       "id": 5,
       "name": "医院创新排行",
       "url": "https://innovation-rank.cn-healthcare.com/comprehensive-ranking",
-      "description": "",
+      "description": "中国医院创新转化排行榜2022年度全国综合榜单，根据榜单指标体系，从专利申请量、专利授权量…",
       "categoryId": 9,
       "icon": "/icons/default.svg"
     },
@@ -151,7 +172,7 @@
       "id": 6,
       "name": "猫眼",
       "url": "https://www.maoyan.com/",
-      "description": "",
+      "description": "电影演出票务与影视数据平台",
       "categoryId": 3,
       "icon": "/icons/default.svg"
     },
@@ -159,7 +180,7 @@
       "id": 7,
       "name": "大麦网",
       "url": "https://www.damai.cn/",
-      "description": "",
+      "description": "大麦网-全球演出赛事官方购票平台-100%正品，安全快捷，为您提供演唱会、音乐会、话剧…",
       "categoryId": 3,
       "icon": "/icons/default.svg"
     },
@@ -167,7 +188,7 @@
       "id": 8,
       "name": "淘票票",
       "url": "https://www.taopiaopiao.com/?tbpm=3",
-      "description": "",
+      "description": "淘票票",
       "categoryId": 3,
       "icon": "/icons/default.svg"
     },
@@ -175,7 +196,7 @@
       "id": 9,
       "name": "央视纪实",
       "url": "https://jishi.cctv.com/",
-      "description": "",
+      "description": "纪实-中国纪录片第一频道,最新、高清正版海量纪录片_央视网",
       "categoryId": 12,
       "icon": "/icons/default.svg"
     },
@@ -183,7 +204,7 @@
       "id": 10,
       "name": "bilibili",
       "url": "https://www.bilibili.com/c/douga/",
-      "description": "",
+      "description": "bilibili是国内知名的视频弹幕网站，这里有及时的动漫新番，活跃的ACG氛围，有创意的Up主…",
       "categoryId": 3,
       "icon": "/icons/default.svg"
     },
@@ -191,7 +212,7 @@
       "id": 11,
       "name": "爱奇艺",
       "url": "https://www.iqiyi.com/",
-      "description": "",
+      "description": "爱奇艺（iQIYI）是中国领先的在线视频平台，提供海量免费正版高清电视剧、短剧、电影、综艺…",
       "categoryId": 3,
       "icon": "/icons/default.svg"
     },
@@ -199,7 +220,7 @@
       "id": 12,
       "name": "腾讯视频",
       "url": "https://v.qq.com/",
-      "description": "",
+      "description": "腾讯视频官方网站，腾讯视频提供最新热门电视剧、电影、综艺、动漫、纪录片等高清正版视频在线观看…",
       "categoryId": 3,
       "icon": "/icons/default.svg"
     },
@@ -207,7 +228,7 @@
       "id": 13,
       "name": "搜狐视频",
       "url": "https://tv.sohu.com/",
-      "description": "",
+      "description": "搜狐视频是搜狐旗下专业的综合视频网站，提供正版高清电影、电视剧、综艺、纪录片、动漫等…",
       "categoryId": 3,
       "icon": "/icons/default.svg"
     },
@@ -215,7 +236,7 @@
       "id": 14,
       "name": "优酷视频",
       "url": "https://www.youku.com/ku/webhome",
-      "description": "",
+      "description": "优酷视频是中国领先的在线视频平台，提供海量正版高清电视剧、电影、综艺、动漫、纪录片等视频内容…",
       "categoryId": 3,
       "icon": "/icons/default.svg"
     },
@@ -223,7 +244,7 @@
       "id": 15,
       "name": "芒果TV",
       "url": "https://www.mgtv.com/",
-      "description": "",
+      "description": "芒果TV-大家都在看的在线视频网站-热门综艺最新电影电视剧在线观看",
       "categoryId": 3,
       "icon": "/icons/default.svg"
     },
@@ -231,7 +252,7 @@
       "id": 16,
       "name": "开心麻花",
       "url": "http://www.kaixinguopiao.com/drama/search?city_id=52",
-      "description": "",
+      "description": "开心麻花",
       "categoryId": 3,
       "icon": "/icons/default.svg"
     },
@@ -239,7 +260,7 @@
       "id": 17,
       "name": "中国电影金鸡奖",
       "url": "https://movie.douban.com/awards/golden-rooster/36/",
-      "description": "",
+      "description": "第36届中国电影金鸡奖 (2023)",
       "categoryId": 3,
       "icon": "/icons/default.svg"
     },
@@ -247,7 +268,7 @@
       "id": 18,
       "name": "北京国际电影节",
       "url": "https://www.bjiff.com/",
-      "description": "",
+      "description": "北京国际电影节",
       "categoryId": 3,
       "icon": "/icons/default.svg"
     },
@@ -255,7 +276,7 @@
       "id": 19,
       "name": "上海国际电影节",
       "url": "https://www.siff.com/",
-      "description": "",
+      "description": "上海国际电影节",
       "categoryId": 3,
       "icon": "/icons/default.svg"
     },
@@ -263,7 +284,7 @@
       "id": 20,
       "name": "中国电影数据网",
       "url": "https://www.zgdypw.cn/#/root.html",
-      "description": "",
+      "description": "中国电影数据信息网",
       "categoryId": 3,
       "icon": "/icons/default.svg"
     },
@@ -271,7 +292,7 @@
       "id": 21,
       "name": "全国电影票房网",
       "url": "https://www.zgdypw.cn/sc/sjbg/index_2.shtml",
-      "description": "",
+      "description": "数据报告_中国电影数据信息网",
       "categoryId": 3,
       "icon": "/icons/default.svg"
     },
@@ -279,7 +300,7 @@
       "id": 22,
       "name": "中国电影资料馆",
       "url": "https://www.cfa.org.cn/eportal/ui?pageId=6e32a0b0ae9c47a8a08511c0e6e0943b",
-      "description": "",
+      "description": "中国电影资料馆（中国电影艺术研究中心）",
       "categoryId": 3,
       "icon": "/icons/default.svg"
     },
@@ -287,7 +308,7 @@
       "id": 23,
       "name": "国际在线文娱",
       "url": "https://ent.cri.cn/movie",
-      "description": "",
+      "description": "国际在线文娱频道汇集文娱全资讯。关注有影响力的国际电影节，为您带来最权威的影视信息…",
       "categoryId": 3,
       "icon": "/icons/default.svg"
     },
@@ -295,7 +316,7 @@
       "id": 24,
       "name": "国家歌剧院",
       "url": "https://www.chncpa.org/",
-      "description": "",
+      "description": "欢迎光临国家大剧院官方网站。查询最新演出资讯，在线选座订购演出票享至少九八折优惠…",
       "categoryId": 3,
       "icon": "/icons/default.svg"
     },
@@ -303,7 +324,7 @@
       "id": 25,
       "name": "一中国家歌剧院",
       "url": "https://www.npac-ntt.org/index",
-      "description": "",
+      "description": "臺中國家歌劇院 National Taichung Theater 隸屬國家表演藝術中心…",
       "categoryId": 3,
       "icon": "/icons/default.svg"
     },
@@ -311,7 +332,7 @@
       "id": 26,
       "name": "ted",
       "url": "https://www.ted.com/",
-      "description": "",
+      "description": "TED Talks are influential videos from expert…",
       "categoryId": 5,
       "icon": "/icons/default.svg"
     },
@@ -319,7 +340,7 @@
       "id": 27,
       "name": "一席",
       "url": "https://www.yixi.tv/#/home",
-      "description": "",
+      "description": "一席",
       "categoryId": 5,
       "icon": "/icons/default.svg"
     },
@@ -327,7 +348,7 @@
       "id": 28,
       "name": "格致论道",
       "url": "http://www.self.org.cn/",
-      "description": "",
+      "description": "“格致论道”讲坛，原称“SELF格致论道”讲坛…",
       "categoryId": 5,
       "icon": "/icons/default.svg"
     },
@@ -335,7 +356,7 @@
       "id": 29,
       "name": "口才演讲训练",
       "url": "http://qsyj.cn/",
-      "description": "",
+      "description": "本文详细介绍分付怎么提现到微信,包括微信分付提现方法、分付怎么套出来、额度调整…",
       "categoryId": 5,
       "icon": "/icons/default.svg"
     },
@@ -343,7 +364,7 @@
       "id": 30,
       "name": "活动行",
       "url": "https://www.huodongxing.com/",
-      "description": "",
+      "description": "找好活动、办好活动，用活动行！活动行提供创业、互联网、科技、金融、教育、 亲子、生活、聚会交友等…",
       "categoryId": 14,
       "icon": "/icons/default.svg"
     },
@@ -351,7 +372,7 @@
       "id": 31,
       "name": "豆包",
       "url": "https://www.doubao.com/chat/",
-      "description": "",
+      "description": "Seedance 2.0 视频生成模型现已全面接入豆包，现在登录即可免费使用！豆包 是你的 AI…",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -359,7 +380,7 @@
       "id": 32,
       "name": "deepseek",
       "url": "https://chat.deepseek.com/",
-      "description": "",
+      "description": "Chat with DeepSeek AI – your intelligent…",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -367,7 +388,7 @@
       "id": 33,
       "name": "ai工具资源",
       "url": "https://ai-bot.cn/",
-      "description": "",
+      "description": "AI工具集官网收录了国内外数百个AI工具，该导航网站包括AI写作工具、AI图像生成和背景移除…",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -375,7 +396,7 @@
       "id": 34,
       "name": "ai工具官网",
       "url": "https://ai-bot.cn/",
-      "description": "",
+      "description": "AI工具集官网收录了国内外数百个AI工具，该导航网站包括AI写作工具、AI图像生成和背景移除…",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -383,7 +404,7 @@
       "id": 35,
       "name": "天猫",
       "url": "https://www.tmall.com/",
-      "description": "",
+      "description": "天猫商城是一个购物平台，更是一种生活方式。天猫凭借丰富的家电、手机、电脑、服装、居家、母婴、美妆…",
       "categoryId": 7,
       "icon": "/icons/default.svg"
     },
@@ -391,7 +412,7 @@
       "id": 36,
       "name": "京东",
       "url": "https://www.jd.com/index.html",
-      "description": "",
+      "description": "京东JD.COM-专业的综合网上购物商城，为您提供正品低价的购物选择、优质便捷的服务体验…",
       "categoryId": 7,
       "icon": "/icons/default.svg"
     },
@@ -399,7 +420,7 @@
       "id": 37,
       "name": "当当网",
       "url": "https://www.dangdang.com/",
-      "description": "",
+      "description": "全球领先的综合性网上购物中心。超过100万种商品在线热销！图书、童书、绘本、中小学教辅、文学小说…",
       "categoryId": 7,
       "icon": "/icons/default.svg"
     },
@@ -407,7 +428,7 @@
       "id": 38,
       "name": "北京医院排名",
       "url": "https://mzyy.yilianmeiti.com/ks/25/110000.html",
-      "description": "",
+      "description": "北京哪个医院看内分泌科好？医联媒体整理北京内分泌科各大医院信息，为您找到北京大学人民医院…",
       "categoryId": 9,
       "icon": "/icons/default.svg"
     },
@@ -415,7 +436,7 @@
       "id": 39,
       "name": "词典",
       "url": "https://www.zdic.net/",
-      "description": "",
+      "description": "汉典 | 汉语字典, 汉语词典, 康熙字典, 说文解字, 音韵方言, 字源字形, 异体字",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -423,7 +444,7 @@
       "id": 40,
       "name": "首都图书馆",
       "url": "https://www.clcn.net.cn/",
-      "description": "",
+      "description": "首都图书馆",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -431,7 +452,7 @@
       "id": 41,
       "name": "国家图书馆",
       "url": "https://www.nlc.cn/web/index.shtml",
-      "description": "",
+      "description": "首页",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -439,7 +460,7 @@
       "id": 42,
       "name": "上海图书馆",
       "url": "https://www.library.sh.cn/service/eread",
-      "description": "",
+      "description": "上海图书馆",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -447,7 +468,7 @@
       "id": 43,
       "name": "浙江图书馆",
       "url": "https://ulib.interlib.cn/tcshop/1111/index",
-      "description": "",
+      "description": "浙江图书馆数字门户，提供借阅与数字资源服务",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -455,7 +476,7 @@
       "id": 44,
       "name": "苏州图书馆",
       "url": "https://51js.szlib.com/ibook/index",
-      "description": "",
+      "description": "苏州图书馆网借平台V1.0.20260805",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -463,7 +484,7 @@
       "id": 45,
       "name": "朝阳图书馆",
       "url": "https://zq5.bookan.com.cn/?t=index&id=72201#/detail/1/310630900/77",
-      "description": "",
+      "description": "bk",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -471,7 +492,7 @@
       "id": 46,
       "name": "海淀图书馆",
       "url": "https://www.hdggwh.com/new-zkdn-vue/PcActivity.html",
-      "description": "",
+      "description": "活动报名",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -479,7 +500,7 @@
       "id": 47,
       "name": "上海静安图书馆",
       "url": "https://www.shjinganlib.net/Resource.aspx?ColumnNameEn=Resources&id=2",
-      "description": "",
+      "description": "电子图书",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -487,7 +508,7 @@
       "id": 48,
       "name": "上海图书分类",
       "url": "https://se.zhangyue.com/category/index?cid=74&tid=4&pid=74&page=1&appId=4109ea35",
-      "description": "",
+      "description": "上海图书馆",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -495,7 +516,7 @@
       "id": 49,
       "name": "京东图书专业版",
       "url": "https://m-tob.jd.com/",
-      "description": "",
+      "description": "京东读书是京东旗下数字阅读平台，70万册正版书籍、网文小说、有声书、漫画品质畅读，热门正版电子书…",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -503,7 +524,7 @@
       "id": 50,
       "name": "浙江图书馆资源",
       "url": "http://zjisa.zjlib.cn/home/zy_home.jsp?libCode=zjlib&libCode1=null&elecLibId=&elecAZ=&elec_re_type=alphabet_nav&elec_change_background=",
-      "description": "",
+      "description": "浙江图书馆电子资源与数据库导航",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -511,7 +532,7 @@
       "id": 51,
       "name": "中国社会科学院图书馆",
       "url": "http://www.lib.cass.org.cn/",
-      "description": "",
+      "description": "中国社会科学院图书馆",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -519,7 +540,7 @@
       "id": 52,
       "name": "北京图书馆分布",
       "url": "https://www.bplisn.net.cn/library/branches/33.html?page=2",
-      "description": "",
+      "description": "联网网点_ 北京市公共图书馆计算机服务信息网",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -527,7 +548,7 @@
       "id": 53,
       "name": "微信阅读",
       "url": "https://weread.qq.com/",
-      "description": "",
+      "description": "微信读书提供海量正版书籍、小说、漫画、公众号、听书，多设备同步实现跨屏阅读…",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -535,7 +556,7 @@
       "id": 54,
       "name": "qq阅读",
       "url": "https://book.qq.com/",
-      "description": "",
+      "description": "QQ阅读,最新热门小说网站,提供玄幻小说、武侠小说、原创小说、网游小说、都市小说、言情小说…",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -543,7 +564,7 @@
       "id": 55,
       "name": "起点中文网",
       "url": "https://www.qidian.com/?source=m_jump",
-      "description": "",
+      "description": "阅文集团旗下网络文学原创平台",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -551,7 +572,7 @@
       "id": 56,
       "name": "番茄小说",
       "url": "https://fanqienovel.com/library",
-      "description": "",
+      "description": "番茄小说网书库为用户提供免费小说阅读，免费小说下载，全本免费小说，经典完本小说，穿越小说，奇幻小说…",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -559,7 +580,7 @@
       "id": 57,
       "name": "喜马拉雅",
       "url": "https://www.ximalaya.com/",
-      "description": "",
+      "description": "国内专业音频分享平台，随时随地，听我想听！4亿用户选择的在线音频平台。马东、郭德纲…",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -567,7 +588,7 @@
       "id": 58,
       "name": "豆瓣读书",
       "url": "https://book.douban.com/",
-      "description": "",
+      "description": "记录你读过的、想读和正在读的书，顺便打分，添加标签及个人附注，写评论。根据你的口味…",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -575,7 +596,7 @@
       "id": 59,
       "name": "起点中文网",
       "url": "https://www.qidian.com/all/",
-      "description": "",
+      "description": "起点全站书库，网文分类大全",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -583,7 +604,7 @@
       "id": 60,
       "name": "简书",
       "url": "https://www.jianshu.com/",
-      "description": "",
+      "description": "简书是一个优质的创作社区，在这里，你可以任性地创作，一篇短文、一张照片、一首诗、一幅画……我们相信…",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -591,7 +612,7 @@
       "id": 61,
       "name": "一单书",
       "url": "https://yidanshu.com/",
-      "description": "",
+      "description": "精选书单与好书推荐平台",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -599,7 +620,7 @@
       "id": 62,
       "name": "书伴",
       "url": "https://bookfere.com/ebook",
-      "description": "",
+      "description": "「书伴」在本页集合了一些精选的、更新频率高、质量好的 Kindle 电子书下载类网址资源，都提供…",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -607,7 +628,7 @@
       "id": 63,
       "name": "新华悦读",
       "url": "https://www.news.cn/book/xhyt/index.html",
-      "description": "",
+      "description": "为你读书_新华悦读_新华网",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -615,7 +636,7 @@
       "id": 64,
       "name": "参考消息",
       "url": "https://world.cankaoxiaoxi.com/#/index",
-      "description": "",
+      "description": "参考消息",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -623,7 +644,7 @@
       "id": 65,
       "name": "新闻周刊",
       "url": "https://news.inewsweek.cn/people/",
-      "description": "",
+      "description": "影响有影响力的人。立足中国新闻社及《中国新闻周刊》精深博大的采编资源和全球网络…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -631,7 +652,7 @@
       "id": 66,
       "name": "每经网",
       "url": "https://www.nbd.com.cn/fangchan/",
-      "description": "",
+      "description": "每经网是24小时新闻网站，依托新锐财经日报《每日经济新闻》打造中国具有影响力的新闻网站…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -639,7 +660,7 @@
       "id": 67,
       "name": "新闻联播",
       "url": "https://search.cctv.com/search.php?qtext=%E6%96%B0%E9%97%BB%E8%81%94%E6%92%AD&type=web",
-      "description": "",
+      "description": "央视网视频搜索是全球最大的中文正版电视视频搜索引擎，拥有最多的电视视频资源…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -647,7 +668,7 @@
       "id": 68,
       "name": "天下商网",
       "url": "http://i.wshang.com/",
-      "description": "",
+      "description": "电商与商业资讯服务平台",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -655,7 +676,7 @@
       "id": 69,
       "name": "新商网",
       "url": "http://www.newshang365.com/informationList",
-      "description": "",
+      "description": "新商网-中国新消费领域的新商业媒体平台",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -663,7 +684,7 @@
       "id": 70,
       "name": "赢商网",
       "url": "https://news.winshang.com/shortVideo/",
-      "description": "",
+      "description": "赢商视频_记录商业发展轨迹_赢商网",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -671,7 +692,7 @@
       "id": 71,
       "name": "中国商报",
       "url": "http://paper.zgswcn.com/bz/html/index.html",
-      "description": "",
+      "description": "中国商报——数字报刊",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -679,7 +700,7 @@
       "id": 72,
       "name": "中国商报网",
       "url": "https://www.zgswcn.com/index.html",
-      "description": "",
+      "description": "中国商报网",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -687,7 +708,7 @@
       "id": 73,
       "name": "中国大百科全书",
       "url": "https://www.zgbk.com/",
-      "description": "",
+      "description": "中国百科网",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -695,7 +716,7 @@
       "id": 74,
       "name": "上海电视节",
       "url": "https://www.stvf.com/",
-      "description": "",
+      "description": "上海电视节",
       "categoryId": 3,
       "icon": "/icons/default.svg"
     },
@@ -703,7 +724,7 @@
       "id": 75,
       "name": "北京时间",
       "url": "https://www.btime.com/btv/btvsy_index",
-      "description": "",
+      "description": "北京电视台专区,北京电视台官方网站包含了北京电视台所有频道,栏目,主持人,记者的图文视频信息…",
       "categoryId": 3,
       "icon": "/icons/default.svg"
     },
@@ -711,7 +732,7 @@
       "id": 76,
       "name": "搜视网",
       "url": "https://www.tvsou.com/epg/4d5fdbb2/w3",
-      "description": "",
+      "description": "搜视网为您提供BTV北京卫视（高清）回放,最新一周节目时间表,BTV北京卫视（高清）节目重播回看。…",
       "categoryId": 3,
       "icon": "/icons/default.svg"
     },
@@ -719,7 +740,7 @@
       "id": 77,
       "name": "网易演讲",
       "url": "https://open.163.com/",
-      "description": "",
+      "description": "网易公开课汇集清华、北大、哈佛、耶鲁等世界名校共上千门课程，覆盖科学、经济、人文、哲学等22个领域…",
       "categoryId": 5,
       "icon": "/icons/default.svg"
     },
@@ -727,7 +748,7 @@
       "id": 78,
       "name": "第一财经网",
       "url": "https://www.yicai.com/epaper/pc/202506/04/node_A01.html",
-      "description": "",
+      "description": "第一财经日报",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -735,7 +756,7 @@
       "id": 79,
       "name": "南方周末",
       "url": "https://www.infzm.com/?from=wenruya.com",
-      "description": "",
+      "description": "南方周末",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -743,7 +764,7 @@
       "id": 80,
       "name": "南方都市晚报",
       "url": "https://epaper.oeeee.com/epaper/A/html/2025-06/05/node_4087.htm",
-      "description": "",
+      "description": "南都数字报",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -751,7 +772,7 @@
       "id": 81,
       "name": "人物周刊",
       "url": "https://www.nfpeople.com/category/6",
-      "description": "",
+      "description": "《南方人物周刊》是南方报业传媒集团主管、南方周末出品的综合类人物周刊…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -759,7 +780,7 @@
       "id": 82,
       "name": "中国纪录片",
       "url": "https://jishi.cctv.com/doc/list/lx/people/index.shtml",
-      "description": "",
+      "description": "CCTV.com - ERROR",
       "categoryId": 12,
       "icon": "/icons/default.svg"
     },
@@ -767,7 +788,7 @@
       "id": 83,
       "name": "财经网",
       "url": "https://finance.caijing.com.cn/",
-      "description": "",
+      "description": "财经网——秉承《财经》杂志理念，严守新闻专业主义精神，坚持客观、中道、理性、建设性前提下批评性立场…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -775,7 +796,7 @@
       "id": 84,
       "name": "第一财经",
       "url": "https://www.yicai.com/epaper/pc/202307/28/node_A01.html",
-      "description": "",
+      "description": "第一财经日报",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -783,7 +804,7 @@
       "id": 85,
       "name": "科普中国",
       "url": "https://www.kepuchina.cn/list/listinfo?at_id=AT202001151404559938",
-      "description": "",
+      "description": "科普中国网是中国科协主办的权威科普平台，汇聚前沿科技资讯与热门专题，通过图文、视频等多样化形式…",
       "categoryId": 13,
       "icon": "/icons/default.svg"
     },
@@ -791,7 +812,7 @@
       "id": 86,
       "name": "万人迷ai",
       "url": "https://www.wanrenmi8.com/cn/index.html",
-      "description": "",
+      "description": "AI 工具与应用集合站点",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -799,7 +820,7 @@
       "id": 87,
       "name": "财富｜世界500强",
       "url": "https://www.fortunechina.com/",
-      "description": "",
+      "description": "《财富》中文网，世界500强榜单与商业资讯",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -807,7 +828,7 @@
       "id": 88,
       "name": "雅书",
       "url": "https://yabook.blog/",
-      "description": "",
+      "description": "雅书电子书下载网站，专注于提供最新的PDF电子书免费下载。无论您是学习、研究或娱乐…",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -815,7 +836,7 @@
       "id": 89,
       "name": "新华网",
       "url": "https://www.news.cn/finance/",
-      "description": "",
+      "description": "上市公司频道_新华网",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -823,7 +844,7 @@
       "id": 90,
       "name": "中国人民共和国商务部",
       "url": "https://www.mofcom.gov.cn/",
-      "description": "",
+      "description": "中华人民共和国商务部",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -831,7 +852,7 @@
       "id": 91,
       "name": "英语听力",
       "url": "https://www.voicetube.com/?ref=tw_header",
-      "description": "",
+      "description": "VoiceTube 英语学习平台，看视频练听力",
       "categoryId": 2,
       "icon": "/icons/default.svg"
     },
@@ -839,7 +860,7 @@
       "id": 92,
       "name": "新浪读书",
       "url": "https://book.sina.com.cn/",
-      "description": "",
+      "description": "致力于传播精品图书，第一时间刊发国内外文化图书资讯，为读者提供集阅读、写作、评书、购书的一站式服务。",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -847,7 +868,7 @@
       "id": 93,
       "name": "央广网",
       "url": "https://www.cnr.cn/",
-      "description": "",
+      "description": "央广网是中央广播电视总台主办的中央重点新闻网站，是中国最具影响力的网络媒体之一…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -855,7 +876,7 @@
       "id": 94,
       "name": "段子星",
       "url": "https://duanzixing.com/1273.html",
-      "description": "",
+      "description": "一哥们上班迟到了。领导愤怒地问：“你为什么这么晚才来？！”这哥们回答：“不好意思，睡过头了…",
       "categoryId": 6,
       "icon": "/icons/default.svg"
     },
@@ -863,7 +884,7 @@
       "id": 95,
       "name": "糗事乐",
       "url": "https://www.qiushile.com/duanzi/",
-      "description": "",
+      "description": "段子栏目汇集海量的段子大全，其中包括搞笑段子，笑话段子等在男性朋友间广为流传的段子精选…",
       "categoryId": 6,
       "icon": "/icons/default.svg"
     },
@@ -871,7 +892,7 @@
       "id": 96,
       "name": "京东图书",
       "url": "https://h5static.m.jd.com/pc/mall/active/3sAaxodHF7kfo3s95cjxo2UZUxu2/index.html?cu=true&utm_source=haosou-search&utm_medium=cpc&utm_campaign=t_262767352_haosousearch&utm_term=43774482978_0_0eff2a044a8d439d8ee5941a747a710d",
-      "description": "",
+      "description": "京东图书",
       "categoryId": 7,
       "icon": "/icons/default.svg"
     },
@@ -879,7 +900,7 @@
       "id": 97,
       "name": "故事网",
       "url": "https://www.xyyuedu.com/",
-      "description": "",
+      "description": "在线故事阅读与分享平台",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -887,7 +908,7 @@
       "id": 98,
       "name": "在行",
       "url": "https://www.zaih.com/falcon/",
-      "description": "",
+      "description": "「在行」是国内领先的知识技能共享平台。从现在开始，当你遇到任何领域的问题或是个性化的服务需求…",
       "categoryId": 14,
       "icon": "/icons/default.svg"
     },
@@ -895,7 +916,7 @@
       "id": 99,
       "name": "福布斯",
       "url": "https://www.forbeschina.com/",
-      "description": "",
+      "description": "福布斯中文，商业榜单与财经资讯",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -903,7 +924,7 @@
       "id": 100,
       "name": "京东图书热卖榜",
       "url": "https://jdread-api.jd.com/h5/bookRank",
-      "description": "",
+      "description": "京东图书实时销售排行榜",
       "categoryId": 7,
       "icon": "/icons/default.svg"
     },
@@ -911,7 +932,7 @@
       "id": 101,
       "name": "当当图书排行榜",
       "url": "http://bang.dangdang.com/books/",
-      "description": "",
+      "description": "当当网图书榜单，发现畅销好书",
       "categoryId": 7,
       "icon": "/icons/default.svg"
     },
@@ -919,7 +940,7 @@
       "id": 102,
       "name": "当当畅销榜",
       "url": "http://bang.dangdang.com/books/bestsellers/01.00.00.00.00.00-24hours-0-0-1-1",
-      "description": "",
+      "description": "当当网 24 小时图书畅销榜",
       "categoryId": 7,
       "icon": "/icons/default.svg"
     },
@@ -927,7 +948,7 @@
       "id": 103,
       "name": "中图网",
       "url": "https://www.bookschina.com/",
-      "description": "",
+      "description": "中图网：网上书店，创办于1998年，通过好书推荐、畅销书、淘书团、特色专题等栏目及各种促销活动…",
       "categoryId": 7,
       "icon": "/icons/default.svg"
     },
@@ -935,7 +956,7 @@
       "id": 104,
       "name": "网易云阅读",
       "url": "https://yuedu.163.com/index",
-      "description": "",
+      "description": "网易云阅读提供丰富的原创小说、畅销好书、热门新闻和文章免费在线阅读和下载。包括文学、传记、艺术…",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -943,7 +964,7 @@
       "id": 105,
       "name": "百度阅读",
       "url": "https://yd.baidu.com/",
-      "description": "",
+      "description": "百度阅读wap首页",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -951,7 +972,7 @@
       "id": 106,
       "name": "知网阅读",
       "url": "https://mall.cnki.net/",
-      "description": "",
+      "description": "中国知网知网阅读-全球领先的数字图书馆 全天开放的大众知识服务！面向海内外读者提供杂志（期刊）…",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -959,7 +980,7 @@
       "id": 107,
       "name": "得到",
       "url": "https://www.dedao.cn/category/%E7%83%AD%E9%97%A8/eyJwcm9kdWN0VHlwZSI6IjEzIiwibmF2aWdhdGlvbiI6InJhbmtpbmc6SmRlS3F2TkpLbVhyOVdaeUdCMmFFT0xsdll6NnAxYUtHMTJwamUzbjhSbzFEYjA1a0E3cWRNVjR4Z3JvV0VNTiIsInN1Yk5hdmlnYXRpb24iOiIifQ==",
-      "description": "",
+      "description": "得到 App 热门课程与知识服务",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -967,7 +988,7 @@
       "id": 108,
       "name": "netflix",
       "url": "https://about.netflix.com/zh_cn/top-10",
-      "description": "",
+      "description": "Netflix 全球 Top 10 热播榜单",
       "categoryId": 3,
       "icon": "/icons/default.svg"
     },
@@ -975,7 +996,7 @@
       "id": 109,
       "name": "维基百科",
       "url": "http://www.wikipedia.org/",
-      "description": "",
+      "description": "自由的在线百科全书，人人可编辑",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -983,7 +1004,7 @@
       "id": 110,
       "name": "360百科",
       "url": "https://baike.so.com/",
-      "description": "",
+      "description": "360百科 - 让求知更简单",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -991,7 +1012,7 @@
       "id": 111,
       "name": "中国青年报",
       "url": "https://zqb.cyol.com/html/2023-09/19/nbs.D110000zgqnb_01.htm",
-      "description": "",
+      "description": "推动社会进步 服务青年成长。中国青年报创刊于1951 年4 月27 日，共青团中央机关报…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -999,7 +1020,7 @@
       "id": 112,
       "name": "网易云音乐",
       "url": "https://music.163.com/",
-      "description": "",
+      "description": "网易云音乐是一款专注于发现与分享的音乐产品，依托专业音乐人、DJ、好友推荐及社交功能…",
       "categoryId": 8,
       "icon": "/icons/default.svg"
     },
@@ -1007,7 +1028,7 @@
       "id": 113,
       "name": "qq音乐",
       "url": "https://y.qq.com/",
-      "description": "",
+      "description": "QQ音乐是腾讯公司推出的一款网络音乐服务产品，海量音乐在线试听、新歌热歌在线首发、歌词翻译…",
       "categoryId": 8,
       "icon": "/icons/default.svg"
     },
@@ -1015,7 +1036,7 @@
       "id": 114,
       "name": "酷狗音乐",
       "url": "https://www.kugou.com/",
-      "description": "",
+      "description": "酷狗音乐在线正版音乐网站，为您提供酷狗音乐播放器下载 、在线音乐试听下载，提供听书、长音频、频道…",
       "categoryId": 8,
       "icon": "/icons/default.svg"
     },
@@ -1023,7 +1044,7 @@
       "id": 115,
       "name": "360国学人物",
       "url": "https://guoxue.baike.so.com/query/index?type=author&page=1",
-      "description": "",
+      "description": "作者列表",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -1031,7 +1052,7 @@
       "id": 116,
       "name": "蝉妈妈｜抖音分析平台",
       "url": "https://www.chanmama.com/register.html",
-      "description": "",
+      "description": "蝉妈妈是厦门蝉羽网络科技有限公司旗下短视频内容营销与直播电商洞察平台，为品牌、商家、达人…",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -1039,7 +1060,7 @@
       "id": 117,
       "name": "315投诉红黑榜",
       "url": "https://tousu.sina.com.cn/top_rank/grprank_card_page?id=29&span=0",
-      "description": "",
+      "description": "红黑榜负责曝光315投诉,消费投诉,共享服务投诉,购物投诉,旅行出行住宿投诉,娱乐生活投诉…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1047,7 +1068,7 @@
       "id": 118,
       "name": "读书",
       "url": "https://www.dushu.com/",
-      "description": "",
+      "description": "读书网-全民阅读门户，专业中文图书搜索引擎,在线读书,提供各类免费电子书及图书导购服务",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -1055,7 +1076,7 @@
       "id": 119,
       "name": "cctv官网",
       "url": "https://tv.cctv.com/lm/index.shtml#datapd=EPGC1386744804340112&datafl=&dataszm=",
-      "description": "",
+      "description": "CCTV节目官网是中央电视台电视节目官方呈现平台，栏目大全页集纳央视所有栏目资源…",
       "categoryId": 12,
       "icon": "/icons/default.svg"
     },
@@ -1063,7 +1084,7 @@
       "id": 120,
       "name": "北京游",
       "url": "https://www.visitbeijing.com.cn/",
-      "description": "",
+      "description": "北京旅游网：北京市文化和旅游局监管的非营利性网站，提供国内最权威的北京旅游信息…",
       "categoryId": 15,
       "icon": "/icons/default.svg"
     },
@@ -1071,7 +1092,7 @@
       "id": 121,
       "name": "央视面对面",
       "url": "https://tv.cctv.com/lm/mdm/",
-      "description": "",
+      "description": "《面对面》是中央电视台的一档长篇人物专访节目,秉持新闻性、权威性、关注度、影响力的诉求…",
       "categoryId": 12,
       "icon": "/icons/default.svg"
     },
@@ -1079,7 +1100,7 @@
       "id": 122,
       "name": "工作总结",
       "url": "https://xiaoin.com.cn/",
-      "description": "",
+      "description": "万能小in是一款AI知识助手应用，在行业内首创了基于个人知识库的文档学习、检索提问、长文写作…",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -1087,7 +1108,7 @@
       "id": 123,
       "name": "豆瓣电影",
       "url": "https://movie.douban.com/",
-      "description": "",
+      "description": "豆瓣电影提供最新的电影介绍及评论包括上映影片的影讯查询及购票服务。你可以记录想看…",
       "categoryId": 3,
       "icon": "/icons/default.svg"
     },
@@ -1095,7 +1116,7 @@
       "id": 124,
       "name": "中国企业家论坛",
       "url": "https://www.cefco.cn/act/meeting2079.html",
-      "description": "",
+      "description": "亚布力中国企业家论坛",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1103,7 +1124,7 @@
       "id": 125,
       "name": "有旅游看天下",
       "url": "https://lyzz.visitbeijing.com.cn/news?cid=43",
-      "description": "",
+      "description": "文章",
       "categoryId": 15,
       "icon": "/icons/default.svg"
     },
@@ -1111,7 +1132,7 @@
       "id": 126,
       "name": "北大bbs",
       "url": "https://bbs.pku.edu.cn/v2/home.php",
-      "description": "",
+      "description": "创立于2000年，作为北京大学唯一的BBS论坛，是北大师生…",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -1119,7 +1140,7 @@
       "id": 127,
       "name": "北大bbs集",
       "url": "https://bbs.pku.edu.cn/v2/zone.php",
-      "description": "",
+      "description": "创立于2000年，作为北京大学唯一的BBS论坛，是北大师生…",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -1127,7 +1148,7 @@
       "id": 128,
       "name": "清华圆",
       "url": "http://www.thubbs.cn/list.php?bd=72",
-      "description": "",
+      "description": "跳蚤市场_清华BBS",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -1135,7 +1156,7 @@
       "id": 129,
       "name": "交通大学bbs",
       "url": "http://bbs.stmit.com/",
-      "description": "",
+      "description": "上海交通大学米天BBS 是民间网络平台 主要提供面向交大校园 提供 信息 情感 交友聊天…",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -1143,7 +1164,7 @@
       "id": 130,
       "name": "古诗文网",
       "url": "https://www.gushiwen.cn/shiwens/",
-      "description": "",
+      "description": "推荐诗文_古文岛_原古诗文网",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -1151,7 +1172,7 @@
       "id": 131,
       "name": "笑话大全",
       "url": "http://www.xiaohua8.com/",
-      "description": "",
+      "description": "笑话网提供最全的笑话,包括笑话大全,经典笑话,幽默笑话,冷笑话,成人笑话,夫妻笑话,爱情笑话…",
       "categoryId": 6,
       "icon": "/icons/default.svg"
     },
@@ -1159,7 +1180,7 @@
       "id": 132,
       "name": "胡润全球富豪榜",
       "url": "https://www.phb123.com/renwu/fuhao/hurun.html",
-      "description": "",
+      "description": "排行榜123网富豪频道为您提供2026年胡润全球富豪排行榜，告诉您胡润富豪榜中谁是世界第一首富…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1167,7 +1188,7 @@
       "id": 133,
       "name": "观察者",
       "url": "https://www.guancha.cn/",
-      "description": "",
+      "description": "观察者网，致力于荟萃中外思想者精华，鼓励青年学人探索，建中西文化交流平台…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1175,7 +1196,7 @@
       "id": 134,
       "name": "微趣小说",
       "url": "https://www.weiqubook.com/fenlei/3/1/",
-      "description": "",
+      "description": "武侠小说-武侠小说大全-微趣小说",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -1183,7 +1204,7 @@
       "id": 135,
       "name": "中国全民阅读网",
       "url": "https://www.nationalreading.gov.cn/hstj/ztcb/",
-      "description": "",
+      "description": "主题出版-中国全民阅读网",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -1191,7 +1212,7 @@
       "id": 136,
       "name": "北京大学出版社",
       "url": "https://www.pup.cn/book",
-      "description": "",
+      "description": "北京大学出版社,北大出版社,北大社",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -1199,7 +1220,7 @@
       "id": 137,
       "name": "国内出版社集合",
       "url": "https://www.bookschina.com/Books/allbook/publisher.aspx",
-      "description": "",
+      "description": "中国图书网出版社大全导航",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -1207,7 +1228,7 @@
       "id": 138,
       "name": "全国新书目｜文学奖",
       "url": "https://cnpub.com.cn/recommend.html#/award",
-      "description": "",
+      "description": "全国新书目平台定位为集公司品牌推广、核心产品推介、期刊杂志订购、书目信息检索展示，数据深度挖掘分析…",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -1215,7 +1236,7 @@
       "id": 139,
       "name": "中国知网",
       "url": "https://www.cnki.net/",
-      "description": "",
+      "description": "中国知网知识发现网络平台—面向海内外读者提供中国学术文献、外文文献、学位论文、报纸、会议、年鉴…",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -1223,7 +1244,7 @@
       "id": 140,
       "name": "万方视频",
       "url": "https://video.wanfangdata.com.cn/",
-      "description": "",
+      "description": "万方视频",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -1231,7 +1252,7 @@
       "id": 141,
       "name": "互联网周刊",
       "url": "http://ciweek.com/list.shtml",
-      "description": "",
+      "description": "互联网周刊",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -1239,7 +1260,7 @@
       "id": 142,
       "name": "三联周刊",
       "url": "https://www.lifeweek.com.cn/",
-      "description": "",
+      "description": "一本杂志和他倡导的生活——作为中国最受尊敬的周刊品牌之一…",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -1247,7 +1268,7 @@
       "id": 143,
       "name": "国家留学网",
       "url": "https://www.csc.edu.cn/",
-      "description": "",
+      "description": "国家留学基金管理委员会，公派留学信息平台",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1255,7 +1276,7 @@
       "id": 144,
       "name": "环球科学",
       "url": "https://www.huanqiukexue.com/?cat=21",
-      "description": "",
+      "description": "人文考古 &#8211; 环球科学",
       "categoryId": 13,
       "icon": "/icons/default.svg"
     },
@@ -1263,7 +1284,7 @@
       "id": 145,
       "name": "中国科普",
       "url": "https://www.kepu.net.cn/",
-      "description": "",
+      "description": "中国科普博览（简称博览），中国科学院权威出品、专业打造的中科院科普云平台…",
       "categoryId": 13,
       "icon": "/icons/default.svg"
     },
@@ -1271,7 +1292,7 @@
       "id": 146,
       "name": "中国青年出版社",
       "url": "http://www.cyp.com.cn/?category-19.html",
-      "description": "",
+      "description": "青年修养, 中国青年出版总社官网",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -1279,7 +1300,7 @@
       "id": 147,
       "name": "环球网",
       "url": "https://english.huanqiu.com/",
-      "description": "",
+      "description": "环球网英文频道，国际新闻资讯",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1287,7 +1308,7 @@
       "id": 148,
       "name": "中国国家地理",
       "url": "http://www.dili360.com/travel/sight/",
-      "description": "",
+      "description": "[description]",
       "categoryId": 15,
       "icon": "/icons/default.svg"
     },
@@ -1295,7 +1316,7 @@
       "id": 149,
       "name": "中国大百科全书数据库",
       "url": "https://h.bkzx.cn/knowledges?pageNo=1&query=",
-      "description": "",
+      "description": "分类列表-中国大百科全书数据库",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -1303,7 +1324,7 @@
       "id": 150,
       "name": "国是直通车",
       "url": "https://www.chinanews.com.cn/gsztc/index.shtml",
-      "description": "",
+      "description": "中国新闻网是知名的中文新闻门户网站，也是全球互联网中文新闻资讯最重要的原创内容供应商之一…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1311,7 +1332,7 @@
       "id": 151,
       "name": "中国作家网",
       "url": "https://www.chinawriter.com.cn/403997/index.html",
-      "description": "",
+      "description": "访谈栏目关注当下的文学热点话题和作家作品，形式以中外作家专访、作家印象和深度对话等为主…",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -1319,7 +1340,7 @@
       "id": 152,
       "name": "学术文海",
       "url": "https://www.xueshuwenhai.com/zzList/ffl",
-      "description": "",
+      "description": "不限学科-期刊有财经研究、教育研究、经济管理、财贸经济、中国软科学、农业经济问题、中国电化教育…",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -1327,7 +1348,7 @@
       "id": 153,
       "name": "ECHOCHASE｜国外阅读",
       "url": "https://echochase.com/zh/%e5%bc%80%e5%90%af%e4%ba%bf%e4%b8%87%e5%af%8c%e7%bf%81%e7%9a%84%e6%99%ba%e6%85%a7-%e9%9b%b7-%e8%be%be%e9%87%8c%e6%ac%a7%e6%96%af%e5%bf%83%e6%80%81%e6%8f%ad%e7%a7%98/",
-      "description": "",
+      "description": "国外精选文章的中文阅读平台",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -1335,7 +1356,7 @@
       "id": 154,
       "name": "新民晚报",
       "url": "https://paper.xinmin.cn/html/home/2025-05-28/01/25163.html",
-      "description": "",
+      "description": "新民网是新民晚报官方网站，强势新闻门户，以上海突发、财经、原创新闻为特色，采用文字、视频、播客…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1343,7 +1364,7 @@
       "id": 155,
       "name": "新民网",
       "url": "https://paper.xinmin.cn/",
-      "description": "",
+      "description": "新民网是新民晚报官方网站，强势新闻门户，以上海突发、财经、原创新闻为特色，采用文字、视频、播客…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1351,7 +1372,7 @@
       "id": 156,
       "name": "解放军报",
       "url": "http://www.81.cn/szb_223187/szbxq/index.html?paperName=jfjb&paperDate=2023-12-06&paperNumber=02&articleid=920926",
-      "description": "",
+      "description": "解放军报 - 中国军网",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1359,7 +1380,7 @@
       "id": 157,
       "name": "百年老字号",
       "url": "https://www.maigoo.com/news/697676.html",
-      "description": "",
+      "description": "CNPP榜中榜独家发布的2024年百年老字号100强名单正式公布，这些历经风雨…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1367,7 +1388,7 @@
       "id": 158,
       "name": "中国文学网",
       "url": "http://huanqiuwenxue.com/",
-      "description": "",
+      "description": "代表权威专业立场的中国文学官网。发表中国优秀文学作品、举办大型文学活动、召开名家学者论坛等…",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -1375,7 +1396,7 @@
       "id": 159,
       "name": "国家中小学智慧",
       "url": "https://basic.smartedu.cn/",
-      "description": "",
+      "description": "国家中小学智慧教育平台",
       "categoryId": 2,
       "icon": "/icons/default.svg"
     },
@@ -1383,7 +1404,7 @@
       "id": 160,
       "name": "chinadaily",
       "url": "https://cn.chinadaily.com.cn/gtx/",
-      "description": "",
+      "description": "观天下 - 中国日报网",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1391,7 +1412,7 @@
       "id": 161,
       "name": "中国作家库",
       "url": "https://www.zuojiaku.com/category-view-56.html",
-      "description": "",
+      "description": "中国作家与文学作品资料库",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -1399,7 +1420,7 @@
       "id": 162,
       "name": "东方网财经",
       "url": "https://finance.eastday.com/",
-      "description": "",
+      "description": "东方网财经频道，财经新闻与行情",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1407,7 +1428,7 @@
       "id": 163,
       "name": "上观",
       "url": "https://www.shobserver.com/staticsg/res/html/web/section.html?id=62&v=1.7",
-      "description": "",
+      "description": "上观新闻",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1415,7 +1436,7 @@
       "id": 164,
       "name": "福州日报",
       "url": "https://mag.fznews.com.cn/fzrb/2025/20250704/20250704_001/20250704_001.html",
-      "description": "",
+      "description": "福州日报数字报",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1423,7 +1444,7 @@
       "id": 165,
       "name": "福州晚报",
       "url": "https://mag.fznews.com.cn/fzwb/2025/20250605/20250605_A01/20250605_A01.html",
-      "description": "",
+      "description": "福州晚报数字报",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1431,7 +1452,7 @@
       "id": 166,
       "name": "陆家嘴金融",
       "url": "https://www.ljzfin.com/",
-      "description": "",
+      "description": "陆家嘴金融网是新华社中国金融信息中心打造的金融垂直网站，依托新华社品牌优势和资源优势…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1439,7 +1460,7 @@
       "id": 167,
       "name": "文汇报",
       "url": "https://dzb.whb.cn/2024-11-29/4/index.html?left=0#1751616894149",
-      "description": "",
+      "description": "文汇报数字报",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1447,7 +1468,7 @@
       "id": 168,
       "name": "光明日报",
       "url": "https://gmrb-cloud.gmw.cn/gmrb/html/2025-07/04/node_1.htm",
-      "description": "",
+      "description": "光明日报数字报",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1455,7 +1476,7 @@
       "id": 169,
       "name": "感知上海",
       "url": "https://touch.shio.gov.cn/jsp/index.jsp",
-      "description": "",
+      "description": "感知上海",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1463,7 +1484,7 @@
       "id": 170,
       "name": "解放日报",
       "url": "https://www.shobserver.com/staticsg/res/html/journal/navi.html?code=jfrb&date=2025-06-05",
-      "description": "",
+      "description": "内容导航",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1471,7 +1492,7 @@
       "id": 171,
       "name": "解放日报",
       "url": "https://www.shobserver.com/staticsg/res/html/journal/navi.html?code=jfrb&date=2025-06-05",
-      "description": "",
+      "description": "内容导航",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1479,7 +1500,7 @@
       "id": 172,
       "name": "京报网",
       "url": "https://wap.bjd.com.cn/jbw/video/",
-      "description": "",
+      "description": "京报视频_北京日报网",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1487,7 +1508,7 @@
       "id": 173,
       "name": "新京报",
       "url": "https://www.bjd.com.cn/index.shtml",
-      "description": "",
+      "description": "京报网",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1495,7 +1516,7 @@
       "id": 174,
       "name": "改革网",
       "url": "http://www.cfgw.net.cn/index.html",
-      "description": "",
+      "description": "改革网(www.cfgw.net.cn)是经国家互联网信息办公室批准，由国家发展改革委主管…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1503,7 +1524,7 @@
       "id": 175,
       "name": "宣讲家网",
       "url": "http://www.71.cn/",
-      "description": "",
+      "description": "宣讲家网是全国独家高端报告视频智库、首家专业理论网站，传播马克思主义中国化的创新理论…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1511,7 +1532,7 @@
       "id": 176,
       "name": "中国企业家网",
       "url": "https://www.iceo.com.cn/",
-      "description": "",
+      "description": "中国企业家网",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1519,7 +1540,7 @@
       "id": 177,
       "name": "国际在线",
       "url": "https://english.cri.cn/",
-      "description": "",
+      "description": "Live Radio, Shows & Podcasts | CGTN Radio",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1527,7 +1548,7 @@
       "id": 178,
       "name": "圣经｜创世纪",
       "url": "http://bible.kyhs.net/old/1.htm",
-      "description": "",
+      "description": "创世记-Genesis - 基督教圣经 by www.god66.cn",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -1535,7 +1556,7 @@
       "id": 179,
       "name": "创世纪",
       "url": "https://hzjh.hangzhouchurch.com/bible/index.html",
-      "description": "",
+      "description": "手机版圣经提供和合本和NIV等版本的中英文圣经在线阅读，有圣经朗读、查经搜索和对照阅读等功能",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -1543,7 +1564,7 @@
       "id": 180,
       "name": "党建读物",
       "url": "https://djcb.12371.cn/",
-      "description": "",
+      "description": "党建读物出版社",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -1551,7 +1572,7 @@
       "id": 181,
       "name": "中国之声",
       "url": "https://china.cnr.cn/",
-      "description": "",
+      "description": "中国之声栏目集纳了中央广播电视总台央广中国之声频率播出的即时“快”新闻，全天24小时为用户提供权威…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1559,7 +1580,7 @@
       "id": 182,
       "name": "吴音小字典｜上海话",
       "url": "https://www.wu-chinese.com/minidict/",
-      "description": "",
+      "description": "Wu-Language Dictionary",
       "categoryId": 2,
       "icon": "/icons/default.svg"
     },
@@ -1567,7 +1588,7 @@
       "id": 183,
       "name": "海词词典",
       "url": "https://dict.cn/",
-      "description": "",
+      "description": "海词词典是中国第一个在线词典，海量权威词典官方网站。独有2000万词汇，配释义饼图、精细讲解…",
       "categoryId": 2,
       "icon": "/icons/default.svg"
     },
@@ -1575,7 +1596,7 @@
       "id": 184,
       "name": "上海智慧教育平台",
       "url": "https://higher.sh.smartedu.cn/",
-      "description": "",
+      "description": "上海智慧教育平台 · 微校",
       "categoryId": 2,
       "icon": "/icons/default.svg"
     },
@@ -1583,7 +1604,7 @@
       "id": 185,
       "name": "高考网",
       "url": "https://gaokao.zxxk.com/",
-      "description": "",
+      "description": "高考资讯、试题与备考资源平台",
       "categoryId": 2,
       "icon": "/icons/default.svg"
     },
@@ -1591,7 +1612,7 @@
       "id": 186,
       "name": "题库网",
       "url": "https://www.tiku.cn/",
-      "description": "",
+      "description": "题库网 完全免费的中小学题库 全国中小学在线题库 免费在线组卷,提供在线组卷，试卷下载服务",
       "categoryId": 2,
       "icon": "/icons/default.svg"
     },
@@ -1599,7 +1620,7 @@
       "id": 187,
       "name": "北京市东城区图书馆｜活动",
       "url": "https://www.bjdclib.com/shtt/dspd/hdxx/",
-      "description": "",
+      "description": "北京东城区图书馆活动信息发布",
       "categoryId": 14,
       "icon": "/icons/default.svg"
     },
@@ -1607,7 +1628,7 @@
       "id": 188,
       "name": "国家博物馆｜活动",
       "url": "https://www.nlc.cn/web/shouye/zuixinhuodong/jzyg/index.shtml",
-      "description": "",
+      "description": "讲座",
       "categoryId": 14,
       "icon": "/icons/default.svg"
     },
@@ -1615,7 +1636,7 @@
       "id": 189,
       "name": "21英语网",
       "url": "https://elt.i21st.cn/article/renwu_8.html",
-      "description": "",
+      "description": "淡泊做人 宁静处世 严谨治学（下）; 淡泊做人 宁静处世 严谨治学; 英语是一门唯美的艺术…",
       "categoryId": 2,
       "icon": "/icons/default.svg"
     },
@@ -1623,7 +1644,7 @@
       "id": 190,
       "name": "高考填自愿",
       "url": "https://www.dxsbb.com/news/list_652.html",
-      "description": "",
+      "description": "985大学名单栏目， 为您提供2026年全国31省市所有39所985大学名单一览表完整版…",
       "categoryId": 2,
       "icon": "/icons/default.svg"
     },
@@ -1631,7 +1652,7 @@
       "id": 191,
       "name": "大学生必备网",
       "url": "https://www.dxsbb.com/",
-      "description": "",
+      "description": "大学生必备网，为广大考生和家长朋友们整理院校信息、专业信息、科普答疑等方面内容，方便大家查询！",
       "categoryId": 2,
       "icon": "/icons/default.svg"
     },
@@ -1639,7 +1660,7 @@
       "id": 192,
       "name": "国家高等智慧教育平台",
       "url": "https://www.chinaooc.com.cn/courses",
-      "description": "",
+      "description": "国家高等教育智慧教育平台是由教育部委托、高等教育出版社有限公司建设和运行维护…",
       "categoryId": 2,
       "icon": "/icons/default.svg"
     },
@@ -1647,7 +1668,7 @@
       "id": 193,
       "name": "国家高等智慧教育｜人像摄影",
       "url": "https://www.chinaooc.com.cn/course/671accce16d8a05eedca22db",
-      "description": "",
+      "description": "国家高等教育智慧教育平台是由教育部委托、高等教育出版社有限公司建设和运行维护…",
       "categoryId": 2,
       "icon": "/icons/default.svg"
     },
@@ -1655,7 +1676,7 @@
       "id": 194,
       "name": "中国人物界",
       "url": "https://m.zgrwj.com/sybg/qyj/",
-      "description": "",
+      "description": "人物报道与企业家资讯平台",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1663,7 +1684,7 @@
       "id": 195,
       "name": "中华名人网",
       "url": "http://www.chinamingren.org/chinamingren/product_cat2.asp?catid=94&catname=%B8%D0%B6%AF%D6%D0%B9%FA",
-      "description": "",
+      "description": "中华名人网",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1671,7 +1692,7 @@
       "id": 196,
       "name": "中华名人网",
       "url": "http://www.chinamingren.org/chinamingren/product_cat2.asp?catid=94&catname=%B8%D0%B6%AF%D6%D0%B9%FA",
-      "description": "",
+      "description": "中华名人网",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1679,7 +1700,7 @@
       "id": 197,
       "name": "中国人物网",
       "url": "https://www.renwu.org.cn/category/fangtan",
-      "description": "",
+      "description": "人物访谈",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1687,7 +1708,7 @@
       "id": 198,
       "name": "中华名人库",
       "url": "http://www.cncl.net.cn/",
-      "description": "",
+      "description": "中华名人库（www.cncl.net.cn）是一内容开放、自由的网络百科人物库…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1695,7 +1716,7 @@
       "id": 199,
       "name": "名人网",
       "url": "https://www.mingrenw.cn/mingyan/",
-      "description": "",
+      "description": "名人网名人语录,名人语录频道提供有关于读书,学习,珍惜时间,爱国,数学,英语,诚信,教师节,励志…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1703,7 +1724,7 @@
       "id": 200,
       "name": "中国记录",
       "url": "https://news.record.hk/category/zhuanji/",
-      "description": "",
+      "description": "人物傳記",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1711,7 +1732,7 @@
       "id": 201,
       "name": "环球人物网",
       "url": "https://www.globalpeople.com.cn/",
-      "description": "",
+      "description": "环球人物杂志官网，人物报道与深度访谈",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1719,7 +1740,7 @@
       "id": 202,
       "name": "青年文学",
       "url": "https://www.chinawriter.com.cn/404015/416204/418979/",
-      "description": "",
+      "description": "《青年文学》--新作品--中国作家网",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -1727,7 +1748,7 @@
       "id": 203,
       "name": "笑话代王",
       "url": "https://www.jokedw.com/",
-      "description": "",
+      "description": "笑话代王致力于为大家带来欢乐，欢迎来到笑话代王，一个专注于分享快乐笑话的优质网站！",
       "categoryId": 6,
       "icon": "/icons/default.svg"
     },
@@ -1735,7 +1756,7 @@
       "id": 204,
       "name": "52笑话网",
       "url": "https://www.52xiaohua.com/category-1.html",
-      "description": "",
+      "description": "笑话网冷笑话频道提供冷笑话段子、爆笑冷笑话图片、搞笑冷笑话大全，收集更多来自网友推荐的最新冷笑话…",
       "categoryId": 6,
       "icon": "/icons/default.svg"
     },
@@ -1743,7 +1764,7 @@
       "id": 205,
       "name": "知乐值",
       "url": "https://zhilezhi.com/raokouling",
-      "description": "",
+      "description": "绕口令大全网站！知乐知收录海量从简单到地狱难度的绕口令，包含儿童版、成人版、经典版…",
       "categoryId": 6,
       "icon": "/icons/default.svg"
     },
@@ -1751,7 +1772,7 @@
       "id": 206,
       "name": "网易云段",
       "url": "https://www.yduanzi.com/",
-      "description": "",
+      "description": "在云段子，随时发现搞笑热评段子",
       "categoryId": 6,
       "icon": "/icons/default.svg"
     },
@@ -1759,7 +1780,7 @@
       "id": 207,
       "name": "故事库",
       "url": "https://www.gushiku.cn/",
-      "description": "",
+      "description": "抱歉，站点已暂停",
       "categoryId": 6,
       "icon": "/icons/default.svg"
     },
@@ -1767,7 +1788,7 @@
       "id": 208,
       "name": "故事大全网",
       "url": "http://www.gushidq.com/shenhua/",
-      "description": "",
+      "description": "故事大全网神话故事栏目提供中国神话故事、民间神话故事、山海经的神话故事、古希腊神话故事…",
       "categoryId": 6,
       "icon": "/icons/default.svg"
     },
@@ -1775,7 +1796,7 @@
       "id": 209,
       "name": "记忆力训练",
       "url": "http://www.jiyifa.cn/jiyili/tigao/",
-      "description": "",
+      "description": "如何提高记忆力?吃什么提高记忆力?通过提高记忆力的食物，学习有效的提高记忆力的方法…",
       "categoryId": 2,
       "icon": "/icons/default.svg"
     },
@@ -1783,7 +1804,7 @@
       "id": 210,
       "name": "狸猫故事",
       "url": "https://www.limaogushi.com/pd/minjian/page/101",
-      "description": "",
+      "description": "狸猫故事网在线阅读经典民间故事，每日更新经典民间故事大全。另有经典民间故事100篇精选内容…",
       "categoryId": 6,
       "icon": "/icons/default.svg"
     },
@@ -1791,7 +1812,7 @@
       "id": 211,
       "name": "天天故事网",
       "url": "https://635w.com/",
-      "description": "",
+      "description": "短篇故事与美文阅读平台",
       "categoryId": 6,
       "icon": "/icons/default.svg"
     },
@@ -1799,7 +1820,7 @@
       "id": 212,
       "name": "中国好故事",
       "url": "https://www.chinastory.cn/rwgs/index.html",
-      "description": "",
+      "description": "人物故事",
       "categoryId": 6,
       "icon": "/icons/default.svg"
     },
@@ -1807,7 +1828,7 @@
       "id": 213,
       "name": "民间故事网",
       "url": "https://www.tatiao.com/njjzw/index_38.html",
-      "description": "",
+      "description": "脑筋急转弯-脑筋急转弯大全-经典常用的脑筋急转弯大全和答案",
       "categoryId": 6,
       "icon": "/icons/default.svg"
     },
@@ -1815,7 +1836,7 @@
       "id": 214,
       "name": "职场故事",
       "url": "https://www.yigushi.com/gushi/zhichanggushi/",
-      "description": "",
+      "description": "第一故事网阅读职场故事大全故事,更新发布最新职场小故事,职场感人故事,经典职场故事等文章在线阅读。",
       "categoryId": 6,
       "icon": "/icons/default.svg"
     },
@@ -1823,7 +1844,7 @@
       "id": 215,
       "name": "各类图书馆导航",
       "url": "https://wanjuanguoxue.com/",
-      "description": "",
+      "description": "古籍国学与图书馆资源导航",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -1831,7 +1852,7 @@
       "id": 216,
       "name": "中舞网",
       "url": "https://www.dance365.com/index/recommend",
-      "description": "",
+      "description": "中舞网",
       "categoryId": 16,
       "icon": "/icons/default.svg"
     },
@@ -1839,7 +1860,7 @@
       "id": 217,
       "name": "国家公共文化云 “学才艺” 子平台",
       "url": "https://www.culturedc.cn/web3.0/learn-talent-index.html",
-      "description": "",
+      "description": "国家公共文化云作为国家公共文化服务领域的资源汇聚、活动汇聚、服务汇聚的基础服务平台…",
       "categoryId": 16,
       "icon": "/icons/default.svg"
     },
@@ -1847,7 +1868,7 @@
       "id": 218,
       "name": "三足鸟",
       "url": "http://www.3zn.org/2j.asp?id=5",
-      "description": "",
+      "description": "神话,神话故事世俗神话",
       "categoryId": 6,
       "icon": "/icons/default.svg"
     },
@@ -1855,7 +1876,7 @@
       "id": 219,
       "name": "有好听",
       "url": "https://www.youhaoting.com/",
-      "description": "",
+      "description": "有好听为你分享好听的内容。",
       "categoryId": 6,
       "icon": "/icons/default.svg"
     },
@@ -1863,7 +1884,7 @@
       "id": 220,
       "name": "民间故事网",
       "url": "http://www.gushihe.cn/",
-      "description": "",
+      "description": "世界民间故事网（故事河） 世界民间传说故事 世界神话故事 中外民间故事…",
       "categoryId": 6,
       "icon": "/icons/default.svg"
     },
@@ -1871,7 +1892,7 @@
       "id": 221,
       "name": "书签",
       "url": "https://it-cxy.top/",
-      "description": "",
+      "description": "最新@网址",
       "categoryId": 6,
       "icon": "/icons/default.svg"
     },
@@ -1879,7 +1900,7 @@
       "id": 222,
       "name": "秒创",
       "url": "https://aigc.yizhentv.com/home/app/login?redirect_to=https%3A%2F%2Faigc.yizhentv.com%2Fhome%2Fapp%2Ftools%2FaiHelp%3Ftype%3DaiHelp",
-      "description": "",
+      "description": "一帧秒创 AI 视频创作工具",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -1887,7 +1908,7 @@
       "id": 223,
       "name": "百家讲坛",
       "url": "https://tv.cctv.com/lm/bjjt/index.shtml",
-      "description": "",
+      "description": "《百家讲坛》栏目一贯坚持“让专家、学者为百姓服务”的栏目宗旨,栏目在专家…",
       "categoryId": 3,
       "icon": "/icons/default.svg"
     },
@@ -1895,7 +1916,7 @@
       "id": 224,
       "name": "携程",
       "url": "https://you.ctrip.com/",
-      "description": "",
+      "description": "携程旅行验证",
       "categoryId": 15,
       "icon": "/icons/default.svg"
     },
@@ -1903,7 +1924,7 @@
       "id": 225,
       "name": "it之家",
       "url": "https://it.ithome.com/people",
-      "description": "",
+      "description": "IT之家，人物记录频道，关注现当代文明进程中那些显现出智慧光芒、卓越创造力和非凡品格的人们…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1911,7 +1932,7 @@
       "id": 226,
       "name": "房子装修",
       "url": "https://www.sdgybc.com/post/189330.html",
-      "description": "",
+      "description": "装修知识与案例分享",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1919,7 +1940,7 @@
       "id": 227,
       "name": "腾讯新闻",
       "url": "https://news.qq.com/",
-      "description": "",
+      "description": "腾讯网从2003年创立至今，已经成为集新闻信息，区域垂直生活服务…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1927,7 +1948,7 @@
       "id": 228,
       "name": "网易新闻",
       "url": "https://news.163.com/",
-      "description": "",
+      "description": "新闻,新闻中心,包含有时政新闻,国内新闻,国际新闻,社会新闻,时事评论,新闻图片,新闻专题…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1935,7 +1956,7 @@
       "id": 229,
       "name": "搜狐新闻",
       "url": "https://www.sohu.com/",
-      "description": "",
+      "description": "搜狐",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1943,7 +1964,7 @@
       "id": 230,
       "name": "今日头条创作",
       "url": "https://mp.toutiao.com/profile_v4/index",
-      "description": "",
+      "description": "头条号",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -1951,7 +1972,7 @@
       "id": 231,
       "name": "在线ps",
       "url": "https://www.photopea.com/",
-      "description": "",
+      "description": "Photopea Online Photo Editor lets you edit photos…",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -1959,7 +1980,7 @@
       "id": 232,
       "name": "在线p图",
       "url": "https://www.photopea.com/",
-      "description": "",
+      "description": "Photopea Online Photo Editor lets you edit photos…",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -1967,7 +1988,7 @@
       "id": 233,
       "name": "扬子晚报",
       "url": "https://www.yangtse.com/news/kj/",
-      "description": "",
+      "description": "科技--扬子晚报网",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1975,7 +1996,7 @@
       "id": 234,
       "name": "科技日报",
       "url": "https://digitalpaper.stdaily.com/http_www.kjrb.com/kjrb/html/2024-09/23/node_9.htm",
-      "description": "",
+      "description": "科技日报数字报",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1983,7 +2004,7 @@
       "id": 235,
       "name": "中国科技网",
       "url": "https://www.stdaily.com/",
-      "description": "",
+      "description": "中国科技网是以科技新闻和信息传播为主业的综合性网络媒体。2010年…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1991,7 +2012,7 @@
       "id": 236,
       "name": "搜狐新闻",
       "url": "https://it.sohu.com/?spm=smpc.content.nav.9.1751964777700OhbMqVj",
-      "description": "",
+      "description": "科技",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -1999,7 +2020,7 @@
       "id": 237,
       "name": "泰晤士报",
       "url": "https://www.thetimes.com/uk",
-      "description": "",
+      "description": "Verifying Device",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2007,7 +2028,7 @@
       "id": 238,
       "name": "搜狗百科",
       "url": "https://baike.sogou.com/",
-      "description": "",
+      "description": "百科是为广大用户所提供的一部自由、开放、共享的百科全书。旨在创造一个涵盖所有知识领域…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2015,7 +2036,7 @@
       "id": 239,
       "name": "求闻百科",
       "url": "https://www.qiuwenbaike.cn/wiki/Qiuwen:%E9%A6%96%E9%A1%B5",
-      "description": "",
+      "description": "求闻百科，共笔求闻——由志愿者合作编纂的网络百科全书，旨在创造一部版权开放、质量优良…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2023,7 +2044,7 @@
       "id": 240,
       "name": "全国报刊大全",
       "url": "http://www.53bk.com/baokan",
-      "description": "",
+      "description": "全国报刊大全和国内报刊大全-在线看报系统-在线读报-报纸在线阅读系统，无论国内和国外…",
       "categoryId": 2,
       "icon": "/icons/default.svg"
     },
@@ -2031,7 +2052,7 @@
       "id": 241,
       "name": "报纸导航",
       "url": "http://www.dx286.com/quanguobaozhi/beijingbaozhi/",
-      "description": "",
+      "description": "404 - 页面不存在",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2039,7 +2060,7 @@
       "id": 242,
       "name": "电台排行榜",
       "url": "https://sao.fm/charts",
-      "description": "",
+      "description": "排行榜 - Sao.fm",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2047,7 +2068,7 @@
       "id": 243,
       "name": "时代周刊",
       "url": "https://timesmagazin.com/",
-      "description": "",
+      "description": "Grand303 platform Utama taruhan judi bola mix…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2055,7 +2076,7 @@
       "id": 244,
       "name": "爱查快递",
       "url": "https://www.ickd.cn/tel.html",
-      "description": "",
+      "description": "提供全国各大快递公司、物流公司官方客服电话和投诉电话一览表，包括国际快递电话，申通、圆通…",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -2063,7 +2084,7 @@
       "id": 245,
       "name": "必应词典",
       "url": "https://cn.bing.com/dict/search?q=punch&FORM=BDVSP2&qpvt=punch",
-      "description": "",
+      "description": "必应词典为您提供punch的释义，美[pʌntʃ]，英[pʌntʃ]，n. 冲床；重拳击打…",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -2071,7 +2092,7 @@
       "id": 246,
       "name": "有道词典",
       "url": "https://dict.youdao.com/",
-      "description": "",
+      "description": "网易有道是中国领先的智能学习公司，致力于提供100%以用户为导向的学习产品和服务…",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -2079,7 +2100,7 @@
       "id": 247,
       "name": "金山词霸",
       "url": "https://www.iciba.com/",
-      "description": "",
+      "description": "金山词霸致力于为用户提供高效、精准的在线翻译服务，支持中、英、日、韩、德、法等177种语言在线翻译…",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -2087,7 +2108,7 @@
       "id": 248,
       "name": "沪江词典",
       "url": "https://dict.hjenglish.com/w/morning",
-      "description": "",
+      "description": "沪江在线词典，多语种查词翻译",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -2095,7 +2116,7 @@
       "id": 249,
       "name": "海词在线",
       "url": "https://dict.cn/",
-      "description": "",
+      "description": "海词词典是中国第一个在线词典，海量权威词典官方网站。独有2000万词汇，配释义饼图、精细讲解…",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -2103,7 +2124,7 @@
       "id": 250,
       "name": "百度汉语词典",
       "url": "https://dict.baidu.com/",
-      "description": "",
+      "description": "百度汉语为您提供全面、权威的汉语数据，包括汉字、词语、成语、诗词等诸多内容；同时运用问答、拍照…",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -2111,7 +2132,7 @@
       "id": 251,
       "name": "剑桥词典",
       "url": "https://dictionary.cambridge.org/zhs/",
-      "description": "",
+      "description": "剑桥词典中文版，权威英语学习词典",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -2119,7 +2140,7 @@
       "id": 252,
       "name": "中文博客排行榜",
       "url": "https://xyzrank.com/#/",
-      "description": "",
+      "description": "中文播客榜 | 榜单只是一种维度，愿你找到喜欢的节目",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2127,7 +2148,7 @@
       "id": 253,
       "name": "podcasts",
       "url": "https://podcasts.apple.com/cn/charts",
-      "description": "",
+      "description": "浏览 Apple 播客上最受欢迎的播客。收听《明朝那些事儿》…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2135,7 +2156,7 @@
       "id": 254,
       "name": "新榜",
       "url": "https://www.newrank.cn/ranklist/xiaohongshu/1/7?from=303",
-      "description": "",
+      "description": "作为数据驱动的内容产业服务，新榜发挥行业枢纽作用，连接线上线下资源，提供内容营销、电商导购…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2143,7 +2164,7 @@
       "id": 255,
       "name": "哈佛商业评论",
       "url": "https://www.hbr-caijing.com/#/home",
-      "description": "",
+      "description": "哈佛商业评论中国",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2151,7 +2172,7 @@
       "id": 256,
       "name": "上海建桥图书馆",
       "url": "https://library.gench.edu.cn/Sub.html#!Function/Resource/Type/List/Column/d6c9f740-5d27-42be-a7ba-941cef96d364/Page/2",
-      "description": "",
+      "description": "根据学校发展规划，图书馆将以文献信息中心和文化活动中心为建设目标，努力践行“感恩、回报、爱心…",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -2159,7 +2180,7 @@
       "id": 257,
       "name": "12306",
       "url": "https://www.12306.cn/index/",
-      "description": "",
+      "description": "中国铁路12306网站",
       "categoryId": 15,
       "icon": "/icons/default.svg"
     },
@@ -2167,7 +2188,7 @@
       "id": 258,
       "name": "艾瑞",
       "url": "https://column.iresearch.cn/",
-      "description": "",
+      "description": "艾瑞网专栏聚焦业内数百位具备丰富互联网实战经验的专家和企业家，为行业人士提供了一个专业的交流平台…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2175,7 +2196,7 @@
       "id": 259,
       "name": "世界经理人",
       "url": "https://www.ceconline.com/leadership/",
-      "description": "",
+      "description": "世界经理人杂志，企业管理与领导力资讯",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2183,7 +2204,7 @@
       "id": 260,
       "name": "书评周刊",
       "url": "https://m.bjnews.com.cn/column/9025.html",
-      "description": "",
+      "description": "书评周刊",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -2191,7 +2212,7 @@
       "id": 261,
       "name": "亲戚称呼计算器",
       "url": "https://tool.lu/",
-      "description": "",
+      "description": "在线工具,开发人员工具,代码格式化、压缩、加密、解密,下载链接转换,json格式化,正则测试工具…",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -2199,7 +2220,7 @@
       "id": 262,
       "name": "微博",
       "url": "https://weibo.com/",
-      "description": "",
+      "description": "Sina Visitor System",
       "categoryId": 15,
       "icon": "/icons/default.svg"
     },
@@ -2207,7 +2228,7 @@
       "id": 263,
       "name": "第一范文网",
       "url": "https://www.diyifanwen.com/tool/",
-      "description": "",
+      "description": "日常工作和学习的一些辅助工具，如三字经、百家姓、千字文，成语大全，歇后语大全，名人名言等等。",
       "categoryId": 2,
       "icon": "/icons/default.svg"
     },
@@ -2215,7 +2236,7 @@
       "id": 264,
       "name": "中国医疗排行榜",
       "url": "https://rank.cn-healthcare.com/fudan/national-general/year/2022",
-      "description": "",
+      "description": "2023年度复旦版中国医院排行榜从全国综合排名、医院专科排行榜…",
       "categoryId": 9,
       "icon": "/icons/default.svg"
     },
@@ -2223,7 +2244,7 @@
       "id": 265,
       "name": "医疗贴吧",
       "url": "https://www.yuaigongwu.com/forum.php",
-      "description": "",
+      "description": "与癌共舞是纯公益网站,建站目的是为广大癌症病友提供交流平台.肺癌,肝癌,肾癌…",
       "categoryId": 9,
       "icon": "/icons/default.svg"
     },
@@ -2231,7 +2252,7 @@
       "id": 266,
       "name": "觅健",
       "url": "https://www.mijian360.com/",
-      "description": "",
+      "description": "觅健是国内优质的癌症及重症患者在线社区和院外康复管理平台,为患者提供精准的一站式康复服务…",
       "categoryId": 9,
       "icon": "/icons/default.svg"
     },
@@ -2239,7 +2260,7 @@
       "id": 267,
       "name": "韩剧tv",
       "url": "https://hanju51.com/",
-      "description": "",
+      "description": "提供最新韩剧、韩国电影、韩国综艺在线观看,韩国新闻最新资讯,以及韩剧排行榜榜单,韩流来袭,KBS…",
       "categoryId": 3,
       "icon": "/icons/default.svg"
     },
@@ -2247,7 +2268,7 @@
       "id": 268,
       "name": "泰剧网",
       "url": "https://i.taijuwang.com/thailand/",
-      "description": "",
+      "description": "泰剧在线观看与资讯平台",
       "categoryId": 3,
       "icon": "/icons/default.svg"
     },
@@ -2255,7 +2276,7 @@
       "id": 269,
       "name": "茶壶杯",
       "url": "https://www.bnjxjd.com/",
-      "description": "",
+      "description": "茶杯狐Cupfox官网是中国最大的影视资源聚合搜索引擎，实时聚合全网优质影视资源…",
       "categoryId": 3,
       "icon": "/icons/default.svg"
     },
@@ -2263,7 +2284,7 @@
       "id": 270,
       "name": "美剧之家",
       "url": "https://mjzj7.cc/mjrb/tv-rank-day.html",
-      "description": "",
+      "description": "美剧排行与追剧资讯",
       "categoryId": 3,
       "icon": "/icons/default.svg"
     },
@@ -2271,7 +2292,7 @@
       "id": 271,
       "name": "名校",
       "url": "https://www.shanghairanking.cn/institution?name=&c=0&r=31&l=0&e=0",
-      "description": "",
+      "description": "院校中可根据院校属地、院校类型、院校层次进行院校检索，查看个大学的详细情况",
       "categoryId": 2,
       "icon": "/icons/default.svg"
     },
@@ -2279,7 +2300,7 @@
       "id": 272,
       "name": "中国大学排名",
       "url": "https://www.cnur.com/",
-      "description": "",
+      "description": "中国大学排行榜官网(China University Rankings，简称CNUR)…",
       "categoryId": 2,
       "icon": "/icons/default.svg"
     },
@@ -2287,7 +2308,7 @@
       "id": 273,
       "name": "软件著作权",
       "url": "https://www.ccopyright.com.cn/",
-      "description": "",
+      "description": "中国版权保护中心是国家版权登记机构，我国唯一的软件著作权登记、著作权质权登记机构，提供版权鉴定…",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -2295,7 +2316,7 @@
       "id": 274,
       "name": "软著申请",
       "url": "https://www.ccopyright.com.cn/index.php?optionid=1030",
-      "description": "",
+      "description": "中国版权保护中心是国家版权登记机构，我国唯一的软件著作权登记、著作权质权登记机构，提供版权鉴定…",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -2303,7 +2324,7 @@
       "id": 275,
       "name": "kimi",
       "url": "https://www.kimi.com/?from=ai-tab.cn",
-      "description": "",
+      "description": "全新 Kimi K3 现已上线：构建可玩的多人与3D游戏，生成咨询级PPT，用 Swarm…",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -2311,7 +2332,7 @@
       "id": 276,
       "name": "格式转换",
       "url": "https://www.ilovepdf.com/zh-cn",
-      "description": "",
+      "description": "iLovePDF网站提供PDF文件在线转换服务。它完全免费，而且使用方便。无论是合并PDF文件…",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -2319,7 +2340,7 @@
       "id": 277,
       "name": "创业故事网",
       "url": "https://www.cygs.cc/gushi/",
-      "description": "",
+      "description": "创业故事与商业案例分享",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2327,7 +2348,7 @@
       "id": 278,
       "name": "创业邦",
       "url": "https://www.cyzone.cn/",
-      "description": "",
+      "description": "创业邦作为国际创新生态服务平台，为高成长企业、金融机构、产业园区、地方政府提供全方位的媒体资讯…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2335,7 +2356,7 @@
       "id": 279,
       "name": "中央气象台",
       "url": "https://www.nmc.cn/publish/forecast/ABJ/beijing.html",
-      "description": "",
+      "description": "北京-天气预报",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -2343,7 +2364,7 @@
       "id": 280,
       "name": "wattpad",
       "url": "https://www.wattpad.com/?from_source=https%3A%2F%2Fwechalet.cn",
-      "description": "",
+      "description": "国际化故事创作与阅读社区",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -2351,7 +2372,7 @@
       "id": 281,
       "name": "十万个为什么",
       "url": "https://wechalet.cn/appstore/detail/3xpp",
-      "description": "",
+      "description": "《十万个为什么》是一个专门打造在线儿童、少儿、青少年百科全书网站…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2359,7 +2380,7 @@
       "id": 282,
       "name": "小木屋",
       "url": "https://wechalet.cn/appstore/all_all_encyclopedias",
-      "description": "",
+      "description": "应用与百科内容集合平台",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -2367,7 +2388,7 @@
       "id": 283,
       "name": "出海指南",
       "url": "https://chuhaizhinan.com/link_cat/receipt-and-payment/",
-      "description": "",
+      "description": "收款支付",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -2375,7 +2396,7 @@
       "id": 284,
       "name": "三联生活周刊",
       "url": "https://www.lifeweek.com.cn/magazine",
-      "description": "",
+      "description": "一本杂志和他倡导的生活——作为中国最受尊敬的周刊品牌之一…",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -2383,7 +2404,7 @@
       "id": 285,
       "name": "多领国",
       "url": "https://www.duolingo.cn/",
-      "description": "",
+      "description": "多邻国是世界上最受欢迎的语言学习平台。免费、有趣、科学。现在就登录 duolingo.com…",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -2391,7 +2412,7 @@
       "id": 286,
       "name": "逗图吧",
       "url": "https://www.doutub.com/",
-      "description": "",
+      "description": "404 Not Found",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -2399,7 +2420,7 @@
       "id": 287,
       "name": "斗图啦",
       "url": "https://www.doutupk.com/maker",
-      "description": "",
+      "description": "表情包在线制作与斗图素材",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -2407,7 +2428,7 @@
       "id": 288,
       "name": "豆果美食",
       "url": "https://www.douguo.com/",
-      "description": "",
+      "description": "豆果美食是最优质的美食菜谱社区,提供各种菜谱大全,食谱大全,家常菜做法大全…",
       "categoryId": 18,
       "icon": "/icons/default.svg"
     },
@@ -2415,7 +2436,7 @@
       "id": 289,
       "name": "欧路词典",
       "url": "https://dict.eudic.net/ting",
-      "description": "",
+      "description": "「每日英语听力」是专为英语学习者定制的英语听力训练软件。收录了英语新闻、英语四级、英语六级…",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -2423,7 +2444,7 @@
       "id": 290,
       "name": "行业分析报告",
       "url": "https://stock.qianzhan.com/hs/zhuyingchanpin_300890.SZ.html",
-      "description": "",
+      "description": "翔丰华主营产品财务报表分析(300890.SZ)_财务报表数据 - 前瞻眼",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -2431,7 +2452,7 @@
       "id": 291,
       "name": "学习强国",
       "url": "https://www.xuexi.cn/",
-      "description": "",
+      "description": "学习强国",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2439,7 +2460,7 @@
       "id": 292,
       "name": "note",
       "url": "https://note.ovokit.xyz/",
-      "description": "",
+      "description": "在线笔记工具",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -2447,7 +2468,7 @@
       "id": 293,
       "name": "中国医药信息查询平台",
       "url": "https://www.dayi.org.cn/",
-      "description": "",
+      "description": "中国医药信息查询平台是中国权威医药数据库之一,建有海量的医学和药学内容。包括疾病,症状,药品,医生…",
       "categoryId": 9,
       "icon": "/icons/default.svg"
     },
@@ -2455,7 +2476,7 @@
       "id": 294,
       "name": "汉语国学",
       "url": "https://www.hanyuguoxue.com/",
-      "description": "",
+      "description": "汉语字典_字典查字_在线查字_汉语字典在线查字-汉语国学",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -2463,7 +2484,7 @@
       "id": 295,
       "name": "北京商报网",
       "url": "https://www.bbtnews.com.cn/",
-      "description": "",
+      "description": "《北京商报》隶属于北京日报报业集团，北京权威综合类经济日报，深耕首都财经商业、金融产经领域…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2471,7 +2492,7 @@
       "id": 296,
       "name": "北京商报网",
       "url": "https://epaper.bbtnews.com.cn/epaper/index.html#20250731#0#14095",
-      "description": "",
+      "description": "北京商报社多媒体数字报刊平台",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2479,7 +2500,7 @@
       "id": 297,
       "name": "世界报",
       "url": "https://www.globaltimes.cn/index.html",
-      "description": "",
+      "description": "Global Times, an English-language Chinese…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2487,7 +2508,7 @@
       "id": 298,
       "name": "读客文化",
       "url": "https://www.dookbook.com/books/",
-      "description": "",
+      "description": "2016年，读客文化正式确立以“激发个人成长”为使命，包括激发读者的精神成长…",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -2495,7 +2516,7 @@
       "id": 299,
       "name": "成都商报网",
       "url": "https://www.cdsb.com/",
-      "description": "",
+      "description": "《成都商报》是1994年成都商报社出版的报刊。主要内容是由要闻、财经、市民…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2503,7 +2524,7 @@
       "id": 300,
       "name": "佳明手表-瑞士",
       "url": "https://www.garmin.com.cn/",
-      "description": "",
+      "description": "佳明手表官方网站为您提供运动表，运动手表，健康手表，健身手表，血氧手表，智能手表…",
       "categoryId": 7,
       "icon": "/icons/default.svg"
     },
@@ -2511,7 +2532,7 @@
       "id": 301,
       "name": "杭走日报报业",
       "url": "https://hzdaily.hangzhou.com.cn/",
-      "description": "",
+      "description": "杭州日报经多年的发展,从开办时单一的一张报纸发展成为以《杭州日报》为母报,《都市快报》…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2519,7 +2540,7 @@
       "id": 302,
       "name": "温州日报",
       "url": "http://szb.66wz.com/",
-      "description": "",
+      "description": "温州日报报业集团数字报纸",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2527,7 +2548,7 @@
       "id": 303,
       "name": "苏商网",
       "url": "http://www.sushang.cn/video/",
-      "description": "",
+      "description": "苏商视频",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2535,7 +2556,7 @@
       "id": 304,
       "name": "ilovepdf-格式转换",
       "url": "https://www.ilovepdf.com/",
-      "description": "",
+      "description": "iLovePDF is an online service to work with PDF…",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -2543,7 +2564,7 @@
       "id": 305,
       "name": "商业创业奖",
       "url": "https://winner.roifestival.com/cn",
-      "description": "",
+      "description": "金投赏获奖案例集汇集了过去16年在金投赏获得荣誉的5400多件获奖作品，你可在此了解广告发展脉络…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2551,7 +2572,7 @@
       "id": 306,
       "name": "第一财经",
       "url": "https://www.yicai.com/",
-      "description": "",
+      "description": "第一财经官方网站，7X24小时提供股市行情、经济大势、金融政策、行业动态、专家分析等财经资讯…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2559,7 +2580,7 @@
       "id": 307,
       "name": "钛媒体",
       "url": "https://www.tmtpost.com/new",
-      "description": "",
+      "description": "【最新资讯】及时的科股原创内容，有钛度的科股原创内容，帮助您及时获取互联网信息的信息，更多资讯内容…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2567,7 +2588,7 @@
       "id": 308,
       "name": "每日一词",
       "url": "https://cn.chinadaily.com.cn/gtx/5d63917ba31099ab995dbb29/Word",
-      "description": "",
+      "description": "双语词解 - 中国日报网",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2575,7 +2596,7 @@
       "id": 309,
       "name": "对话",
       "url": "https://tv.cctv.com/lm/duihua/",
-      "description": "",
+      "description": "对话_CCTV节目官网-CCTV-2_央视网(cctv.com)",
       "categoryId": 3,
       "icon": "/icons/default.svg"
     },
@@ -2583,7 +2604,7 @@
       "id": 310,
       "name": "在线计时器",
       "url": "https://clockzone.net/zh-CN/timer/1-hour",
-      "description": "",
+      "description": "1小时在线倒计时器 - 深度工作与长时学习的专业选择…",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -2591,7 +2612,7 @@
       "id": 311,
       "name": "计时器材",
       "url": "https://clockzone.net/zh-CN/timer/1-hour",
-      "description": "",
+      "description": "1小时在线倒计时器 - 深度工作与长时学习的专业选择…",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -2599,7 +2620,7 @@
       "id": 312,
       "name": "财联社",
       "url": "https://www.cls.cn/depth?id=1000",
-      "description": "",
+      "description": "财联社深度：重大政策事件及时分析解读。提供准确、快速、权威、专业的事件分析，涵盖新能源汽车、创业板…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2607,7 +2628,7 @@
       "id": 313,
       "name": "ai-工具集",
       "url": "https://ai-bot.cn/",
-      "description": "",
+      "description": "AI工具集官网收录了国内外数百个AI工具，该导航网站包括AI写作工具、AI图像生成和背景移除…",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -2615,7 +2636,7 @@
       "id": 314,
       "name": "processon-流程图",
       "url": "https://www.processon.com/",
-      "description": "",
+      "description": "ProcessOn是一款专业在线作图工具和知识分享社区，支持AI一键生成思维导图和流程图…",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -2623,7 +2644,7 @@
       "id": 315,
       "name": "泰达图书馆",
       "url": "https://www.tedala.teda.gov.cn/szzy/index.asp",
-      "description": "",
+      "description": "天津泰达图书馆数字资源服务",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -2631,7 +2652,7 @@
       "id": 316,
       "name": "飞库文学",
       "url": "https://www.feiku6.com/index.html",
-      "description": "",
+      "description": "热门书:狂飙,这里是中国,毫无意义的工作,三体_飞库网是广大书友最喜欢的文学小说阅读网…",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -2639,7 +2660,7 @@
       "id": 317,
       "name": "经济网",
       "url": "https://www.jingji.com.cn/",
-      "description": "",
+      "description": "《经济》杂志官网，财经新闻与评论",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2647,7 +2668,7 @@
       "id": 318,
       "name": "万方学术导航",
       "url": "https://apps.wanfangdata.com.cn/Navigation#nav14",
-      "description": "",
+      "description": "万方数据学术资源导航",
       "categoryId": 2,
       "icon": "/icons/default.svg"
     },
@@ -2655,7 +2676,7 @@
       "id": 319,
       "name": "世界百科全书",
       "url": "https://www.worldbookonline.com/link/international/Chinese.pdf",
-      "description": "",
+      "description": "A comprehensive suite of e-learning resources…",
       "categoryId": 3,
       "icon": "/icons/default.svg"
     },
@@ -2663,7 +2684,7 @@
       "id": 320,
       "name": "世界百科全书",
       "url": "https://www.worldhistory.org/trans/zh/?page=1",
-      "description": "",
+      "description": "免费在线历史百科全书，提供经过事实核查的文章、图片、视频、地图、时间轴等内容；作为非营利组织运营。",
       "categoryId": 2,
       "icon": "/icons/default.svg"
     },
@@ -2671,7 +2692,7 @@
       "id": 321,
       "name": "笑话大王",
       "url": "http://xiaohua.pldkwz.cn/",
-      "description": "",
+      "description": "笑话大王网收集家庭笑话、司法笑话、交通笑话、名人笑话、动物笑话、民间笑话、文艺笑话…",
       "categoryId": 6,
       "icon": "/icons/default.svg"
     },
@@ -2679,7 +2700,7 @@
       "id": 322,
       "name": "人们网观点",
       "url": "http://opinion.people.com.cn/GB/159301/",
-      "description": "",
+      "description": "观点频道是人民网2000年4月开设的全国网站第一个言论频道，设有人民时评、网友说话、观点1+1…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2687,7 +2708,7 @@
       "id": 323,
       "name": "华尔街见闻",
       "url": "https://wallstreetcn.com/",
-      "description": "",
+      "description": "华尔街见闻",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2695,7 +2716,7 @@
       "id": 324,
       "name": "早晨新闻报",
       "url": "https://www.zaochenbao.com/",
-      "description": "",
+      "description": "每日新闻简报聚合平台",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2703,7 +2724,7 @@
       "id": 325,
       "name": "新闻一览——日本",
       "url": "https://www3.nhk.or.jp/nhkworld/zh/news/list/",
-      "description": "",
+      "description": "NHK 中文国际新闻一览",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2711,7 +2732,7 @@
       "id": 326,
       "name": "意林杂志",
       "url": "https://www.yilinzazhi.com/",
-      "description": "",
+      "description": "《意林》是由长春市文学艺术界联合会主办的知名文摘期刊，自2003年创刊至今，《意林》以其故事丰富…",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -2719,7 +2740,7 @@
       "id": 327,
       "name": "科学网",
       "url": "https://news.sciencenet.cn/ys/",
-      "description": "",
+      "description": "绉戝缃戔€旈櫌澹閬�",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2727,7 +2748,7 @@
       "id": 328,
       "name": "发布会",
       "url": "https://news.mydrivers.com/zhibo/",
-      "description": "",
+      "description": "发布会--快科技--科技改变未来",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2735,7 +2756,7 @@
       "id": 329,
       "name": "中关村在线",
       "url": "https://www.zol.com.cn/",
-      "description": "",
+      "description": "中国领先的IT信息与商务门户, 包括新闻, 商城, 硬件, 下载, 游戏, 手机…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2743,7 +2764,7 @@
       "id": 330,
       "name": "中国日报网",
       "url": "https://cn.chinadaily.com.cn/",
-      "description": "",
+      "description": "中国日报网是中国最优质的新闻发布平台,热点实时新闻发布,提供国内新闻,国际快讯,评论,财经,体育…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2751,7 +2772,7 @@
       "id": 331,
       "name": "中国企业家论坛",
       "url": "https://www.cefco.cn/index.html",
-      "description": "",
+      "description": "亚布力中国企业家论坛",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2759,7 +2780,7 @@
       "id": 332,
       "name": "央视读书",
       "url": "https://tv.cctv.com/lm/dushu/",
-      "description": "",
+      "description": "《读书》用丰富的电视手段传递书中的精华和信息，是一档和大众分享好书的栏目。在节目中…",
       "categoryId": 17,
       "icon": "/icons/default.svg"
     },
@@ -2767,7 +2788,7 @@
       "id": 333,
       "name": "中国纪录片协会",
       "url": "http://www.docuchina.cn/",
-      "description": "",
+      "description": "中国纪录片网是集纪录片创作生产、推介展示、传播推广…",
       "categoryId": 12,
       "icon": "/icons/default.svg"
     },
@@ -2775,7 +2796,7 @@
       "id": 334,
       "name": "cctv-9",
       "url": "https://tv.cctv.com/cctv9/",
-      "description": "",
+      "description": "CCTV-9纪录频道于2011年1月1日开播后，以高忠诚度…",
       "categoryId": 12,
       "icon": "/icons/default.svg"
     },
@@ -2783,7 +2804,7 @@
       "id": 335,
       "name": "可可英语",
       "url": "https://listen.kekenet.com/#/",
-      "description": "",
+      "description": "英语听写训练系统_英语听力--可可英语",
       "categoryId": 17,
       "icon": "/icons/default.svg"
     },
@@ -2791,7 +2812,7 @@
       "id": 336,
       "name": "最新影片",
       "url": "https://www.ysxq.cc/",
-      "description": "",
+      "description": "最新影视更新与播放导航",
       "categoryId": 3,
       "icon": "/icons/default.svg"
     },
@@ -2799,7 +2820,7 @@
       "id": 337,
       "name": "中国外国文学网",
       "url": "http://ifl.cssn.cn/ifl_bskw/ifl_sjwx/lkml/",
-      "description": "",
+      "description": "历刊目录-中国外国文学网",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -2807,7 +2828,7 @@
       "id": 338,
       "name": "国家统计局",
       "url": "https://www.stats.gov.cn/sj/",
-      "description": "",
+      "description": "数据 - 国家统计局",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2815,7 +2836,7 @@
       "id": 339,
       "name": "十大品牌网",
       "url": "https://www.cnpp.cn/",
-      "description": "",
+      "description": "十大品牌网是正宗十大品牌榜中榜查询网站，由CNPP品牌数据研究院授权查询，品牌大数据一站式服务平台…",
       "categoryId": 7,
       "icon": "/icons/default.svg"
     },
@@ -2823,7 +2844,7 @@
       "id": 340,
       "name": "商业计划书模版",
       "url": "https://www.trjcn.com/tg/syjhs2023_bd.html?trackid=ads:bing:ss:A20:A208:pc55355485&msclkid=a1b38fbe7f40189a04b1e7189656164e",
-      "description": "",
+      "description": "商业计划书不会写？找商业计划书范文模板？来投融界？投融界专业商业计划书代写团队为您打造一份格式规范…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2831,7 +2852,7 @@
       "id": 341,
       "name": "首富排行榜",
       "url": "https://www.phb123.com/renwu/fuhao/px_CN.html",
-      "description": "",
+      "description": "排行榜123网富豪频道为您提供完整版中国首富排行榜最新排名，整理了最新最全福布斯中国富豪榜…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2839,7 +2860,7 @@
       "id": 342,
       "name": "中国探险家协会",
       "url": "https://www.caa1993.org.cn/",
-      "description": "",
+      "description": "中国探险协会成立于1993年3月，是由中国国家民政部登记注册的从事探险活动的专业性社会团体…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2847,7 +2868,7 @@
       "id": 343,
       "name": "中国工商联会",
       "url": "https://www.acfic.org.cn/myjjzs/qyjjy/",
-      "description": "",
+      "description": "企业家谈-中华全国工商业联合会",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2855,7 +2876,7 @@
       "id": 344,
       "name": "半月刊",
       "url": "http://www.banyuetan.org/byt/jinritan/index.html",
-      "description": "",
+      "description": "今日谈—半月谈网",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2863,7 +2884,7 @@
       "id": 345,
       "name": "今日谈",
       "url": "https://www.kanzhiwang.com/",
-      "description": "",
+      "description": "每日资讯与文章阅读平台",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -2871,7 +2892,7 @@
       "id": 346,
       "name": "任推邦",
       "url": "https://dt.bd.cn/#/pages/zt/pc/index?path=pages%2Flogin%2Fregister&invite_code=749650",
-      "description": "",
+      "description": "推广拉新任务对接平台",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -2879,7 +2900,7 @@
       "id": 347,
       "name": "夸克网盘",
       "url": "https://pan.quark.cn/list#/list/all",
-      "description": "",
+      "description": "夸克网盘官方网站，提供电脑PC/手机/TV/Pad全平台最新版本的客户端下载…",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -2887,7 +2908,7 @@
       "id": 348,
       "name": "阿里巴巴矢量图",
       "url": "https://www.iconfont.cn/?spm=a313x.search_index.i3.d4d0a486a.6dd73a81M5U4MT",
-      "description": "",
+      "description": "iconfont-国内功能很强大且图标内容很丰富的矢量图标库，提供矢量图标下载、在线存储…",
       "categoryId": 19,
       "icon": "/icons/default.svg"
     },
@@ -2895,7 +2916,7 @@
       "id": 349,
       "name": "islide",
       "url": "https://www.islide.cc/",
-      "description": "",
+      "description": "iSlide是AI赋能的PPT智能设计工具，支持一键生成PPT、500万+正版PPT模板素材下载…",
       "categoryId": 19,
       "icon": "/icons/default.svg"
     },
@@ -2903,7 +2924,7 @@
       "id": 350,
       "name": "shareicon",
       "url": "https://www.shareicon.net/category/abstract",
-      "description": "",
+      "description": "Category Abstract, View all 257 Icons",
       "categoryId": 19,
       "icon": "/icons/default.svg"
     },
@@ -2911,7 +2932,7 @@
       "id": 351,
       "name": "officeplus",
       "url": "https://www.officeplus.cn/addin/QIUYE/",
-      "description": "",
+      "description": "officePLUS插件是微软官方PPT模板插件，满足你在PPT制作上的各种需求…",
       "categoryId": 20,
       "icon": "/icons/default.svg"
     },
@@ -2919,7 +2940,7 @@
       "id": 352,
       "name": "canva",
       "url": "https://www.canva.cn/reports/templates/",
-      "description": "",
+      "description": "Canva 设计模板与素材中心",
       "categoryId": 20,
       "icon": "/icons/default.svg"
     },
@@ -2927,7 +2948,7 @@
       "id": 353,
       "name": "白描",
       "url": "https://web.baimiaoapp.com/",
-      "description": "",
+      "description": "图片转文字 - 图片转Excel表格 - PDF转Word - 白描网页版",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -2935,7 +2956,7 @@
       "id": 354,
       "name": "google analytics",
       "url": "https://analytics.google.com/",
-      "description": "",
+      "description": "Google 网站数据分析平台",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -2943,7 +2964,7 @@
       "id": 355,
       "name": "电话查询",
       "url": "https://www.114.tel/",
-      "description": "",
+      "description": "114电话查询，本站的电话号码归属地查询功能，可以通过输入固定座机电话号码…",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -2951,7 +2972,7 @@
       "id": 356,
       "name": "今日中国",
       "url": "http://www.chinatoday.com.cn/index.htm",
-      "description": "",
+      "description": "今日中国",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2959,7 +2980,7 @@
       "id": 357,
       "name": "纽约客",
       "url": "https://www.britannica.com/topic/The-New-Yorker",
-      "description": "",
+      "description": "《纽约客》杂志相关资料",
       "categoryId": 17,
       "icon": "/icons/default.svg"
     },
@@ -2967,7 +2988,7 @@
       "id": 358,
       "name": "中国新闻网",
       "url": "https://www.chinanews.com.cn/scroll-news/news1.html",
-      "description": "",
+      "description": "中国新闻网滚动新闻是知名的中文新闻门户网站频道…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2975,7 +2996,7 @@
       "id": 359,
       "name": "抖音店铺",
       "url": "https://fxg.jinritemai.com/ffa/gov/settle/choose-role",
-      "description": "",
+      "description": "抖店官网,抖店官方入驻平台,多渠道流量一站式覆盖,精准智能推荐内容营销玩法,沉浸式全品类商品转化场景",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -2983,7 +3004,7 @@
       "id": 360,
       "name": "字典",
       "url": "https://www.chazidian.com/",
-      "description": "",
+      "description": "查字典在线汉语字典词典",
       "categoryId": 2,
       "icon": "/icons/default.svg"
     },
@@ -2991,7 +3012,7 @@
       "id": 361,
       "name": "电商派",
       "url": "https://www.pai.com.cn/",
-      "description": "",
+      "description": "电商派是国内最具影响力的电子商务信息服务平台和电子商务专业研究机构之一，关注并24小时播报B2B…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -2999,7 +3020,7 @@
       "id": 362,
       "name": "世界日报",
       "url": "http://www.un1216.org/world/renwu/",
-      "description": "",
+      "description": "环球人物 - 世界日报中文网",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -3007,7 +3028,7 @@
       "id": 363,
       "name": "中国文艺评",
       "url": "https://www.zgwypl.com/",
-      "description": "",
+      "description": "首页_中国文艺评论网",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -3015,7 +3036,7 @@
       "id": 364,
       "name": "求是网",
       "url": "https://www.qstheory.cn/index.htm",
-      "description": "",
+      "description": "求是网是中国共产党中央委员会机关刊《求是》杂志主办的理论宣传研究平台…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -3023,7 +3044,7 @@
       "id": 365,
       "name": "银行利率",
       "url": "https://www.csai.cn/bankrate/",
-      "description": "",
+      "description": "各大银行存贷款利率查询",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -3031,7 +3052,7 @@
       "id": 366,
       "name": "handwriting",
       "url": "https://text-to-handwriting.org/handwriting",
-      "description": "",
+      "description": "Convert your text to handwriting instantly",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -3039,7 +3060,7 @@
       "id": 367,
       "name": "pdf水印",
       "url": "https://zhang.kuaitu.cc/",
-      "description": "",
+      "description": "章快图 - 免费在线PDF盖章工具，支持添加普通印章和骑缝章，快速处理PDF文档盖章需求…",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -3047,7 +3068,7 @@
       "id": 368,
       "name": "泰晤士报",
       "url": "https://www.thetimes.com/uk",
-      "description": "",
+      "description": "Verifying Device",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -3055,7 +3076,7 @@
       "id": 369,
       "name": "全国报刊索引",
       "url": "https://www.cnbksy.cn/home",
-      "description": "",
+      "description": "全国报刊索引数据库，文献检索平台",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -3063,7 +3084,7 @@
       "id": 370,
       "name": "快乐壁纸",
       "url": "https://4kwallpapers.com/happy",
-      "description": "",
+      "description": "4K wallpapers of Happy for desktop and mobile…",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -3071,7 +3092,7 @@
       "id": 371,
       "name": "全球媒体",
       "url": "https://www.globemedialinks.com/%e5%9b%bd%e5%88%ab",
-      "description": "",
+      "description": "国别 &#8211; 杨梅网",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -3079,7 +3100,7 @@
       "id": 372,
       "name": "上海浦东图书馆",
       "url": "https://libvisual.pudong.gov.cn/databaseList",
-      "description": "",
+      "description": "ersp",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -3087,7 +3108,7 @@
       "id": 373,
       "name": "平台热播剧",
       "url": "https://www.ky.live/pc.html",
-      "description": "",
+      "description": "各平台热播剧集榜单聚合",
       "categoryId": 3,
       "icon": "/icons/default.svg"
     },
@@ -3095,7 +3116,7 @@
       "id": 374,
       "name": "洛杉矶时报",
       "url": "https://www.latimes.com/california",
-      "description": "",
+      "description": "California news and features from the Los Angeles…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -3103,7 +3124,7 @@
       "id": 375,
       "name": "星辰",
       "url": "https://x.300301.com/guocanju/xuwoyaoyan/",
-      "description": "",
+      "description": "影视内容观看站点",
       "categoryId": 3,
       "icon": "/icons/default.svg"
     },
@@ -3111,7 +3132,7 @@
       "id": 376,
       "name": "佛学知识",
       "url": "https://www.xuefoyun.cn/",
-      "description": "",
+      "description": "学佛云依托强大的门户网站基础，设有佛学入门、佛法看世间、佛学文化、法师大德、佛学词典、佛教经文…",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -3119,7 +3140,7 @@
       "id": 377,
       "name": "麦肯锡中国",
       "url": "https://www.mckinsey.com.cn/",
-      "description": "",
+      "description": "McKinsey Greater China",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -3127,7 +3148,7 @@
       "id": 378,
       "name": "超星名师讲坛",
       "url": "https://ssvideo.superlib.com/pc/home/index;jsessionid=3ED5267F9B96C056D54CC5B30A429DDF.dweb1740",
-      "description": "",
+      "description": "首页",
       "categoryId": 5,
       "icon": "/icons/default.svg"
     },
@@ -3135,7 +3156,7 @@
       "id": 379,
       "name": "国学人物",
       "url": "https://www.guoxuebaike.cn/guoxuerenwu/",
-      "description": "",
+      "description": "国学人物 &#8211; 国学百科",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -3143,7 +3164,7 @@
       "id": 380,
       "name": "明星企业",
       "url": "https://www.baikev.com/",
-      "description": "",
+      "description": "锐百科（baikev.com）一部人人都能参与编写的中文百科全书。专注于艺术家、明星艺人、网红主播…",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -3151,7 +3172,7 @@
       "id": 381,
       "name": "当代中国",
       "url": "https://www.ourchinastory.com/cn/home",
-      "description": "",
+      "description": "「当代中国」是中国文化研究院開設的多媒体网上平台，以全新视角介绍当代中国发展…",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -3159,7 +3180,7 @@
       "id": 382,
       "name": "中国戏剧节",
       "url": "https://www.chinatheatre.org.cn/rcpy/",
-      "description": "",
+      "description": "人才培养",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -3167,7 +3188,7 @@
       "id": 383,
       "name": "开心笑话网",
       "url": "https://www.yiyixh.com/a/ertongxiaohua/",
-      "description": "",
+      "description": "笑话大全与幽默内容",
       "categoryId": 6,
       "icon": "/icons/default.svg"
     },
@@ -3175,7 +3196,7 @@
       "id": 384,
       "name": "52笑话网",
       "url": "https://www.52xiaohua.com/",
-      "description": "",
+      "description": "每日分享笑话大全笑到肚子疼，经典段子大全爆笑，搞笑图片，儿童笑话，小笑话超级爆笑，校园笑话…",
       "categoryId": 6,
       "icon": "/icons/default.svg"
     },
@@ -3183,7 +3204,7 @@
       "id": 385,
       "name": "知乐网",
       "url": "https://zhilezhi.com/",
-      "description": "",
+      "description": "趣学无止境！知乐知是一站式中文趣味内容泛知识网站。海量高质量的谜语、脑筋急转弯、笑话、古诗词文…",
       "categoryId": 6,
       "icon": "/icons/default.svg"
     },
@@ -3191,7 +3212,7 @@
       "id": 386,
       "name": "播客",
       "url": "https://podcasts.apple.com/cn/new",
-      "description": "",
+      "description": "在 Apple 播客上浏览你最爱的播客节目、类型和主播。在任意 Apple 设备下载并收听…",
       "categoryId": 17,
       "icon": "/icons/default.svg"
     },
@@ -3199,7 +3220,7 @@
       "id": 387,
       "name": "梗百科",
       "url": "https://gengbaike.cn/",
-      "description": "",
+      "description": "梗百科，一个有新梗热梗的梗网站。梗百科，解释网络语、弹幕、网络热词是什么梗，流行语是什么意思…",
       "categoryId": 21,
       "icon": "/icons/default.svg"
     },
@@ -3207,7 +3228,7 @@
       "id": 388,
       "name": "在线调色板",
       "url": "https://cn.online-color.com/",
-      "description": "",
+      "description": "帮助设计师和艺术家选择合适的配色方案。调色板、渐变色、多色调色板及颜色计算器",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -3215,7 +3236,7 @@
       "id": 389,
       "name": "科学网",
       "url": "https://news.sciencenet.cn/",
-      "description": "",
+      "description": "科学网—新闻中心",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -3223,7 +3244,7 @@
       "id": 390,
       "name": "环球科学",
       "url": "https://www.huanqiukexue.com/",
-      "description": "",
+      "description": "环球科学 &#8211; 《科学美国人》中文版",
       "categoryId": 13,
       "icon": "/icons/default.svg"
     },
@@ -3231,7 +3252,7 @@
       "id": 391,
       "name": "中奢网",
       "url": "http://www.iluxe.com/",
-      "description": "",
+      "description": "中奢网立足高端财富人群生活视角，关注奢侈话题，关注财富态度，深度解读健康品质生活方式…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -3239,7 +3260,7 @@
       "id": 392,
       "name": "寺库网",
       "url": "https://www.secoo.com/",
-      "description": "",
+      "description": "寺库奢侈品网站(secoo.com)作为全球最大的奢侈品购物服务平台，涉及了奢侈品网上销售…",
       "categoryId": 7,
       "icon": "/icons/default.svg"
     },
@@ -3247,7 +3268,7 @@
       "id": 393,
       "name": "贝壳知识",
       "url": "https://www.zsbeike.com/",
-      "description": "",
+      "description": "知识贝壳是汇集汉语知识、双语翻译、科普百科、名人名言、专业词典、医学健康、技术文档…",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -3255,7 +3276,7 @@
       "id": 394,
       "name": "百度百科",
       "url": "https://baike.baidu.com/vbaike#gallary",
-      "description": "",
+      "description": "百度百科是一部内容开放、自由的网络百科全书，旨在创造一个涵盖所有领域知识…",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -3263,7 +3284,7 @@
       "id": 395,
       "name": "21经济网",
       "url": "https://www.21jingji.com/",
-      "description": "",
+      "description": "21经济网是21世纪经济报道门户网站，主打财经新闻，是21世纪经济报道原创新闻最重要的展现平台…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -3271,7 +3292,7 @@
       "id": 396,
       "name": "展会网",
       "url": "https://www.zhanhome.com/beijing/",
-      "description": "",
+      "description": "展家网的北京展会栏目也为您提供了2026年北京展会排期表和2026年北京展会大全一览表…",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -3279,7 +3300,7 @@
       "id": 397,
       "name": "中信书院",
       "url": "https://h5.yunpub.cn/home",
-      "description": "",
+      "description": "中信书院",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -3287,7 +3308,7 @@
       "id": 398,
       "name": "英语专栏",
       "url": "https://language.chinadaily.com.cn/news_bilingual/",
-      "description": "",
+      "description": "双语新闻 - 中国日报网英语点津-LanguageTips",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -3295,7 +3316,7 @@
       "id": 399,
       "name": "英语",
       "url": "https://css-tricks.com/",
-      "description": "",
+      "description": "CSS-Tricks is where folks around the world come…",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -3303,7 +3324,7 @@
       "id": 400,
       "name": "上海广播",
       "url": "http://xbtv.net/fm/sh/#:~:text=%E8%A5%BF%E8%B4%9D%E8%A7%86%E5%90%AC%E6%8F%90%E4%BE%9B%E4%B8%8A%E6%B5%B7,%E7%BB%9C%E7%94%B5%E5%8F%B0%E5%9C%A8%E7%BA%BF%E7%9B%B4%E6%92%AD%E3%80%82",
-      "description": "",
+      "description": "西贝视听提供上海地区广播电台免费在线收听、上海网络收音机直播，收集上海地区广播电台收音机短波…",
       "categoryId": 17,
       "icon": "/icons/default.svg"
     },
@@ -3311,7 +3332,7 @@
       "id": 401,
       "name": "雪球",
       "url": "https://xueqiu.com/",
-      "description": "",
+      "description": "投资者社区与行情数据平台",
       "categoryId": 22,
       "icon": "/icons/default.svg"
     },
@@ -3319,7 +3340,7 @@
       "id": 402,
       "name": "纪录片仓库",
       "url": "https://jilulib.com/all/?pro=7&cat=0&raw=0",
-      "description": "",
+      "description": "全部纪录片下载,网盘下载,百度网盘下载和迅雷下载",
       "categoryId": 12,
       "icon": "/icons/default.svg"
     },
@@ -3327,7 +3348,7 @@
       "id": 403,
       "name": "纪录片数据库",
       "url": "https://jiludb.com/",
-      "description": "",
+      "description": "纪录片数据库(JiluDB.com) 为广大纪录片爱好者提供纪录片资料查询、检阅、下载一站式服务。",
       "categoryId": 12,
       "icon": "/icons/default.svg"
     },
@@ -3335,7 +3356,7 @@
       "id": 404,
       "name": "图片设计",
       "url": "https://www.gaoding.com/templates-h5?code=h5&hmsr=pc360-sem-changjing-h5-h5-616121-sem&utm_medium=cpc&utm_source=pc360",
-      "description": "",
+      "description": "稿定设计模板中心，在线图片设计",
       "categoryId": 19,
       "icon": "/icons/default.svg"
     },
@@ -3343,7 +3364,7 @@
       "id": 405,
       "name": "书评",
       "url": "http://read.china.com.cn/node_1012499.htm#",
-      "description": "",
+      "description": "读书人",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -3351,7 +3372,7 @@
       "id": 406,
       "name": "读客",
       "url": "https://www.dookbook.com/books/",
-      "description": "",
+      "description": "2016年，读客文化正式确立以“激发个人成长”为使命，包括激发读者的精神成长…",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -3359,7 +3380,7 @@
       "id": 407,
       "name": "书摘",
       "url": "https://share.lovejade.cn/",
-      "description": "",
+      "description": "玉桃文飨轩，专业的文本转图片工具。一键将 Markdown 转换为精美图片，支持书摘模式…",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -3367,7 +3388,7 @@
       "id": 408,
       "name": "人物专题",
       "url": "https://people.cctv.com/",
-      "description": "",
+      "description": "每一个人物的面孔，都折射着时代特征；每一个细微的表情，都写满了人间百味。央视网人物频道…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -3375,7 +3396,7 @@
       "id": 409,
       "name": "人物专题",
       "url": "https://www.globalpeople.com.cn/306475/index.html",
-      "description": "",
+      "description": "环球人物专题报道",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -3383,7 +3404,7 @@
       "id": 410,
       "name": "时代在线",
       "url": "https://www.time-weekly.com/post/326061",
-      "description": "",
+      "description": "舒客回应牙膏功效宣称质疑：产品均合规备案",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -3391,7 +3412,7 @@
       "id": 411,
       "name": "尼尔森数据调查",
       "url": "https://nielseniq.cn/global/zh/",
-      "description": "",
+      "description": "便利店趋势洞察：变局中的新机遇 - nielseniq-cn",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -3399,7 +3420,7 @@
       "id": 412,
       "name": "华夏时报",
       "url": "http://www.chinesetimes.info/",
-      "description": "",
+      "description": "华夏时报",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -3407,7 +3428,7 @@
       "id": 413,
       "name": "博看",
       "url": "https://new.bookan.com.cn/page/index.html",
-      "description": "",
+      "description": "博看网",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -3415,7 +3436,7 @@
       "id": 414,
       "name": "超星期刊",
       "url": "https://qikan.chaoxing.com/",
-      "description": "",
+      "description": "超星期刊数据库，学术期刊在线阅读",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -3423,7 +3444,7 @@
       "id": 415,
       "name": "医学权威资讯",
       "url": "https://cardiology.medsci.cn/article/list.do?s_id=2",
-      "description": "",
+      "description": "MedSci 医学前沿资讯",
       "categoryId": 9,
       "icon": "/icons/default.svg"
     },
@@ -3431,7 +3452,7 @@
       "id": 416,
       "name": "MSN",
       "url": "https://www.msn.cn/zh-cn/news/other/%E9%93%B6%E8%A1%8C%E7%BB%8F%E7%90%86%E5%9D%A6%E8%A8%80-%E5%BD%93%E4%B8%AA%E4%BA%BA%E5%AD%98%E6%AC%BE%E8%B6%85%E8%BF%87%E8%BF%99%E4%B8%AA%E6%95%B0-%E5%B0%B1%E5%B7%B2%E8%B6%85%E8%BF%87%E4%BA%8698-%E7%9A%84%E5%AE%B6%E5%BA%AD/ar-AA1WfFbj?ocid=msedgntp&pc=U531&cvid=69a675e4bc9b478f86fdc163b330cb99&ei=13",
-      "description": "",
+      "description": "MSN",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -3439,7 +3460,7 @@
       "id": 417,
       "name": "中国时报",
       "url": "https://www.chinatimes.com/cn/newspapers/260120?chdtv",
-      "description": "",
+      "description": "台湾中国时报新闻",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -3447,7 +3468,7 @@
       "id": 418,
       "name": "中国商业周刊网",
       "url": "http://www.syzkwang.com/",
-      "description": "",
+      "description": "商业周刊资讯平台",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -3455,7 +3476,7 @@
       "id": 419,
       "name": "百度产品",
       "url": "https://www.baidu.com/more/",
-      "description": "",
+      "description": "百度产品大全",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -3463,7 +3484,7 @@
       "id": 420,
       "name": "搜狗产品",
       "url": "https://www.sogou.com/docs/more.htm?p=70331801",
-      "description": "",
+      "description": "搜狗产品大全",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -3471,7 +3492,7 @@
       "id": 421,
       "name": "搜狗知识",
       "url": "https://zhishi.sogou.com/",
-      "description": "",
+      "description": "中国最领先的中文搜索引擎，支持微信公众号、文章搜索…",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -3479,7 +3500,7 @@
       "id": 422,
       "name": "春晚",
       "url": "https://www.cctv.com/000/#",
-      "description": "",
+      "description": "中国网络电视台文化台作为中央电视台在新媒体平台上的文化窗口，主要集成央视文化类名牌栏目…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -3519,7 +3540,7 @@
       "id": 427,
       "name": "中国科学院",
       "url": "http://www.bulletin.cas.cn/BCAS_CH/issue",
-      "description": "",
+      "description": "中国科学院院刊",
       "categoryId": 2,
       "icon": "/icons/default.svg"
     },
@@ -3527,7 +3548,7 @@
       "id": 428,
       "name": "中国出版集团",
       "url": "http://book.cnpubg.com/?app=book&controller=book&action=newbooks",
-      "description": "",
+      "description": "新书推荐_精品图书 - 中国出版集团有限公司",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -3535,7 +3556,7 @@
       "id": 429,
       "name": "时事政治",
       "url": "https://www.rmlt.com.cn/eco/",
-      "description": "",
+      "description": "人民论坛网经济观察频道通过发布全面深入的经济类内容，解读国家政策，分析市场形势，为用户提供权威…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -3543,7 +3564,7 @@
       "id": 430,
       "name": "人民网论坛",
       "url": "https://rmlt.com.cn/",
-      "description": "",
+      "description": "人民论坛网为国家一类新闻网站、中央重点思想理论门户网站、中央网信办新闻信息稿源单位…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -3551,7 +3572,7 @@
       "id": 431,
       "name": "人民论坛",
       "url": "http://opinion.people.com.cn/GB/8213/49160/49220/index1.html",
-      "description": "",
+      "description": "人民论坛--观点--人民网",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -3559,7 +3580,7 @@
       "id": 432,
       "name": "中国经济网",
       "url": "http://www.ce.cn/",
-      "description": "",
+      "description": "中国经济网是国家重点新闻网站中唯一以经济报道为中心的综合新闻网站，每日采写大量经济新闻…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -3567,7 +3588,7 @@
       "id": 433,
       "name": "最新政策",
       "url": "https://www.gov.cn/zhengce/index.htm",
-      "description": "",
+      "description": "政策_中国政府网",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -3575,7 +3596,7 @@
       "id": 434,
       "name": "诺贝尔文学奖",
       "url": "https://www.nobelpress.org/",
-      "description": "",
+      "description": "诺贝尔奖讯是诺贝尔奖中文资讯网站，展示历届诺奖得主中文信息资讯、新闻，及中文著作、出版物等…",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -3583,7 +3604,7 @@
       "id": 435,
       "name": "微信读书",
       "url": "https://weread.qq.com/web/category/1700000",
-      "description": "",
+      "description": "小说，小说排行榜，免费小说，言情小说，玄幻小说，电子书，好书推荐",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -3591,7 +3612,7 @@
       "id": 436,
       "name": "经济观察网",
       "url": "https://www.eeo.com.cn/jg/chuhai/",
-      "description": "",
+      "description": "出海_经济观察网",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -3599,7 +3620,7 @@
       "id": 437,
       "name": "纽约时报",
       "url": "https://www.cgtn.com/",
-      "description": "",
+      "description": "Get the news as it breaks and go behind the day",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -3607,7 +3628,7 @@
       "id": 438,
       "name": "每日快讯",
       "url": "https://www.jiemian.com/lists/85.html",
-      "description": "",
+      "description": "界面新闻是中国具有影响力的原创财经新媒体，以财经、商业新闻为核心，布局近40个内容频道…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -3615,7 +3636,7 @@
       "id": 439,
       "name": "亿欧快讯",
       "url": "https://www.iyiou.com/briefing",
-      "description": "",
+      "description": "亿欧网科技与创新产业快讯",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -3623,7 +3644,7 @@
       "id": 440,
       "name": "上海译文出版社",
       "url": "https://www.yiwen.com.cn/book",
-      "description": "",
+      "description": "上海译文出版社成立于1978年1月。它的前身是成立于50年代的上海新文艺出版社和人民文学出版社上海分…",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -3631,7 +3652,7 @@
       "id": 441,
       "name": "搜狗百科",
       "url": "https://baike.sogou.com/",
-      "description": "",
+      "description": "百科是为广大用户所提供的一部自由、开放、共享的百科全书。旨在创造一个涵盖所有知识领域…",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -3639,7 +3660,7 @@
       "id": 442,
       "name": "有来医生",
       "url": "https://www.youlai.cn/dise/",
-      "description": "",
+      "description": "有来医生疾病百科频道为您提供全面、专业的疾病科普知识、疾病问答和疾病权威视频等信息，您可以通过科室…",
       "categoryId": 9,
       "icon": "/icons/default.svg"
     },
@@ -3647,7 +3668,7 @@
       "id": 443,
       "name": "搜狗搜索",
       "url": "https://www.sogou.com/",
-      "description": "",
+      "description": "搜狗搜索是全球第三代互动式搜索引擎，支持微信公众号和文章搜索、知乎搜索、英文搜索及翻译等…",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -3655,7 +3676,7 @@
       "id": 444,
       "name": "搜狗搜索",
       "url": "https://www.sogou.com/",
-      "description": "",
+      "description": "搜狗搜索是全球第三代互动式搜索引擎，支持微信公众号和文章搜索、知乎搜索、英文搜索及翻译等…",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -3663,7 +3684,7 @@
       "id": 445,
       "name": "蜻蜓fm",
       "url": "https://www.qtfm.cn/",
-      "description": "",
+      "description": "蜻蜓FM，不仅囊括数千家FM广播电台，还涵盖有声小说、儿童故事、相声评书、戏曲、音乐、脱口秀…",
       "categoryId": 17,
       "icon": "/icons/default.svg"
     },
@@ -3671,7 +3692,7 @@
       "id": 446,
       "name": "意林杂志",
       "url": "https://www.yilinzazhi.com/2025/202515/index.html",
-      "description": "",
+      "description": "意林杂志 - 2025年第15期",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     },
@@ -3679,7 +3700,7 @@
       "id": 447,
       "name": "去水印",
       "url": "https://pic.360.com/tools/image-editor/replacebg?src=idimage&srcg=bing4",
-      "description": "",
+      "description": "360智图是一个专业的图片版权查询平台，基于360搜索算法和图像AI识别能力，为广大运营、市场…",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -3687,7 +3708,7 @@
       "id": 448,
       "name": "点点分析",
       "url": "https://app.diandian.com/",
-      "description": "",
+      "description": "点点网",
       "categoryId": 11,
       "icon": "/icons/default.svg"
     },
@@ -3695,7 +3716,7 @@
       "id": 449,
       "name": "经济观察网",
       "url": "https://www.eeo.com.cn/",
-      "description": "",
+      "description": "经济观察网是赋能中国商业全球决策的财经资讯平台。20余年来，经济观察网以“理性…",
       "categoryId": 1,
       "icon": "/icons/default.svg"
     },
@@ -3703,7 +3724,7 @@
       "id": 450,
       "name": "人民文学出版社",
       "url": "http://book.cnpubg.com/?app=book&controller=book&action=newbooks&typeid=180",
-      "description": "",
+      "description": "哲学_精品图书 - 中国出版集团有限公司",
       "categoryId": 4,
       "icon": "/icons/default.svg"
     }
