@@ -1,9 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import data from './data.json';
 import { useLocalStorage, useDebounce } from './hooks';
 import { SiteCard, CategoryButton, EmptyState } from './components';
-import { EditModeToolbar, EditSiteModal, Notification } from './EditComponents';
+import { EditModeToolbar, EditSiteModal, EditCategoryModal, Notification } from './EditComponents';
 import { useLocalAPI } from './hooks/useLocalAPI';
+
+// 站外搜索引擎配置（"站内"为 null，表示过滤已收录网站）
+const SEARCH_ENGINES = {
+  site: { name: '站内', url: null },
+  google: { name: 'Google', url: 'https://www.google.com/search?q=' },
+  bing: { name: '必应', url: 'https://www.bing.com/search?q=' },
+  baidu: { name: '百度', url: 'https://www.baidu.com/s?wd=' },
+};
+
+// 懒加载每批渲染的卡片数量
+const BATCH_SIZE = 60;
 
 // 主应用组件
 const App = () => {
@@ -12,11 +23,16 @@ const App = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
+
+  // 深色模式与搜索引擎偏好（持久化）
+  const [theme, setTheme] = useLocalStorage('theme', 'light');
+  const [searchEngine, setSearchEngine] = useLocalStorage('searchEngine', 'site');
   
   // 编辑模式相关状态
   const [isEditMode, setIsEditMode] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
   const [editingSite, setEditingSite] = useState(null);
+  const [showCategoryModal, setShowCategoryModal] = useState(false);
   const [notification, setNotification] = useState(null);
   
   // 本地API数据管理
@@ -26,13 +42,73 @@ const App = () => {
     error: apiError,
     addSite, 
     editSite, 
-    deleteSite 
+    deleteSite,
+    addCategory
   } = useLocalAPI();
   
   const debouncedSearchTerm = useDebounce(searchTerm, 300);
   
   // 使用API数据或本地数据
   const currentData = apiData || data;
+
+  // 应用深色模式到根元素
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+  }, [theme]);
+
+  // 最新收录（按 id 倒序取前 8 个）及其 id 集合，用于 NEW 角标
+  const latestSites = useMemo(
+    () => [...currentData.sites].sort((a, b) => b.id - a.id).slice(0, 8),
+    [currentData]
+  );
+  const newSiteIds = useMemo(
+    () => new Set(latestSites.map((site) => site.id)),
+    [latestSites]
+  );
+
+  // 每个分类下的站点数量（用于分类栏计数显示）
+  const categoryCounts = useMemo(() => {
+    const counts = {};
+    currentData.sites.forEach((site) => {
+      counts[site.categoryId] = (counts[site.categoryId] || 0) + 1;
+    });
+    return counts;
+  }, [currentData]);
+
+  // 懒加载（分批渲染）：初始渲染一批，滚动到底部哨兵时自动追加下一批
+  const [visibleCount, setVisibleCount] = useState(BATCH_SIZE);
+  const sentinelRef = useRef(null);
+
+  // 切换分类或搜索时重置回第一批
+  useEffect(() => {
+    setVisibleCount(BATCH_SIZE);
+  }, [activeCategory, debouncedSearchTerm]);
+
+  // 哨兵进入视口附近时加载下一批
+  useEffect(() => {
+    const sentinel = sentinelRef.current;
+    if (!sentinel) return;
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        setVisibleCount((prev) => Math.min(prev + BATCH_SIZE, filteredSites.length));
+      }
+    }, { rootMargin: '400px' });
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, [filteredSites.length]);
+
+  // 当前实际渲染的卡片与是否还有未加载项
+  const displayedSites = filteredSites.slice(0, visibleCount);
+  const hasMore = visibleCount < filteredSites.length;
+
+  // 回车跳转站外搜索引擎
+  const handleSearchKeyDown = (event) => {
+    if (event.key !== 'Enter' || !searchTerm.trim() || searchEngine === 'site') {
+      return;
+    }
+    const engine = SEARCH_ENGINES[searchEngine];
+    window.open(engine.url + encodeURIComponent(searchTerm.trim()), '_blank', 'noopener,noreferrer');
+  };
 
   // 检查URL参数来决定是否启用编辑模式
   useEffect(() => {
@@ -131,12 +207,23 @@ const App = () => {
     setSearchTerm(''); // 切换分类时清空搜索
   };
 
+  // 添加分类处理函数
+  const handleSaveCategory = async (formData) => {
+    const result = await addCategory(formData);
+    if (result.success) {
+      setNotification({ message: `分类 "${formData.name}" 添加成功！`, type: 'success' });
+    } else {
+      setNotification({ message: `添加失败: ${result.error}`, type: 'error' });
+    }
+    setShowCategoryModal(false);
+  };
+
   const handleSearch = (term) => {
     setSearchTerm(term);
   };
 
   const getCurrentCategory = () => {
-    return data.categories.find(cat => cat.id === activeCategory);
+    return currentData.categories.find(cat => cat.id === activeCategory);
   };
 
   // 添加快捷键监听
@@ -183,9 +270,7 @@ const App = () => {
       {/* 顶部导航 */}
       <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="py-4">
-            {/* 标题和搜索框行 */}
-            <div className="flex items-center justify-between mb-4">
+          <div className="py-3 flex flex-wrap items-center gap-x-3 gap-y-2">
               <div className="flex items-center">
                 <h1 
                   className="text-2xl font-bold gradient-text cursor-pointer select-none"
@@ -219,20 +304,26 @@ const App = () => {
                 )}
               </div>
               
-              {/* 搜索框 - 右侧紧凑版 */}
-              <div className="flex-shrink-0">
-                <div className="relative w-64">
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <svg className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                  </div>
+              {/* 搜索框 - 中央主搜索（支持站外搜索引擎），移动端独占一行 */}
+              <div className="order-3 sm:order-none w-full sm:w-auto sm:flex-1 sm:max-w-xl sm:mx-auto">
+                <div className="relative flex items-center">
+                  <select
+                    value={searchEngine}
+                    onChange={(e) => setSearchEngine(e.target.value)}
+                    className="absolute inset-y-0 left-0 pl-2 pr-1 text-xs bg-transparent text-gray-500 border-0 focus:outline-none cursor-pointer z-10 appearance-none"
+                    title="选择搜索引擎"
+                  >
+                    {Object.entries(SEARCH_ENGINES).map(([key, engine]) => (
+                      <option key={key} value={key}>{engine.name}</option>
+                    ))}
+                  </select>
                   <input
                     type="text"
                     value={searchTerm}
                     onChange={(e) => handleSearch(e.target.value)}
-                    className="block w-full pl-9 pr-8 py-2 border border-gray-300 rounded-lg text-sm leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-primary-blue focus:border-primary-blue transition-all duration-200"
-                    placeholder="搜索网站..."
+                    onKeyDown={handleSearchKeyDown}
+                    className="block w-full pl-16 pr-8 py-2 border border-gray-300 rounded-lg text-sm leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-primary-blue focus:border-primary-blue transition-all duration-200"
+                    placeholder={searchEngine === 'site' ? '搜索网站...' : `回车使用${SEARCH_ENGINES[searchEngine].name}搜索`}
                   />
                   {searchTerm && (
                     <button
@@ -246,36 +337,96 @@ const App = () => {
                   )}
                 </div>
               </div>
-            </div>
-            
-            {/* 分类导航 */}
-            <nav className="flex flex-wrap justify-center gap-2">
-              <button
-                onClick={() => handleCategoryChange(0)}
-                className={`category-button px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 active:scale-95 ${
-                  activeCategory === 0
-                    ? 'bg-primary-blue text-white shadow-md'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
-              >
-                <span className="mr-1">🌟</span>
-                全部
-              </button>
-              {data.categories.map((category) => (
-                <CategoryButton
-                  key={category.id}
-                  category={category}
-                  isActive={activeCategory === category.id}
-                  onClick={handleCategoryChange}
-                />
-              ))}
-            </nav>
+
+            {/* 深色模式切换 */}
+            <button
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              className="order-2 sm:order-none flex-shrink-0 ml-auto sm:ml-0 p-2 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-600 transition-colors duration-200"
+              title={theme === 'dark' ? '切换到浅色模式' : '切换到深色模式'}
+            >
+              {theme === 'dark' ? (
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              ) : (
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+              )}
+            </button>
           </div>
         </div>
       </header>
 
-      {/* 主内容区域 */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      {/* 页面主体：左侧分类栏 + 内容区 */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:flex lg:items-start lg:gap-6">
+        {/* 移动端分类横滚条 */}
+        <nav className="lg:hidden mb-4 -mx-4 px-4 overflow-x-auto whitespace-nowrap flex gap-2 pb-1">
+          <button
+            onClick={() => handleCategoryChange(0)}
+            className={`category-button flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+              activeCategory === 0
+                ? 'bg-primary-blue text-white shadow-md'
+                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+            }`}
+          >
+            <span className="mr-1">🌟</span>
+            全部
+          </button>
+          {data.categories.map((category) => (
+            <span key={category.id} className="flex-shrink-0">
+              <CategoryButton
+                category={category}
+                isActive={activeCategory === category.id}
+                onClick={handleCategoryChange}
+              />
+            </span>
+          ))}
+        </nav>
+
+        {/* 桌面端左侧分类栏（吸顶、可独立滚动） */}
+        <aside className="hidden lg:block w-52 flex-shrink-0 self-start sticky top-20 max-h-[calc(100vh-6.5rem)] overflow-y-auto bg-white rounded-lg border border-gray-100 shadow-card p-2 space-y-0.5">
+          <nav>
+            <button
+              onClick={() => handleCategoryChange(0)}
+              className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm transition-colors duration-200 ${
+                activeCategory === 0
+                  ? 'bg-primary-blue text-white shadow-sm'
+                  : 'text-gray-700 hover:bg-gray-100'
+              }`}
+            >
+              <span className="flex items-center min-w-0">
+                <span className="mr-2 flex-shrink-0">🌟</span>
+                <span className="truncate">全部</span>
+              </span>
+              <span className={`ml-2 text-xs flex-shrink-0 ${activeCategory === 0 ? 'text-blue-100' : 'text-gray-400'}`}>
+                {currentData.sites.length}
+              </span>
+            </button>
+            {data.categories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => handleCategoryChange(category.id)}
+                className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm transition-colors duration-200 ${
+                  activeCategory === category.id
+                    ? 'bg-primary-blue text-white shadow-sm'
+                    : 'text-gray-700 hover:bg-gray-100'
+                }`}
+              >
+                <span className="flex items-center min-w-0">
+                  <span className="mr-2 flex-shrink-0">{category.icon}</span>
+                  <span className="truncate">{category.name}</span>
+                </span>
+                <span className={`ml-2 text-xs flex-shrink-0 ${activeCategory === category.id ? 'text-blue-100' : 'text-gray-400'}`}>
+                  {categoryCounts[category.id] || 0}
+                </span>
+              </button>
+            ))}
+          </nav>
+        </aside>
+
+        {/* 主内容区域 */}
+        <main className="flex-1 min-w-0">
         {/* API加载状态 */}
         {apiLoading && (
           <div className="text-center mb-4">
@@ -310,9 +461,48 @@ const App = () => {
           </div>
         )}
 
+        {/* 当前分类标题与简介 - 选中具体分类且无搜索时显示 */}
+        {activeCategory !== 0 && !debouncedSearchTerm && getCurrentCategory() && (
+          <div className="mb-6">
+            <h2 className="text-base font-semibold text-gray-900 flex items-center">
+              <span className="mr-2">{getCurrentCategory().icon}</span>
+              {getCurrentCategory().name}
+              <span className="ml-2 text-xs font-normal text-gray-400">
+                {filteredSites.length} 个网站
+              </span>
+            </h2>
+            {getCurrentCategory().description && (
+              <p className="text-sm text-gray-500 mt-1">{getCurrentCategory().description}</p>
+            )}
+          </div>
+        )}
+
+        {/* 最新收录分区 - 仅在"全部"分类且无搜索时显示 */}
+        {activeCategory === 0 && !debouncedSearchTerm && latestSites.length > 0 && (
+          <section className="mb-8">
+            <h2 className="text-base font-semibold text-gray-900 mb-3 flex items-center">
+              <span className="mr-2">🆕</span>最新收录
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+              {latestSites.map((site, index) => (
+                <SiteCard
+                  key={`latest-${site.id}`}
+                  site={site}
+                  isVisible={true}
+                  delay={index * 50}
+                  isEditMode={isEditMode}
+                  isNew={true}
+                  onEdit={handleEditSite}
+                  onDelete={handleDeleteSite}
+                />
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* 网站卡片网格 */}
         {isLoading ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4">
             {[...Array(8)].map((_, index) => (
               <div key={index} className="animate-pulse">
                 <div className="bg-white rounded-lg shadow-card p-4 border border-gray-100">
@@ -330,18 +520,19 @@ const App = () => {
             ))}
           </div>
         ) : filteredSites.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {filteredSites.map((site, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4">
+            {displayedSites.map((site, index) => (
               <div
                 key={`site-${site.id}-cat-${activeCategory}`}
                 className="animate-fadeInUp opacity-100"
-                style={{ animationDelay: `${index * 50}ms` }}
+                style={{ animationDelay: `${Math.min(index % BATCH_SIZE, 16) * 50}ms` }}
               >
                 <SiteCard 
                   site={site} 
                   isVisible={true}
-                  delay={index * 50}
+                  delay={Math.min(index % BATCH_SIZE, 16) * 50}
                   isEditMode={isEditMode}
+                  isNew={newSiteIds.has(site.id)}
                   onEdit={handleEditSite}
                   onDelete={handleDeleteSite}
                 />
@@ -350,6 +541,22 @@ const App = () => {
           </div>
         ) : (
           <EmptyState category={getCurrentCategory()} />
+        )}
+
+        {/* 懒加载哨兵与加载状态 */}
+        {filteredSites.length > 0 && hasMore && (
+          <div ref={sentinelRef} className="py-8 text-center text-sm text-gray-500">
+            <svg className="animate-spin inline-block -ml-1 mr-2 h-4 w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+            </svg>
+            正在加载更多...（已显示 {displayedSites.length} / {filteredSites.length}）
+          </div>
+        )}
+        {filteredSites.length > BATCH_SIZE && !hasMore && (
+          <p className="py-8 text-center text-sm text-gray-500">
+            已显示全部 {filteredSites.length} 个网站
+          </p>
         )}
 
         {/* 回到顶部按钮 */}
@@ -365,42 +572,50 @@ const App = () => {
           </button>
         )}
 
-        {/* 编辑模式工具栏 */}
-        {isEditMode && (
-          <EditModeToolbar 
-            isEditMode={isEditMode}
-            onToggleEditMode={() => setIsEditMode(!isEditMode)}
-            onAddSite={handleAddSite}
-          />
-        )}
-
-        {/* 编辑网站模态框 */}
-        {showEditModal && (
-          <EditSiteModal 
-            isOpen={showEditModal}
-            onClose={() => {
-              setShowEditModal(false);
-              setEditingSite(null);
-            }}
-            onSave={handleSaveSite}
-            site={editingSite}
-            categories={currentData.categories}
-          />
-        )}
-      </main>
+        </main>
+      </div>
 
       {/* 底部信息 */}
       <footer className="bg-white border-t border-gray-100 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row md:justify-between md:items-center space-y-2 md:space-y-0">
-            <p className="text-sm text-gray-500 text-center md:text-left">
-              © 2024 简约导航站. Made with ❤️
-            </p>
-            <div className="flex justify-center md:justify-end space-x-4 text-sm text-gray-500">
-              <span>共收录 {currentData.sites.length} 个网站</span>
-              <span>•</span>
-              <span>{currentData.categories.length} 个分类</span>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* 品牌信息 */}
+            <div>
+              <p className="text-lg font-bold gradient-text mb-2">简约导航站</p>
+              <p className="text-sm text-gray-500 leading-relaxed">
+                精选收录各类优质网站，涵盖效率工具、设计创意、学习资源、影音娱乐等分类，做你简约高效的上网入口。
+              </p>
             </div>
+            {/* 快速链接 */}
+            <div>
+              <p className="text-sm font-semibold text-gray-900 mb-3">快速链接</p>
+              <ul className="space-y-2 text-sm text-gray-500">
+                <li>
+                  <a href="https://ovoforge.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary-blue transition-colors duration-200">OVOForge 主站</a>
+                </li>
+                <li>
+                  <a href="https://github.com/gamelibs/simple-nav-site" target="_blank" rel="noopener noreferrer" className="hover:text-primary-blue transition-colors duration-200">GitHub 项目</a>
+                </li>
+                <li>
+                  <a href="https://github.com/gamelibs/simple-nav-site/issues" target="_blank" rel="noopener noreferrer" className="hover:text-primary-blue transition-colors duration-200">问题反馈 / 收录申请</a>
+                </li>
+                <li>
+                  <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer" className="hover:text-primary-blue transition-colors duration-200">网站地图</a>
+                </li>
+              </ul>
+            </div>
+            {/* 站点统计 */}
+            <div>
+              <p className="text-sm font-semibold text-gray-900 mb-3">站点统计</p>
+              <ul className="space-y-2 text-sm text-gray-500">
+                <li>共收录 {currentData.sites.length} 个网站</li>
+                <li>{currentData.categories.length} 个分类</li>
+                <li>持续更新中</li>
+              </ul>
+            </div>
+          </div>
+          <div className="mt-8 pt-6 border-t border-gray-100 text-center text-sm text-gray-500">
+            © 2026 简约导航站 · <a href="https://ovoforge.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary-blue transition-colors duration-200">OVOForge</a> 出品
           </div>
         </div>
       </footer>
@@ -411,6 +626,16 @@ const App = () => {
           isEditMode={isEditMode}
           onToggleEditMode={() => setIsEditMode(!isEditMode)}
           onAddSite={handleAddSite}
+          onAddCategory={() => setShowCategoryModal(true)}
+        />
+      )}
+
+      {/* 添加分类模态框 */}
+      {showCategoryModal && (
+        <EditCategoryModal
+          isOpen={showCategoryModal}
+          onClose={() => setShowCategoryModal(false)}
+          onSave={handleSaveCategory}
         />
       )}
 

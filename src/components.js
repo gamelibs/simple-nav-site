@@ -1,8 +1,28 @@
 import React, { useState, memo } from 'react';
 
+// 从站点 URL 提取域名，生成 favicon 抓取地址
+const getFaviconUrl = (url) => {
+  try {
+    const host = new URL(url).hostname;
+    return `https://www.google.com/s2/favicons?domain=${host}&sz=64`;
+  } catch (error) {
+    return null;
+  }
+};
+
 // 网站图标组件
+// 加载链：自定义图标（如有）→ Google favicon 抓取 → 首字母头像
 const SiteIcon = memo(({ site }) => {
-  const [imageError, setImageError] = useState(false);
+  const sources = [];
+  if (site.icon && site.icon !== '/icons/default.svg') {
+    sources.push(process.env.PUBLIC_URL + site.icon);
+  }
+  const faviconUrl = getFaviconUrl(site.url);
+  if (faviconUrl) {
+    sources.push(faviconUrl);
+  }
+
+  const [sourceIndex, setSourceIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
 
   const handleImageLoad = () => {
@@ -10,11 +30,10 @@ const SiteIcon = memo(({ site }) => {
   };
 
   const handleImageError = () => {
-    setImageError(true);
-    setIsLoading(false);
+    setSourceIndex((prev) => prev + 1);
   };
 
-  if (imageError) {
+  if (sourceIndex >= sources.length) {
     return (
       <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-sm">
         {site.name.charAt(0)}
@@ -28,7 +47,7 @@ const SiteIcon = memo(({ site }) => {
         <div className="absolute inset-0 bg-gray-200 rounded-lg skeleton"></div>
       )}
       <img
-        src={process.env.PUBLIC_URL + site.icon}
+        src={sources[sourceIndex]}
         alt={`${site.name} 图标`}
         className={`w-10 h-10 rounded-lg object-cover shadow-sm transition-opacity duration-300 ${
           isLoading ? 'opacity-0' : 'opacity-100'
@@ -41,22 +60,51 @@ const SiteIcon = memo(({ site }) => {
   );
 });
 
-// 网站卡片组件
-const SiteCard = memo(({ site, isVisible, delay = 0, isEditMode = false, onEdit, onDelete }) => {
-  return (
-    <div 
-      className={`card-hover bg-white rounded-lg shadow-card p-4 border border-gray-100 transition-all duration-700 ease-out ${
-        isVisible 
-          ? 'opacity-100 translate-y-0 scale-100' 
-          : 'opacity-0 translate-y-8 scale-95'
-      } ${isEditMode ? 'relative' : ''}`}
-      style={{
-        transitionDelay: `${delay}ms`
-      }}
-    >
-      {/* 编辑模式按钮 */}
-      {isEditMode && (
-        <div className="absolute top-2 right-2 flex space-x-1">
+// 从站点 URL 提取域名，作为空描述时的兜底显示
+const getHost = (url) => {
+  try {
+    return new URL(url).hostname;
+  } catch (error) {
+    return '';
+  }
+};
+
+// 网站卡片组件 - 整卡可点击（编辑模式下为 div + 操作按钮）
+const SiteCard = memo(({ site, isVisible, delay = 0, isEditMode = false, isNew = false, onEdit, onDelete }) => {
+  const cardClassName = `card-hover relative block bg-white rounded-lg shadow-card p-4 border border-gray-100 transition-all duration-700 ease-out ${
+    isVisible 
+      ? 'opacity-100 translate-y-0 scale-100' 
+      : 'opacity-0 translate-y-8 scale-95'
+  }`;
+  const cardStyle = { transitionDelay: `${delay}ms` };
+
+  // 卡片主体内容
+  const cardBody = (
+    <div className="flex items-center space-x-3">
+      <div className="flex-shrink-0">
+        <SiteIcon site={site} />
+      </div>
+      <div className="flex-1 min-w-0">
+        <h3 className="text-sm font-semibold text-gray-900 mb-1 truncate hover:text-primary-blue transition-colors duration-200">
+          {site.name}
+        </h3>
+        <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
+          {site.description || getHost(site.url)}
+        </p>
+      </div>
+      {!isEditMode && (
+        <svg className="w-3.5 h-3.5 flex-shrink-0 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+        </svg>
+      )}
+    </div>
+  );
+
+  // 编辑模式：不可跳转，显示编辑/删除按钮
+  if (isEditMode) {
+    return (
+      <div className={cardClassName} style={cardStyle}>
+        <div className="absolute top-2 right-2 flex space-x-1 z-10">
           <button
             onClick={() => onEdit(site)}
             className="p-1.5 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-200"
@@ -76,35 +124,28 @@ const SiteCard = memo(({ site, isVisible, delay = 0, isEditMode = false, onEdit,
             </svg>
           </button>
         </div>
-      )}
-
-      <div className="flex items-start space-x-3">
-        <div className="flex-shrink-0">
-          <SiteIcon site={site} />
-        </div>
-        <div className="flex-1 min-w-0">
-          <h3 className="text-sm font-semibold text-gray-900 mb-1 truncate hover:text-primary-blue transition-colors duration-200">
-            {site.name}
-          </h3>
-          <p className="text-xs text-gray-600 mb-3 line-clamp-2 leading-relaxed">
-            {site.description}
-          </p>
-          {!isEditMode && (
-            <a
-              href={site.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center px-3 py-1.5 bg-primary-blue text-white text-xs font-medium rounded-md hover:bg-blue-600 hover:shadow-md transition-all duration-200 transform hover:scale-105 active:scale-95"
-            >
-              访问
-              <svg className="ml-1 w-3 h-3 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
-            </a>
-          )}
-        </div>
+        {cardBody}
       </div>
-    </div>
+    );
+  }
+
+  // 正常模式：整卡为链接
+  return (
+    <a
+      href={site.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={cardClassName}
+      style={cardStyle}
+    >
+      {/* 新收录角标 */}
+      {isNew && (
+        <span className="absolute top-2 right-2 px-1.5 py-0.5 bg-emerald-500 text-white text-[10px] font-bold rounded shadow-sm">
+          NEW
+        </span>
+      )}
+      {cardBody}
+    </a>
   );
 });
 

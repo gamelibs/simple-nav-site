@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 // 编辑模式工具栏组件
-export const EditModeToolbar = ({ isEditMode, onToggleEditMode, onAddSite }) => {
+export const EditModeToolbar = ({ isEditMode, onToggleEditMode, onAddSite, onAddCategory }) => {
   if (!isEditMode) return null;
 
   return (
@@ -13,6 +13,16 @@ export const EditModeToolbar = ({ isEditMode, onToggleEditMode, onAddSite }) => 
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+        </svg>
+      </button>
+
+      <button
+        onClick={onAddCategory}
+        className="flex items-center justify-center w-14 h-14 bg-indigo-500 text-white rounded-full shadow-lg hover:bg-indigo-600 hover:shadow-xl transition-all duration-300 transform hover:scale-110 active:scale-95"
+        title="添加新分类"
+      >
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 13h6m-3-3v6m-9 1V7a2 2 0 012-2h5l2 2h5a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
         </svg>
       </button>
       
@@ -269,6 +279,162 @@ export const EditSiteModal = ({ isOpen, onClose, onSave, site, categories }) => 
                 ) : (
                   site ? '更新' : '添加'
                 )}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// 添加分类模态框组件
+export const EditCategoryModal = ({ isOpen, onClose, onSave }) => {
+  const [formData, setFormData] = useState({
+    name: '',
+    icon: '',
+    description: ''
+  });
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // 打开时重置表单
+  useEffect(() => {
+    if (isOpen) {
+      setFormData({ name: '', icon: '', description: '' });
+      setErrors({});
+    }
+  }, [isOpen]);
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.name.trim()) {
+      newErrors.name = '分类名称不能为空';
+    }
+    if (!formData.icon.trim()) {
+      newErrors.icon = '请填写一个 emoji 图标';
+    }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!validateForm()) return;
+
+    setIsSubmitting(true);
+    try {
+      await onSave(formData);
+    } catch (error) {
+      console.error('保存分类失败:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleInputChange = (field, value) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+    if (errors[field]) {
+      setErrors(prev => ({ ...prev, [field]: '' }));
+    }
+  };
+
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+      <div className="bg-white rounded-xl shadow-2xl w-full max-w-md">
+        <div className="p-6">
+          <div className="flex items-center justify-between mb-6">
+            <h3 className="text-xl font-semibold text-gray-900">添加新分类</h3>
+            <button
+              onClick={onClose}
+              className="text-gray-400 hover:text-gray-600 transition-colors duration-200"
+              disabled={isSubmitting}
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          <form onSubmit={handleSubmit} className="space-y-5">
+            {/* 分类名称 */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                分类名称 *
+              </label>
+              <input
+                type="text"
+                value={formData.name}
+                onChange={(e) => handleInputChange('name', e.target.value)}
+                className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200 ${
+                  errors.name ? 'border-red-500' : 'border-gray-300'
+                }`}
+                placeholder="例如：AI工具"
+                disabled={isSubmitting}
+              />
+              {errors.name && (
+                <p className="text-red-500 text-xs mt-1">{errors.name}</p>
+              )}
+            </div>
+
+            {/* 分类图标 */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                分类图标（emoji）*
+              </label>
+              <div className="flex items-center space-x-3">
+                <input
+                  type="text"
+                  value={formData.icon}
+                  onChange={(e) => handleInputChange('icon', e.target.value)}
+                  className={`flex-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200 ${
+                    errors.icon ? 'border-red-500' : 'border-gray-300'
+                  }`}
+                  placeholder="例如：🤖"
+                  disabled={isSubmitting}
+                />
+                {formData.icon && (
+                  <span className="text-3xl flex-shrink-0">{formData.icon}</span>
+                )}
+              </div>
+              {errors.icon && (
+                <p className="text-red-500 text-xs mt-1">{errors.icon}</p>
+              )}
+            </div>
+
+            {/* 分类简介 */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                分类简介
+              </label>
+              <input
+                type="text"
+                value={formData.description}
+                onChange={(e) => handleInputChange('description', e.target.value)}
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200"
+                placeholder="一句话介绍这个分类（可选）"
+                disabled={isSubmitting}
+              />
+            </div>
+
+            {/* 操作按钮 */}
+            <div className="flex space-x-3 pt-4">
+              <button
+                type="button"
+                onClick={onClose}
+                className="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-200"
+                disabled={isSubmitting}
+              >
+                取消
+              </button>
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="flex-1 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors duration-200 disabled:bg-blue-300 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? '保存中...' : '添加'}
               </button>
             </div>
           </form>
