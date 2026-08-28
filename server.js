@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const compression = require('compression');
 const fs = require('fs-extra');
 const path = require('path');
 
@@ -8,10 +9,44 @@ const PORT = 15001;
 
 // 数据文件路径
 const DATA_FILE_PATH = path.join(__dirname, 'src', 'data.json');
+// 构建文件路径
+const BUILD_PATH = path.join(__dirname, 'build');
+
+// 允许跨域的来源（同源请求不经过 CORS，不受影响）
+const ALLOWED_ORIGINS = [
+  'https://nav.ovoforge.com',
+  'http://localhost:15001',
+  'http://localhost:3000',
+];
 
 // 中间件
-app.use(cors());
+app.use(compression());
+app.use(cors({
+  origin: (origin, callback) => {
+    // 无 origin 的请求（同源、curl、服务器端）直接放行
+    callback(null, !origin || ALLOWED_ORIGINS.includes(origin));
+  },
+}));
 app.use(express.json());
+
+// 托管静态文件 - 优先提供 build 目录的静态文件
+app.use(express.static(BUILD_PATH, {
+  setHeaders: (res, filePath) => {
+    // 带内容 hash 的静态资源（/static/js、/static/css）长缓存
+    if (filePath.includes(`${path.sep}static${path.sep}`)) {
+      res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+    } else if (filePath.endsWith('.html')) {
+      res.setHeader('Cache-Control', 'no-cache');
+    }
+  },
+}));
+
+// 为 icons 提供特殊路由，确保图标可以正确访问
+app.use('/icons', express.static(path.join(BUILD_PATH, 'icons'), {
+  setHeaders: (res) => {
+    res.setHeader('Cache-Control', 'public, max-age=604800');
+  },
+}));
 
 // 读取数据文件
 const readDataFile = async () => {
@@ -190,7 +225,7 @@ app.delete('/api/sites/:id', async (req, res) => {
 // 添加新分类
 app.post('/api/categories', async (req, res) => {
   try {
-    const { name, icon } = req.body;
+    const { name, icon, description } = req.body;
     
     if (!name || !icon) {
       return res.status(400).json({
@@ -208,7 +243,8 @@ app.post('/api/categories', async (req, res) => {
     const newCategory = {
       id: newId,
       name,
-      icon
+      icon,
+      description: description || ''
     };
     
     // 添加到数据中
@@ -238,6 +274,26 @@ app.get('/api/health', (req, res) => {
     message: '服务器运行正常',
     timestamp: new Date().toISOString()
   });
+});
+
+// 所有非 API 的 GET 请求都返回 React 应用的 index.html
+// （Express 5 不支持 app.get('*') 写法，改用中间件形式，同时兼容 Express 4）
+app.use((req, res, next) => {
+  if (req.method !== 'GET') {
+    return next();
+  }
+
+  // 如果请求的是 API 路由，继续处理错误
+  if (req.path.startsWith('/api/')) {
+    return res.status(404).json({
+      success: false,
+      error: 'API 路由不存在'
+    });
+  }
+
+  // 否则返回 React 应用（HTML 不缓存，保证发布后即时生效）
+  res.setHeader('Cache-Control', 'no-cache');
+  res.sendFile(path.join(BUILD_PATH, 'index.html'));
 });
 
 // 错误处理中间件
