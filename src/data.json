@@ -46,11 +46,6 @@
       "icon": "🏥"
     },
     {
-      "id": 10,
-      "name": "tst",
-      "icon": "📁"
-    },
-    {
       "id": 11,
       "name": "工作",
       "icon": "🎯"
@@ -89,6 +84,26 @@
       "id": 18,
       "name": "美食",
       "icon": "🍔"
+    },
+    {
+      "id": 19,
+      "name": "图片",
+      "icon": "📷"
+    },
+    {
+      "id": 20,
+      "name": "PPT",
+      "icon": "🎪"
+    },
+    {
+      "id": 21,
+      "name": "网络热词",
+      "icon": "🌐"
+    },
+    {
+      "id": 22,
+      "name": "金融",
+      "icon": "💰"
     }
   ],
   "sites": [
@@ -2410,6 +2425,1286 @@
       "url": "https://stock.qianzhan.com/hs/zhuyingchanpin_300890.SZ.html",
       "description": "",
       "categoryId": 11,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 291,
+      "name": "学习强国",
+      "url": "https://www.xuexi.cn/",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 292,
+      "name": "note",
+      "url": "https://note.ovokit.xyz/",
+      "description": "",
+      "categoryId": 11,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 293,
+      "name": "中国医药信息查询平台",
+      "url": "https://www.dayi.org.cn/",
+      "description": "",
+      "categoryId": 9,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 294,
+      "name": "汉语国学",
+      "url": "https://www.hanyuguoxue.com/",
+      "description": "",
+      "categoryId": 11,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 295,
+      "name": "北京商报网",
+      "url": "https://www.bbtnews.com.cn/",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 296,
+      "name": "北京商报网",
+      "url": "https://epaper.bbtnews.com.cn/epaper/index.html#20250731#0#14095",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 297,
+      "name": "世界报",
+      "url": "https://www.globaltimes.cn/index.html",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 298,
+      "name": "读客文化",
+      "url": "https://www.dookbook.com/books/",
+      "description": "",
+      "categoryId": 4,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 299,
+      "name": "成都商报网",
+      "url": "https://www.cdsb.com/",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 300,
+      "name": "佳明手表-瑞士",
+      "url": "https://www.garmin.com.cn/",
+      "description": "",
+      "categoryId": 7,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 301,
+      "name": "杭走日报报业",
+      "url": "https://hzdaily.hangzhou.com.cn/",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 302,
+      "name": "温州日报",
+      "url": "http://szb.66wz.com/",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 303,
+      "name": "苏商网",
+      "url": "http://www.sushang.cn/video/",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 304,
+      "name": "ilovepdf-格式转换",
+      "url": "https://www.ilovepdf.com/",
+      "description": "",
+      "categoryId": 11,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 305,
+      "name": "商业创业奖",
+      "url": "https://winner.roifestival.com/cn",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 306,
+      "name": "第一财经",
+      "url": "https://www.yicai.com/",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 307,
+      "name": "钛媒体",
+      "url": "https://www.tmtpost.com/new",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 308,
+      "name": "每日一词",
+      "url": "https://cn.chinadaily.com.cn/gtx/5d63917ba31099ab995dbb29/Word",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 309,
+      "name": "对话",
+      "url": "https://tv.cctv.com/lm/duihua/",
+      "description": "",
+      "categoryId": 3,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 310,
+      "name": "在线计时器",
+      "url": "https://clockzone.net/zh-CN/timer/1-hour",
+      "description": "",
+      "categoryId": 11,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 311,
+      "name": "计时器材",
+      "url": "https://clockzone.net/zh-CN/timer/1-hour",
+      "description": "",
+      "categoryId": 11,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 312,
+      "name": "财联社",
+      "url": "https://www.cls.cn/depth?id=1000",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 313,
+      "name": "ai-工具集",
+      "url": "https://ai-bot.cn/",
+      "description": "",
+      "categoryId": 11,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 314,
+      "name": "processon-流程图",
+      "url": "https://www.processon.com/",
+      "description": "",
+      "categoryId": 11,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 315,
+      "name": "泰达图书馆",
+      "url": "https://www.tedala.teda.gov.cn/szzy/index.asp",
+      "description": "",
+      "categoryId": 4,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 316,
+      "name": "飞库文学",
+      "url": "https://www.feiku6.com/index.html",
+      "description": "",
+      "categoryId": 4,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 317,
+      "name": "经济网",
+      "url": "https://www.jingji.com.cn/",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 318,
+      "name": "万方学术导航",
+      "url": "https://apps.wanfangdata.com.cn/Navigation#nav14",
+      "description": "",
+      "categoryId": 2,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 319,
+      "name": "世界百科全书",
+      "url": "https://www.worldbookonline.com/link/international/Chinese.pdf",
+      "description": "",
+      "categoryId": 3,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 320,
+      "name": "世界百科全书",
+      "url": "https://www.worldhistory.org/trans/zh/?page=1",
+      "description": "",
+      "categoryId": 2,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 321,
+      "name": "笑话大王",
+      "url": "http://xiaohua.pldkwz.cn/",
+      "description": "",
+      "categoryId": 6,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 322,
+      "name": "人们网观点",
+      "url": "http://opinion.people.com.cn/GB/159301/",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 323,
+      "name": "华尔街见闻",
+      "url": "https://wallstreetcn.com/",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 324,
+      "name": "早晨新闻报",
+      "url": "https://www.zaochenbao.com/",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 325,
+      "name": "新闻一览——日本",
+      "url": "https://www3.nhk.or.jp/nhkworld/zh/news/list/",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 326,
+      "name": "意林杂志",
+      "url": "https://www.yilinzazhi.com/",
+      "description": "",
+      "categoryId": 4,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 327,
+      "name": "科学网",
+      "url": "https://news.sciencenet.cn/ys/",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 328,
+      "name": "发布会",
+      "url": "https://news.mydrivers.com/zhibo/",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 329,
+      "name": "中关村在线",
+      "url": "https://www.zol.com.cn/",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 330,
+      "name": "中国日报网",
+      "url": "https://cn.chinadaily.com.cn/",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 331,
+      "name": "中国企业家论坛",
+      "url": "https://www.cefco.cn/index.html",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 332,
+      "name": "央视读书",
+      "url": "https://tv.cctv.com/lm/dushu/",
+      "description": "",
+      "categoryId": 17,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 333,
+      "name": "中国纪录片协会",
+      "url": "http://www.docuchina.cn/",
+      "description": "",
+      "categoryId": 12,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 334,
+      "name": "cctv-9",
+      "url": "https://tv.cctv.com/cctv9/",
+      "description": "",
+      "categoryId": 12,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 335,
+      "name": "可可英语",
+      "url": "https://listen.kekenet.com/#/",
+      "description": "",
+      "categoryId": 17,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 336,
+      "name": "最新影片",
+      "url": "https://www.ysxq.cc/",
+      "description": "",
+      "categoryId": 3,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 337,
+      "name": "中国外国文学网",
+      "url": "http://ifl.cssn.cn/ifl_bskw/ifl_sjwx/lkml/",
+      "description": "",
+      "categoryId": 4,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 338,
+      "name": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 339,
+      "name": "十大品牌网",
+      "url": "https://www.cnpp.cn/",
+      "description": "",
+      "categoryId": 7,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 340,
+      "name": "商业计划书模版",
+      "url": "https://www.trjcn.com/tg/syjhs2023_bd.html?trackid=ads:bing:ss:A20:A208:pc55355485&msclkid=a1b38fbe7f40189a04b1e7189656164e",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 341,
+      "name": "首富排行榜",
+      "url": "https://www.phb123.com/renwu/fuhao/px_CN.html",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 342,
+      "name": "中国探险家协会",
+      "url": "https://www.caa1993.org.cn/",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 343,
+      "name": "中国工商联会",
+      "url": "https://www.acfic.org.cn/myjjzs/qyjjy/",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 344,
+      "name": "半月刊",
+      "url": "http://www.banyuetan.org/byt/jinritan/index.html",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 345,
+      "name": "今日谈",
+      "url": "https://www.kanzhiwang.com/",
+      "description": "",
+      "categoryId": 4,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 346,
+      "name": "任推邦",
+      "url": "https://dt.bd.cn/#/pages/zt/pc/index?path=pages%2Flogin%2Fregister&invite_code=749650",
+      "description": "",
+      "categoryId": 11,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 347,
+      "name": "夸克网盘",
+      "url": "https://pan.quark.cn/list#/list/all",
+      "description": "",
+      "categoryId": 11,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 348,
+      "name": "阿里巴巴矢量图",
+      "url": "https://www.iconfont.cn/?spm=a313x.search_index.i3.d4d0a486a.6dd73a81M5U4MT",
+      "description": "",
+      "categoryId": 19,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 349,
+      "name": "islide",
+      "url": "https://www.islide.cc/",
+      "description": "",
+      "categoryId": 19,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 350,
+      "name": "shareicon",
+      "url": "https://www.shareicon.net/category/abstract",
+      "description": "",
+      "categoryId": 19,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 351,
+      "name": "officeplus",
+      "url": "https://www.officeplus.cn/addin/QIUYE/",
+      "description": "",
+      "categoryId": 20,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 352,
+      "name": "canva",
+      "url": "https://www.canva.cn/reports/templates/",
+      "description": "",
+      "categoryId": 20,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 353,
+      "name": "白描",
+      "url": "https://web.baimiaoapp.com/",
+      "description": "",
+      "categoryId": 11,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 354,
+      "name": "google analytics",
+      "url": "https://analytics.google.com/",
+      "description": "",
+      "categoryId": 11,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 355,
+      "name": "电话查询",
+      "url": "https://www.114.tel/",
+      "description": "",
+      "categoryId": 11,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 356,
+      "name": "今日中国",
+      "url": "http://www.chinatoday.com.cn/index.htm",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 357,
+      "name": "纽约客",
+      "url": "https://www.britannica.com/topic/The-New-Yorker",
+      "description": "",
+      "categoryId": 17,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 358,
+      "name": "中国新闻网",
+      "url": "https://www.chinanews.com.cn/scroll-news/news1.html",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 359,
+      "name": "抖音店铺",
+      "url": "https://fxg.jinritemai.com/ffa/gov/settle/choose-role",
+      "description": "",
+      "categoryId": 11,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 360,
+      "name": "字典",
+      "url": "https://www.chazidian.com/",
+      "description": "",
+      "categoryId": 2,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 361,
+      "name": "电商派",
+      "url": "https://www.pai.com.cn/",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 362,
+      "name": "世界日报",
+      "url": "http://www.un1216.org/world/renwu/",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 363,
+      "name": "中国文艺评",
+      "url": "https://www.zgwypl.com/",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 364,
+      "name": "求是网",
+      "url": "https://www.qstheory.cn/index.htm",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 365,
+      "name": "银行利率",
+      "url": "https://www.csai.cn/bankrate/",
+      "description": "",
+      "categoryId": 11,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 366,
+      "name": "handwriting",
+      "url": "https://text-to-handwriting.org/handwriting",
+      "description": "",
+      "categoryId": 11,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 367,
+      "name": "pdf水印",
+      "url": "https://zhang.kuaitu.cc/",
+      "description": "",
+      "categoryId": 11,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 368,
+      "name": "泰晤士报",
+      "url": "https://www.thetimes.com/uk",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 369,
+      "name": "全国报刊索引",
+      "url": "https://www.cnbksy.cn/home",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 370,
+      "name": "快乐壁纸",
+      "url": "https://4kwallpapers.com/happy",
+      "description": "",
+      "categoryId": 11,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 371,
+      "name": "全球媒体",
+      "url": "https://www.globemedialinks.com/%e5%9b%bd%e5%88%ab",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 372,
+      "name": "上海浦东图书馆",
+      "url": "https://libvisual.pudong.gov.cn/databaseList",
+      "description": "",
+      "categoryId": 4,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 373,
+      "name": "平台热播剧",
+      "url": "https://www.ky.live/pc.html",
+      "description": "",
+      "categoryId": 3,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 374,
+      "name": "洛杉矶时报",
+      "url": "https://www.latimes.com/california",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 375,
+      "name": "星辰",
+      "url": "https://x.300301.com/guocanju/xuwoyaoyan/",
+      "description": "",
+      "categoryId": 3,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 376,
+      "name": "佛学知识",
+      "url": "https://www.xuefoyun.cn/",
+      "description": "",
+      "categoryId": 4,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 377,
+      "name": "麦肯锡中国",
+      "url": "https://www.mckinsey.com.cn/",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 378,
+      "name": "超星名师讲坛",
+      "url": "https://ssvideo.superlib.com/pc/home/index;jsessionid=3ED5267F9B96C056D54CC5B30A429DDF.dweb1740",
+      "description": "",
+      "categoryId": 5,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 379,
+      "name": "国学人物",
+      "url": "https://www.guoxuebaike.cn/guoxuerenwu/",
+      "description": "",
+      "categoryId": 4,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 380,
+      "name": "明星企业",
+      "url": "https://www.baikev.com/",
+      "description": "",
+      "categoryId": 4,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 381,
+      "name": "当代中国",
+      "url": "https://www.ourchinastory.com/cn/home",
+      "description": "",
+      "categoryId": 4,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 382,
+      "name": "中国戏剧节",
+      "url": "https://www.chinatheatre.org.cn/rcpy/",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 383,
+      "name": "开心笑话网",
+      "url": "https://www.yiyixh.com/a/ertongxiaohua/",
+      "description": "",
+      "categoryId": 6,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 384,
+      "name": "52笑话网",
+      "url": "https://www.52xiaohua.com/",
+      "description": "",
+      "categoryId": 6,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 385,
+      "name": "知乐网",
+      "url": "https://zhilezhi.com/",
+      "description": "",
+      "categoryId": 6,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 386,
+      "name": "播客",
+      "url": "https://podcasts.apple.com/cn/new",
+      "description": "",
+      "categoryId": 17,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 387,
+      "name": "梗百科",
+      "url": "https://gengbaike.cn/",
+      "description": "",
+      "categoryId": 21,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 388,
+      "name": "在线调色板",
+      "url": "https://cn.online-color.com/",
+      "description": "",
+      "categoryId": 11,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 389,
+      "name": "科学网",
+      "url": "https://news.sciencenet.cn/",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 390,
+      "name": "环球科学",
+      "url": "https://www.huanqiukexue.com/",
+      "description": "",
+      "categoryId": 13,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 391,
+      "name": "中奢网",
+      "url": "http://www.iluxe.com/",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 392,
+      "name": "寺库网",
+      "url": "https://www.secoo.com/",
+      "description": "",
+      "categoryId": 7,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 393,
+      "name": "贝壳知识",
+      "url": "https://www.zsbeike.com/",
+      "description": "",
+      "categoryId": 4,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 394,
+      "name": "百度百科",
+      "url": "https://baike.baidu.com/vbaike#gallary",
+      "description": "",
+      "categoryId": 4,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 395,
+      "name": "21经济网",
+      "url": "https://www.21jingji.com/",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 396,
+      "name": "展会网",
+      "url": "https://www.zhanhome.com/beijing/",
+      "description": "",
+      "categoryId": 11,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 397,
+      "name": "中信书院",
+      "url": "https://h5.yunpub.cn/home",
+      "description": "",
+      "categoryId": 4,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 398,
+      "name": "英语专栏",
+      "url": "https://language.chinadaily.com.cn/news_bilingual/",
+      "description": "",
+      "categoryId": 4,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 399,
+      "name": "英语",
+      "url": "https://css-tricks.com/",
+      "description": "",
+      "categoryId": 4,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 400,
+      "name": "上海广播",
+      "url": "http://xbtv.net/fm/sh/#:~:text=%E8%A5%BF%E8%B4%9D%E8%A7%86%E5%90%AC%E6%8F%90%E4%BE%9B%E4%B8%8A%E6%B5%B7,%E7%BB%9C%E7%94%B5%E5%8F%B0%E5%9C%A8%E7%BA%BF%E7%9B%B4%E6%92%AD%E3%80%82",
+      "description": "",
+      "categoryId": 17,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 401,
+      "name": "雪球",
+      "url": "https://xueqiu.com/",
+      "description": "",
+      "categoryId": 22,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 402,
+      "name": "纪录片仓库",
+      "url": "https://jilulib.com/all/?pro=7&cat=0&raw=0",
+      "description": "",
+      "categoryId": 12,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 403,
+      "name": "纪录片数据库",
+      "url": "https://jiludb.com/",
+      "description": "",
+      "categoryId": 12,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 404,
+      "name": "图片设计",
+      "url": "https://www.gaoding.com/templates-h5?code=h5&hmsr=pc360-sem-changjing-h5-h5-616121-sem&utm_medium=cpc&utm_source=pc360",
+      "description": "",
+      "categoryId": 19,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 405,
+      "name": "书评",
+      "url": "http://read.china.com.cn/node_1012499.htm#",
+      "description": "",
+      "categoryId": 4,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 406,
+      "name": "读客",
+      "url": "https://www.dookbook.com/books/",
+      "description": "",
+      "categoryId": 4,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 407,
+      "name": "书摘",
+      "url": "https://share.lovejade.cn/",
+      "description": "",
+      "categoryId": 11,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 408,
+      "name": "人物专题",
+      "url": "https://people.cctv.com/",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 409,
+      "name": "人物专题",
+      "url": "https://www.globalpeople.com.cn/306475/index.html",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 410,
+      "name": "时代在线",
+      "url": "https://www.time-weekly.com/post/326061",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 411,
+      "name": "尼尔森数据调查",
+      "url": "https://nielseniq.cn/global/zh/",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 412,
+      "name": "华夏时报",
+      "url": "http://www.chinesetimes.info/",
+      "description": "",
+      "categoryId": 4,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 413,
+      "name": "博看",
+      "url": "https://new.bookan.com.cn/page/index.html",
+      "description": "",
+      "categoryId": 4,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 414,
+      "name": "超星期刊",
+      "url": "https://qikan.chaoxing.com/",
+      "description": "",
+      "categoryId": 4,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 415,
+      "name": "医学权威资讯",
+      "url": "https://cardiology.medsci.cn/article/list.do?s_id=2",
+      "description": "",
+      "categoryId": 9,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 416,
+      "name": "MSN",
+      "url": "https://www.msn.cn/zh-cn/news/other/%E9%93%B6%E8%A1%8C%E7%BB%8F%E7%90%86%E5%9D%A6%E8%A8%80-%E5%BD%93%E4%B8%AA%E4%BA%BA%E5%AD%98%E6%AC%BE%E8%B6%85%E8%BF%87%E8%BF%99%E4%B8%AA%E6%95%B0-%E5%B0%B1%E5%B7%B2%E8%B6%85%E8%BF%87%E4%BA%8698-%E7%9A%84%E5%AE%B6%E5%BA%AD/ar-AA1WfFbj?ocid=msedgntp&pc=U531&cvid=69a675e4bc9b478f86fdc163b330cb99&ei=13",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 417,
+      "name": "中国时报",
+      "url": "https://www.chinatimes.com/cn/newspapers/260120?chdtv",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 418,
+      "name": "中国商业周刊网",
+      "url": "http://www.syzkwang.com/",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 419,
+      "name": "百度产品",
+      "url": "https://www.baidu.com/more/",
+      "description": "",
+      "categoryId": 11,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 420,
+      "name": "搜狗产品",
+      "url": "https://www.sogou.com/docs/more.htm?p=70331801",
+      "description": "",
+      "categoryId": 11,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 421,
+      "name": "搜狗知识",
+      "url": "https://zhishi.sogou.com/",
+      "description": "",
+      "categoryId": 11,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 422,
+      "name": "春晚",
+      "url": "https://www.cctv.com/000/#",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 423,
+      "name": "中国政府网",
+      "url": "https://www.gov.cn/",
+      "description": "国家级总平台（最权威）",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 424,
+      "name": "国家发改委",
+      "url": "https://www.ndrc.gov.cn/",
+      "description": "宏观经济、规划、投资",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 425,
+      "name": "财政部",
+      "url": "https://www.mof.gov.cn/index.htm",
+      "description": "财税、补贴、政府债务",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 426,
+      "name": "商务部",
+      "url": "https://www.mofcom.gov.cn/",
+      "description": "外贸、外资、消费",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 427,
+      "name": "中国科学院",
+      "url": "http://www.bulletin.cas.cn/BCAS_CH/issue",
+      "description": "",
+      "categoryId": 2,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 428,
+      "name": "中国出版集团",
+      "url": "http://book.cnpubg.com/?app=book&controller=book&action=newbooks",
+      "description": "",
+      "categoryId": 4,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 429,
+      "name": "时事政治",
+      "url": "https://www.rmlt.com.cn/eco/",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 430,
+      "name": "人民网论坛",
+      "url": "https://rmlt.com.cn/",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 431,
+      "name": "人民论坛",
+      "url": "http://opinion.people.com.cn/GB/8213/49160/49220/index1.html",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 432,
+      "name": "中国经济网",
+      "url": "http://www.ce.cn/",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 433,
+      "name": "最新政策",
+      "url": "https://www.gov.cn/zhengce/index.htm",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 434,
+      "name": "诺贝尔文学奖",
+      "url": "https://www.nobelpress.org/",
+      "description": "",
+      "categoryId": 4,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 435,
+      "name": "微信读书",
+      "url": "https://weread.qq.com/web/category/1700000",
+      "description": "",
+      "categoryId": 4,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 436,
+      "name": "经济观察网",
+      "url": "https://www.eeo.com.cn/jg/chuhai/",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 437,
+      "name": "纽约时报",
+      "url": "https://www.cgtn.com/",
+      "description": "",
+      "categoryId": 4,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 438,
+      "name": "每日快讯",
+      "url": "https://www.jiemian.com/lists/85.html",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 439,
+      "name": "亿欧快讯",
+      "url": "https://www.iyiou.com/briefing",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 440,
+      "name": "上海译文出版社",
+      "url": "https://www.yiwen.com.cn/book",
+      "description": "",
+      "categoryId": 4,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 441,
+      "name": "搜狗百科",
+      "url": "https://baike.sogou.com/",
+      "description": "",
+      "categoryId": 11,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 442,
+      "name": "有来医生",
+      "url": "https://www.youlai.cn/dise/",
+      "description": "",
+      "categoryId": 9,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 443,
+      "name": "搜狗搜索",
+      "url": "https://www.sogou.com/",
+      "description": "",
+      "categoryId": 11,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 444,
+      "name": "搜狗搜索",
+      "url": "https://www.sogou.com/",
+      "description": "",
+      "categoryId": 11,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 445,
+      "name": "蜻蜓fm",
+      "url": "https://www.qtfm.cn/",
+      "description": "",
+      "categoryId": 17,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 446,
+      "name": "意林杂志",
+      "url": "https://www.yilinzazhi.com/2025/202515/index.html",
+      "description": "",
+      "categoryId": 4,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 447,
+      "name": "去水印",
+      "url": "https://pic.360.com/tools/image-editor/replacebg?src=idimage&srcg=bing4",
+      "description": "",
+      "categoryId": 11,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 448,
+      "name": "点点分析",
+      "url": "https://app.diandian.com/",
+      "description": "",
+      "categoryId": 11,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 449,
+      "name": "经济观察网",
+      "url": "https://www.eeo.com.cn/",
+      "description": "",
+      "categoryId": 1,
+      "icon": "/icons/default.svg"
+    },
+    {
+      "id": 450,
+      "name": "人民文学出版社",
+      "url": "http://book.cnpubg.com/?app=book&controller=book&action=newbooks&typeid=180",
+      "description": "",
+      "categoryId": 4,
       "icon": "/icons/default.svg"
     }
   ]
