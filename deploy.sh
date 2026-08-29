@@ -108,6 +108,9 @@ if command -v pm2 >/dev/null 2>&1; then
     info "pm2 重启 $APP_NAME..."
     EDIT_PASSWORD="${EDIT_PASSWORD:-}" pm2 restart "$APP_NAME" --update-env
   else
+    # 若之前有 nohup 方式启动的进程，先停掉，避免占用端口导致 pm2 启动失败
+    pkill -f "node nav-server.js" 2>/dev/null || true
+    sleep 1
     info "pm2 首次启动 $APP_NAME..."
     EDIT_PASSWORD="${EDIT_PASSWORD:-}" pm2 start nav-server.js --name "$APP_NAME"
     pm2 save
