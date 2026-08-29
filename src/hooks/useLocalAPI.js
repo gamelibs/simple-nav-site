@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react';
 
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:15001/api';
 
+// 读取已保存的编辑令牌（编辑模式密码验证通过后写入 localStorage）
+const getEditToken = () => localStorage.getItem('editToken') || '';
+
 export const useLocalAPI = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -39,6 +42,7 @@ export const useLocalAPI = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'x-edit-token': getEditToken(),
         },
         body: JSON.stringify(siteData),
       });
@@ -70,6 +74,7 @@ export const useLocalAPI = () => {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
+          'x-edit-token': getEditToken(),
         },
         body: JSON.stringify(siteData),
       });
@@ -99,6 +104,9 @@ export const useLocalAPI = () => {
       
       const response = await fetch(`${API_BASE_URL}/sites/${siteId}`, {
         method: 'DELETE',
+        headers: {
+          'x-edit-token': getEditToken(),
+        },
       });
       
       const result = await response.json();
@@ -128,6 +136,7 @@ export const useLocalAPI = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'x-edit-token': getEditToken(),
         },
         body: JSON.stringify(categoryData),
       });
@@ -149,6 +158,28 @@ export const useLocalAPI = () => {
     }
   };
 
+  // 验证编辑权限：接受 { password } 或 { token }，通过则返回编辑令牌
+  const verifyEditAccess = async (payload) => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/auth/verify`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        return { success: true, token: result.token };
+      }
+      return { success: false, error: result.error || '验证失败' };
+    } catch (err) {
+      return { success: false, error: err.message };
+    }
+  };
+
   // 初始化时获取数据
   useEffect(() => {
     fetchData();
@@ -163,5 +194,6 @@ export const useLocalAPI = () => {
     editSite,
     deleteSite,
     addCategory,
+    verifyEditAccess,
   };
 };

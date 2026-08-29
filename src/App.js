@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo, useRef } from 'react';
 import data from './data.json';
 import { useLocalStorage, useDebounce } from './hooks';
 import { SiteCard, CategoryButton, EmptyState } from './components';
-import { EditModeToolbar, EditSiteModal, EditCategoryModal, Notification } from './EditComponents';
+import { EditModeToolbar, EditSiteModal, EditCategoryModal, EditPasswordModal, Notification } from './EditComponents';
 import { useLocalAPI } from './hooks/useLocalAPI';
 
 // 站外搜索引擎配置（"站内"为 null，表示过滤已收录网站）
@@ -34,6 +34,10 @@ const App = () => {
   const [editingSite, setEditingSite] = useState(null);
   const [showCategoryModal, setShowCategoryModal] = useState(false);
   const [notification, setNotification] = useState(null);
+
+  // 编辑鉴权状态：令牌持久化，密码框默认关闭
+  const [editToken, setEditToken] = useLocalStorage('editToken', '');
+  const [showPasswordModal, setShowPasswordModal] = useState(false);
   
   // 本地API数据管理
   const { 
@@ -43,7 +47,8 @@ const App = () => {
     addSite, 
     editSite, 
     deleteSite,
-    addCategory
+    addCategory,
+    verifyEditAccess
   } = useLocalAPI();
   
   const debouncedSearchTerm = useDebounce(searchTerm, 300);
@@ -115,12 +120,9 @@ const App = () => {
     const urlParams = new URLSearchParams(window.location.search);
     const editParam = urlParams.get('edit');
     if (editParam === '1' || editParam === 'true') {
-      setIsEditMode(true);
-      setNotification({ 
-        message: '编辑模式已通过URL参数启用', 
-        type: 'success' 
-      });
+      requestEditMode();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // 监听滚动事件，控制回到顶部按钮显示
@@ -202,6 +204,44 @@ const App = () => {
     }
   };
 
+  // 请求进入编辑模式：已有令牌先向服务端验证，否则弹出密码框
+  const requestEditMode = async () => {
+    if (editToken) {
+      const result = await verifyEditAccess({ token: editToken });
+      if (result.success) {
+        setIsEditMode(true);
+        setNotification({ message: '编辑模式已开启', type: 'success' });
+        return;
+      }
+      // 令牌失效（如密码已修改），清除后重新输入密码
+      setEditToken('');
+    }
+    setShowPasswordModal(true);
+  };
+
+  // 切换编辑模式：进入需密码验证，退出直接关闭
+  const toggleEditMode = () => {
+    if (isEditMode) {
+      setIsEditMode(false);
+      setNotification({ message: '编辑模式已关闭', type: 'success' });
+    } else {
+      requestEditMode();
+    }
+  };
+
+  // 密码弹窗提交：返回 true 表示服务端验证通过
+  const handlePasswordSubmit = async (password) => {
+    const result = await verifyEditAccess({ password });
+    if (result.success) {
+      setEditToken(result.token);
+      setShowPasswordModal(false);
+      setIsEditMode(true);
+      setNotification({ message: '🎉 验证成功，编辑模式已开启', type: 'success' });
+      return true;
+    }
+    return false;
+  };
+
   const handleCategoryChange = (categoryId) => {
     setActiveCategory(categoryId);
     setSearchTerm(''); // 切换分类时清空搜索
@@ -232,11 +272,7 @@ const App = () => {
       // Ctrl+E (Windows/Linux) 或 Cmd+E (Mac) 切换编辑模式
       if ((event.ctrlKey || event.metaKey) && event.key === 'e') {
         event.preventDefault();
-        setIsEditMode(!isEditMode);
-        setNotification({ 
-          message: `编辑模式${!isEditMode ? '已开启' : '已关闭'}`, 
-          type: 'success' 
-        });
+        toggleEditMode();
       }
       
       // 连续按 3 次 E 键也可以切换编辑模式
@@ -252,17 +288,14 @@ const App = () => {
         // 如果 3 秒内按了 3 次 E
         if (recentPresses.length >= 3) {
           localStorage.removeItem('keyPresses');
-          setIsEditMode(!isEditMode);
-          setNotification({ 
-            message: `🎉 编辑模式${!isEditMode ? '已开启' : '已关闭'}！`, 
-            type: 'success' 
-          });
+          toggleEditMode();
         }
       }
     };
 
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isEditMode]);
 
   return (
@@ -275,14 +308,10 @@ const App = () => {
                 <h1 
                   className="text-2xl font-bold gradient-text cursor-pointer select-none"
                   onMouseDown={(e) => {
-                    // 长按标题3秒激活编辑模式
+                    // 长按标题3秒激活编辑模式（需密码验证）
                     const timer = setTimeout(() => {
                       if (!isEditMode) {
-                        setIsEditMode(true);
-                        setNotification({ 
-                          message: '🎉 隐藏的编辑模式已激活！', 
-                          type: 'success' 
-                        });
+                        requestEditMode();
                       }
                     }, 3000);
                     
@@ -636,6 +665,15 @@ const App = () => {
           isOpen={showCategoryModal}
           onClose={() => setShowCategoryModal(false)}
           onSave={handleSaveCategory}
+        />
+      )}
+
+      {/* 编辑模式密码验证弹窗 */}
+      {showPasswordModal && (
+        <EditPasswordModal
+          isOpen={showPasswordModal}
+          onClose={() => setShowPasswordModal(false)}
+          onSubmit={handlePasswordSubmit}
         />
       )}
 

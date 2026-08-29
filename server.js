@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const compression = require('compression');
+const crypto = require('crypto');
 const fs = require('fs-extra');
 const path = require('path');
 
@@ -28,6 +29,46 @@ app.use(cors({
   },
 }));
 app.use(express.json());
+
+// ============ 编辑模式鉴权（服务端硬锁） ============
+// 编辑密码只存在于服务端，通过环境变量 EDIT_PASSWORD 配置
+const EDIT_PASSWORD = process.env.EDIT_PASSWORD || 'nav-edit-2026';
+// 由密码派生的无状态编辑令牌（HMAC-SHA256），前端持有令牌即可操作写接口
+const EDIT_TOKEN = crypto.createHmac('sha256', EDIT_PASSWORD).update('edit-mode-token').digest('hex');
+
+if (!process.env.EDIT_PASSWORD) {
+  console.log('⚠️  未设置 EDIT_PASSWORD 环境变量，正在使用默认编辑密码，上线请务必配置');
+}
+
+// 恒时比较，防止时序侧信道
+const safeEqual = (a, b) => {
+  const bufA = Buffer.from(String(a || ''));
+  const bufB = Buffer.from(String(b || ''));
+  return bufA.length === bufB.length && crypto.timingSafeEqual(bufA, bufB);
+};
+
+// 写接口鉴权中间件：令牌不匹配直接 401，数据不会被修改
+const requireEditAuth = (req, res, next) => {
+  if (safeEqual(req.get('x-edit-token'), EDIT_TOKEN)) {
+    return next();
+  }
+  return res.status(401).json({
+    success: false,
+    error: '未授权：请先在编辑模式中验证密码'
+  });
+};
+
+// 验证编辑密码（或已有令牌），通过则返回令牌
+app.post('/api/auth/verify', (req, res) => {
+  const { password, token } = req.body || {};
+  if (safeEqual(password, EDIT_PASSWORD) || safeEqual(token, EDIT_TOKEN)) {
+    return res.json({ success: true, token: EDIT_TOKEN });
+  }
+  return res.status(401).json({
+    success: false,
+    error: '密码错误'
+  });
+});
 
 // 托管静态文件 - 优先提供 build 目录的静态文件
 app.use(express.static(BUILD_PATH, {
@@ -88,7 +129,7 @@ app.get('/api/data', async (req, res) => {
 });
 
 // 添加新网站
-app.post('/api/sites', async (req, res) => {
+app.post('/api/sites', requireEditAuth, async (req, res) => {
   try {
     const { name, url, description, categoryId, icon } = req.body;
     
@@ -136,7 +177,7 @@ app.post('/api/sites', async (req, res) => {
 });
 
 // 更新网站
-app.put('/api/sites/:id', async (req, res) => {
+app.put('/api/sites/:id', requireEditAuth, async (req, res) => {
   try {
     const siteId = parseInt(req.params.id);
     const { name, url, description, categoryId, icon } = req.body;
@@ -183,7 +224,7 @@ app.put('/api/sites/:id', async (req, res) => {
 });
 
 // 删除网站
-app.delete('/api/sites/:id', async (req, res) => {
+app.delete('/api/sites/:id', requireEditAuth, async (req, res) => {
   try {
     const siteId = parseInt(req.params.id);
     
@@ -223,7 +264,7 @@ app.delete('/api/sites/:id', async (req, res) => {
 });
 
 // 添加新分类
-app.post('/api/categories', async (req, res) => {
+app.post('/api/categories', requireEditAuth, async (req, res) => {
   try {
     const { name, icon, description } = req.body;
     
