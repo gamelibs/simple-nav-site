@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:15001/api';
+// API 地址：生产环境走同源相对路径（由 Caddy 反代到后端），本地开发直连 15001
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL ||
+  (process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:15001/api');
 
 // 读取已保存的编辑令牌（编辑模式密码验证通过后写入 localStorage）
 const getEditToken = () => localStorage.getItem('editToken') || '';
