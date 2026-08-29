@@ -160,6 +160,68 @@ export const useLocalAPI = () => {
     }
   };
 
+  // 更新分类
+  const updateCategory = async (categoryId, categoryData) => {
+    try {
+      setLoading(true);
+      setError(null);
+
+      const response = await fetch(`${API_BASE_URL}/categories/${categoryId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-edit-token': getEditToken(),
+        },
+        body: JSON.stringify(categoryData),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        // 重新获取数据以更新本地状态
+        await fetchData();
+        return { success: true, data: result.data, message: result.message };
+      } else {
+        throw new Error(result.error || '更新分类失败');
+      }
+    } catch (err) {
+      setError(err.message);
+      return { success: false, error: err.message };
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // 删除分类（分类下有网站时服务端会拒绝）
+  const deleteCategory = async (categoryId) => {
+    try {
+      setLoading(true);
+      setError(null);
+
+      const response = await fetch(`${API_BASE_URL}/categories/${categoryId}`, {
+        method: 'DELETE',
+        headers: {
+          'x-edit-token': getEditToken(),
+        },
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        // 重新获取数据以更新本地状态
+        await fetchData();
+        return { success: true, data: result.data, message: result.message };
+      } else {
+        throw new Error(result.error || '删除分类失败');
+      }
+    } catch (err) {
+      setError(err.message);
+      return { success: false, error: err.message };
+    } finally {
+      setLoading(false);
+    }
+  };
+
   // 验证编辑权限：接受 { password } 或 { token }，通过则返回编辑令牌
   const verifyEditAccess = async (payload) => {
     try {
@@ -196,6 +258,8 @@ export const useLocalAPI = () => {
     editSite,
     deleteSite,
     addCategory,
+    updateCategory,
+    deleteCategory,
     verifyEditAccess,
   };
 };

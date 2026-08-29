@@ -70,7 +70,7 @@ const getHost = (url) => {
 };
 
 // 网站卡片组件 - 整卡可点击（编辑模式下为 div + 操作按钮）
-const SiteCard = memo(({ site, isVisible, delay = 0, isEditMode = false, isNew = false, onEdit, onDelete }) => {
+const SiteCard = memo(({ site, isVisible, delay = 0, isEditMode = false, isNew = false, onEdit, onDelete, onToggleFeatured }) => {
   const cardClassName = `card-hover relative block bg-white rounded-lg shadow-card p-4 border border-gray-100 transition-all duration-700 ease-out ${
     isVisible 
       ? 'opacity-100 translate-y-0 scale-100' 
@@ -100,11 +100,22 @@ const SiteCard = memo(({ site, isVisible, delay = 0, isEditMode = false, isNew =
     </div>
   );
 
-  // 编辑模式：不可跳转，显示编辑/删除按钮
+  // 编辑模式：不可跳转，显示推荐/编辑/删除按钮
   if (isEditMode) {
     return (
       <div className={cardClassName} style={cardStyle}>
         <div className="absolute top-2 right-2 flex space-x-1 z-10">
+          <button
+            onClick={() => onToggleFeatured(site)}
+            className={`p-1.5 text-white rounded-md transition-colors duration-200 ${
+              site.featured ? 'bg-amber-500 hover:bg-amber-600' : 'bg-gray-400 hover:bg-gray-500'
+            }`}
+            title={site.featured ? '取消首页推荐' : '推荐到首页精选区'}
+          >
+            <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2l2.9 6.26 6.6.57-5 4.36 1.5 6.46L12 16.9 5.99 19.65l1.5-6.46-5-4.36 6.6-.57L12 2z" />
+            </svg>
+          </button>
           <button
             onClick={() => onEdit(site)}
             className="p-1.5 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-200"
@@ -142,6 +153,12 @@ const SiteCard = memo(({ site, isVisible, delay = 0, isEditMode = false, isNew =
       {isNew && (
         <span className="absolute top-2 right-2 px-1.5 py-0.5 bg-emerald-500 text-white text-[10px] font-bold rounded shadow-sm">
           NEW
+        </span>
+      )}
+      {/* 推荐角标 */}
+      {site.featured && (
+        <span className={`absolute ${isNew ? 'top-7' : 'top-2'} right-2 px-1.5 py-0.5 bg-amber-500 text-white text-[10px] font-bold rounded shadow-sm`}>
+          荐
         </span>
       )}
       {cardBody}

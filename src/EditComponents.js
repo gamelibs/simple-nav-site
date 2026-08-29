@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 // 编辑模式工具栏组件
-export const EditModeToolbar = ({ isEditMode, onToggleEditMode, onAddSite, onAddCategory }) => {
+export const EditModeToolbar = ({ isEditMode, onToggleEditMode, onAddSite, onAddCategory, onExport }) => {
   if (!isEditMode) return null;
 
   return (
@@ -25,7 +25,17 @@ export const EditModeToolbar = ({ isEditMode, onToggleEditMode, onAddSite, onAdd
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 13h6m-3-3v6m-9 1V7a2 2 0 012-2h5l2 2h5a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
         </svg>
       </button>
-      
+
+      <button
+        onClick={onExport}
+        className="flex items-center justify-center w-14 h-14 bg-amber-500 text-white rounded-full shadow-lg hover:bg-amber-600 hover:shadow-xl transition-all duration-300 transform hover:scale-110 active:scale-95"
+        title="导出数据备份（JSON）"
+      >
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 4v12m0 0l-4-4m4 4l4-4" />
+        </svg>
+      </button>
+
       <button
         onClick={onToggleEditMode}
         className="flex items-center justify-center w-14 h-14 bg-red-500 text-white rounded-full shadow-lg hover:bg-red-600 hover:shadow-xl transition-all duration-300 transform hover:scale-110 active:scale-95"
@@ -46,7 +56,8 @@ export const EditSiteModal = ({ isOpen, onClose, onSave, site, categories }) => 
     url: '',
     description: '',
     categoryId: 1,
-    icon: '/icons/default.svg'
+    icon: '/icons/default.svg',
+    featured: false
   });
 
   const [errors, setErrors] = useState({});
@@ -60,7 +71,8 @@ export const EditSiteModal = ({ isOpen, onClose, onSave, site, categories }) => 
         url: site.url || '',
         description: site.description || '',
         categoryId: site.categoryId || 1,
-        icon: site.icon || '/icons/default.svg'
+        icon: site.icon || '/icons/default.svg',
+        featured: Boolean(site.featured)
       });
     } else {
       // 重置表单为默认值
@@ -69,7 +81,8 @@ export const EditSiteModal = ({ isOpen, onClose, onSave, site, categories }) => 
         url: '',
         description: '',
         categoryId: 1,
-        icon: '/icons/default.svg'
+        icon: '/icons/default.svg',
+        featured: false
       });
     }
     setErrors({});
@@ -253,6 +266,21 @@ export const EditSiteModal = ({ isOpen, onClose, onSave, site, categories }) => 
               </p>
             </div>
 
+            {/* 推荐到首页精选区 */}
+            <div className="flex items-center">
+              <input
+                id="featured-checkbox"
+                type="checkbox"
+                checked={formData.featured}
+                onChange={(e) => handleInputChange('featured', e.target.checked)}
+                className="w-4 h-4 text-amber-500 border-gray-300 rounded focus:ring-amber-500"
+                disabled={isSubmitting}
+              />
+              <label htmlFor="featured-checkbox" className="ml-2 text-sm text-gray-700 select-none cursor-pointer">
+                ⭐ 推荐到首页「精选推荐」区
+              </label>
+            </div>
+
             {/* 操作按钮 */}
             <div className="flex space-x-3 pt-4">
               <button
@@ -288,8 +316,8 @@ export const EditSiteModal = ({ isOpen, onClose, onSave, site, categories }) => 
   );
 };
 
-// 添加分类模态框组件
-export const EditCategoryModal = ({ isOpen, onClose, onSave }) => {
+// 分类模态框组件（添加 / 编辑 / 删除）
+export const EditCategoryModal = ({ isOpen, onClose, onSave, onDelete, category }) => {
   const [formData, setFormData] = useState({
     name: '',
     icon: '',
@@ -297,14 +325,23 @@ export const EditCategoryModal = ({ isOpen, onClose, onSave }) => {
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isDeleting, setIsDeleting] = useState(false);
 
-  // 打开时重置表单
+  // 打开时：编辑现有分类则预填，否则重置为空表单
   useEffect(() => {
     if (isOpen) {
-      setFormData({ name: '', icon: '', description: '' });
+      if (category) {
+        setFormData({
+          name: category.name || '',
+          icon: category.icon || '',
+          description: category.description || ''
+        });
+      } else {
+        setFormData({ name: '', icon: '', description: '' });
+      }
       setErrors({});
     }
-  }, [isOpen]);
+  }, [isOpen, category]);
 
   const validateForm = () => {
     const newErrors = {};
@@ -332,6 +369,23 @@ export const EditCategoryModal = ({ isOpen, onClose, onSave }) => {
     }
   };
 
+  // 删除分类：二次确认；分类下还有网站时展示服务端返回的错误
+  const handleDelete = async () => {
+    if (!window.confirm(`确定要删除分类「${category.name}」吗？此操作不可恢复。`)) {
+      return;
+    }
+    setIsDeleting(true);
+    setErrors({});
+    try {
+      const result = await onDelete(category.id);
+      if (!result?.success) {
+        setErrors({ delete: result?.error || '删除失败' });
+      }
+    } finally {
+      setIsDeleting(false);
+    }
+  };
+
   const handleInputChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));
     if (errors[field]) {
@@ -346,11 +400,13 @@ export const EditCategoryModal = ({ isOpen, onClose, onSave }) => {
       <div className="bg-white rounded-xl shadow-2xl w-full max-w-md">
         <div className="p-6">
           <div className="flex items-center justify-between mb-6">
-            <h3 className="text-xl font-semibold text-gray-900">添加新分类</h3>
+            <h3 className="text-xl font-semibold text-gray-900">
+              {category ? '编辑分类' : '添加新分类'}
+            </h3>
             <button
               onClick={onClose}
               className="text-gray-400 hover:text-gray-600 transition-colors duration-200"
-              disabled={isSubmitting}
+              disabled={isSubmitting || isDeleting}
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -372,7 +428,7 @@ export const EditCategoryModal = ({ isOpen, onClose, onSave }) => {
                   errors.name ? 'border-red-500' : 'border-gray-300'
                 }`}
                 placeholder="例如：AI工具"
-                disabled={isSubmitting}
+                disabled={isSubmitting || isDeleting}
               />
               {errors.name && (
                 <p className="text-red-500 text-xs mt-1">{errors.name}</p>
@@ -393,7 +449,7 @@ export const EditCategoryModal = ({ isOpen, onClose, onSave }) => {
                     errors.icon ? 'border-red-500' : 'border-gray-300'
                   }`}
                   placeholder="例如：🤖"
-                  disabled={isSubmitting}
+                  disabled={isSubmitting || isDeleting}
                 />
                 {formData.icon && (
                   <span className="text-3xl flex-shrink-0">{formData.icon}</span>
@@ -415,26 +471,41 @@ export const EditCategoryModal = ({ isOpen, onClose, onSave }) => {
                 onChange={(e) => handleInputChange('description', e.target.value)}
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200"
                 placeholder="一句话介绍这个分类（可选）"
-                disabled={isSubmitting}
+                disabled={isSubmitting || isDeleting}
               />
             </div>
 
+            {/* 删除错误提示（如分类下还有网站） */}
+            {errors.delete && (
+              <p className="text-red-500 text-sm bg-red-50 rounded-lg px-3 py-2">{errors.delete}</p>
+            )}
+
             {/* 操作按钮 */}
             <div className="flex space-x-3 pt-4">
+              {category && (
+                <button
+                  type="button"
+                  onClick={handleDelete}
+                  disabled={isSubmitting || isDeleting}
+                  className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors duration-200 disabled:bg-red-300 disabled:cursor-not-allowed"
+                >
+                  {isDeleting ? '删除中...' : '删除'}
+                </button>
+              )}
               <button
                 type="button"
                 onClick={onClose}
                 className="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-200"
-                disabled={isSubmitting}
+                disabled={isSubmitting || isDeleting}
               >
                 取消
               </button>
               <button
                 type="submit"
-                disabled={isSubmitting}
+                disabled={isSubmitting || isDeleting}
                 className="flex-1 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors duration-200 disabled:bg-blue-300 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? '保存中...' : '添加'}
+                {isSubmitting ? '保存中...' : (category ? '更新' : '添加')}
               </button>
             </div>
           </form>

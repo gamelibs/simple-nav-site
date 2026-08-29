@@ -33,21 +33,24 @@ const App = () => {
   const [showEditModal, setShowEditModal] = useState(false);
   const [editingSite, setEditingSite] = useState(null);
   const [showCategoryModal, setShowCategoryModal] = useState(false);
+  const [editingCategory, setEditingCategory] = useState(null);
   const [notification, setNotification] = useState(null);
 
   // 编辑鉴权状态：令牌持久化，密码框默认关闭
   const [editToken, setEditToken] = useLocalStorage('editToken', '');
   const [showPasswordModal, setShowPasswordModal] = useState(false);
-  
+
   // 本地API数据管理
-  const { 
-    data: apiData, 
-    loading: apiLoading, 
+  const {
+    data: apiData,
+    loading: apiLoading,
     error: apiError,
-    addSite, 
-    editSite, 
+    addSite,
+    editSite,
     deleteSite,
     addCategory,
+    updateCategory,
+    deleteCategory,
     verifyEditAccess
   } = useLocalAPI();
   
@@ -69,6 +72,12 @@ const App = () => {
   const newSiteIds = useMemo(
     () => new Set(latestSites.map((site) => site.id)),
     [latestSites]
+  );
+
+  // 精选推荐：编辑模式中手动标记 featured 的站点，存在时替换首页"最新收录"区
+  const featuredSites = useMemo(
+    () => currentData.sites.filter((site) => site.featured).sort((a, b) => b.id - a.id).slice(0, 8),
+    [currentData]
   );
 
   // 每个分类下的站点数量（用于分类栏计数显示）
@@ -247,15 +256,71 @@ const App = () => {
     setSearchTerm(''); // 切换分类时清空搜索
   };
 
-  // 添加分类处理函数
+  // 分类处理函数：添加或更新
   const handleSaveCategory = async (formData) => {
-    const result = await addCategory(formData);
-    if (result.success) {
-      setNotification({ message: `分类 "${formData.name}" 添加成功！`, type: 'success' });
+    if (editingCategory) {
+      const result = await updateCategory(editingCategory.id, formData);
+      if (result.success) {
+        setNotification({ message: `分类 "${formData.name}" 更新成功！`, type: 'success' });
+      } else {
+        setNotification({ message: `更新失败: ${result.error}`, type: 'error' });
+      }
     } else {
-      setNotification({ message: `添加失败: ${result.error}`, type: 'error' });
+      const result = await addCategory(formData);
+      if (result.success) {
+        setNotification({ message: `分类 "${formData.name}" 添加成功！`, type: 'success' });
+      } else {
+        setNotification({ message: `添加失败: ${result.error}`, type: 'error' });
+      }
     }
     setShowCategoryModal(false);
+    setEditingCategory(null);
+  };
+
+  // 打开分类编辑弹窗
+  const handleEditCategory = (category) => {
+    setEditingCategory(category);
+    setShowCategoryModal(true);
+  };
+
+  // 删除分类（分类下有网站时服务端拒绝，错误信息交给弹窗展示）
+  const handleDeleteCategory = async (categoryId) => {
+    const result = await deleteCategory(categoryId);
+    if (result.success) {
+      if (activeCategory === categoryId) {
+        setActiveCategory(0);
+      }
+      setNotification({ message: '分类删除成功！', type: 'success' });
+      setShowCategoryModal(false);
+      setEditingCategory(null);
+    }
+    return result;
+  };
+
+  // 切换站点首页推荐状态
+  const handleToggleFeatured = async (site) => {
+    const result = await editSite(site.id, { featured: !site.featured });
+    if (result.success) {
+      setNotification({
+        message: site.featured ? `已取消「${site.name}」的首页推荐` : `「${site.name}」已推荐到首页精选区`,
+        type: 'success'
+      });
+    } else {
+      setNotification({ message: `操作失败: ${result.error}`, type: 'error' });
+    }
+  };
+
+  // 导出数据备份（下载当前最新数据为 JSON 文件）
+  const handleExportData = () => {
+    const blob = new Blob([JSON.stringify(currentData, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    const date = new Date().toISOString().slice(0, 10).replace(/-/g, '');
+    link.href = url;
+    link.download = `nav-data-backup-${date}.json`;
+    link.click();
+    URL.revokeObjectURL(url);
+    setNotification({ message: '数据备份已导出', type: 'success' });
   };
 
   const handleSearch = (term) => {
@@ -402,13 +467,24 @@ const App = () => {
             <span className="mr-1">🌟</span>
             全部
           </button>
-          {data.categories.map((category) => (
-            <span key={category.id} className="flex-shrink-0">
+          {currentData.categories.map((category) => (
+            <span key={category.id} className="flex-shrink-0 inline-flex items-center">
               <CategoryButton
                 category={category}
                 isActive={activeCategory === category.id}
                 onClick={handleCategoryChange}
               />
+              {isEditMode && (
+                <button
+                  onClick={() => handleEditCategory(category)}
+                  className="ml-1 p-1 text-gray-400 hover:text-blue-500 transition-colors duration-200"
+                  title={`编辑分类「${category.name}」`}
+                >
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                  </svg>
+                </button>
+              )}
             </span>
           ))}
         </nav>
@@ -432,24 +508,36 @@ const App = () => {
                 {currentData.sites.length}
               </span>
             </button>
-            {data.categories.map((category) => (
-              <button
-                key={category.id}
-                onClick={() => handleCategoryChange(category.id)}
-                className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm transition-colors duration-200 ${
-                  activeCategory === category.id
-                    ? 'bg-primary-blue text-white shadow-sm'
-                    : 'text-gray-700 hover:bg-gray-100'
-                }`}
-              >
-                <span className="flex items-center min-w-0">
-                  <span className="mr-2 flex-shrink-0">{category.icon}</span>
-                  <span className="truncate">{category.name}</span>
-                </span>
-                <span className={`ml-2 text-xs flex-shrink-0 ${activeCategory === category.id ? 'text-blue-100' : 'text-gray-400'}`}>
-                  {categoryCounts[category.id] || 0}
-                </span>
-              </button>
+            {currentData.categories.map((category) => (
+              <div key={category.id} className="group relative">
+                <button
+                  onClick={() => handleCategoryChange(category.id)}
+                  className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm transition-colors duration-200 ${
+                    activeCategory === category.id
+                      ? 'bg-primary-blue text-white shadow-sm'
+                      : 'text-gray-700 hover:bg-gray-100'
+                  }`}
+                >
+                  <span className="flex items-center min-w-0">
+                    <span className="mr-2 flex-shrink-0">{category.icon}</span>
+                    <span className="truncate">{category.name}</span>
+                  </span>
+                  <span className={`ml-2 text-xs flex-shrink-0 ${activeCategory === category.id ? 'text-blue-100' : 'text-gray-400'}`}>
+                    {categoryCounts[category.id] || 0}
+                  </span>
+                </button>
+                {isEditMode && (
+                  <button
+                    onClick={() => handleEditCategory(category)}
+                    className="absolute right-8 top-1/2 -translate-y-1/2 p-1 text-gray-400 hover:text-blue-500 transition-colors duration-200"
+                    title={`编辑分类「${category.name}」`}
+                  >
+                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                    </svg>
+                  </button>
+                )}
+              </div>
             ))}
           </nav>
         </aside>
@@ -506,23 +594,28 @@ const App = () => {
           </div>
         )}
 
-        {/* 最新收录分区 - 仅在"全部"分类且无搜索时显示 */}
-        {activeCategory === 0 && !debouncedSearchTerm && latestSites.length > 0 && (
+        {/* 首页推荐分区 - 仅在"全部"分类且无搜索时显示：有精选站点则显示精选，否则回退为最新收录 */}
+        {activeCategory === 0 && !debouncedSearchTerm && (featuredSites.length > 0 || latestSites.length > 0) && (
           <section className="mb-8">
             <h2 className="text-base font-semibold text-gray-900 mb-3 flex items-center">
-              <span className="mr-2">🆕</span>最新收录
+              {featuredSites.length > 0 ? (
+                <><span className="mr-2">⭐</span>精选推荐</>
+              ) : (
+                <><span className="mr-2">🆕</span>最新收录</>
+              )}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
-              {latestSites.map((site, index) => (
+              {(featuredSites.length > 0 ? featuredSites : latestSites).map((site, index) => (
                 <SiteCard
-                  key={`latest-${site.id}`}
+                  key={`featured-${site.id}`}
                   site={site}
                   isVisible={true}
                   delay={index * 50}
                   isEditMode={isEditMode}
-                  isNew={true}
+                  isNew={featuredSites.length === 0 || newSiteIds.has(site.id)}
                   onEdit={handleEditSite}
                   onDelete={handleDeleteSite}
+                  onToggleFeatured={handleToggleFeatured}
                 />
               ))}
             </div>
@@ -564,6 +657,7 @@ const App = () => {
                   isNew={newSiteIds.has(site.id)}
                   onEdit={handleEditSite}
                   onDelete={handleDeleteSite}
+                  onToggleFeatured={handleToggleFeatured}
                 />
               </div>
             ))}
@@ -655,16 +749,25 @@ const App = () => {
           isEditMode={isEditMode}
           onToggleEditMode={() => setIsEditMode(!isEditMode)}
           onAddSite={handleAddSite}
-          onAddCategory={() => setShowCategoryModal(true)}
+          onAddCategory={() => {
+            setEditingCategory(null);
+            setShowCategoryModal(true);
+          }}
+          onExport={handleExportData}
         />
       )}
 
-      {/* 添加分类模态框 */}
+      {/* 分类模态框（添加/编辑/删除） */}
       {showCategoryModal && (
         <EditCategoryModal
           isOpen={showCategoryModal}
-          onClose={() => setShowCategoryModal(false)}
+          onClose={() => {
+            setShowCategoryModal(false);
+            setEditingCategory(null);
+          }}
           onSave={handleSaveCategory}
+          onDelete={handleDeleteCategory}
+          category={editingCategory}
         />
       )}
 
