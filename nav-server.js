@@ -180,7 +180,7 @@ app.post('/api/sites', requireEditAuth, async (req, res) => {
 app.put('/api/sites/:id', requireEditAuth, async (req, res) => {
   try {
     const siteId = parseInt(req.params.id);
-    const { name, url, description, categoryId, icon } = req.body;
+    const { name, url, description, categoryId, icon, featured } = req.body;
 
     const data = await readDataFile();
 
@@ -201,7 +201,8 @@ app.put('/api/sites/:id', requireEditAuth, async (req, res) => {
       ...(url && { url }),
       ...(description !== undefined && { description }),
       ...(categoryId && { categoryId: parseInt(categoryId) }),
-      ...(icon && { icon })
+      ...(icon && { icon }),
+      ...(featured !== undefined && { featured: Boolean(featured) })
     };
 
     data.sites[siteIndex] = updatedSite;
@@ -308,7 +309,52 @@ app.post('/api/categories', requireEditAuth, async (req, res) => {
   }
 });
 
-// 删除分类（需鉴权）
+// 更新分类（需鉴权）
+app.put('/api/categories/:id', requireEditAuth, async (req, res) => {
+  try {
+    const categoryId = parseInt(req.params.id);
+    const { name, icon, description } = req.body;
+
+    const data = await readDataFile();
+
+    // 找到要更新的分类
+    const categoryIndex = data.categories.findIndex(cat => cat.id === categoryId);
+
+    if (categoryIndex === -1) {
+      return res.status(404).json({
+        success: false,
+        error: '分类不存在'
+      });
+    }
+
+    // 更新分类信息
+    const updatedCategory = {
+      ...data.categories[categoryIndex],
+      ...(name && { name }),
+      ...(icon && { icon }),
+      ...(description !== undefined && { description })
+    };
+
+    data.categories[categoryIndex] = updatedCategory;
+
+    // 保存数据
+    await writeDataFile(data);
+
+    res.json({
+      success: true,
+      data: updatedCategory,
+      message: `分类 "${updatedCategory.name}" 更新成功`
+    });
+
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message
+    });
+  }
+});
+
+// 删除分类（需鉴权；分类下还有网站时拒绝删除）
 app.delete('/api/categories/:id', requireEditAuth, async (req, res) => {
   try {
     const categoryId = parseInt(req.params.id);
