@@ -168,6 +168,14 @@ const App = () => {
     setIsLoading(false);
   }, [activeCategory, debouncedSearchTerm, currentData]);
 
+  // 写操作返回 401（令牌失效）时：清除令牌、退出编辑模式并重新弹出密码框
+  const handleUnauthorized = () => {
+    setEditToken('');
+    setIsEditMode(false);
+    setShowPasswordModal(true);
+    setNotification({ message: '登录状态已失效，请重新验证密码', type: 'error' });
+  };
+
   // 编辑功能处理函数
   const handleAddSite = () => {
     setEditingSite(null);
@@ -198,8 +206,16 @@ const App = () => {
         setNotification({ message: `添加失败: ${result.error}`, type: 'error' });
       }
     }
-    setShowEditModal(false);
-    setEditingSite(null);
+    // 令牌失效：保留弹窗内容，重新弹出密码验证
+    if (result.unauthorized) {
+      handleUnauthorized();
+      return;
+    }
+    // 仅成功时关闭弹窗，失败保留已填写的表单内容
+    if (result.success) {
+      setShowEditModal(false);
+      setEditingSite(null);
+    }
   };
 
   const handleDeleteSite = async (siteId) => {
@@ -207,6 +223,8 @@ const App = () => {
       const result = await deleteSite(siteId);
       if (result.success) {
         setNotification({ message: '网站删除成功！', type: 'success' });
+      } else if (result.unauthorized) {
+        handleUnauthorized();
       } else {
         setNotification({ message: `删除失败: ${result.error}`, type: 'error' });
       }
@@ -258,23 +276,30 @@ const App = () => {
 
   // 分类处理函数：添加或更新
   const handleSaveCategory = async (formData) => {
+    let result;
     if (editingCategory) {
-      const result = await updateCategory(editingCategory.id, formData);
+      result = await updateCategory(editingCategory.id, formData);
       if (result.success) {
         setNotification({ message: `分类 "${formData.name}" 更新成功！`, type: 'success' });
       } else {
         setNotification({ message: `更新失败: ${result.error}`, type: 'error' });
       }
     } else {
-      const result = await addCategory(formData);
+      result = await addCategory(formData);
       if (result.success) {
         setNotification({ message: `分类 "${formData.name}" 添加成功！`, type: 'success' });
       } else {
         setNotification({ message: `添加失败: ${result.error}`, type: 'error' });
       }
     }
-    setShowCategoryModal(false);
-    setEditingCategory(null);
+    if (result.unauthorized) {
+      handleUnauthorized();
+      return;
+    }
+    if (result.success) {
+      setShowCategoryModal(false);
+      setEditingCategory(null);
+    }
   };
 
   // 打开分类编辑弹窗
@@ -293,6 +318,8 @@ const App = () => {
       setNotification({ message: '分类删除成功！', type: 'success' });
       setShowCategoryModal(false);
       setEditingCategory(null);
+    } else if (result.unauthorized) {
+      handleUnauthorized();
     }
     return result;
   };
@@ -305,6 +332,8 @@ const App = () => {
         message: site.featured ? `已取消「${site.name}」的首页推荐` : `「${site.name}」已推荐到首页精选区`,
         type: 'success'
       });
+    } else if (result.unauthorized) {
+      handleUnauthorized();
     } else {
       setNotification({ message: `操作失败: ${result.error}`, type: 'error' });
     }

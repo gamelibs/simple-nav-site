@@ -4,8 +4,22 @@ import { useState, useEffect } from 'react';
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL ||
   (process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:15001/api');
 
-// 读取已保存的编辑令牌（编辑模式密码验证通过后写入 localStorage）
-const getEditToken = () => localStorage.getItem('editToken') || '';
+// 读取已保存的编辑令牌（useLocalStorage 以 JSON 形式存储，需要解析去掉引号）
+const getEditToken = () => {
+  const raw = localStorage.getItem('editToken');
+  if (!raw) return '';
+  try {
+    return JSON.parse(raw) || '';
+  } catch {
+    return raw;
+  }
+};
+
+// 判断响应是否为 401（令牌失效），是则返回带标记的结果
+const unauthorizedResult = (response) =>
+  response.status === 401
+    ? { success: false, unauthorized: true, error: '编辑令牌无效，请重新验证密码' }
+    : null;
 
 export const useLocalAPI = () => {
   const [data, setData] = useState(null);
@@ -49,6 +63,9 @@ export const useLocalAPI = () => {
         body: JSON.stringify(siteData),
       });
       
+      const unauthorized = unauthorizedResult(response);
+      if (unauthorized) return unauthorized;
+
       const result = await response.json();
       
       if (result.success) {
@@ -81,6 +98,9 @@ export const useLocalAPI = () => {
         body: JSON.stringify(siteData),
       });
       
+      const unauthorized = unauthorizedResult(response);
+      if (unauthorized) return unauthorized;
+
       const result = await response.json();
       
       if (result.success) {
@@ -111,6 +131,9 @@ export const useLocalAPI = () => {
         },
       });
       
+      const unauthorized = unauthorizedResult(response);
+      if (unauthorized) return unauthorized;
+
       const result = await response.json();
       
       if (result.success) {
@@ -143,6 +166,9 @@ export const useLocalAPI = () => {
         body: JSON.stringify(categoryData),
       });
       
+      const unauthorized = unauthorizedResult(response);
+      if (unauthorized) return unauthorized;
+
       const result = await response.json();
       
       if (result.success) {
@@ -175,6 +201,9 @@ export const useLocalAPI = () => {
         body: JSON.stringify(categoryData),
       });
 
+      const unauthorized = unauthorizedResult(response);
+      if (unauthorized) return unauthorized;
+
       const result = await response.json();
 
       if (result.success) {
@@ -204,6 +233,9 @@ export const useLocalAPI = () => {
           'x-edit-token': getEditToken(),
         },
       });
+
+      const unauthorized = unauthorizedResult(response);
+      if (unauthorized) return unauthorized;
 
       const result = await response.json();
 
